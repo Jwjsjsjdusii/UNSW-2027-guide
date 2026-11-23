@@ -1,26 +1,31 @@
-# My Study Life · Personal Edition V4.0
+# My Study Life · Personal Edition V4.2
 
-## 本次升级
-- 全站改为奶油白、米色、暖黄、橘色和木棕色生活风格。
-- 租房中心：realestate.com.au、Domain、Flatmates、Flatmate Finders、Snug、TenantApp、UNSW Accommodation、短期住宿入口。
-- 购物中心：Coles、Woolworths、ALDI、IKEA、Kmart、BIG W、Officeworks、JB Hi-Fi、Chemist Warehouse、Target、Myer、Costco、Gumtree、Marketplace。
-- 悉尼实体购物中心：Westfield Sydney、Broadway、Eastgardens、Central Park Mall。
-- 新增交通、银行金融、医疗与 OSHC 页面。
-- 兼职页面补充 UNSW Careers、SEEK、Indeed、Jora、Fair Work。
-- 新增可搜索资源导航中心，支持分类筛选、收藏和站内尝试预览。
-- 新增看房检查清单；收藏、看房勾选和原有个人数据保存在当前浏览器。
-- 保留原有倒计时、个人资料、日历、时间轴、预算、待办和 JSON 备份。
+## 本次升级（V4.2）
+- 固定知识内容直接内置在网站页面：NSW 租房流程、签约文件、Bond、Condition Report、看房须知；购物省钱方法、会员积分、搬家首周采购、二手交易安全；兼职基本权益、最低工资/Award、工资单与学生签证工作条件；Arc/UNSW 社团与校园支持介绍。
+- 日历默认显示当前周（周一至周日），通过下拉切换整月；重要事件日期使用醒目的暖色底、边框、分类点和事件数量提示。
+- 新增独立「个人花销」页面：固定支出、周期（月/周/双周/季度/年）自动折算月均；日常消费逐笔记录；按月筛选并汇总固定支出、当月消费和预计月总支出。
+- 固定支出、日常消费、资源收藏、看房清单都纳入本地数据与 JSON 备份。
+- 保留原有航班倒计时、时间轴、待办、资源导航、租房购物入口和 PWA。
 
-## 部署到 GitHub Pages
-1. 下载 ZIP 并解压。
-2. 将 index.html、manifest.json、sw.js、icon.svg、README.md 上传到原仓库根目录。
-3. 覆盖同名文件并 Commit changes。
-4. 确认 Settings → Pages 使用 main 分支和 /(root)。
-5. 等待 GitHub Pages 完成部署，再用原网址打开。
+## 部署
+1. 解压 ZIP。
+2. 把 index.html、manifest.json、sw.js、icon.svg、README.md 上传到现有 GitHub 仓库根目录并覆盖同名文件。
+3. Commit changes，等待 GitHub Pages 部署。
+4. 若手机仍显示旧版，关闭旧 PWA 页面后重新打开；必要时清除该站点缓存或重新添加到主屏幕。
 
-## 重要限制
-- 不需要注册、服务器、数据库或付费 API。
-- 个人数据仅保存在当前浏览器，不会自动跨设备同步；定期导出 JSON 备份。
-- 第三方网站可能禁止 iframe，因此“站内尝试打开”无法保证成功；若被阻止，请使用新标签页外部打开。
-- 本网站不实时同步价格、库存、房源或优惠；各平台信息以其官方页面为准。
-- 个人计划日期与学校日期应以学校正式通知为准；签证、税务、租房、保险政策应核对官方来源。
+## 数据说明
+- 个人数据只保存在当前浏览器本地，不会自动云同步。
+- 固定支出初始仅放入一条「房租预算参考」A$475/周，标记为预算参考而非已签约实际账单；可编辑/删除。
+- 其余固定账单请按自己的实际情况添加。
+- 个人花销按 A$ 记录；月均固定费用换算：周×52÷12、双周×26÷12、月×1、季度÷3、年÷12。
+- 月度总支出估算 = 固定支出月均 + 当前月份已记录的日常消费。未记录消费不会自动估算。
+- JSON 导出/导入包含 expenses、资源收藏和看房清单。
+
+## 内容来源与限制
+固定知识内容是根据政府/学校官方公开说明重新归纳，不是逐字复制。政策可能变化，关键事项在页面内附有官方来源链接：
+- NSW Fair Trading：租客起租时应获得的资料、标准租赁合同、Condition Report、Bond 与入住步骤。
+- Fair Work Ombudsman：国际学生工作权益、最低工资、工资单。
+- Australian Department of Home Affairs：Student visa subclass 500 条件。
+- Arc UNSW / UNSW：学生社团、国际学生融入和学生支持。
+
+网站不实时更新房源、商家价格、优惠、课程活动、交通服务状态或政策变化；这些动态信息仍需以官方实时页面为准。

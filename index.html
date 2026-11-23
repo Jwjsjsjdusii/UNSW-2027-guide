@@ -59,6 +59,29 @@ body{background:var(--bg);color:var(--ink)}
 @media(max-width:560px){.resourceGrid{grid-template-columns:1fr}}
 </style>
 
+
+<style id="calendar-expenses-v41">
+.calendarMode{border:1px solid #eadfd3;border-radius:9px;padding:7px 10px;background:#fffefa;color:#795f4a;font-size:11px}
+.day .eventCount{display:block;font-size:8px;color:#a46637;line-height:1;margin-top:2px}.day.hasEvents{background:#fff0d9;border:1px solid #e9bd83;font-weight:850;color:#8f572f;box-shadow:inset 0 0 0 1px #f6dfc1}
+.day.hasEvents .dots{display:flex;gap:3px;justify-content:center;margin-top:5px}
+.day.hasEvents .dot{width:6px;height:6px;border-radius:50%;box-shadow:0 0 0 2px #fffefa}
+.day.selected.hasEvents{background:#e9b16f;color:#533824;border-color:#d28e4e}
+.day.selected.hasEvents .dot{box-shadow:0 0 0 2px #fff2df}
+.expenseSummary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.expenseStat{background:#fff6e9;border:1px solid #f0e1ce;border-radius:14px;padding:13px}
+.expenseStat span{display:block;font-size:10px;color:#927a63}.expenseStat strong{display:block;font-size:21px;color:#765037;margin-top:5px}
+.expenseList{display:grid;gap:8px}.expenseRow{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 12px;border:1px solid #eee2d4;background:#fffefa;border-radius:11px}
+.expenseRow strong{font-size:12px}.expenseRow small{display:block;color:#988575;font-size:10px;margin-top:3px}
+.expenseRow .amount{font-weight:800;color:#795137;white-space:nowrap}
+.expenseFormGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.expenseFormGrid .field{min-width:0}
+.expenseSectionTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.expenseSectionTitle h3{font-size:14px;margin:0}.expenseSectionTitle p{font-size:10px;color:#998574;margin:4px 0 0}
+.expenseEmpty{font-size:11px;color:#998574;padding:14px;text-align:center;border:1px dashed #e8d9c8;border-radius:11px}
+@media(max-width:650px){.expenseSummary{grid-template-columns:1fr 1fr}.expenseFormGrid{grid-template-columns:1fr 1fr}.calendarMode{padding:6px 7px}}
+@media(max-width:390px){.expenseSummary{grid-template-columns:1fr}.expenseFormGrid{grid-template-columns:1fr}}
+</style>
+
 </head>
 <body>
 <header class="top"><div class="topLeft">
@@ -86,8 +109,8 @@ body{background:var(--bg);color:var(--ink)}
  <button class="sideLink" data-page="resources"><span class="ico">✧</span>资源导航中心</button>
  <div class="sideLabel" style="padding-top:18px">PERSONAL</div>
  <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人资料</button>
- <button class="sideLink" data-page="tools"><span class="ico">⚙</span>个人工具</button>
- <div class="sideBottom">PERSONAL EDITION · V4.0<br>本地数据 · 无需注册 · 无需服务器</div>
+ <button class="sideLink" data-page="expenses"><span class="ico">＄</span>个人花销</button><button class="sideLink" data-page="tools"><span class="ico">⚙</span>个人工具</button>
+ <div class="sideBottom">PERSONAL EDITION · V4.2<br>本地数据 · 无需注册 · 无需服务器</div>
 </div></aside>
 <main class="main"><div class="content">
 <section class="page active" id="page-home">
@@ -109,8 +132,8 @@ body{background:var(--bg);color:var(--ink)}
  <div class="dashGrid">
   <section class="panel" id="homeCalendar">
    <div class="panelHead"><div><h2>我的日历</h2><p>月历与日程同步 · 点击日期查看事件</p></div><button class="plainBtn" id="newEvent">＋ 新建事件</button></div>
-   <div class="calendarHead"><div class="monthTitle" id="monthTitle">2027年1月</div><div class="calNav"><button id="prevMonth">‹</button><button id="todayMonth">今</button><button id="nextMonth">›</button></div></div>
-   <div class="weekdays"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="calendar" id="calendar"></div>
+   <div class="calendarHead"><div class="monthTitle" id="monthTitle">2027年1月</div><div class="calNav"><select class="calendarMode" id="calendarViewMode" aria-label="日历视图"><option value="week" selected>一周</option><option value="month">整个月</option></select><button id="prevMonth">‹</button><button id="todayMonth">今</button><button id="nextMonth">›</button></div></div>
+   <div class="weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div><div class="calendar" id="calendar"></div>
    <div class="legend"><span><i style="background:#4b72d6"></i>学校</span><span><i style="background:#31906e"></i>个人</span><span><i style="background:#dc9c3d"></i>航班</span><span><i style="background:#d66b61"></i>截止日期</span><span><i style="background:#9874c7"></i>自定义</span></div>
    <div class="agenda"><div class="agendaTitle" id="agendaTitle">当天日程</div><div id="agendaList"></div></div>
   </section>
@@ -131,8 +154,8 @@ body{background:var(--bg);color:var(--ink)}
 <section class="page" id="page-calendar">
  <div class="pageIntro"><div class="eyebrow">MY SCHEDULE</div><h1>日历与时间轴</h1><p>所有个人事件统一保存在本地，可创建、删除并导出备份。</p></div>
  <div class="panel"><div class="panelHead"><div><h2>日历管理</h2><p>选择日期，查看当天安排</p></div><button class="primary" id="calendarAdd">＋ 添加事件</button></div>
-  <div class="calendarHead"><div class="monthTitle" id="monthTitle2">2027年1月</div><div class="calNav"><button id="prevMonth2">‹</button><button id="todayMonth2">今</button><button id="nextMonth2">›</button></div></div>
-  <div class="weekdays"><div>日</div><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div></div><div class="calendar" id="calendar2"></div>
+  <div class="calendarHead"><div class="monthTitle" id="monthTitle2">2027年1月</div><div class="calNav"><select class="calendarMode" id="calendarViewMode2" aria-label="日历视图"><option value="week" selected>一周</option><option value="month">整个月</option></select><button id="prevMonth2">‹</button><button id="todayMonth2">今</button><button id="nextMonth2">›</button></div></div>
+  <div class="weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div><div class="calendar" id="calendar2"></div>
   <div class="agenda"><div class="agendaTitle" id="agendaTitle2">当天日程</div><div id="agendaList2"></div></div>
  </div>
  <div class="sectionBlock"><div class="sectionTitle"><div><h2>阶段时间轴</h2><p>当前个人留学阶段规划</p></div><div class="timelineTabs"><button class="active" data-timeline="arrival">抵澳阶段</button><button data-timeline="semester">学期</button><button data-timeline="year">学年</button></div></div><div class="timelinePanel"><div class="timelineList" id="timelineList2"></div></div></div>
@@ -153,7 +176,16 @@ body{background:var(--bg);color:var(--ink)}
 </section>
 
 <section class="page" id="page-campus">
- <div class="pageIntro"><div class="eyebrow">UNSW CAMPUS</div><h1>UNSW 校园</h1><p>校园资源、学生组织、学习支持与职业发展。</p></div>
+ <div class="pageIntro"><div class="eyebrow">UNSW CAMPUS</div>
+<h1>UNSW 校园</h1><p>校园资源、学生组织、学习支持与职业发展。</p></div>
+ <div class="sectionBlock"><div class="sectionTitle"><div><h2>Arc 与校园生活怎么用</h2><p>把长期稳定的校园资源介绍直接收进网站</p></div></div>
+ <div class="cardGrid">
+  <article class="infoCard"><h3>Arc 是什么</h3><p>Arc 是 UNSW 的学生组织，连接社团、志愿活动、体育、创意项目、学生支持与校园活动。可从兴趣社团、国际文化社群和新生活动开始融入校园生活。</p><a href="https://www.arc.unsw.edu.au/" target="_blank" rel="noopener">Arc 官方入口 ↗</a></article>
+  <article class="infoCard"><h3>加入社团的价值</h3><p>社团适合认识朋友、练习沟通、参加工作坊、建立专业或兴趣人脉。选择时比较活动频率、会员费、活动地点和是否欢迎新手；不要只看社团数量。</p><a href="https://www.arc.unsw.edu.au/clubs" target="_blank" rel="noopener">社团目录 ↗</a></article>
+  <article class="infoCard"><h3>国际学生融入</h3><p>可以优先关注 International & Cultural 类社团、语言交流、迎新活动和 Arc Goes To 等悉尼周边活动。具体活动时间与报名名额属于动态信息，需要查看当期公告。</p><a href="https://www.arc.unsw.edu.au/join/international" target="_blank" rel="noopener">国际学生与朋友 ↗</a></article>
+  <article class="infoCard"><h3>校园求助路径</h3><p>遇到选课、学业、签证支持、心理健康、经济困难或安全问题时，先识别对应的 UNSW 学生服务部门；不要把紧急安全问题留到普通邮件回复。</p><a href="https://www.unsw.edu.au/student/support" target="_blank" rel="noopener">UNSW Student Support ↗</a></article>
+ </div></div>
+
  <div class="cardGrid">
   <article class="infoCard"><h3>🎓 Arc 学生组织</h3><p>查看会员权益、社团目录、志愿活动、校园活动与学生体验。具体权益按当年规则核实。</p><a href="https://www.arc.unsw.edu.au/" target="_blank" rel="noopener">Arc 官网 ↗</a>　<a href="https://www.arc.unsw.edu.au/clubs" target="_blank" rel="noopener">社团目录 ↗</a></article>
   <article class="infoCard"><h3>🧭 国际学生支持</h3><p>了解入学、学习适应、签证相关支持与学生服务入口。</p><a href="https://www.unsw.edu.au/student/support/international" target="_blank" rel="noopener">International Support ↗</a></article>
@@ -194,7 +226,17 @@ body{background:var(--bg);color:var(--ink)}
   <article class="infoCard"><h3>Rosebery / Zetland</h3><p>可关注公寓合租和生活配套，但要按实际门牌计算通勤，不要只看地图直线距离。</p></article>
   <article class="infoCard"><h3>NSW 官方租房指南</h3><p>核对租赁合同、Bond、维修、押金和纠纷处理流程。</p><a href="https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live" target="_blank" rel="noopener">NSW 租房指南 ↗</a></article>
  </div></div>
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>看房检查清单</h2><p>现场看房时逐项勾选，状态保存在当前浏览器</p></div></div><div class="panel" id="rentalChecklist">
+
+ <div class="sectionBlock"><div class="sectionTitle"><div><h2>NSW 租房流程速查</h2><p>这些是相对稳定的基础流程摘要，方便先在网站内阅读</p></div><span class="tag">内置知识卡</span></div>
+ <div class="cardGrid">
+  <article class="infoCard"><span class="tag">01 · 申请前</span><h3>准备租房申请资料</h3><p>通常先准备身份证明、在读/录取证明、收入或资金证明、租房经历与推荐人信息。不同平台和中介的要求不同；只向可信的房东/中介提交必要资料，敏感文件可加用途水印。</p></article>
+  <article class="infoCard"><span class="tag">02 · 签约前</span><h3>先拿齐合同与披露文件</h3><p>NSW 租房开始前，房东或中介应提供租客信息声明、拟签租赁合同、已填写的房屋状况报告；公寓还可能涉及 strata by-laws。逐条核对租金、期限、账单责任、维修和提前解约条款。</p><a href="https://www.nsw.gov.au/housing-and-construction/rules/information-a-tenant-should-get-at-start-of-a-tenancy" target="_blank" rel="noopener">官方文件清单 ↗</a></article>
+  <article class="infoCard"><span class="tag">03 · Bond</span><h3>押金与租金预付</h3><p>确认 Bond 金额及正式登记流程，优先使用 NSW Rental Bonds Online 或规定的纸质方式。保留收据和转账记录；不要把 Bond 转入无法核实的私人账户。</p><a href="https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live/starting-a-residential-tenancy/signing-a-lease-and-moving" target="_blank" rel="noopener">签约与入住官方步骤 ↗</a></article>
+  <article class="infoCard"><span class="tag">04 · 入住后 7 天</span><h3>完成 Condition Report</h3><p>逐房间记录墙面、地板、家具、电器、窗户、门锁和已有损坏，拍摄带时间信息的照片。按要求在取得房屋占有后 7 天内返还填写后的报告，并保存自己的副本。</p><a href="https://www.nsw.gov.au/housing-and-construction/rules/rental-property-condition-reports" target="_blank" rel="noopener">状况报告官方说明 ↗</a></article>
+ </div>
+ <div class="notice">重要：上面是 NSW 一般住宅租赁流程摘要，不替代合同、法律意见或最新法规。合租、转租、学生公寓和短租可能适用不同安排，签署前核实具体类型。</div>
+ </div>
+\n <div class="sectionBlock"><div class="sectionTitle"><div><h2>看房检查清单</h2><p>现场看房时逐项勾选，状态保存在当前浏览器</p></div></div><div class="panel" id="rentalChecklist">
  <div class="profileGrid" id="rentalChecks"></div>
  </div></div>
 
@@ -209,7 +251,15 @@ body{background:var(--bg);color:var(--ink)}
  </div>
  <div class="notice">2027 年政策可能变化。请核对个人签证条件及 Home Affairs 最新规定。</div>
 
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>招聘与工作权益入口</h2><p>校内岗位优先，其次使用主流招聘平台</p></div></div>
+
+ <div class="sectionBlock"><div class="sectionTitle"><div><h2>开始兼职前必须知道</h2><p>把基础劳动权益与求职步骤放在页面里</p></div></div>
+ <div class="cardGrid">
+  <article class="infoCard"><h3>先核实签证工作条件</h3><p>学生签证持有人通常不能在课程开始前工作；课程进行期间常见上限为每两周 48 小时，正式课程假期通常可不限时。研究型学位、课程组成工作等存在例外。以 VEVO 和签证 grant letter 为准。</p><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500" target="_blank" rel="noopener">Home Affairs 学生签证 ↗</a></article>
+  <article class="infoCard"><h3>最低工资与 Award</h3><p>澳洲雇员有最低工资和基本工作权益。具体时薪需按岗位适用的 Modern Award、雇佣类型、年龄、资历和时段确定；周末、公共假日或夜班可能涉及 penalty rates。</p><a href="https://www.fairwork.gov.au/pay-and-wages/minimum-wages" target="_blank" rel="noopener">Fair Work 最低工资 ↗</a></article>
+  <article class="infoCard"><h3>工资单与工作记录</h3><p>雇主通常须在发薪后一个工作日内提供 payslip。保存排班、打卡、工资单和银行入账记录；核对普通工时、加班/罚金、税款扣缴和 super 信息。</p><a href="https://www.fairwork.gov.au/pay-and-wages/paying-wages/pay-slips" target="_blank" rel="noopener">工资单官方说明 ↗</a></article>
+  <article class="infoCard"><h3>识别不合理试工</h3><p>试工只能限于合理展示岗位技能所需的时间；要求长时间无薪工作、培训不付薪、收取招聘费或扣押护照都应提高警惕。遇到问题可联系 Fair Work Ombudsman。</p><a href="https://www.fairwork.gov.au/tools-and-resources/fact-sheets/rights-and-obligations/international-students" target="_blank" rel="noopener">国际学生工作权益 ↗</a></article>
+ </div></div>
+\n <div class="sectionBlock"><div class="sectionTitle"><div><h2>招聘与工作权益入口</h2><p>校内岗位优先，其次使用主流招聘平台</p></div></div>
  <div class="cardGrid">
   <article class="infoCard"><h3>UNSW Careers</h3><p>学校职业服务、校内招聘、简历支持、职业活动与实习信息。</p><a href="https://www.unsw.edu.au/student/support/career" target="_blank" rel="noopener">UNSW Careers ↗</a></article>
   <article class="infoCard"><h3>SEEK</h3><p>澳洲主流综合招聘网站，可筛选 casual、part-time、地点和工作类别。</p><a href="https://www.seek.com.au/" target="_blank" rel="noopener">SEEK ↗</a></article>
@@ -255,7 +305,17 @@ body{background:var(--bg);color:var(--ink)}
   <article class="infoCard"><h3>Westfield Eastgardens</h3><p>东南区大型购物中心，可集中采购食品、服饰、家居与生活用品。</p><a href="https://www.westfield.com.au/eastgardens" target="_blank" rel="noopener">商场官网 ↗</a></article>
   <article class="infoCard"><h3>Central Park Mall</h3><p>靠近 UTS 与 Central 区域，适合校园周边日常购物和餐饮。</p><a href="https://www.centralparkmall.com.au/" target="_blank" rel="noopener">商场官网 ↗</a></article>
  </div></div>
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>优惠、目录与学生折扣</h2><p>购物前先查折扣和每周促销</p></div></div>
+
+ <div class="sectionBlock"><div class="sectionTitle"><div><h2>在澳洲怎么买更划算</h2><p>固定消费知识直接放在这里，不必每次跳出网站查基础概念</p></div></div>
+ <div class="cardGrid">
+  <article class="infoCard"><h3>食品采购：先比单位价格</h3><p>不要只看包装总价。比较每 100g、每 kg、每 L 的价格；留意自有品牌、冷冻蔬菜、季末折扣和临近保质期商品。每周先列菜单和清单，减少重复购买与浪费。</p></article>
+  <article class="infoCard"><h3>会员积分怎么用</h3><p>Coles 常见 Flybuys，Woolworths 常见 Everyday Rewards。加入前确认会员价、积分兑换规则和个人数据使用条款；不为积分而购买原本不需要的商品。</p></article>
+  <article class="infoCard"><h3>搬家第一周优先买什么</h3><p>先买床品、毛巾、基础厨具、餐具、清洁用品、衣架、垃圾袋和简单药箱。家具先测量房间与门宽，再考虑 IKEA、Kmart、二手平台或校内群组。</p></article>
+  <article class="infoCard"><h3>数码产品购买检查</h3><p>先确认准确型号、键盘布局、电源规格、保修范围和退换条件。比较教育价、公开促销与历史常见价格；不要只因“限时优惠”而仓促下单。</p></article>
+  <article class="infoCard"><h3>二手交易安全</h3><p>优先当面检查物品、测试电器、确认配件并在安全公共地点交易。不要点击陌生人发来的付款链接，不要为“预留商品”向个人账户提前汇款。</p></article>
+  <article class="infoCard"><h3>学生优惠核验</h3><p>先完成学生身份认证，再核对折扣适用国家、课程/学校资格、有效期、排除型号和是否可叠加。折扣码不等于最低价，最终以结算页为准。</p></article>
+ </div></div>
+\n <div class="sectionBlock"><div class="sectionTitle"><div><h2>优惠、目录与学生折扣</h2><p>购物前先查折扣和每周促销</p></div></div>
  <div class="cardGrid">
   <article class="infoCard"><h3>UNiDAYS</h3><p>学生身份验证后查看电子产品、时尚、生活品牌等学生优惠。资格和折扣因品牌而异。</p><a href="https://www.myunidays.com/AU/en-AU" target="_blank" rel="noopener">查看 UNiDAYS ↗</a></article>
   <article class="infoCard"><h3>Student Beans</h3><p>学生折扣与优惠码平台，覆盖电子产品、餐饮、服饰和娱乐。</p><a href="https://www.studentbeans.com/au" target="_blank" rel="noopener">查看 Student Beans ↗</a></article>
@@ -347,8 +407,52 @@ body{background:var(--bg);color:var(--ink)}
  <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>个人资料摘要</h2><p>当前系统使用的主要设定</p></div></div><div class="profileGrid" id="profileSummary"></div></div>
 </section>
 
+
+<section class="page" id="page-expenses">
+ <div class="pageIntro"><div class="eyebrow">MY MONEY & EXPENSES</div><h1>个人花销</h1><p>把固定账单、日常消费和预算放在一起。金额以澳元 A$ 记录，数据仅保存在当前浏览器。</p></div>
+ <div class="expenseSummary">
+  <div class="expenseStat"><span>固定支出 · 月均</span><strong id="fixedMonthly">A$0</strong></div>
+  <div class="expenseStat"><span>本月已记录消费</span><strong id="spentThisMonth">A$0</strong></div>
+  <div class="expenseStat"><span>本月总支出估算</span><strong id="monthTotalEstimate">A$0</strong></div>
+ </div>
+ <div class="panel" style="margin-top:14px">
+  <div class="expenseSectionTitle"><div><h3>固定支出管理</h3><p>房租、手机、保险、订阅、交通月票等定期账单</p></div><span class="tag blue" id="fixedCount">0 项</span></div>
+  <div class="expenseList" id="fixedExpenseList"></div>
+  <form id="fixedExpenseForm" style="margin-top:14px">
+   <div class="expenseFormGrid">
+    <div class="field"><label>支出名称</label><input id="fxName" placeholder="例如：房租" required></div>
+    <div class="field"><label>金额 A$</label><input id="fxAmount" type="number" min="0" step="0.01" placeholder="475" required></div>
+    <div class="field"><label>扣费频率</label><select id="fxFrequency"><option value="weekly">每周</option><option value="fortnightly">每两周</option><option value="monthly" selected>每月</option><option value="quarterly">每季度</option><option value="yearly">每年</option></select></div>
+    <div class="field"><label>类别</label><select id="fxCategory"><option>住房</option><option>通信</option><option>保险</option><option>交通</option><option>订阅</option><option>学习</option><option>其他</option></select></div>
+   </div>
+   <div class="formActions"><button class="primary" type="submit">＋ 添加固定支出</button></div>
+  </form>
+ </div>
+ <div class="panel" style="margin-top:14px">
+  <div class="expenseSectionTitle"><div><h3>记录一笔日常消费</h3><p>食品、交通、购物、餐饮等非固定消费</p></div></div>
+  <form id="dailyExpenseForm">
+   <div class="expenseFormGrid">
+    <div class="field"><label>消费项目</label><input id="spName" placeholder="例如：Coles 食品采购" required></div>
+    <div class="field"><label>金额 A$</label><input id="spAmount" type="number" min="0" step="0.01" placeholder="32.50" required></div>
+    <div class="field"><label>日期</label><input id="spDate" type="date" required></div>
+    <div class="field"><label>类别</label><select id="spCategory"><option>食品杂货</option><option>餐饮</option><option>交通</option><option>购物</option><option>学习</option><option>娱乐</option><option>医疗</option><option>其他</option></select></div>
+   </div>
+   <div class="formActions"><button class="primary" type="submit">记录消费</button></div>
+  </form>
+ </div>
+ <div class="panel" style="margin-top:14px">
+  <div class="expenseSectionTitle"><div><h3>本月消费明细</h3><p>可以删除录错的消费记录</p></div><input id="expenseMonth" type="month" style="max-width:160px"></div>
+  <div id="dailyExpenseList" class="expenseList"></div>
+ </div>
+ <div class="panel" style="margin-top:14px">
+  <div class="expenseSectionTitle"><div><h3>月度支出结构</h3><p>固定支出与已记录消费分类汇总</p></div></div>
+  <div id="expenseBreakdown" class="expenseList"></div>
+  <div class="notice">月均固定支出按每周×52÷12、每两周×26÷12、每季度÷3、每年÷12换算。月度总支出估算 = 固定支出月均 + 当前所选月份已记录的日常消费。尚未录入的消费不会自动猜测。</div>
+ </div>
+</section>
+
 <section class="page" id="page-tools">
- <div class="pageIntro"><div class="eyebrow">PERSONAL TOOLS</div><h1>个人工具</h1><p>航班设置、日历事件、预算计算和数据备份。</p></div>
+ <div class="pageIntro"><div class="eyebrow">PERSONAL TOOLS</div><h1>个人工具</h1><p>航班设置、日历事件和数据备份。个人花销已独立到「个人花销」模块。</p></div>
  <div class="panel" style="margin-bottom:14px"><div class="panelHead"><div><h2>抵澳航班设置</h2><p>手动填写机票确认单上的信息，倒计时使用悉尼时区。</p></div></div>
   <form id="flightForm"><div class="formGrid">
    <div class="field"><label>出发机场代码</label><input id="fFromCode" placeholder="例如 PVG" maxlength="5"></div><div class="field"><label>出发机场名称</label><input id="fFromName" placeholder="例如 Shanghai Pudong"></div>
@@ -367,16 +471,12 @@ body{background:var(--bg);color:var(--ink)}
   </div><div class="formActions"><button class="primary" type="submit">添加到日历</button></div></form>
   <div id="manageEvents" style="margin-top:12px"></div>
  </div>
- <div class="panel" style="margin-bottom:14px"><div class="panelHead"><div><h2>每周生活费预算</h2><p>月均按 52÷12 周估算，修改后自动保存。</p></div></div>
-  <div class="formGrid"><div class="field"><label>房租 A$/周</label><input type="number" min="0" id="rent" value="475"></div><div class="field"><label>食品杂货 A$/周</label><input type="number" min="0" id="food" value="110"></div><div class="field"><label>交通 A$/周</label><input type="number" min="0" id="transport" value="35"></div><div class="field"><label>其他日常 A$/周</label><input type="number" min="0" id="other" value="65"></div></div>
-  <div class="quickStats" style="margin-top:14px"><div class="quick"><span>每周合计</span><strong id="weekly">A$685</strong></div><div class="quick"><span>月均估算</span><strong id="monthly">A$2,968</strong></div></div>
- </div>
- <div class="panel"><div class="panelHead"><div><h2>数据备份与恢复</h2><p>备份个人资料、航班、事件、待办和预算。</p></div></div>
+ <div class="panel"><div class="panelHead"><div><h2>数据备份与恢复</h2><p>备份个人资料、航班、事件、待办、固定支出和日常消费。</p></div></div>
   <div class="formActions"><button class="primary" id="exportData" type="button">导出 JSON 备份</button><label class="secondary" style="cursor:pointer">导入 JSON 备份<input id="importData" type="file" accept="application/json" hidden></label></div>
   <div class="notice">数据保存在当前浏览器。清理浏览器数据、换设备或更换浏览器前，请先导出备份。导入会覆盖当前个人数据。</div>
  </div>
 </section>
-<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.0　|　个人规划工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
+<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.2　|　个人规划工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
 </div></main>
 </div>
 
@@ -406,10 +506,11 @@ const defaultState={
   {id:'degree-2027',title:'学位课程预计开始',date:'2027-06-01',time:'',category:'school',note:'待 UNSW 官方日历确认'}
  ],
  budget:{rent:475,food:110,transport:35,other:65},
+ expenses:{fixed:[{id:'fx-rent',name:'房租预算参考',amount:475,frequency:'weekly',category:'住房'}],entries:[]},
  tasks:{}
 };
 function clone(x){return JSON.parse(JSON.stringify(x))}
-function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{}}}catch(e){return clone(defaultState)}}
+function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},expenses:{...clone(defaultState.expenses),...(s.expenses||{}),fixed:Array.isArray(s.expenses?.fixed)?s.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(s.expenses?.entries)?s.expenses.entries:[]},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{}}}catch(e){return clone(defaultState)}}
 let state=loadState();
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 let toastTimer;function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2200)}
@@ -435,24 +536,48 @@ function updateClock(){
 }
 setInterval(updateClock,250);updateClock();
 const now=new Date();$('todayText').textContent=new Intl.DateTimeFormat('zh-CN',{dateStyle:'full'}).format(now);$('dateChip').textContent=new Intl.DateTimeFormat('zh-CN',{dateStyle:'full'}).format(now);
-let viewYear=2027,viewMonth=0,selectedDate='2027-01-20';
+
+let viewYear=now.getFullYear(),viewMonth=now.getMonth(),selectedDate=ymd(now.getFullYear(),now.getMonth(),now.getDate()),calendarMode='week';
 function catName(c){return {school:'学校',personal:'个人',flight:'航班',deadline:'截止',custom:'自定义'}[c]||'事件'}
 function renderCalendar(idSuffix=''){
  const calId='calendar'+idSuffix,titleId='monthTitle'+idSuffix,agendaTitleId='agendaTitle'+idSuffix,agendaListId='agendaList'+idSuffix;
  if(!$(calId))return;
- const first=new Date(viewYear,viewMonth,1),start=new Date(viewYear,viewMonth,1-first.getDay());
- $(titleId).textContent=viewYear+'年'+(viewMonth+1)+'月';
- let out='';for(let i=0;i<42;i++){const dt=new Date(start);dt.setDate(start.getDate()+i);const key=ymd(dt.getFullYear(),dt.getMonth(),dt.getDate()),same=dt.getMonth()===viewMonth,todayKey=ymd(now.getFullYear(),now.getMonth(),now.getDate());const dots=state.events.filter(e=>e.date===key).slice(0,4).map(e=>`<i class="dot ${e.category}"></i>`).join('');out+=`<button class="day ${same?'':'mutedDay'} ${key===todayKey?'today':''} ${key===selectedDate?'selected':''}" data-date="${key}">${dt.getDate()}<span class="dots">${dots}</span></button>`;}
+ const mode=calendarMode,selected=new Date(selectedDate+'T12:00:00');
+ let start,count;
+ if(mode==='week'){
+   const dow=(selected.getDay()+6)%7;start=new Date(selected);start.setDate(selected.getDate()-dow);count=7;
+ }else{
+   const first=new Date(viewYear,viewMonth,1);start=new Date(first);start.setDate(first.getDate()-((first.getDay()+6)%7));count=42;
+ }
+ const end=new Date(start);end.setDate(start.getDate()+count-1);
+ const fmt=d=>ymd(d.getFullYear(),d.getMonth(),d.getDate());
+ if(mode==='week'){
+   const sameMonth=start.getMonth()===end.getMonth();
+   $(titleId).textContent=sameMonth?`${start.getFullYear()}年${start.getMonth()+1}月 · ${start.getDate()}–${end.getDate()}日`:`${start.getFullYear()}.${start.getMonth()+1}.${start.getDate()} – ${end.getFullYear()}.${end.getMonth()+1}.${end.getDate()}`;
+ }else $(titleId).textContent=viewYear+'年'+(viewMonth+1)+'月';
+ let out='';const todayKey=ymd(now.getFullYear(),now.getMonth(),now.getDate());
+ for(let i=0;i<count;i++){
+   const dt=new Date(start);dt.setDate(start.getDate()+i);const key=fmt(dt),same=mode==='week'||dt.getMonth()===viewMonth;
+   const dayEvents=state.events.filter(e=>e.date===key),has=dayEvents.length>0;
+   const dots=dayEvents.slice(0,4).map(e=>`<i class="dot ${e.category}"></i>`).join('');
+   out+=`<button class="day ${same?'':'mutedDay'} ${key===todayKey?'today':''} ${key===selectedDate?'selected':''} ${has?'hasEvents':''}" data-date="${key}" aria-label="${key}${has?'，'+dayEvents.length+'个事件':''}">${dt.getDate()}<span class="dots">${dots}</span>${has&&dayEvents.length>1?`<small class="eventCount">${dayEvents.length}</small>`:''}</button>`;
+ }
  $(calId).innerHTML=out;
- $(calId).querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{selectedDate=b.dataset.date;renderAllCalendars()});
+ $(calId).querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{selectedDate=b.dataset.date;const d=new Date(selectedDate+'T12:00:00');viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()});
  const ev=state.events.filter(e=>e.date===selectedDate).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
- $(agendaTitleId).textContent=selectedDate+' · 日程';
- $(agendaListId).innerHTML=ev.length?ev.map(e=>`<div class="eventRow"><div class="eventDate">${e.date.slice(5).replace('-','/')}</div><div class="eventInfo"><strong>${escapeHTML(e.title)}</strong><small>${e.time||'全天'}${e.note?' · '+escapeHTML(e.note):''}</small></div><span class="eventCat">${catName(e.category)}</span></div>`).join(''):'<div class="eventEmpty">这一天还没有安排。点击「新建事件」添加事项。</div>';
+ $(agendaTitleId).textContent=selectedDate+' · '+ev.length+' 项安排';
+ $(agendaListId).innerHTML=ev.length?ev.map(e=>`<div class="eventRow"><div class="eventDate">${e.date.slice(5).replace('-','/')}</div><div class="eventInfo"><strong>${escapeHTML(e.title)}</strong><small>${e.time||'全天'}${e.note?' · '+escapeHTML(e.note):''}</small></div><span class="eventCat">${catName(e.category)}</span></div>`).join(''):'<div class="eventEmpty">这一天还没有安排。点击「添加事件」添加事项。</div>';
 }
 function renderAllCalendars(){renderCalendar('');renderCalendar('2');renderAllEvents();renderManageEvents()}
-function shiftMonth(delta){viewMonth+=delta;if(viewMonth<0){viewMonth=11;viewYear--}if(viewMonth>11){viewMonth=0;viewYear++}renderAllCalendars()}
-['prevMonth','prevMonth2'].forEach(id=>$(id).onclick=()=>shiftMonth(-1));['nextMonth','nextMonth2'].forEach(id=>$(id).onclick=()=>shiftMonth(1));
-['todayMonth','todayMonth2'].forEach(id=>$(id).onclick=()=>{viewYear=now.getFullYear();viewMonth=now.getMonth();selectedDate=ymd(viewYear,viewMonth,now.getDate());renderAllCalendars()});
+function shiftCalendar(delta){
+ if(calendarMode==='week'){const d=new Date(selectedDate+'T12:00:00');d.setDate(d.getDate()+delta*7);selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();}
+ else {viewMonth+=delta;if(viewMonth<0){viewMonth=11;viewYear--}if(viewMonth>11){viewMonth=0;viewYear++}selectedDate=ymd(viewYear,viewMonth,1);}
+ renderAllCalendars();
+}
+['prevMonth','prevMonth2'].forEach(id=>$(id).onclick=()=>shiftCalendar(-1));
+['nextMonth','nextMonth2'].forEach(id=>$(id).onclick=()=>shiftCalendar(1));
+['todayMonth','todayMonth2'].forEach(id=>$(id).onclick=()=>{const d=new Date();selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()});
+['calendarViewMode','calendarViewMode2'].forEach(id=>{if($(id))$(id).onchange=()=>{calendarMode=$(id).value;['calendarViewMode','calendarViewMode2'].forEach(x=>{if($(x))$(x).value=calendarMode});renderAllCalendars()}});
 const timelines={
  arrival:()=>[['抵达日',state.profile.arrival,'机场、入住、手机卡、银行与交通'],['语言班开始',state.profile.languageStart,'按录取通知完成报到'],['语言班结束',state.profile.languageEnd,'成绩、衔接与后续课程准备'],['迎新计划',state.profile.orientation,'日期待学校官方确认'],['主课预计开始',state.profile.course,'日期待学校官方确认']],
  semester:()=>[['学期前','准备阶段','选课、注册、教材、课表'],['教学周','学习阶段','上课、作业、考试与校园活动'],['考试期','评估阶段','复习、考试与成绩查询'],['假期','休整阶段','旅行、兼职与下学期准备']],
@@ -460,7 +585,7 @@ const timelines={
 };
 function renderTimeline(type){const items=timelines[type]();['timelineList','timelineList2'].forEach(id=>{if($(id))$(id).innerHTML=items.map(x=>`<div class="timeItem"><time>${escapeHTML(x[1])}</time><strong>${escapeHTML(x[0])}</strong><small>${escapeHTML(x[2])}</small></div>`).join('')})}
 document.querySelectorAll('[data-timeline]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-timeline]').forEach(x=>x.classList.toggle('active',x.dataset.timeline===b.dataset.timeline));renderTimeline(b.dataset.timeline)});renderTimeline('arrival');
-function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='tools'){fillFlightForm();fillBudget();renderManageEvents()}if(name==='calendar')renderAllCalendars()}
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='tools'){fillFlightForm();renderManageEvents()}if(name==='calendar')renderAllCalendars();if(name==='expenses')renderExpenses()}
 document.querySelectorAll('.sideLink').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 const sidebar=$('sidebar'),overlay=$('overlay');function openMenu(){sidebar.classList.add('open');overlay.classList.add('show')}function closeMenu(){sidebar.classList.remove('open');overlay.classList.remove('show')}
 $('menuToggle').onclick=()=>{if(innerWidth<=720){sidebar.classList.contains('open')?closeMenu():openMenu()}else sidebar.classList.toggle('closed')};overlay.onclick=closeMenu;
@@ -477,13 +602,35 @@ $('profileForm').addEventListener('submit',e=>{e.preventDefault();state.profile=
 $('resetProfile').onclick=()=>{state.profile=clone(baseProfile);save();fillProfile();updateOverview();toast('已恢复项目交接资料')};
 function renderProfileSummary(){const p=state.profile;const rows=[['国家',p.country],['城市',p.city],['学校',p.school],['专业 / 学位',p.program||'尚未填写'],['语言班',p.language==='yes'?'需要':p.language==='no'?'不需要':'尚未确定'],['计划抵澳',p.arrival],['主课预计开始',p.course],['房租预算','A$'+p.rentMin+'–'+p.rentMax+'/周']];$('profileSummary').innerHTML=rows.map(x=>`<div class="profileItem"><small>${escapeHTML(x[0])}</small><strong>${escapeHTML(x[1])}</strong></div>`).join('')}
 function updateOverview(){const p=state.profile;$('statArrival').textContent=p.arrival||'待设置';$('statLanguage').textContent=p.languageStart||'待设置';$('statLanguageEnd').textContent=p.languageEnd||'待设置';$('statCourse').textContent=p.course||'待设置';$('welcomeTitle').textContent=p.name?'欢迎回来，'+p.name+'！':'早上好，准备好开启'+(p.city||'留学')+'生活了吗？'}
-function fillBudget(){for(const k of ['rent','food','transport','other'])$(k).value=state.budget[k]}
-function calcBudget(){const sum=['rent','food','transport','other'].reduce((s,k)=>s+Math.max(0,Number($(k).value)||0),0);$('weekly').textContent='A$'+Math.round(sum).toLocaleString('en-AU');$('monthly').textContent='A$'+Math.round(sum*52/12).toLocaleString('en-AU');state.budget=Object.fromEntries(['rent','food','transport','other'].map(k=>[k,Number($(k).value)||0]));save()}
-['rent','food','transport','other'].forEach(k=>$(k).addEventListener('input',calcBudget));fillBudget();calcBudget();
+
 const tasks=['确认签证批准信、签证条件与 VEVO','确认 CoE、语言班报到与开课安排','整理护照、保险、录取文件及电子备份','筛选租房区域并预约看房','核实租赁合同、Bond 与入住状况报告','确认航班、行李、机场到住处路线','准备澳洲手机卡 / eSIM 方案','比较银行账户与国际汇款方式','了解 Opal / 非接触式交通支付','确认 OSHC 保单与医疗服务入口','熟悉 Arc、社团及校园支持服务','核实 2027 官方校历、迎新和主课日期','准备抵澳初期生活用品','导出并保存网站个人数据备份'];
 function renderTasks(){$('arrivalTasks').innerHTML=tasks.map((t,i)=>`<label class="checkRow ${state.tasks[i]?'done':''}"><input type="checkbox" data-task="${i}" ${state.tasks[i]?'checked':''}><span>${escapeHTML(t)}</span></label>`).join('');const done=tasks.filter((_,i)=>state.tasks[i]).length;$('taskCount').textContent=done+' / '+tasks.length;$('taskProgress').style.width=(done/tasks.length*100)+'%';$('arrivalTasks').querySelectorAll('[data-task]').forEach(c=>c.onchange=()=>{state.tasks[c.dataset.task]=c.checked;save();renderTasks()})}
 $('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks')||'{}')}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
-$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile}};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks',JSON.stringify(obj.extras.rentalChecks||{}));}save();updateClock();fillProfile();fillFlightForm();fillBudget();calcBudget();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
+$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]}};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks',JSON.stringify(obj.extras.rentalChecks||{}));}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
+
+
+function money(n){return 'A$'+(Number(n)||0).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function fixedMonthly(item){const a=Number(item.amount)||0;return a*({weekly:52/12,fortnightly:26/12,monthly:1,quarterly:1/3,yearly:1/12}[item.frequency]||1)}
+function frequencyText(f){return {weekly:'每周',fortnightly:'每两周',monthly:'每月',quarterly:'每季度',yearly:'每年'}[f]||f}
+function renderExpenses(){
+ if(!$('fixedExpenseList'))return;
+ const exp=state.expenses||{fixed:[],entries:[]},fixed=exp.fixed||[],entries=exp.entries||[];
+ const month=$('expenseMonth').value||new Date().toISOString().slice(0,7);
+ const fixedSum=fixed.reduce((s,x)=>s+fixedMonthly(x),0);
+ const monthEntries=entries.filter(x=>(x.date||'').startsWith(month));
+ const variableSum=monthEntries.reduce((s,x)=>s+(Number(x.amount)||0),0);
+ $('fixedMonthly').textContent=money(fixedSum);$('spentThisMonth').textContent=money(variableSum);$('monthTotalEstimate').textContent=money(fixedSum+variableSum);$('fixedCount').textContent=fixed.length+' 项';
+ $('fixedExpenseList').innerHTML=fixed.length?fixed.map(x=>`<div class="expenseRow"><div><strong>${escapeHTML(x.name)}</strong><small>${escapeHTML(x.category||'其他')} · ${frequencyText(x.frequency)} · ${money(x.amount)}</small></div><div style="display:flex;align-items:center;gap:9px"><span class="amount">${money(fixedMonthly(x))}/月</span><button class="secondary" data-fxdel="${x.id}">删除</button></div></div>`).join(''):'<div class="expenseEmpty">还没有固定支出，添加房租、手机费或保险等项目。</div>';
+ $('fixedExpenseList').querySelectorAll('[data-fxdel]').forEach(b=>b.onclick=()=>{state.expenses.fixed=state.expenses.fixed.filter(x=>x.id!==b.dataset.fxdel);save();renderExpenses()});
+ $('dailyExpenseList').innerHTML=monthEntries.length?monthEntries.slice().sort((a,b)=>b.date.localeCompare(a.date)).map(x=>`<div class="expenseRow"><div><strong>${escapeHTML(x.name)}</strong><small>${x.date} · ${escapeHTML(x.category||'其他')}</small></div><div style="display:flex;align-items:center;gap:9px"><span class="amount">${money(x.amount)}</span><button class="secondary" data-spdel="${x.id}">删除</button></div></div>`).join(''):'<div class="expenseEmpty">这个月还没有记录日常消费。</div>';
+ $('dailyExpenseList').querySelectorAll('[data-spdel]').forEach(b=>b.onclick=()=>{state.expenses.entries=state.expenses.entries.filter(x=>x.id!==b.dataset.spdel);save();renderExpenses()});
+ const cats={};monthEntries.forEach(x=>cats[x.category||'其他']=(cats[x.category||'其他']||0)+(Number(x.amount)||0));
+ const breakdown=[...fixed.reduce((m,x)=>{const c=x.category||'固定支出';m.set(c,(m.get(c)||0)+fixedMonthly(x));return m},new Map()).entries(),...Object.entries(cats)];
+ $('expenseBreakdown').innerHTML=breakdown.length?breakdown.map(([c,v])=>`<div class="expenseRow"><strong>${escapeHTML(c)}</strong><span class="amount">${money(v)}</span></div>`).join(''):'<div class="expenseEmpty">暂无支出数据。</div>';
+}
+$('fixedExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('fxName').value.trim(),amount=Number($('fxAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.fixed.push({id:'fx-'+Date.now(),name,amount,frequency:$('fxFrequency').value,category:$('fxCategory').value});save();e.target.reset();renderExpenses();toast('固定支出已添加')});
+$('dailyExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('spName').value.trim(),amount=Number($('spAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.entries.push({id:'sp-'+Date.now(),name,amount,date:$('spDate').value,category:$('spCategory').value});save();$('spName').value='';$('spAmount').value='';renderExpenses();toast('消费记录已保存')});
+$('expenseMonth').value=new Date().toISOString().slice(0,7);$('spDate').value=ymd(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());$('expenseMonth').addEventListener('change',renderExpenses);
 
 const resourceItems=[
  {id:'r-realestate',name:'realestate.com.au',cat:'租房',desc:'整租、公寓、House 和中介挂牌房源搜索。',url:'https://www.realestate.com.au/rent/'},
@@ -549,7 +696,7 @@ const rentalChecks=['房屋地址与广告一致','房间门锁、窗户和安�
 function renderRentalChecks(){const done=JSON.parse(localStorage.getItem('msl-rental-checks')||'{}');$('rentalChecks').innerHTML=rentalChecks.map((x,i)=>`<label class="checkRow ${done[i]?'done':''}"><input type="checkbox" data-rental="${i}" ${done[i]?'checked':''}><span>${x}</span></label>`).join('');$('rentalChecks').querySelectorAll('[data-rental]').forEach(c=>c.onchange=()=>{done[c.dataset.rental]=c.checked;localStorage.setItem('msl-rental-checks',JSON.stringify(done));renderRentalChecks()})}
 
 fillProfile();fillFlightForm();updateOverview();renderAllCalendars();renderManageEvents();renderTasks();
-renderResources();renderRentalChecks();
+renderResources();renderRentalChecks();renderExpenses();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body></html>
