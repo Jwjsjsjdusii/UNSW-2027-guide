@@ -1,26 +1,26 @@
-# My Study Life · Personal Edition V3.0
+# My Study Life · Personal Edition V4.0
 
-一个面向个人使用的静态留学生活管理网站，初始资料按 UNSW 2027 项目交接信息设置。
+## 本次升级
+- 全站改为奶油白、米色、暖黄、橘色和木棕色生活风格。
+- 租房中心：realestate.com.au、Domain、Flatmates、Flatmate Finders、Snug、TenantApp、UNSW Accommodation、短期住宿入口。
+- 购物中心：Coles、Woolworths、ALDI、IKEA、Kmart、BIG W、Officeworks、JB Hi-Fi、Chemist Warehouse、Target、Myer、Costco、Gumtree、Marketplace。
+- 悉尼实体购物中心：Westfield Sydney、Broadway、Eastgardens、Central Park Mall。
+- 新增交通、银行金融、医疗与 OSHC 页面。
+- 兼职页面补充 UNSW Careers、SEEK、Indeed、Jora、Fair Work。
+- 新增可搜索资源导航中心，支持分类筛选、收藏和站内尝试预览。
+- 新增看房检查清单；收藏、看房勾选和原有个人数据保存在当前浏览器。
+- 保留原有倒计时、个人资料、日历、时间轴、预算、待办和 JSON 备份。
 
-## 文件
-- `index.html`：完整网站
-- `manifest.json`：PWA 配置
-- `sw.js`：基础离线缓存
-- `icon.svg`：应用图标
-
-## 发布到 GitHub Pages
-1. 解压 ZIP。
-2. 将四个网站文件上传到现有仓库根目录。
+## 部署到 GitHub Pages
+1. 下载 ZIP 并解压。
+2. 将 index.html、manifest.json、sw.js、icon.svg、README.md 上传到原仓库根目录。
 3. 覆盖同名文件并 Commit changes。
-4. Settings → Pages → Deploy from a branch → `main` → `/(root)` → Save。
-5. 等待部署完成后打开原 GitHub Pages 网址。
+4. 确认 Settings → Pages 使用 main 分支和 /(root)。
+5. 等待 GitHub Pages 完成部署，再用原网址打开。
 
-## 数据与隐私
-- 无注册、无登录、无服务器、无数据库。
-- 个人资料、航班、事件、预算和待办保存在当前浏览器的 LocalStorage。
-- 不同浏览器/设备不会自动同步。
-- 请定期在「个人工具」导出 JSON 备份。
-- 当前版本没有 Offer 文件上传或 AI 解析，也没有实时航班 API。
-
-## 重要说明
-页面中的个人日期来自用户提供的项目计划。UNSW 2027 校历、迎新、主课日期及签证政策需以官方最新信息核实。网站不构成移民、法律、税务或租赁建议。
+## 重要限制
+- 不需要注册、服务器、数据库或付费 API。
+- 个人数据仅保存在当前浏览器，不会自动跨设备同步；定期导出 JSON 备份。
+- 第三方网站可能禁止 iframe，因此“站内尝试打开”无法保证成功；若被阻止，请使用新标签页外部打开。
+- 本网站不实时同步价格、库存、房源或优惠；各平台信息以其官方页面为准。
+- 个人计划日期与学校日期应以学校正式通知为准；签证、税务、租房、保险政策应核对官方来源。

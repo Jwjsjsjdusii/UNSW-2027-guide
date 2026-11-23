@@ -1,12 +1,12 @@
 {
   "name": "My Study Life · Personal Edition",
   "short_name": "My Study Life",
-  "description": "个人留学生活管理中心 · UNSW 2027",
+  "description": "温暖明亮风格的个人留学生活管理中心",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f3f5f8",
-  "theme_color": "#101d35",
+  "background_color": "#fffaf2",
+  "theme_color": "#fff5e7",
   "icons": [
     {
       "src": "icon.svg",
