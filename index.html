@@ -119,6 +119,108 @@ body{background:var(--bg);color:var(--ink)}
 @media(max-width:620px){.accordionGrid,.campusCardGrid{grid-template-columns:1fr}.campusCard p{min-height:0}.guideCard summary{padding:13px}.guideBody{padding:12px}}
 </style>
 
+
+<style id="v44-dashboard-and-cleanup">
+.dashboardLayout{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(270px,.85fr);gap:16px;align-items:start}
+.dashboardMain,.dashboardSide{min-width:0;display:grid;gap:15px}
+.dashboardCalendar{min-width:0}
+.dashboardPanelHead{align-items:center;flex-wrap:wrap}
+.calendarTabs{display:flex;gap:5px;background:#f7eee3;padding:4px;border-radius:12px}
+.calendarTabs button{border:0;border-radius:9px;background:transparent;padding:8px 12px;color:#947d68;font-size:11px;font-weight:800;cursor:pointer}
+.calendarTabs button.active{background:#fffefa;color:#9c6038;box-shadow:0 2px 8px #80604014}
+.countTargetName{font-size:19px;font-weight:850;color:#fff9f0;margin-top:5px}
+.countTargetPicker{display:grid;gap:4px;min-width:145px}
+.countTargetPicker label{font-size:10px;color:#f4dfc8}
+.countTargetPicker select{background:#fff9f0;color:#78543a;border:1px solid #f2d9bb;border-radius:10px;padding:8px 10px;font-weight:750;font-size:11px;max-width:190px}
+.countdownManager{margin-top:12px;border-top:1px solid #ffffff30;padding-top:10px}
+.countdownManager>summary{list-style:none;cursor:pointer;color:#fff0dd;font-size:11px;font-weight:750;display:flex;justify-content:space-between}
+.countdownManager>summary::-webkit-details-marker{display:none}
+.countdownManageBody{margin-top:12px;background:#fffaf3;color:#6c523d;padding:12px;border-radius:12px}
+.countTargetRow{display:grid;grid-template-columns:minmax(130px,1fr) minmax(125px,150px) minmax(90px,110px) auto;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid #efe2d3}
+.countTargetRow strong,.countTargetRow small{display:block}.countTargetRow strong{font-size:11px}.countTargetRow small{font-size:9px;color:#9b8875;margin-top:3px}
+.countTargetRow input{min-width:0;border:1px solid #e9d9c7;border-radius:8px;padding:7px;font-size:10px;background:white;color:#624632}
+.inlineAddForm{display:grid;grid-template-columns:1.2fr 1fr .8fr auto;gap:8px;margin-top:12px}
+.inlineAddForm input{min-width:0;border:1px solid #e9d9c7;border-radius:8px;padding:8px;font-size:10px}
+.calendarActions{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.textAction{border:0;background:transparent;color:#a36b45;font-size:10px;font-weight:800;cursor:pointer}
+.dashWidget .panelHead{margin-bottom:10px}
+.upcomingMini{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #f1e7dc}
+.upcomingMini>span{font-size:10px;font-weight:850;color:#a66b43;background:#fff0df;padding:7px 8px;border-radius:8px;white-space:nowrap}
+.upcomingMini strong,.upcomingMini small{display:block}.upcomingMini strong{font-size:11px;color:#634a36}.upcomingMini small{font-size:9px;color:#9a8775;margin-top:3px}
+.spendingMini{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.spendingMini>div{background:#fff7ed;border-radius:11px;padding:11px}
+.spendingMini small,.spendingMini strong{display:block}.spendingMini small{font-size:9px;color:#9b856e}.spendingMini strong{font-size:17px;color:#9b623d;margin-top:5px}
+.spendingMini .spendingTotal{grid-column:1/-1;background:#f8ead8}
+.dashboardShortcuts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.dashboardShortcuts button{border:1px solid #efe2d4;border-radius:10px;background:#fffaf3;padding:10px;text-align:left;font-size:10px;color:#71563e;cursor:pointer}
+.dashboardShortcuts button span{margin-right:6px;color:#b4784e}
+.timetableHead{display:flex;justify-content:space-between;align-items:center;padding:10px 0 13px}
+.timetableHead strong,.timetableHead small{display:block}.timetableHead strong{font-size:13px;color:#674d37}.timetableHead small{font-size:10px;color:#9b8875;margin-top:4px}
+.timetableWeek{display:grid;grid-template-columns:repeat(7,minmax(110px,1fr));gap:7px;overflow-x:auto;padding-bottom:8px}
+.timetableDay{background:#fffaf3;border:1px solid #efe2d4;border-radius:12px;min-height:160px;overflow:hidden}
+.timetableDayHead{display:flex;justify-content:space-between;padding:9px;background:#f8ecdc;color:#7b5c42}
+.timetableDayHead strong{font-size:12px}.timetableDayHead small{font-size:9px}
+.timetableDayCourses{padding:6px;display:grid;gap:6px}
+.courseCard{border-radius:9px;padding:8px;display:grid;gap:4px;border-left:3px solid #d79a67}
+.courseCard b{font-size:9px;color:#90613e}.courseCard strong{font-size:10px;color:#654a35}.courseCard small{font-size:8px;color:#8f7b67;line-height:1.4}
+.courseApricot{background:#fff0df;border-color:#d99458}.courseSage{background:#edf4e9;border-color:#8da87f}.courseLavender{background:#f1edfa;border-color:#a391c9}.courseRose{background:#fbedeb;border-color:#d49b96}.courseSky{background:#eaf3f8;border-color:#8db4c8}
+.courseActions{display:flex;gap:8px;margin-top:3px}.courseActions button{border:0;background:transparent;padding:0;color:#9a704e;font-size:8px;cursor:pointer}
+.noCourse{font-size:9px;color:#b3a18e;text-align:center;padding:18px 2px}
+.courseEditor{border:1px solid #efe2d4;border-radius:12px;margin-top:12px;overflow:hidden}
+.courseEditor>summary{list-style:none;cursor:pointer;padding:12px 14px;background:#fff8ee;color:#9b663f;font-size:11px;font-weight:800}
+.courseEditor>summary::-webkit-details-marker{display:none}
+.courseForm{padding:13px;display:grid;gap:10px}
+.courseForm label{display:grid;gap:5px;font-size:10px;color:#8e7862}
+.courseForm input,.courseForm select{width:100%;min-width:0;padding:8px;border:1px solid #eadccc;border-radius:8px;background:#fffefa;color:#614a36;font-size:11px}
+.courseFormGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.courseFormActions{display:flex;gap:8px}
+.housingAccordionList{display:grid;gap:11px}
+.housingAccordion{background:#fffefa;border:1px solid #eee1d2;border-radius:15px;overflow:hidden;box-shadow:0 6px 18px #8b68400a}
+.housingAccordion[open]{border-color:#e5c49f}
+.housingAccordion>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer}
+.housingAccordion>summary::-webkit-details-marker{display:none}
+.housingAccordion>summary>span:nth-child(2){flex:1;min-width:0}
+.housingAccordion>summary strong,.housingAccordion>summary small{display:block}
+.housingAccordion>summary strong{font-size:13px;color:#654b36}
+.housingAccordion>summary small{font-size:10px;color:#9a8673;margin-top:4px;line-height:1.5}
+.housingAccordion>summary>b{width:26px;height:26px;display:grid;place-items:center;border-radius:50%;background:#fff0df;color:#a56d43}
+.housingAccordion[open]>summary>b{transform:rotate(45deg)}
+.housingNumber{width:34px;height:34px;display:grid;place-items:center;border-radius:11px;background:#fff0df;color:#a66e47;font-size:11px;font-weight:900}
+.housingAccordionBody{padding:14px 16px 17px;border-top:1px solid #f0e5d8;color:#705943;font-size:11px}
+.platformGrid,.areaGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.platformMini,.areaCard{background:#fff9f1;border:1px solid #f0e5d8;border-radius:12px;padding:12px}
+.platformMini h3,.areaCard h3{font-size:12px;margin:7px 0;color:#684e38}
+.platformMini p,.areaCard p{font-size:10px;line-height:1.65;color:#907b66;margin:6px 0}
+.platformMini a,.housingAccordionBody>a{font-size:10px;font-weight:800;color:#a36a43}
+.areaCard small{font-size:9px;color:#9b826a;line-height:1.5}
+.checklistIntro{font-size:10px;color:#8d7964;margin:0 0 10px}
+.checklistToolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:9px;font-size:10px;color:#9a673f;font-weight:800}
+.rentalChecklistGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 14px}
+.leaseChecklistGroups{display:grid;gap:12px}
+.leaseCheckGroup{background:#fff9f1;border:1px solid #f0e5d8;border-radius:12px;padding:12px}
+.leaseCheckGroup h3{font-size:11px;color:#8d603c;margin:0 0 8px}
+.leaseCheckGroup .checkRow{margin:5px 0}
+.housingAdvice{padding-left:18px;line-height:1.9}
+.workCoreGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.workCoreCard{background:#fffefa;border:1px solid #eee1d2;border-radius:16px;padding:17px;box-shadow:0 6px 18px #8b68400a}
+.workCoreIcon{font-size:23px;margin-bottom:9px}
+.workCoreCard h2{font-size:15px;color:#634a35;margin:8px 0}
+.workCoreCard p,.workCoreCard li{font-size:10px;line-height:1.75;color:#88745f}
+.workCoreCard ul{padding-left:17px;margin:9px 0}
+.workCoreCard li{margin:4px 0}
+@media(max-width:980px){.dashboardLayout{grid-template-columns:1fr}.dashboardSide{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboardSide .dashWidget:last-child{grid-column:1/-1}.platformGrid,.areaGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.workCoreGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.dashboardSide{grid-template-columns:1fr}.dashboardSide .dashWidget:last-child{grid-column:auto}.countTargetRow{grid-template-columns:1fr 1fr}.countTargetRow>div{grid-column:1/-1}.inlineAddForm{grid-template-columns:1fr 1fr}.platformGrid,.areaGrid,.workCoreGrid,.rentalChecklistGrid{grid-template-columns:1fr}.courseFormGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.calendarTabs button{padding:7px 9px;font-size:10px}.housingAccordion>summary{padding:13px}}
+</style>
+
+
+<style id="v44-fixes">
+.flightTop{align-items:flex-start}
+.flightTop .status{display:inline-flex;margin-top:7px}
+.countTargetPicker select{max-width:210px}
+.dashboardCalendar .calendar{min-height:80px}
+#timetablePane[hidden],#eventsCalendarPane[hidden]{display:none!important}
+</style>
+
 </head>
 <body>
 <header class="top"><div class="topLeft">
@@ -132,8 +234,7 @@ body{background:var(--bg);color:var(--ink)}
 <aside class="sidebar closed" id="sidebar"><div class="sideInner">
  <div class="sideLabel">MY WORKSPACE</div>
  <button class="sideLink active" data-page="home"><span class="ico">⌂</span>首页控制中心</button>
- <button class="sideLink" data-page="timeline"><span class="ico">⌁</span>留学时间轴</button>
- <div class="sideLabel" style="padding-top:18px">STUDY ABROAD</div>
+  <div class="sideLabel" style="padding-top:18px">STUDY ABROAD</div>
  <button class="sideLink" data-page="arrival"><span class="ico">✈</span>来澳准备</button>
  <div class="sideLabel" style="padding-top:18px">CAMPUS</div>
  <button class="sideLink" data-page="campus"><span class="ico">🎓</span>院校校园</button>
@@ -148,61 +249,85 @@ body{background:var(--bg);color:var(--ink)}
  <div class="sideLabel" style="padding-top:18px">PERSONAL</div>
  <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人资料</button>
  <button class="sideLink" data-page="expenses"><span class="ico">＄</span>个人花销</button><button class="sideLink" data-page="tools"><span class="ico">⚙</span>个人工具</button>
- <div class="sideBottom">PERSONAL EDITION · V4.3<br>本地数据 · 无需注册 · 无需服务器</div>
+ <div class="sideBottom">PERSONAL EDITION · V4.4<br>本地数据 · 无需注册 · 无需服务器</div>
 </div></aside>
 <main class="main"><div class="content">
 <section class="page active" id="page-home">
- <div class="welcome"><div><div class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h1 id="welcomeTitle">早上好，准备好开启悉尼生活了吗？</h1><p>你的留学计划、重要日期与个人事项，都在这里。</p></div><div class="dateChip" id="dateChip"></div></div>
+ <div class="welcome"><div><div class="eyebrow">YOUR PERSONAL STUDY HUB</div><h1 id="welcomeTitle">早上好，准备好开启新的一天了吗？</h1><p>课程、日程、待办与生活开支，一站管理。</p></div><div class="dateChip" id="dateChip"></div></div>
  <section class="flightHero">
-  <div class="flightTop"><div class="flightLabel">✦ MY ARRIVAL FLIGHT · SYDNEY</div><div class="status" id="flightStatus">计划抵达 · 手动设置</div></div>
-  <div class="route">
+  <div class="flightTop">
+   <div><div class="flightLabel">✦ COUNTDOWN · YOUR NEXT MILESTONE</div><div class="countTargetName" id="countdownTargetName">抵达澳洲</div><div class="status" id="flightStatus">计划抵达 · 手动设置</div></div>
+   <div class="countTargetPicker"><label for="countdownTargetSelect">当前目标</label><select id="countdownTargetSelect" aria-label="切换倒计时目标"></select></div>
+  </div>
+  <div class="route" id="flightRoute">
    <div class="airport"><strong id="fromCode">— — —</strong><span id="fromName">出发机场待填写</span></div>
    <div class="planeLine"><span class="line"></span><b>✈</b><span class="line"></span></div>
    <div class="airport"><strong id="toCode">SYD</strong><span id="toName">Sydney · Kingsford Smith</span></div>
   </div>
-  <div class="countLabel">TIME UNTIL ARRIVAL · SYDNEY LOCAL TIME</div>
+  <div class="countLabel" id="countdownLabel">TIME UNTIL ARRIVAL · SYDNEY LOCAL TIME</div>
   <div class="countdown">
    <div class="countCell"><strong id="cdDays">000</strong><span>天 DAYS</span></div><div class="countCell"><strong id="cdHours">00</strong><span>小时 HRS</span></div><div class="countCell"><strong id="cdMinutes">00</strong><span>分钟 MIN</span></div><div class="countCell"><strong id="cdSeconds">00</strong><span>秒 SEC</span></div>
   </div>
-  <div class="flightMeta"><span>✈ 航班 <b id="flightNo">待填写</b></span><span>▣ 航空公司 <b id="airline">待填写</b></span><span>◷ 抵达 <b id="arrivalDisplay">2027.01.20 · 12:00</b></span></div>
-  <div class="heroFoot"><small>按悉尼当地时间 Australia/Sydney 计算 · 手动航班资料</small><button class="lightBtn" id="editFlight">编辑航班信息 ↗</button></div>
+  <div class="flightMeta" id="flightMeta"><span>✈ 航班 <b id="flightNo">待填写</b></span><span>▣ 航空公司 <b id="airline">待填写</b></span><span>◷ 抵达 <b id="arrivalDisplay">2027.01.20 · 12:00</b></span></div>
+  <div class="heroFoot"><small id="countdownFoot">按悉尼当地时间 Australia/Sydney 计算</small><button class="lightBtn" id="editFlight">编辑航班信息 ↗</button></div>
+  <details class="countdownManager" id="countdownManager">
+   <summary>管理倒计时目标 <span>＋</span></summary>
+   <div class="countdownManageBody">
+    <div id="countdownTargetRows"></div>
+    <form id="customCountdownForm" class="inlineAddForm">
+     <input id="customTargetName" placeholder="自定义目标名称，例如：期末考试" required maxlength="36">
+     <input id="customTargetDate" type="date" required>
+     <input id="customTargetTime" type="time" value="09:00" required>
+     <button class="primary" type="submit">添加目标</button>
+    </form>
+   </div>
+  </details>
  </section>
- <div class="dashGrid">
-  <section class="panel" id="homeCalendar">
-   <div class="panelHead"><div><h2>我的日历</h2><p>月历与日程同步 · 点击日期查看事件</p></div><button class="plainBtn" id="newEvent">＋ 新建事件</button></div>
-   <div class="calendarHead"><div class="monthTitle" id="monthTitle">2027年1月</div><div class="calNav"><select class="calendarMode" id="calendarViewMode" aria-label="日历视图"><option value="week" selected>一周</option><option value="month">整个月</option></select><button id="prevMonth">‹</button><button id="todayMonth">今</button><button id="nextMonth">›</button></div></div>
-   <div class="weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div><div class="calendar" id="calendar"></div>
-   <div class="legend"><span><i style="background:#4b72d6"></i>学校</span><span><i style="background:#31906e"></i>个人</span><span><i style="background:#dc9c3d"></i>航班</span><span><i style="background:#d66b61"></i>截止日期</span><span><i style="background:#9874c7"></i>自定义</span></div>
-   <div class="agenda"><div class="agendaTitle" id="agendaTitle">当天日程</div><div id="agendaList"></div></div>
-  </section>
-  <section class="panel">
-   <div class="panelHead"><div><h2>我的留学概览</h2><p>关键节点与快捷入口</p></div><button class="plainBtn" data-goto="profile">编辑资料</button></div>
-   <div class="quickStats">
-    <div class="quick"><span>目标抵澳</span><strong id="statArrival">2027.01.20</strong></div><div class="quick"><span>语言班开始</span><strong id="statLanguage">2027.02.08</strong></div><div class="quick"><span>语言班结束</span><strong id="statLanguageEnd">2027.05.21</strong></div><div class="quick"><span>主课预计开始</span><strong id="statCourse">2027.06.01</strong></div>
-   </div>
-   <div class="quickActions">
-    <button data-goto="arrival"><b>✈</b>抵澳准备</button><button data-goto="housing"><b>⌂</b>租房看房</button><button data-goto="work"><b>▣</b>兼职求职</button><button data-goto="tools"><b>⚙</b>预算与备份</button>
-   </div>
-   <div class="notice">学校 2027 官方校历、迎新及课程日期仍需以最终通知核实。</div>
-  </section>
- </div>
-</section>
 
-<section class="page" id="page-timeline">
- <div class="pageIntro"><div class="eyebrow">MY STUDY ROADMAP</div><h1>留学时间轴</h1><p>这里专注长期阶段规划，不重复首页的日历和每日事件管理。</p></div>
- <div class="sectionBlock" style="margin-top:0">
-  <div class="sectionTitle"><div><h2>我的留学阶段</h2><p>按抵澳准备、学期节奏或完整学年查看关键节点</p></div>
-   <div class="timelineTabs"><button class="active" data-timeline="arrival">来澳阶段</button><button data-timeline="semester">学期规划</button><button data-timeline="year">学年规划</button></div>
-  </div>
-  <div class="timelinePanel"><div class="timelineList" id="timelineList2"></div></div>
- </div>
- <div class="notice">具体开学、迎新、考试和假期日期应以你所就读学校及课程的正式校历为准。可以在个人资料中维护自己的关键日期。</div>
- <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>时间轴使用说明</h2><p>让长期计划与日常安排各司其职</p></div></div>
-  <div class="cardGrid">
-   <article class="infoCard"><h3>来澳阶段</h3><p>从计划抵达、落地安顿、语言班、迎新到主课开学，梳理入学前后的过渡节点。</p></article>
-   <article class="infoCard"><h3>学期规划</h3><p>围绕选课、教学周、作业评估、考试周和假期安排每个学期的学习节奏。</p></article>
-   <article class="infoCard"><h3>学年规划</h3><p>从全年视角安排学习目标、实习兼职、社团参与、假期和下一学年的准备。</p></article>
-  </div>
+ <div class="dashboardLayout">
+  <main class="dashboardMain">
+   <section class="panel dashboardCalendar" id="homeCalendar">
+    <div class="panelHead dashboardPanelHead"><div><h2>我的日程</h2><p>事件安排与每周课表，在这里切换</p></div>
+     <div class="calendarTabs"><button class="active" data-home-calendar="events">事件日历</button><button data-home-calendar="timetable">我的课表</button></div>
+    </div>
+    <div id="eventsCalendarPane">
+     <div class="calendarHead"><div class="monthTitle" id="monthTitle">2027年1月</div><div class="calNav"><select class="calendarMode" id="calendarViewMode" aria-label="日历视图"><option value="week" selected>一周</option><option value="month">整个月</option></select><button id="prevMonth">‹</button><button id="todayMonth">今</button><button id="nextMonth">›</button></div></div>
+     <div class="weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div><div class="calendar" id="calendar"></div>
+     <div class="legend"><span><i style="background:#4b72d6"></i>学校</span><span><i style="background:#31906e"></i>个人</span><span><i style="background:#dc9c3d"></i>航班</span><span><i style="background:#d66b61"></i>截止日期</span><span><i style="background:#9874c7"></i>自定义</span></div>
+     <div class="agenda"><div class="agendaTitle" id="agendaTitle">当天日程</div><div id="agendaList"></div></div>
+     <div class="calendarActions"><button class="secondary" id="newEvent">＋ 添加事件</button><button class="textAction" data-goto="tools">管理全部事件 →</button></div>
+    </div>
+    <div id="timetablePane" hidden>
+     <div class="timetableHead"><div><strong>每周课程安排</strong><small>固定每周重复 · 课程时间以学校课表为准</small></div><button class="secondary" id="todayTimetable">本周</button></div>
+     <div class="timetableWeek" id="timetableWeek"></div>
+     <details class="courseEditor" id="courseEditor">
+      <summary>＋ 添加 / 编辑课程</summary>
+      <form id="courseForm" class="courseForm">
+       <input type="hidden" id="courseId">
+       <label>课程名称<input id="courseName" required maxlength="60" placeholder="例如：Academic English"></label>
+       <div class="courseFormGrid">
+        <label>星期<select id="courseDay"><option value="1">星期一</option><option value="2">星期二</option><option value="3">星期三</option><option value="4">星期四</option><option value="5">星期五</option><option value="6">星期六</option><option value="7">星期日</option></select></label>
+        <label>课程类型<select id="courseType"><option>Lecture</option><option>Tutorial</option><option>Lab</option><option>Workshop</option><option>其他</option></select></label>
+        <label>开始时间<input id="courseStart" type="time" value="09:00" required></label>
+        <label>结束时间<input id="courseEnd" type="time" value="10:00" required></label>
+        <label>教室 / 地点<input id="courseRoom" placeholder="例如：Mathews  Theatre"></label>
+        <label>颜色<select id="courseColor"><option value="apricot">杏色</option><option value="sage">鼠尾草绿</option><option value="lavender">薰衣草紫</option><option value="rose">玫瑰粉</option><option value="sky">浅蓝</option></select></label>
+       </div>
+       <label>备注<input id="courseNote" placeholder="选填"></label>
+       <div class="courseFormActions"><button class="primary" type="submit">保存课程</button><button class="secondary" type="button" id="cancelCourseEdit">取消</button></div>
+      </form>
+     </details>
+     <div class="notice">当前版本支持手动录入与本地保存。后续可增加 CSV / 文本课表导入；目前尚未接入学校账号的自动同步。</div>
+    </div>
+   </section>
+  </main>
+  <aside class="dashboardSide">
+   <section class="panel dashWidget"><div class="panelHead"><div><h2>近期安排</h2><p>接下来值得留意的事情</p></div><button class="textAction" data-goto="tools">全部 →</button></div><div id="dashboardUpcoming"></div></section>
+   <section class="panel dashWidget"><div class="panelHead"><div><h2>本月花销</h2><p>固定支出与日常消费</p></div><button class="textAction" data-goto="expenses">明细 →</button></div><div class="spendingMini"><div><small>固定支出月均</small><strong id="dashFixedSpend">A$0</strong></div><div><small>本月日常消费</small><strong id="dashVariableSpend">A$0</strong></div><div class="spendingTotal"><small>本月预计总支出</small><strong id="dashTotalSpend">A$0</strong></div></div></section>
+   <section class="panel dashWidget"><div class="panelHead"><div><h2>快捷入口</h2><p>常用模块一键抵达</p></div></div><div class="dashboardShortcuts">
+    <button data-goto="arrival"><span>✈</span>来澳准备</button><button data-goto="campus"><span>🎓</span>院校校园</button><button data-goto="housing"><span>⌂</span>租房中心</button><button data-goto="work"><span>▣</span>兼职求职</button><button data-goto="shopping"><span>◇</span>购物信息</button><button data-goto="expenses"><span>＄</span>个人花销</button>
+   </div></section>
+  </aside>
  </div>
 </section>
 
@@ -263,79 +388,92 @@ body{background:var(--bg);color:var(--ink)}
 </section>
 
 <section class="page" id="page-housing">
- <div class="pageIntro"><div class="eyebrow">FIND A HOME</div><h1>租房中心</h1><p>目标租金 A$450–500/周，优先独立卧室；按具体地址核算通勤和总成本。</p></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>🏠 找房平台</h3><p>同时比较整租、合租与学生住宿，核验房源和出租人身份。</p><a href="https://flatmates.com.au/" target="_blank" rel="noopener">Flatmates ↗</a>　<a href="https://www.realestate.com.au/rent/" target="_blank" rel="noopener">realestate ↗</a>　<a href="https://www.domain.com.au/rent/" target="_blank" rel="noopener">Domain ↗</a></article>
-  <article class="infoCard"><h3>📍 区域与通勤</h3><p>Kensington、Kingsford、Randwick、Rosebery 等区域按具体房屋地址比较门到门通勤。</p><a href="https://transportnsw.info/trip" target="_blank" rel="noopener">Trip Planner ↗</a></article>
-  <article class="infoCard"><h3>🔍 看房检查</h3><p>检查门锁、窗户、霉斑、通风、热水、网络、洗衣、厨房、噪音、采光和公共区域。</p></article>
-  <article class="infoCard"><h3>📝 合同与 Bond</h3><p>核对合同、租期、押金登记、入住状况报告、维修责任与付款凭证。</p><a href="https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live" target="_blank" rel="noopener">NSW 租房官方指南 ↗</a></article>
-  <article class="infoCard"><h3>🛡 防诈骗</h3><p>尽量实地或实时视频看房，警惕明显低价、拒绝看房、催促先转账等信号。</p><a href="https://www.scamwatch.gov.au/" target="_blank" rel="noopener">Scamwatch ↗</a></article>
- </div>
+ <div class="pageIntro"><div class="eyebrow">FIND A HOME</div><h1>租房中心</h1><p>目标租金 A$450–500/周，优先独立卧室；先筛区域，再比较房源和合同风险。</p></div>
+ <div class="housingAccordionList">
+  <details class="housingAccordion" open>
+   <summary><span class="housingNumber">01</span><span><strong>找房平台</strong><small>主流房源网站、合租平台、申请工具和短期住宿入口</small></span><b>＋</b></summary>
+   <div class="housingAccordionBody">
+    <div class="platformGrid">
+     <article class="platformMini"><span class="tag blue">整租 / 公寓</span><h3>realestate.com.au</h3><p>澳洲主流房源搜索，适合公寓、House 和中介挂牌房源。</p><a href="https://www.realestate.com.au/rent/" target="_blank" rel="noopener">打开租房搜索 ↗</a></article>
+     <article class="platformMini"><span class="tag blue">整租 / 公寓</span><h3>Domain</h3><p>与 realestate 并行搜索，比较区域、租金和房屋条件。</p><a href="https://www.domain.com.au/rent/" target="_blank" rel="noopener">打开租房搜索 ↗</a></article>
+     <article class="platformMini"><span class="tag">合租 / 独立卧室</span><h3>Flatmates</h3><p>适合找 share house、单间和室友；核实房东或主租客身份。</p><a href="https://flatmates.com.au/" target="_blank" rel="noopener">寻找合租房 ↗</a></article>
+     <article class="platformMini"><span class="tag">合租 / 房间</span><h3>Flatmate Finders</h3><p>合租房间和寻找室友的补充渠道。</p><a href="https://www.flatmatefinders.com.au/" target="_blank" rel="noopener">查看房间 ↗</a></article>
+     <article class="platformMini"><span class="tag">申请 / 看房管理</span><h3>Snug</h3><p>部分中介使用的租客资料、申请与进度管理平台。</p><a href="https://snug.com/renter/" target="_blank" rel="noopener">了解 Snug ↗</a></article>
+     <article class="platformMini"><span class="tag">申请 / 看房管理</span><h3>TenantApp</h3><p>部分中介用于看房登记、租房申请和租客沟通。</p><a href="https://tenantapp.com.au/" target="_blank" rel="noopener">访问 TenantApp ↗</a></article>
+     <article class="platformMini"><span class="tag warn">短期过渡</span><h3>Booking.com</h3><p>适合刚抵达时短住，再实地寻找长期房源。</p><a href="https://www.booking.com/" target="_blank" rel="noopener">查看短期住宿 ↗</a></article>
+     <article class="platformMini"><span class="tag warn">短期过渡</span><h3>Airbnb</h3><p>适合短期过渡；留意清洁费、服务费和取消政策。</p><a href="https://www.airbnb.com.au/" target="_blank" rel="noopener">查看短租 ↗</a></article>
+     <article class="platformMini"><span class="tag">学生住宿</span><h3>UNSW Accommodation</h3><p>查看校内住宿、申请条件、费用与合同期。</p><a href="https://www.unsw.edu.au/accommodation" target="_blank" rel="noopener">学校住宿入口 ↗</a></article>
+    </div>
+   </div>
+  </details>
 
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>租房平台导航</h2><p>按找整租、找合租、申请租房和短期住宿分类</p></div><span class="tag">官方入口</span></div>
- <div class="cardGrid">
-  <article class="infoCard"><span class="tag blue">整租 / 公寓</span><h3>realestate.com.au</h3><p>澳洲主流房源搜索入口，适合找整租公寓、House 和中介挂牌房源。按 suburb、预算、卧室数筛选。</p><a href="https://www.realestate.com.au/rent/" target="_blank" rel="noopener">打开租房搜索 ↗</a></article>
-  <article class="infoCard"><span class="tag blue">整租 / 公寓</span><h3>Domain</h3><p>与 realestate 并行搜索，补充不同中介房源；适合建立收藏清单、比较 suburb 和房屋条件。</p><a href="https://www.domain.com.au/rent/" target="_blank" rel="noopener">打开租房搜索 ↗</a></article>
-  <article class="infoCard"><span class="tag">合租 / 独立卧室</span><h3>Flatmates</h3><p>适合找 share house、单间和室友。比较房间、室友偏好和看房安排；核实房东或主租客身份。</p><a href="https://flatmates.com.au/" target="_blank" rel="noopener">寻找合租房 ↗</a></article>
-  <article class="infoCard"><span class="tag">合租 / 房间</span><h3>Flatmate Finders</h3><p>以合租房间和寻找室友为主，可作为 Flatmates 的补充渠道。</p><a href="https://www.flatmatefinders.com.au/" target="_blank" rel="noopener">查看房间 ↗</a></article>
-  <article class="infoCard"><span class="tag">租房申请</span><h3>Snug</h3><p>部分中介使用的租房申请与租客资料平台，可建立申请资料、提交申请和查看进度；不是房源搜索网站本身。</p><a href="https://snug.com/renter/" target="_blank" rel="noopener">了解租房申请 ↗</a></article>
-  <article class="infoCard"><span class="tag">租房申请</span><h3>TenantApp</h3><p>部分中介用于看房登记、租房申请和租客沟通；通常由具体房源中介指定使用。</p><a href="https://tenantapp.com.au/" target="_blank" rel="noopener">访问 TenantApp ↗</a></article>
-  <article class="infoCard"><span class="tag warn">短期过渡</span><h3>Booking.com</h3><p>刚抵达时可考虑短期住宿，再实地看长期房源。比较取消政策、税费和入住时间。</p><a href="https://www.booking.com/" target="_blank" rel="noopener">查看短期住宿 ↗</a></article>
-  <article class="infoCard"><span class="tag warn">短期过渡</span><h3>Airbnb</h3><p>适合短期过渡或多人临时住宿，注意清洁费、服务费、取消规则和房东评价。</p><a href="https://www.airbnb.com.au/" target="_blank" rel="noopener">查看短租 ↗</a></article>
-  <article class="infoCard"><span class="tag">学生公寓</span><h3>UNSW Accommodation</h3><p>优先查看学校住宿选项、申请条件、费用和合同期；校内住宿名额及价格以学校当年页面为准。</p><a href="https://www.unsw.edu.au/accommodation" target="_blank" rel="noopener">UNSW 住宿 ↗</a></article>
- </div>
- <div class="notice">租房安全：尽量实地或实时视频看房；核对房源与出租人；签署书面合同并保留付款凭证；Bond 应按 NSW 规定登记。不要因催促而向陌生人先转账。</div>
- </div>
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>UNSW 周边找房起点</h2><p>先按通勤便利度筛选，再按具体房屋地址核算路线</p></div></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>Kensington / Kingsford</h3><p>靠近 UNSW 主校区，适合优先查找步行、公交或轻轨通勤的房源；热门地段也要比较租金和房屋条件。</p></article>
-  <article class="infoCard"><h3>Randwick / Maroubra</h3><p>可作为周边备选，重点比较到具体校门的公交线路、换乘和步行时间。</p></article>
-  <article class="infoCard"><h3>Rosebery / Zetland</h3><p>可关注公寓合租和生活配套，但要按实际门牌计算通勤，不要只看地图直线距离。</p></article>
-  <article class="infoCard"><h3>NSW 官方租房指南</h3><p>核对租赁合同、Bond、维修、押金和纠纷处理流程。</p><a href="https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live" target="_blank" rel="noopener">NSW 租房指南 ↗</a></article>
- </div></div>
+  <details class="housingAccordion">
+   <summary><span class="housingNumber">02</span><span><strong>区域与通勤</strong><small>不同区域的居住特点、通勤便利度与取舍</small></span><b>＋</b></summary>
+   <div class="housingAccordionBody">
+    <div class="areaGrid">
+     <article class="areaCard"><h3>Kensington</h3><span class="tag blue">离校园近</span><p><b>优点：</b>靠近 UNSW Kensington 校区，部分地址可步行或短程公交/轻轨通勤。</p><p><b>取舍：</b>校园周边需求集中，房源竞争和租金压力可能较高。</p><small>适合：重视通勤时间、希望减少换乘的人。</small></article>
+     <article class="areaCard"><h3>Kingsford</h3><span class="tag blue">轻轨便利</span><p><b>优点：</b>靠近 Anzac Parade 轻轨走廊，餐饮和日常配套较多。</p><p><b>取舍：</b>需按具体街道确认到校门的步行距离、噪音和房屋状况。</p><small>适合：希望兼顾校园通勤与生活配套的人。</small></article>
+     <article class="areaCard"><h3>Randwick</h3><span class="tag">生活配套</span><p><b>优点：</b>商业、医疗和生活服务较集中，部分位置可利用轻轨或公交。</p><p><b>取舍：</b>区域较大，离校距离差异明显，不能只按 suburb 名称判断。</p><small>适合：看重生活便利、可接受短程通勤的人。</small></article>
+     <article class="areaCard"><h3>Rosebery / Zetland</h3><span class="tag">公寓选择</span><p><b>优点：</b>公寓和购物配套较多，可作为合租和现代公寓的搜索方向。</p><p><b>取舍：</b>公交线路、步行接驳和高峰通勤时间要逐个地址核算。</p><small>适合：偏好公寓环境、愿意比较通勤成本的人。</small></article>
+     <article class="areaCard"><h3>Maroubra</h3><span class="tag">空间取向</span><p><b>优点：</b>部分住宅街区环境较安静，可关注合租和独立房间。</p><p><b>取舍：</b>距离校园更远的地址可能依赖公交，需把候车和换乘算入通勤。</p><small>适合：更看重居住空间、预算和社区环境的人。</small></article>
+    </div>
+    <div class="notice">以上是区域层面的初筛方向，不代表具体租金或固定通勤时间。看中房源后，请用门牌地址和实际上课校区查询门到门路线。</div>
+    <a href="https://transportnsw.info/trip" target="_blank" rel="noopener">Transport NSW 实时路线规划 ↗</a>
+   </div>
+  </details>
 
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>NSW 租房流程速查</h2><p>这些是相对稳定的基础流程摘要，方便先在网站内阅读</p></div><span class="tag">内置知识卡</span></div>
- <div class="cardGrid">
-  <article class="infoCard"><span class="tag">01 · 申请前</span><h3>准备租房申请资料</h3><p>通常先准备身份证明、在读/录取证明、收入或资金证明、租房经历与推荐人信息。不同平台和中介的要求不同；只向可信的房东/中介提交必要资料，敏感文件可加用途水印。</p></article>
-  <article class="infoCard"><span class="tag">02 · 签约前</span><h3>先拿齐合同与披露文件</h3><p>NSW 租房开始前，房东或中介应提供租客信息声明、拟签租赁合同、已填写的房屋状况报告；公寓还可能涉及 strata by-laws。逐条核对租金、期限、账单责任、维修和提前解约条款。</p><a href="https://www.nsw.gov.au/housing-and-construction/rules/information-a-tenant-should-get-at-start-of-a-tenancy" target="_blank" rel="noopener">官方文件清单 ↗</a></article>
-  <article class="infoCard"><span class="tag">03 · Bond</span><h3>押金与租金预付</h3><p>确认 Bond 金额及正式登记流程，优先使用 NSW Rental Bonds Online 或规定的纸质方式。保留收据和转账记录；不要把 Bond 转入无法核实的私人账户。</p><a href="https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live/starting-a-residential-tenancy/signing-a-lease-and-moving" target="_blank" rel="noopener">签约与入住官方步骤 ↗</a></article>
-  <article class="infoCard"><span class="tag">04 · 入住后 7 天</span><h3>完成 Condition Report</h3><p>逐房间记录墙面、地板、家具、电器、窗户、门锁和已有损坏，拍摄带时间信息的照片。按要求在取得房屋占有后 7 天内返还填写后的报告，并保存自己的副本。</p><a href="https://www.nsw.gov.au/housing-and-construction/rules/rental-property-condition-reports" target="_blank" rel="noopener">状况报告官方说明 ↗</a></article>
- </div>
- <div class="notice">重要：上面是 NSW 一般住宅租赁流程摘要，不替代合同、法律意见或最新法规。合租、转租、学生公寓和短租可能适用不同安排，签署前核实具体类型。</div>
- </div>
-\n <div class="sectionBlock"><div class="sectionTitle"><div><h2>看房检查清单</h2><p>现场看房时逐项勾选，状态保存在当前浏览器</p></div></div><div class="panel" id="rentalChecklist">
- <div class="profileGrid" id="rentalChecks"></div>
- </div></div>
+  <details class="housingAccordion">
+   <summary><span class="housingNumber">03</span><span><strong>看房检查清单</strong><small>把原来页面底部的检查项目移到这里，现场逐项勾选</small></span><b>＋</b></summary>
+   <div class="housingAccordionBody">
+    <p class="checklistIntro">看房时逐项检查；勾选状态会保存在当前浏览器。不同房源可在看房后重置清单。</p>
+    <div class="checklistToolbar"><span id="viewingProgress">0 / 16 已完成</span><button type="button" class="textAction" id="resetViewingChecks">重置看房清单</button></div>
+    <div class="rentalChecklistGrid" id="viewingChecklist"></div>
+   </div>
+  </details>
 
+  <details class="housingAccordion">
+   <summary><span class="housingNumber">04</span><span><strong>合同与 Bond 检查清单</strong><small>签约前、付款时、入住后分别核对，完成一项勾一项</small></span><b>＋</b></summary>
+   <div class="housingAccordionBody">
+    <p class="checklistIntro">这是一份 NSW 一般住宅租赁的实用核对清单。合租、转租和学生公寓可能有不同安排，签署前请确认适用规则。</p>
+    <div class="checklistToolbar"><span id="leaseProgress">0 / 12 已完成</span><button type="button" class="textAction" id="resetLeaseChecks">重置合同清单</button></div>
+    <div class="leaseChecklistGroups" id="leaseChecklist"></div>
+    <div class="guideLinks"><a href="https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live/starting-a-residential-tenancy/signing-a-lease-and-moving" target="_blank" rel="noopener">NSW 签约与入住官方指南 ↗</a><a href="https://www.nsw.gov.au/housing-and-construction/rules/rental-property-condition-reports" target="_blank" rel="noopener">Condition Report 官方说明 ↗</a><a href="https://www.nsw.gov.au/housing-and-construction/renting-a-place-to-live" target="_blank" rel="noopener">NSW 租房总指南 ↗</a></div>
+   </div>
+  </details>
+
+  <details class="housingAccordion">
+   <summary><span class="housingNumber">05</span><span><strong>租房防诈骗</strong><small>识别假房源、假房东、催促转账和不合理收费</small></span><b>＋</b></summary>
+   <div class="housingAccordionBody">
+    <ul class="housingAdvice"><li>尽量实地看房；无法到场时，要求实时视频并确认房屋地址和对方身份。</li><li>核实中介是否为真实机构，房东/主租客是否有权出租该房间。</li><li>不要因“很多人排队”而在未核实房源和合同前转账。</li><li>不要支付法律不允许的额外费用；保存广告、聊天记录、合同和收据。</li><li>敏感身份证明只通过可信渠道提交，必要时添加用途水印。</li></ul>
+    <a href="https://www.scamwatch.gov.au/" target="_blank" rel="noopener">Scamwatch 防诈骗官方入口 ↗</a>
+   </div>
+  </details>
+ </div>
 </section>
 
 <section class="page" id="page-work">
- <div class="pageIntro"><div class="eyebrow">WORK & CAREER</div><h1>兼职求职</h1><p>准备简历、招聘渠道和工资核验习惯；签证条件以个人 grant letter 与 VEVO 为准。</p></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>🧾 学生签证工作条件</h3><p>多数学生签证持有人在课程进行期间通常每两周最多工作48小时；课程未开始前通常不能工作。个人签证条件优先。</p><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500" target="_blank" rel="noopener">Home Affairs ↗</a>　<a href="https://online.immi.gov.au/evo/firstParty?actionType=query" target="_blank" rel="noopener">VEVO ↗</a></article>
-  <article class="infoCard"><h3>💰 工资与劳动权益</h3><p>核对适用 Award、雇佣类别、时薪、周末/公共假日费率和 payslip。</p><a href="https://www.fairwork.gov.au/" target="_blank" rel="noopener">Fair Work ↗</a>　<a href="https://calculate.fairwork.gov.au/" target="_blank" rel="noopener">Pay Calculator ↗</a></article>
-  <article class="infoCard"><h3>🔎 招聘渠道</h3><p>校内职位优先看学校渠道；校外可查看综合招聘网站，核实雇主、工作地点与工作权利。</p><a href="https://www.seek.com.au/" target="_blank" rel="noopener">SEEK ↗</a>　<a href="https://au.indeed.com/" target="_blank" rel="noopener">Indeed ↗</a></article>
+ <div class="pageIntro"><div class="eyebrow">WORK & CAREER</div><h1>兼职求职</h1><p>把工作权利、工资核验和求职渠道整理成三个互不重复的模块。</p></div>
+ <div class="workCoreGrid">
+  <article class="workCoreCard">
+   <div class="workCoreIcon">🛂</div><span class="tag blue">先确认资格</span><h2>学生签证工作条件</h2>
+   <p>学生签证持有人通常必须等课程开始后才能工作；课程进行期间一般最多每两周工作 48 小时，正式课程假期通常可以不限时。研究型硕博及课程强制实习等有特定例外，最终以个人签证条件为准。</p>
+   <ul><li>开工前在 VEVO 核实自己的签证条件。</li><li>确认语言课程和主课的实际开始日期；不能只按抵澳日期判断。</li><li>多份工作的总工时需要合并计算。</li><li>保留 CoE、课程开始证明、排班和工时记录。</li></ul>
+   <div class="guideLinks"><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500" target="_blank" rel="noopener">Home Affairs 学生签证 ↗</a><a href="https://online.immi.gov.au/evo/firstParty?actionType=query" target="_blank" rel="noopener">VEVO 查询个人条件 ↗</a><a href="https://immi.homeaffairs.gov.au/visas/already-have-a-visa/check-visa-details-and-conditions/see-your-visa-conditions" target="_blank" rel="noopener">签证条件解释 ↗</a></div>
+  </article>
+  <article class="workCoreCard">
+   <div class="workCoreIcon">💰</div><span class="tag">工资与劳动权益</span><h2>工资、Award 与 payslip</h2>
+   <p>工资标准取决于岗位适用的 Modern Award、雇佣类型、年龄、资历和工作时段。周末、公共假日、夜班或加班可能适用不同费率。</p>
+   <ul><li>确认岗位属于 casual、part-time 还是 full-time。</li><li>核对适用 Award、基础时薪和 penalty rates。</li><li>每次发薪检查 payslip、税款扣缴和 super 信息。</li><li>保留排班、打卡、工资单与银行入账记录。</li><li>警惕长时间无薪试工、培训不付薪、招聘费或扣押护照。</li></ul>
+   <div class="guideLinks"><a href="https://www.fairwork.gov.au/" target="_blank" rel="noopener">Fair Work Ombudsman ↗</a><a href="https://www.fairwork.gov.au/pay-and-wages/minimum-wages" target="_blank" rel="noopener">最低工资 ↗</a><a href="https://calculate.fairwork.gov.au/" target="_blank" rel="noopener">Pay Calculator ↗</a><a href="https://www.fairwork.gov.au/pay-and-wages/paying-wages/pay-slips" target="_blank" rel="noopener">Payslip 规则 ↗</a></div>
+  </article>
+  <article class="workCoreCard">
+   <div class="workCoreIcon">🔎</div><span class="tag">寻找机会</span><h2>招聘渠道与申请准备</h2>
+   <p>先建立一份清晰的英文简历，再按岗位调整经历和技能。校内职位、招聘平台和线下门店可以并行寻找。</p>
+   <ul><li>校内：学校 Careers、Student Job Board、招聘会和学院邮件。</li><li>校外：按 suburb、casual、part-time 和岗位关键词筛选。</li><li>投递前核实雇主、工作地点、薪资范围和工作内容。</li><li>面试准备简短自我介绍、可工作时间和相关经历。</li></ul>
+   <div class="guideLinks"><a href="https://www.unsw.edu.au/student/support/career" target="_blank" rel="noopener">UNSW Careers ↗</a><a href="https://www.seek.com.au/" target="_blank" rel="noopener">SEEK ↗</a><a href="https://au.indeed.com/" target="_blank" rel="noopener">Indeed ↗</a><a href="https://au.jora.com/" target="_blank" rel="noopener">Jora ↗</a></div>
+  </article>
  </div>
- <div class="notice">2027 年政策可能变化。请核对个人签证条件及 Home Affairs 最新规定。</div>
-
-
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>开始兼职前必须知道</h2><p>把基础劳动权益与求职步骤放在页面里</p></div></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>先核实签证工作条件</h3><p>学生签证持有人通常不能在课程开始前工作；课程进行期间常见上限为每两周 48 小时，正式课程假期通常可不限时。研究型学位、课程组成工作等存在例外。以 VEVO 和签证 grant letter 为准。</p><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500" target="_blank" rel="noopener">Home Affairs 学生签证 ↗</a></article>
-  <article class="infoCard"><h3>最低工资与 Award</h3><p>澳洲雇员有最低工资和基本工作权益。具体时薪需按岗位适用的 Modern Award、雇佣类型、年龄、资历和时段确定；周末、公共假日或夜班可能涉及 penalty rates。</p><a href="https://www.fairwork.gov.au/pay-and-wages/minimum-wages" target="_blank" rel="noopener">Fair Work 最低工资 ↗</a></article>
-  <article class="infoCard"><h3>工资单与工作记录</h3><p>雇主通常须在发薪后一个工作日内提供 payslip。保存排班、打卡、工资单和银行入账记录；核对普通工时、加班/罚金、税款扣缴和 super 信息。</p><a href="https://www.fairwork.gov.au/pay-and-wages/paying-wages/pay-slips" target="_blank" rel="noopener">工资单官方说明 ↗</a></article>
-  <article class="infoCard"><h3>识别不合理试工</h3><p>试工只能限于合理展示岗位技能所需的时间；要求长时间无薪工作、培训不付薪、收取招聘费或扣押护照都应提高警惕。遇到问题可联系 Fair Work Ombudsman。</p><a href="https://www.fairwork.gov.au/tools-and-resources/fact-sheets/rights-and-obligations/international-students" target="_blank" rel="noopener">国际学生工作权益 ↗</a></article>
- </div></div>
-\n <div class="sectionBlock"><div class="sectionTitle"><div><h2>招聘与工作权益入口</h2><p>校内岗位优先，其次使用主流招聘平台</p></div></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>UNSW Careers</h3><p>学校职业服务、校内招聘、简历支持、职业活动与实习信息。</p><a href="https://www.unsw.edu.au/student/support/career" target="_blank" rel="noopener">UNSW Careers ↗</a></article>
-  <article class="infoCard"><h3>SEEK</h3><p>澳洲主流综合招聘网站，可筛选 casual、part-time、地点和工作类别。</p><a href="https://www.seek.com.au/" target="_blank" rel="noopener">SEEK ↗</a></article>
-  <article class="infoCard"><h3>Indeed Australia</h3><p>综合招聘搜索与雇主评价，适合扩展关键词和岗位来源。</p><a href="https://au.indeed.com/" target="_blank" rel="noopener">Indeed ↗</a></article>
-  <article class="infoCard"><h3>Jora</h3><p>聚合型招聘搜索平台，可作为 SEEK 和 Indeed 的补充。</p><a href="https://au.jora.com/" target="_blank" rel="noopener">Jora ↗</a></article>
-  <article class="infoCard"><h3>Fair Work Ombudsman</h3><p>查询最低工资、Award、工资单、休息时间和雇佣权益。保留排班与工资记录。</p><a href="https://www.fairwork.gov.au/" target="_blank" rel="noopener">Fair Work ↗</a></article>
-  <article class="infoCard"><h3>Pay Calculator</h3><p>估算不同雇佣类别和时段的工资待遇，实际工资需按适用 Award 和合同核实。</p><a href="https://calculate.fairwork.gov.au/" target="_blank" rel="noopener">工资计算器 ↗</a></article>
- </div></div>
-
+ <div class="notice">政策说明按目前 Home Affairs 官方信息整理。学生签证工作条件可能因签证类别、课程状态和个人签证条款不同而变化；开始工作前务必查询 VEVO。<a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/work-rights-and-exploitation/work-restrictions" target="_blank" rel="noopener">官方工作限制说明 ↗</a></div>
 </section>
 
 <section class="page" id="page-shopping">
@@ -543,7 +681,7 @@ body{background:var(--bg);color:var(--ink)}
   <div class="notice">数据保存在当前浏览器。清理浏览器数据、换设备或更换浏览器前，请先导出备份。导入会覆盖当前个人数据。</div>
  </div>
 </section>
-<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.3　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
+<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.4　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
 </div></main>
 </div>
 
@@ -574,10 +712,14 @@ const defaultState={
  ],
  budget:{rent:475,food:110,transport:35,other:65},
  expenses:{fixed:[{id:'fx-rent',name:'房租预算参考',amount:475,frequency:'weekly',category:'住房'}],entries:[]},
- tasks:{}
+ tasks:{},
+ countdownDates:{'return-home':{date:'',time:'12:00'},'return-campus':{date:'',time:'09:00'}},
+ customCountdownTargets:[],
+ activeCountdownId:'arrival',
+ timetable:[]
 };
 function clone(x){return JSON.parse(JSON.stringify(x))}
-function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},expenses:{...clone(defaultState.expenses),...(s.expenses||{}),fixed:Array.isArray(s.expenses?.fixed)?s.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(s.expenses?.entries)?s.expenses.entries:[]},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{}}}catch(e){return clone(defaultState)}}
+function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},expenses:{...clone(defaultState.expenses),...(s.expenses||{}),fixed:Array.isArray(s.expenses?.fixed)?s.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(s.expenses?.entries)?s.expenses.entries:[]},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{},countdownDates:{...clone(defaultState.countdownDates),...(s.countdownDates||{})},customCountdownTargets:Array.isArray(s.customCountdownTargets)?s.customCountdownTargets:[],activeCountdownId:s.activeCountdownId||'arrival',timetable:Array.isArray(s.timetable)?s.timetable:[]}}catch(e){return clone(defaultState)}}
 let state=loadState();
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 let toastTimer;function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2200)}
@@ -591,17 +733,59 @@ function sydneyEpoch(date,time){
  for(let i=0;i<4;i++){const parts=Object.fromEntries(fmt.formatToParts(new Date(guess)).map(p=>[p.type,p.value]));const represented=Date.UTC(+parts.year,+parts.month-1,+parts.day,+parts.hour,+parts.minute);guess+=Date.UTC(y,m-1,d,hh,mm)-represented;}
  return guess;
 }
+function getCountdownTargets(){
+ const p=state.profile||{},f=state.flight||{},dates=state.countdownDates||{};
+ return [
+  {id:'arrival',label:'抵达澳洲',date:f.date||p.arrival||'',time:f.time||p.arrivalTime||'12:00',kind:'flight',sub:'航班抵达时间'},
+  {id:'language',label:'语言班开课',date:p.languageStart||'',time:'09:00',kind:'study',sub:'语言课程开始'},
+  {id:'course',label:'正课开课',date:p.course||'',time:'09:00',kind:'study',sub:'学位课程开始'},
+  {id:'return-home',label:'回国',date:dates['return-home']?.date||'',time:dates['return-home']?.time||'12:00',kind:'travel',sub:'自定义回国日期'},
+  {id:'return-campus',label:'返校',date:dates['return-campus']?.date||'',time:dates['return-campus']?.time||'09:00',kind:'travel',sub:'自定义返校日期'},
+  ...(state.customCountdownTargets||[])
+ ];
+}
+function renderCountdownTargets(){
+ const targets=getCountdownTargets(),sel=$('countdownTargetSelect');if(!sel)return;
+ if(!targets.some(x=>x.id===state.activeCountdownId))state.activeCountdownId='arrival';
+ sel.innerHTML=targets.map(x=>`<option value="${escapeHTML(x.id)}">${escapeHTML(x.label)}${x.date?' · '+x.date:' · 待设置'}</option>`).join('');
+ sel.value=state.activeCountdownId;
+ const rows=$('countdownTargetRows');if(rows)rows.innerHTML=targets.map(x=>`<div class="countTargetRow" data-target-row="${escapeHTML(x.id)}"><div><strong>${escapeHTML(x.label)}</strong><small>${x.id==='arrival'?'与航班资料同步':x.id==='language'?'与个人资料中的语言班日期同步':x.id==='course'?'与个人资料中的正课日期同步':'可在此设置日期与时间'}</small></div><input aria-label="${escapeHTML(x.label)}日期" type="date" data-target-date="${escapeHTML(x.id)}" value="${escapeHTML(x.date||'')}"><input aria-label="${escapeHTML(x.label)}时间" type="time" data-target-time="${escapeHTML(x.id)}" value="${escapeHTML(x.time||'09:00')}"><button type="button" class="textAction" data-save-target="${escapeHTML(x.id)}">保存</button></div>`).join('');
+ rows?.querySelectorAll('[data-save-target]').forEach(btn=>btn.onclick=()=>saveCountdownTarget(btn.dataset.saveTarget));
+}
+function saveCountdownTarget(id){
+ const date=document.querySelector(`[data-target-date="${id}"]`)?.value||'',time=document.querySelector(`[data-target-time="${id}"]`)?.value||'09:00';
+ if(!date){toast('请先选择日期');return}
+ if(id==='arrival'){state.flight.date=date;state.flight.time=time}
+ else if(id==='language'){state.profile.languageStart=date}
+ else if(id==='course'){state.profile.course=date}
+ else if(id==='return-home'||id==='return-campus'){state.countdownDates[id]={date,time}}
+ else {const item=state.customCountdownTargets.find(x=>x.id===id);if(item){item.date=date;item.time=time}}
+ save();renderCountdownTargets();updateClock();updateOverview();toast('倒计时目标已更新');
+}
 function updateClock(){
- const f=state.flight,target=sydneyEpoch(f.date||state.profile.arrival,f.time||state.profile.arrivalTime||'12:00');let diff=target-Date.now();const past=diff<0;diff=Math.abs(diff);
+ const targets=getCountdownTargets(),target=targets.find(x=>x.id===state.activeCountdownId)||targets[0],f=state.flight;
+ $('countdownTargetName').textContent=target.label;
+ $('countdownLabel').textContent='TIME UNTIL '+target.label.toUpperCase()+' · SYDNEY LOCAL TIME';
+ $('flightRoute').style.display=target.id==='arrival'?'':'none';
+ $('flightMeta').style.display=target.id==='arrival'?'':'none';
+ $('editFlight').style.display=target.id==='arrival'?'':'none';
+ $('countdownFoot').textContent=target.id==='arrival'?'按悉尼当地时间计算 · 航班资料可在个人工具中编辑':'按悉尼当地时间计算 · 可在「管理倒计时目标」中修改日期';
+ if(!target.date){
+  ['cdDays','cdHours','cdMinutes','cdSeconds'].forEach(id=>$(id).textContent='—');
+  $('flightStatus').textContent='请设置目标日期';return;
+ }
+ let diff=sydneyEpoch(target.date,target.time||'09:00')-Date.now();const past=diff<0;diff=Math.abs(diff);
  const days=Math.floor(diff/86400000),hours=Math.floor(diff%86400000/3600000),mins=Math.floor(diff%3600000/60000),secs=Math.floor(diff%60000/1000);
  $('cdDays').textContent=String(days).padStart(3,'0');$('cdHours').textContent=pad(hours);$('cdMinutes').textContent=pad(mins);$('cdSeconds').textContent=pad(secs);
- $('flightStatus').textContent=past?'目标抵达时间已过':(f.flightNo?'航班信息已录入':'计划抵达 · 手动设置');
+ $('flightStatus').textContent=past?'目标时间已过':(target.id==='arrival'?(f.flightNo?'航班信息已录入':'计划抵达 · 手动设置'):'目标已设置');
  $('fromCode').textContent=(f.fromCode||'— — —').toUpperCase();$('fromName').textContent=f.fromName||'出发机场待填写';
  $('toCode').textContent=(f.toCode||'SYD').toUpperCase();$('toName').textContent=f.toName||'Sydney · Kingsford Smith';
  $('flightNo').textContent=f.flightNo||'待填写';$('airline').textContent=f.airline||'待填写';
  $('arrivalDisplay').textContent=(f.date||'2027-01-20').replaceAll('-','.')+' · '+(f.time||'12:00');
 }
-setInterval(updateClock,250);updateClock();
+$('countdownTargetSelect').onchange=()=>{state.activeCountdownId=$('countdownTargetSelect').value;save();updateClock()};
+$('customCountdownForm').addEventListener('submit',e=>{e.preventDefault();const name=$('customTargetName').value.trim(),date=$('customTargetDate').value,time=$('customTargetTime').value||'09:00';if(!name||!date)return;const item={id:'custom-'+Date.now(),label:name,date,time,kind:'custom'};state.customCountdownTargets.push(item);state.activeCountdownId=item.id;save();e.target.reset();renderCountdownTargets();updateClock();toast('自定义倒计时已添加')});
+setInterval(updateClock,250);renderCountdownTargets();updateClock();
 const now=new Date();$('todayText').textContent=new Intl.DateTimeFormat('zh-CN',{dateStyle:'full'}).format(now);$('dateChip').textContent=new Intl.DateTimeFormat('zh-CN',{dateStyle:'full'}).format(now);
 
 let viewYear=now.getFullYear(),viewMonth=now.getMonth(),selectedDate=ymd(now.getFullYear(),now.getMonth(),now.getDate()),calendarMode='week';
@@ -635,7 +819,7 @@ function renderCalendar(idSuffix=''){
  $(agendaTitleId).textContent=selectedDate+' · '+ev.length+' 项安排';
  $(agendaListId).innerHTML=ev.length?ev.map(e=>`<div class="eventRow"><div class="eventDate">${e.date.slice(5).replace('-','/')}</div><div class="eventInfo"><strong>${escapeHTML(e.title)}</strong><small>${e.time||'全天'}${e.note?' · '+escapeHTML(e.note):''}</small></div><span class="eventCat">${catName(e.category)}</span></div>`).join(''):'<div class="eventEmpty">这一天还没有安排。点击「添加事件」添加事项。</div>';
 }
-function renderAllCalendars(){renderCalendar('');renderCalendar('2');renderAllEvents();renderManageEvents()}
+function renderAllCalendars(){renderCalendar('');renderAllEvents();renderManageEvents();renderDashboardWidgets()}
 function shiftCalendar(delta){
  if(calendarMode==='week'){const d=new Date(selectedDate+'T12:00:00');d.setDate(d.getDate()+delta*7);selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();}
  else {viewMonth+=delta;if(viewMonth<0){viewMonth=11;viewYear--}if(viewMonth>11){viewMonth=0;viewYear++}selectedDate=ymd(viewYear,viewMonth,1);}
@@ -645,20 +829,13 @@ $('prevMonth').onclick=()=>shiftCalendar(-1);
 $('nextMonth').onclick=()=>shiftCalendar(1);
 $('todayMonth').onclick=()=>{const d=new Date();selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()};
 $('calendarViewMode').onchange=()=>{calendarMode=$('calendarViewMode').value;renderAllCalendars()};
-const timelines={
- arrival:()=>[['抵达日',state.profile.arrival,'机场、入住、手机卡、银行与交通'],['语言班开始',state.profile.languageStart,'按录取通知完成报到'],['语言班结束',state.profile.languageEnd,'成绩、衔接与后续课程准备'],['迎新计划',state.profile.orientation,'日期待学校官方确认'],['主课预计开始',state.profile.course,'日期待学校官方确认']],
- semester:()=>[['学期前','准备阶段','选课、注册、教材、课表'],['教学周','学习阶段','上课、作业、考试与校园活动'],['考试期','评估阶段','复习、考试与成绩查询'],['假期','休整阶段','旅行、兼职与下学期准备']],
- year:()=>[['第一阶段','适应与建立','熟悉学习方式、校园与悉尼生活'],['第二阶段','学习与提升','课程、项目、社团与工作经验'],['年末阶段','总结与规划','考试、成绩、假期与下一年计划']]
-};
-function renderTimeline(type){const items=timelines[type]();if($('timelineList2'))$('timelineList2').innerHTML=items.map(x=>`<div class="timeItem"><time>${escapeHTML(x[1])}</time><strong>${escapeHTML(x[0])}</strong><small>${escapeHTML(x[2])}</small></div>`).join('')}
-document.querySelectorAll('[data-timeline]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-timeline]').forEach(x=>x.classList.toggle('active',x.dataset.timeline===b.dataset.timeline));renderTimeline(b.dataset.timeline)});renderTimeline('arrival');
-function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='tools'){fillFlightForm();renderManageEvents()}if(name==='timeline')renderTimeline('arrival');if(name==='expenses')renderExpenses();if(name==='campus')updateCampusSchool()}
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='tools'){fillFlightForm();renderManageEvents()}if(name==='expenses'){renderExpenses();renderDashboardWidgets()}if(name==='campus')updateCampusSchool()}
 document.querySelectorAll('.sideLink').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 const sidebar=$('sidebar'),overlay=$('overlay');function openMenu(){sidebar.classList.add('open');overlay.classList.add('show')}function closeMenu(){sidebar.classList.remove('open');overlay.classList.remove('show')}
 $('menuToggle').onclick=()=>{if(innerWidth<=720){sidebar.classList.contains('open')?closeMenu():openMenu()}else sidebar.classList.toggle('closed')};overlay.onclick=closeMenu;
 $('calendarShortcut').onclick=()=>{showPage('home');document.getElementById('homeCalendar').scrollIntoView({behavior:'smooth',block:'start'})};$('addShortcut').onclick=()=>{showPage('tools');$('eTitle').focus()};$('newEvent').onclick=()=>{showPage('tools');$('eDate').value=selectedDate;$('eTitle').focus()};$('editFlight').onclick=()=>showPage('tools');
 function fillFlightForm(){const f=state.flight;for(const [id,key] of Object.entries({fFromCode:'fromCode',fFromName:'fromName',fToCode:'toCode',fToName:'toName',fAirline:'airline',fFlightNo:'flightNo',fDate:'date',fTime:'time'}))$(id).value=f[key]||''}
-$('flightForm').addEventListener('submit',e=>{e.preventDefault();state.flight={fromCode:$('fFromCode').value.trim().toUpperCase(),fromName:$('fFromName').value.trim(),toCode:$('fToCode').value.trim().toUpperCase()||'SYD',toName:$('fToName').value.trim(),airline:$('fAirline').value.trim(),flightNo:$('fFlightNo').value.trim().toUpperCase(),date:$('fDate').value,time:$('fTime').value};save();updateClock();toast('航班与抵澳时间已保存')});
+$('flightForm').addEventListener('submit',e=>{e.preventDefault();state.flight={fromCode:$('fFromCode').value.trim().toUpperCase(),fromName:$('fFromName').value.trim(),toCode:$('fToCode').value.trim().toUpperCase()||'SYD',toName:$('fToName').value.trim(),airline:$('fAirline').value.trim(),flightNo:$('fFlightNo').value.trim().toUpperCase(),date:$('fDate').value,time:$('fTime').value};save();renderCountdownTargets();updateClock();toast('航班与抵澳时间已保存')});
 $('resetFlight').onclick=()=>{state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00';save();fillFlightForm();updateClock();toast('已使用个人资料中的抵澳时间')};
 $('eDate').value=selectedDate;
 $('eventForm').addEventListener('submit',e=>{e.preventDefault();state.events.push({id:'e-'+Date.now(),title:$('eTitle').value.trim(),date:$('eDate').value,time:$('eTime').value,category:$('eCategory').value,note:$('eNote').value.trim()});save();selectedDate=$('eDate').value;viewYear=+selectedDate.slice(0,4);viewMonth=+selectedDate.slice(5,7)-1;renderAllCalendars();e.target.reset();$('eDate').value=selectedDate;toast('事件已添加到日历')});
@@ -680,16 +857,61 @@ function closeCampusDetail(){$('campusDetailView').hidden=true;$('campusOverview
 document.querySelectorAll('[data-campus-detail]').forEach(b=>b.addEventListener('click',()=>openCampusDetail(b.dataset.campusDetail)));
 $('campusBack').onclick=closeCampusDetail;
 
-$('profileForm').addEventListener('submit',e=>{e.preventDefault();state.profile={name:$('pName').value.trim(),country:$('pCountry').value.trim(),city:$('pCity').value.trim(),school:$('pSchool').value.trim(),program:$('pProgram').value.trim(),language:$('pLanguage').value,arrival:$('pArrival').value,arrivalTime:$('pArrivalTime').value,languageStart:$('pLanguageStart').value,languageEnd:$('pLanguageEnd').value,orientation:$('pOrientation').value,course:$('pCourse').value,rentMin:Number($('pRentMin').value)||0,rentMax:Number($('pRentMax').value)||0,notes:$('pNotes').value.trim()};if(!state.flight.flightNo){state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00'}save();updateClock();updateOverview();renderTimeline('arrival');renderProfileSummary();updateCampusSchool();toast('个人资料已保存，首页已同步')});
+$('profileForm').addEventListener('submit',e=>{e.preventDefault();state.profile={name:$('pName').value.trim(),country:$('pCountry').value.trim(),city:$('pCity').value.trim(),school:$('pSchool').value.trim(),program:$('pProgram').value.trim(),language:$('pLanguage').value,arrival:$('pArrival').value,arrivalTime:$('pArrivalTime').value,languageStart:$('pLanguageStart').value,languageEnd:$('pLanguageEnd').value,orientation:$('pOrientation').value,course:$('pCourse').value,rentMin:Number($('pRentMin').value)||0,rentMax:Number($('pRentMax').value)||0,notes:$('pNotes').value.trim()};if(!state.flight.flightNo){state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00'}save();updateClock();updateOverview();renderProfileSummary();updateCampusSchool();renderCountdownTargets();updateClock();toast('个人资料已保存，首页已同步')});
 $('resetProfile').onclick=()=>{state.profile=clone(baseProfile);save();fillProfile();updateOverview();toast('已恢复项目交接资料')};
 function renderProfileSummary(){const p=state.profile;const rows=[['国家',p.country],['城市',p.city],['学校',p.school],['专业 / 学位',p.program||'尚未填写'],['语言班',p.language==='yes'?'需要':p.language==='no'?'不需要':'尚未确定'],['计划抵澳',p.arrival],['主课预计开始',p.course],['房租预算','A$'+p.rentMin+'–'+p.rentMax+'/周']];$('profileSummary').innerHTML=rows.map(x=>`<div class="profileItem"><small>${escapeHTML(x[0])}</small><strong>${escapeHTML(x[1])}</strong></div>`).join('')}
-function updateOverview(){const p=state.profile;$('statArrival').textContent=p.arrival||'待设置';$('statLanguage').textContent=p.languageStart||'待设置';$('statLanguageEnd').textContent=p.languageEnd||'待设置';$('statCourse').textContent=p.course||'待设置';$('welcomeTitle').textContent=p.name?'欢迎回来，'+p.name+'！':'早上好，准备好开启'+(p.city||'留学')+'生活了吗？'}
+function updateOverview(){const p=state.profile;$('welcomeTitle').textContent=p.name?'欢迎回来，'+p.name+'！':'早上好，准备好开启'+(p.city||'留学')+'生活了吗？'}
 
 const tasks=['确认签证批准信、签证条件与 VEVO','确认 CoE、语言班报到与开课安排','整理护照、保险、录取文件及电子备份','筛选租房区域并预约看房','核实租赁合同、Bond 与入住状况报告','确认航班、行李、机场到住处路线','准备澳洲手机卡 / eSIM 方案','比较银行账户与国际汇款方式','了解 Opal / 非接触式交通支付','确认 OSHC 保单与医疗服务入口','熟悉 Arc、社团及校园支持服务','核实 2027 官方校历、迎新和主课日期','准备抵澳初期生活用品','导出并保存网站个人数据备份'];
 function renderTasks(){$('arrivalTasks').innerHTML=tasks.map((t,i)=>`<label class="checkRow ${state.tasks[i]?'done':''}"><input type="checkbox" data-task="${i}" ${state.tasks[i]?'checked':''}><span>${escapeHTML(t)}</span></label>`).join('');const done=tasks.filter((_,i)=>state.tasks[i]).length;$('taskCount').textContent=done+' / '+tasks.length;$('taskProgress').style.width=(done/tasks.length*100)+'%';$('arrivalTasks').querySelectorAll('[data-task]').forEach(c=>c.onchange=()=>{state.tasks[c.dataset.task]=c.checked;save();renderTasks()})}
-$('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks')||'{}')}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
-$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]}};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks',JSON.stringify(obj.extras.rentalChecks||{}));}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
+$('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}')}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
+$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]},countdownDates:{...clone(defaultState.countdownDates),...(obj.countdownDates||{})},customCountdownTargets:Array.isArray(obj.customCountdownTargets)?obj.customCountdownTargets:[],timetable:Array.isArray(obj.timetable)?obj.timetable:[]};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(obj.extras.rentalChecks||{}));}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();renderTimetable();renderCountdownTargets();renderDashboardWidgets();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
 
+
+
+const weekNames=['一','二','三','四','五','六','日'];
+let timetableWeekOffset=0;
+function renderTimetable(){
+ const root=$('timetableWeek');if(!root)return;
+ const today=new Date();const monday=new Date(today);monday.setDate(today.getDate()-((today.getDay()+6)%7)+timetableWeekOffset*7);
+ const dayDates=weekNames.map((_,i)=>{const d=new Date(monday);d.setDate(monday.getDate()+i);return d});
+ root.innerHTML=dayDates.map((d,i)=>{
+  const dayNo=i+1,items=(state.timetable||[]).filter(c=>Number(c.day)===dayNo).sort((a,b)=>(a.start||'').localeCompare(b.start||''));
+  const colorClass={apricot:'courseApricot',sage:'courseSage',lavender:'courseLavender',rose:'courseRose',sky:'courseSky'};
+  return `<div class="timetableDay"><div class="timetableDayHead"><strong>${weekNames[i]}</strong><small>${d.getMonth()+1}/${d.getDate()}</small></div><div class="timetableDayCourses">${items.length?items.map(c=>`<article class="courseCard ${colorClass[c.color]||'courseApricot'}"><b>${escapeHTML(c.start)}–${escapeHTML(c.end)}</b><strong>${escapeHTML(c.name)}</strong><small>${escapeHTML(c.type||'课程')} · ${escapeHTML(c.room||'地点待定')}</small>${c.note?`<small>${escapeHTML(c.note)}</small>`:''}<div class="courseActions"><button data-course-edit="${escapeHTML(c.id)}">编辑</button><button data-course-delete="${escapeHTML(c.id)}">删除</button></div></article>`).join(''):'<div class="noCourse">暂无课程</div>'}</div></div>`;
+ }).join('');
+ root.querySelectorAll('[data-course-edit]').forEach(btn=>btn.onclick=()=>editCourse(btn.dataset.courseEdit));
+ root.querySelectorAll('[data-course-delete]').forEach(btn=>btn.onclick=()=>{state.timetable=state.timetable.filter(c=>c.id!==btn.dataset.courseDelete);save();renderTimetable();renderDashboardWidgets();toast('课程已删除')});
+}
+function editCourse(id){
+ const c=state.timetable.find(x=>x.id===id);if(!c)return;
+ $('courseId').value=c.id;$('courseName').value=c.name;$('courseDay').value=c.day;$('courseType').value=c.type||'Lecture';$('courseStart').value=c.start;$('courseEnd').value=c.end;$('courseRoom').value=c.room||'';$('courseColor').value=c.color||'apricot';$('courseNote').value=c.note||'';
+ $('courseEditor').open=true;$('courseName').focus();
+}
+$('courseForm').addEventListener('submit',e=>{
+ e.preventDefault();const start=$('courseStart').value,end=$('courseEnd').value;
+ if(end<=start){toast('结束时间必须晚于开始时间');return}
+ const id=$('courseId').value||'course-'+Date.now();
+ const item={id,name:$('courseName').value.trim(),day:Number($('courseDay').value),type:$('courseType').value,start,end,room:$('courseRoom').value.trim(),color:$('courseColor').value,note:$('courseNote').value.trim()};
+ const idx=state.timetable.findIndex(x=>x.id===id);if(idx>=0)state.timetable[idx]=item;else state.timetable.push(item);
+ save();e.target.reset();$('courseId').value='';$('courseStart').value='09:00';$('courseEnd').value='10:00';$('courseEditor').open=false;renderTimetable();renderDashboardWidgets();toast('课程已保存');
+});
+$('cancelCourseEdit').onclick=()=>{$('courseForm').reset();$('courseId').value='';$('courseEditor').open=false};
+$('todayTimetable').onclick=()=>{timetableWeekOffset=0;renderTimetable()};
+document.querySelectorAll('[data-home-calendar]').forEach(btn=>btn.onclick=()=>{
+ document.querySelectorAll('[data-home-calendar]').forEach(x=>x.classList.toggle('active',x===btn));
+ const events=btn.dataset.homeCalendar==='events';$('eventsCalendarPane').hidden=!events;$('timetablePane').hidden=events;
+ if(!events)renderTimetable();
+});
+function renderDashboardWidgets(){
+ const list=$('dashboardUpcoming');if(!list)return;
+ const todayKey=ymd(now.getFullYear(),now.getMonth(),now.getDate());
+ const upcoming=(state.events||[]).filter(e=>e.date>=todayKey).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).slice(0,4);
+ list.innerHTML=upcoming.length?upcoming.map(e=>`<div class="upcomingMini"><span>${escapeHTML(e.date.slice(5).replace('-','/'))}</span><div><strong>${escapeHTML(e.title)}</strong><small>${escapeHTML(e.time||'全天')} · ${catName(e.category)}</small></div></div>`).join(''):'<div class="eventEmpty">近期没有已安排的事件。</div>';
+ const fixed=(state.expenses?.fixed||[]).reduce((s,x)=>s+fixedMonthly(x),0);
+ const currentMonth=new Date(),month=currentMonth.getFullYear()+'-'+pad(currentMonth.getMonth()+1),variable=(state.expenses?.entries||[]).filter(x=>(x.date||'').startsWith(month)).reduce((s,x)=>s+(Number(x.amount)||0),0);
+ $('dashFixedSpend').textContent=money(fixed);$('dashVariableSpend').textContent=money(variable);$('dashTotalSpend').textContent=money(fixed+variable);
+}
 
 function money(n){return 'A$'+(Number(n)||0).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})}
 function fixedMonthly(item){const a=Number(item.amount)||0;return a*({weekly:52/12,fortnightly:26/12,monthly:1,quarterly:1/3,yearly:1/12}[item.frequency]||1)}
@@ -709,6 +931,7 @@ function renderExpenses(){
  const cats={};monthEntries.forEach(x=>cats[x.category||'其他']=(cats[x.category||'其他']||0)+(Number(x.amount)||0));
  const breakdown=[...fixed.reduce((m,x)=>{const c=x.category||'固定支出';m.set(c,(m.get(c)||0)+fixedMonthly(x));return m},new Map()).entries(),...Object.entries(cats)];
  $('expenseBreakdown').innerHTML=breakdown.length?breakdown.map(([c,v])=>`<div class="expenseRow"><strong>${escapeHTML(c)}</strong><span class="amount">${money(v)}</span></div>`).join(''):'<div class="expenseEmpty">暂无支出数据。</div>';
+ renderDashboardWidgets();
 }
 $('fixedExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('fxName').value.trim(),amount=Number($('fxAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.fixed.push({id:'fx-'+Date.now(),name,amount,frequency:$('fxFrequency').value,category:$('fxCategory').value});save();e.target.reset();renderExpenses();toast('固定支出已添加')});
 $('dailyExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('spName').value.trim(),amount=Number($('spAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.entries.push({id:'sp-'+Date.now(),name,amount,date:$('spDate').value,category:$('spCategory').value});save();$('spName').value='';$('spAmount').value='';renderExpenses();toast('消费记录已保存')});
@@ -774,10 +997,34 @@ $('showFavorites').onclick=()=>{onlyFavorites=!onlyFavorites;$('showFavorites').
 $('clearResourceSearch').onclick=()=>{$('resourceSearch').value='';resourceCategory='全部';onlyFavorites=false;$('showFavorites').textContent='☆ 只看收藏';renderResources()};
 function previewSite(url,title){$('viewerTitle').textContent=title+' · 站内预览';$('viewerExternal').href=url;$('viewerFrame').src=url;$('siteViewer').style.display='block';document.body.style.overflow='hidden'}
 function closeViewer(){$('siteViewer').style.display='none';$('viewerFrame').src='about:blank';document.body.style.overflow=''}
-const rentalChecks=['房屋地址与广告一致','房间门锁、窗户和安全设施正常','检查霉斑、潮湿、通风与异味','热水、淋浴、马桶和水龙头正常','厨房、电器、冰箱和洗衣设备可用','确认网络、手机信号与网费责任','检查噪音、采光和周边环境','确认家具、床垫与储物空间','明确租金、Bond、水电网账单分摊','核对合同、出租人身份与付款方式','拍摄入住前房屋状况照片'];
-function renderRentalChecks(){const done=JSON.parse(localStorage.getItem('msl-rental-checks')||'{}');$('rentalChecks').innerHTML=rentalChecks.map((x,i)=>`<label class="checkRow ${done[i]?'done':''}"><input type="checkbox" data-rental="${i}" ${done[i]?'checked':''}><span>${x}</span></label>`).join('');$('rentalChecks').querySelectorAll('[data-rental]').forEach(c=>c.onchange=()=>{done[c.dataset.rental]=c.checked;localStorage.setItem('msl-rental-checks',JSON.stringify(done));renderRentalChecks()})}
 
-fillProfile();fillFlightForm();updateOverview();renderAllCalendars();renderManageEvents();renderTasks();
+const viewingChecks=[
+ '房屋地址、房间与广告描述一致','房门、入户门锁和窗户锁正常','检查墙面、天花板和角落是否有霉斑/渗水','检查通风、异味、采光和自然光','热水、水压、淋浴、马桶和水龙头正常','厨房炉灶、烤箱、抽油烟机和冰箱可用','洗衣机/烘干机及晾晒空间可用','检查网络、手机信号与宽带费用','确认家具、床垫、衣柜和储物空间','检查噪音、邻居、道路和施工情况','检查插座、电灯、烟雾报警器和安全设施','查看公共区域、卫生间和厨房清洁情况','确认是否有虫害、宠物或吸烟限制','确认水电网是否包含在租金内','确认公共交通、超市和夜间回家路线','拍下看房时发现的问题并书面询问中介/房东'
+];
+const leaseGroups=[
+ {title:'签约前核对',items:['核实房东/中介身份及其出租权限','拿到租客信息声明、拟签合同和 Condition Report','核对房屋地址、租金、支付频率和租期','确认续租、提前解约、通知期和维修责任','确认水、电、燃气、网络及其他账单由谁承担','如属 strata 公寓，阅读适用的 by-laws']},
+ {title:'付款与 Bond',items:['Bond 金额不超过 NSW 法定上限（一般不超过四周租金）','确认通过 Rental Bonds Online 或合规纸质方式登记 Bond','租金预付金额和支付方式符合规定','不支付法律不允许的额外费用或私人“保证金”','保存 Bond 编号、收据、银行转账记录和签署合同']},
+ {title:'入住后完成',items:['取得双方签署的完整租赁合同和钥匙/门禁','逐项填写 Condition Report 并拍摄带时间信息的照片','在取得房屋占有后七天内返还报告并保留副本','把维修问题和承诺完成日期用书面方式记录']}
+];
+function renderRentalChecks(){
+ const read=()=>JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}');
+ const done=read();
+ const v=$('viewingChecklist');
+ if(v){v.innerHTML=viewingChecks.map((x,i)=>`<label class="checkRow ${done['v'+i]?'done':''}"><input type="checkbox" data-view-check="${i}" ${done['v'+i]?'checked':''}><span>${escapeHTML(x)}</span></label>`).join('');
+  v.querySelectorAll('[data-view-check]').forEach(c=>c.onchange=()=>{const d=read();d['v'+c.dataset.viewCheck]=c.checked;localStorage.setItem('msl-rental-checks-v44',JSON.stringify(d));renderRentalChecks()});
+  const n=viewingChecks.filter((_,i)=>done['v'+i]).length;$('viewingProgress').textContent=n+' / '+viewingChecks.length+' 已完成';
+ }
+ const l=$('leaseChecklist');
+ if(l){l.innerHTML=leaseGroups.map((g,gi)=>`<div class="leaseCheckGroup"><h3>${g.title}</h3>${g.items.map((x,i)=>{const k='l'+gi+'-'+i;return `<label class="checkRow ${done[k]?'done':''}"><input type="checkbox" data-lease-check="${k}" ${done[k]?'checked':''}><span>${escapeHTML(x)}</span></label>`}).join('')}</div>`).join('');
+  l.querySelectorAll('[data-lease-check]').forEach(c=>c.onchange=()=>{const d=read();d[c.dataset.leaseCheck]=c.checked;localStorage.setItem('msl-rental-checks-v44',JSON.stringify(d));renderRentalChecks()});
+  const total=leaseGroups.reduce((s,g)=>s+g.items.length,0),n=leaseGroups.reduce((s,g,gi)=>s+g.items.filter((_,i)=>done['l'+gi+'-'+i]).length,0);$('leaseProgress').textContent=n+' / '+total+' 已完成';
+ }
+}
+$('resetViewingChecks').onclick=()=>{const d=JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}');Object.keys(d).filter(k=>k.startsWith('v')).forEach(k=>delete d[k]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(d));renderRentalChecks()};
+$('resetLeaseChecks').onclick=()=>{const d=JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}');Object.keys(d).filter(k=>k.startsWith('l')).forEach(k=>delete d[k]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(d));renderRentalChecks()};
+
+
+fillProfile();fillFlightForm();updateOverview();renderAllCalendars();renderManageEvents();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderTasks();
 renderResources();renderRentalChecks();renderExpenses();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
