@@ -264,6 +264,136 @@ body{background:var(--bg);color:var(--ink)}
 @media(max-width:600px){.healthEmergency{align-items:flex-start;flex-direction:column}.healthCallout{grid-template-columns:1fr}.healthPathGrid,.benefitGrid,.extraBenefitGrid,.shoppingStoreGrid,.healthChecklist{grid-template-columns:1fr}.shoppingQuickGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 
+
+<style id="v46-work-resources">
+/* V4.7: detailed recruitment resource centre */
+.workCoreGrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.workChannelsCard{grid-column:1/-1}
+.workChannelsCard>p{max-width:900px}
+.workChannelIntro{display:grid;gap:5px;padding:13px 15px;margin:13px 0 15px;border-radius:12px;background:#fff7eb;border:1px solid #efdfca}
+.workChannelIntro strong{font-size:11px;color:#785638}
+.workChannelIntro span{font-size:10px;line-height:1.7;color:#8d755d}
+.workChannelGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.workChannelPanel{background:#fffdf9;border:1px solid #eee2d4;border-radius:13px;padding:14px;min-width:0}
+.workChannelHeading{display:flex;align-items:center;gap:10px;margin-bottom:11px}
+.workChannelHeading>span{width:29px;height:29px;flex:0 0 29px;display:grid;place-items:center;border-radius:9px;background:#f9ead8;color:#a16d42;font-size:10px;font-weight:900}
+.workChannelHeading h3{font-size:12px;color:#654a35;margin:0 0 3px}
+.workChannelHeading small{font-size:9px;color:#9a846d;line-height:1.5}
+.workResourceList{display:grid;gap:9px}
+.workResourceList>div{padding-bottom:8px;border-bottom:1px dashed #eee2d4}
+.workResourceList>div:last-child{padding-bottom:0;border-bottom:0}
+.workResourceList a,.workEmployerGrid a{font-size:10px;font-weight:900;color:#a36b43;text-decoration:none}
+.workResourceList p{font-size:9px;line-height:1.65;color:#8c7863;margin:4px 0 0}
+.workTip{margin-top:11px;padding:9px 10px;border-radius:9px;background:#f8f2e9;color:#8e795f;font-size:9px;line-height:1.65}
+.workEmployerGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.workEmployerGrid a{display:grid;gap:4px;padding:9px;border:1px solid #eee2d4;border-radius:9px;background:#fffaf3}
+.workEmployerGrid small{font-size:9px;font-weight:500;line-height:1.55;color:#8c7863}
+.workOfflinePanel{grid-column:1/-1}
+.workOfflineSteps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.workOfflineSteps>div{padding:10px;border:1px solid #eee2d4;border-radius:10px;background:#fffaf3}
+.workOfflineSteps b{font-size:10px;color:#79583a}
+.workOfflineSteps p{font-size:9px;line-height:1.65;color:#8d7963;margin:6px 0 0}
+.workPhrase{margin-top:10px;padding:11px 13px;border-left:3px solid #c89562;background:#f8f1e8;border-radius:0 9px 9px 0}
+.workPhrase small{font-size:9px;color:#9c7a56;font-weight:800}
+.workPhrase p{font-size:10px;line-height:1.65;color:#6f5944;margin:5px 0 0;font-style:italic}
+.workPrepGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.workPrepGrid>div{padding:10px;border:1px solid #eee2d4;border-radius:10px;background:#fffaf3}
+.workPrepGrid b{font-size:10px;color:#79583a}
+.workPrepGrid ul{padding-left:15px;margin:6px 0}
+.workPrepGrid li{font-size:9px;line-height:1.6;color:#8d7963;margin:3px 0}
+.workPrepGrid a{font-size:9px;font-weight:800;color:#a36b43}
+.workKeywordGroups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.workKeywordGroups>div{display:grid;gap:5px;padding:9px;border-radius:9px;background:#fffaf3;border:1px solid #eee2d4}
+.workKeywordGroups b{font-size:9px;color:#79583a}
+.workKeywordGroups span{font-size:9px;line-height:1.6;color:#8d7963}
+.workSearchPlan{grid-column:1/-1}
+.workWeeklyPlan{display:grid;gap:7px;padding:13px 15px;margin-top:13px;background:#f8f2e9;border:1px solid #eee0ce;border-radius:12px}
+.workWeeklyPlan>strong{font-size:11px;color:#785638;margin-bottom:2px}
+.workWeeklyPlan>div{font-size:9px;line-height:1.6;color:#8b755d}
+.workWeeklyPlan>div span{display:inline-block;min-width:82px;font-weight:900;color:#a36b43}
+.workWeeklyPlan>small{font-size:9px;line-height:1.6;color:#9a846d;margin-top:2px}
+.workSafetyNote{margin-top:10px;padding:11px 13px;border:1px solid #f0dfcf;border-radius:10px;background:#fff8f1;color:#896e56;font-size:9px;line-height:1.7}
+.workSafetyNote b{color:#8d553e;margin-right:5px}
+.workSafetyNote a{color:#a36b43;font-weight:900;white-space:nowrap}
+@media(max-width:980px){.workCoreGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.workOfflineSteps{grid-template-columns:repeat(3,minmax(0,1fr))}.workPrepGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.workCoreGrid,.workChannelGrid{grid-template-columns:1fr}.workChannelsCard,.workOfflinePanel,.workSearchPlan{grid-column:auto}.workEmployerGrid,.workPrepGrid,.workKeywordGroups{grid-template-columns:1fr}.workOfflineSteps{grid-template-columns:1fr}.workChannelsCard{padding:14px}}
+</style>
+
+
+<style id="v47-layout-theme">
+/* Home workspace balance */
+.dashboardLayout{grid-template-columns:minmax(0,1.58fr) minmax(300px,.92fr);align-items:stretch}
+.dashboardMain,.dashboardSide{align-content:stretch}
+.dashboardSide{grid-template-rows:repeat(3,minmax(0,1fr));}
+.dashboardSide .dashWidget{height:100%;min-height:0}
+.dashboardSide .dashboardShortcuts{grid-template-columns:repeat(3,minmax(0,1fr))}
+.quickExpenseForm{display:grid;grid-template-columns:1.2fr .75fr;gap:7px;margin-top:12px;padding-top:11px;border-top:1px solid var(--line)}
+.quickExpenseForm input,.quickExpenseForm select{min-width:0;width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:9px;background:var(--paper);color:var(--ink);font:inherit;font-size:11px}
+.quickExpenseForm button{grid-column:1/-1;padding:8px 10px}
+.quickExpenseForm small{grid-column:1/-1;color:var(--muted);font-size:9px}
+.homeFlightSettings,.homeEventEditor{margin-top:13px;border:1px solid var(--line);border-radius:15px;background:var(--paper);overflow:hidden}
+.homeFlightSettings>summary,.homeEventEditor>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:14px 16px;cursor:pointer;color:var(--ink);font-size:12px;font-weight:850}
+.homeFlightSettings>summary::-webkit-details-marker,.homeEventEditor>summary::-webkit-details-marker{display:none}
+.homeFlightSettings>summary small,.homeEventEditor>summary small{font-size:10px;font-weight:500;color:var(--muted);margin-left:auto}
+.homeFlightSettings>summary b,.homeEventEditor>summary b{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--bg);color:var(--navy)}
+.homeFlightSettings[open]>summary,.homeEventEditor[open]>summary{border-bottom:1px solid var(--line)}
+.homeSettingsBody{padding:15px}
+.homeEventEditor{margin-top:12px}
+.homeEventEditor .formGrid{margin-top:0}
+.arrivalDocProgress{display:grid;gap:7px;margin:12px 0}
+.arrivalDocProgress>span{font-size:10px;font-weight:800;color:var(--navy)}
+.arrivalDocProgress .progress{height:7px;margin:0}
+.arrivalDocChecklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.arrivalDocItem{display:flex;align-items:flex-start;gap:10px;padding:11px;border:1px solid var(--line);border-radius:11px;background:var(--paper);cursor:pointer}
+.arrivalDocItem input{margin-top:3px;accent-color:#b77a4f;flex:0 0 auto}
+.arrivalDocItem b{display:block;font-size:11px;color:var(--ink)}
+.arrivalDocItem small{display:block;font-size:9px;line-height:1.55;color:var(--muted);margin-top:3px}
+.arrivalDocItem.done{background:#f1f5ed;border-color:#dce8d5}
+.arrivalDocItem.done b{text-decoration:line-through;color:#82917c}
+.saleCalendarGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.saleEventCard{padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--paper);display:flex;flex-direction:column;align-items:flex-start;gap:7px}
+.saleEventCard.saleHot{background:#fff5eb;border-color:#efcda9}
+.saleDate{font-size:10px;font-weight:900;letter-spacing:.5px;color:#a56e43}
+.saleEventCard h3{font-size:12px;color:var(--ink);margin:0}
+.saleEventCard p{font-size:10px;line-height:1.65;color:var(--muted);margin:0}
+.saleEventCard small{font-size:9px;line-height:1.6;color:var(--muted);margin-top:auto}
+.themeChoices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.themeChoice{display:grid;gap:8px;text-align:left;padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--paper);color:var(--ink);cursor:pointer}
+.themeChoice.selected{border:2px solid var(--navy);padding:12px;box-shadow:0 5px 16px #8a75551a}
+.themeChoice b{font-size:11px}.themeChoice small{font-size:9px;color:var(--muted);line-height:1.5}
+.themeSwatches{display:flex;gap:5px}.themeSwatches i{width:25px;height:25px;border-radius:8px;background:#fff1dc;border:1px solid #ead9c5}.themeSwatches i:nth-child(2){background:#e8ad78}.themeSwatches i:nth-child(3){background:#9b704f}
+.daySwatches i:nth-child(1){background:#fff}.daySwatches i:nth-child(2){background:#eaf3f5}.daySwatches i:nth-child(3){background:#f1c99e}
+.nightSwatches i:nth-child(1){background:#e9ece7}.nightSwatches i:nth-child(2){background:#c9d2c9}.nightSwatches i:nth-child(3){background:#9aaba0}
+
+/* Three light, low-contrast themes: none uses black backgrounds. */
+body[data-theme="day"]{--bg:#fbfcfa;--paper:#ffffff;--ink:#3f4b4d;--muted:#7d8988;--line:#e7ece9;--navy:#6f9b9a;--navy2:#8eb6b0;--blue:#7ba7b1;--gold:#e8bd82;--green:#7fa58d;--shadow:0 9px 28px #6f8b8410;background:var(--bg);color:var(--ink)}
+body[data-theme="day"] .top{background:#ffffff;border-bottom-color:#e9eeeb}
+body[data-theme="day"] .sidebar{background:#ffffff;border-right-color:#e8eeeb}
+body[data-theme="day"] .sideLink.active,body[data-theme="day"] .sideLink:hover{background:#edf5f2;color:#527f78}
+body[data-theme="day"] .flightHero{background:linear-gradient(120deg,#fff3df,#f8e7d3 58%,#f0d9c4);color:#5e5145;box-shadow:0 14px 30px #9d876b14}
+body[data-theme="day"] .flightHero:after{border-color:#ffffff88;box-shadow:0 0 0 32px #ffffff44,0 0 0 65px #ffffff22}
+body[data-theme="day"] .flightLabel,body[data-theme="day"] .countLabel,body[data-theme="day"] .flightMeta,body[data-theme="day"] .heroFoot small{color:#75685c}
+body[data-theme="day"] .status{color:#5d786f;background:#ffffff80;border-color:#dce9e1}
+body[data-theme="day"] .airport span,body[data-theme="day"] .planeLine{color:#7b8b82}
+body[data-theme="day"] .calendarTabs{background:#f1f5f3}
+body[data-theme="day"] .calendarTabs button.active{background:#fff;color:#527f78}
+body[data-theme="day"] .panel{box-shadow:0 8px 24px #718a7b0b}
+body[data-theme="night"]{--bg:#eceee9;--paper:#f7f8f4;--ink:#46504a;--muted:#7e8980;--line:#dce2da;--navy:#71877a;--navy2:#899b8d;--blue:#8aa3a0;--gold:#c8a77e;--green:#7f9c86;--shadow:0 9px 28px #59695b12;background:var(--bg);color:var(--ink)}
+body[data-theme="night"] .top{background:#f4f5f0;border-bottom-color:#dce2da}
+body[data-theme="night"] .sidebar{background:#f2f4ef;border-right-color:#dce2da}
+body[data-theme="night"] .sideLink.active,body[data-theme="night"] .sideLink:hover{background:#e4ebe3;color:#5b7664}
+body[data-theme="night"] .flightHero{background:linear-gradient(120deg,#dce5dc,#c9d6ca 58%,#b8c9bc);color:#43564a;box-shadow:0 14px 30px #62766818}
+body[data-theme="night"] .flightHero:after{border-color:#ffffff88;box-shadow:0 0 0 32px #ffffff44,0 0 0 65px #ffffff22}
+body[data-theme="night"] .flightLabel,body[data-theme="night"] .countLabel,body[data-theme="night"] .flightMeta,body[data-theme="night"] .heroFoot small{color:#5c6e61}
+body[data-theme="night"] .status{color:#526c5b;background:#ffffff80;border-color:#d5e0d6}
+body[data-theme="night"] .airport span,body[data-theme="night"] .planeLine{color:#687d6c}
+body[data-theme="night"] .calendarTabs{background:#e7ece6}
+body[data-theme="night"] .calendarTabs button.active{background:#f7f8f4;color:#58705e}
+body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
+@media(max-width:980px){.dashboardLayout{grid-template-columns:1fr}.dashboardSide{grid-template-rows:auto;grid-template-columns:repeat(2,minmax(0,1fr))}.dashboardSide .dashWidget:last-child{grid-column:1/-1}}
+@media(max-width:650px){.arrivalDocChecklist,.saleCalendarGrid,.themeChoices{grid-template-columns:1fr}.dashboardSide{grid-template-columns:1fr}.dashboardSide .dashWidget:last-child{grid-column:auto}.quickExpenseForm{grid-template-columns:1fr 1fr}.homeFlightSettings>summary,.homeEventEditor>summary{flex-wrap:wrap}.homeFlightSettings>summary small,.homeEventEditor>summary small{width:100%;margin-left:0}}
+</style>
+
 </head>
 <body>
 <header class="top"><div class="topLeft">
@@ -289,8 +419,8 @@ body{background:var(--bg);color:var(--ink)}
  <button class="sideLink" data-page="resources"><span class="ico">✧</span>资源导航中心</button>
  <div class="sideLabel" style="padding-top:18px">PERSONAL</div>
  <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人资料</button>
- <button class="sideLink" data-page="expenses"><span class="ico">＄</span>个人花销</button><button class="sideLink" data-page="tools"><span class="ico">⚙</span>个人工具</button>
- <div class="sideBottom">PERSONAL EDITION · V4.5<br>本地数据 · 无需注册 · 无需服务器</div>
+ <button class="sideLink" data-page="expenses"><span class="ico">＄</span>个人花销</button>
+ <div class="sideBottom">PERSONAL EDITION · V4.7<br>本地数据 · 无需注册 · 无需服务器</div>
 </div></aside>
 <main class="main"><div class="content">
 <section class="page active" id="page-home">
@@ -325,6 +455,20 @@ body{background:var(--bg);color:var(--ink)}
   </details>
  </section>
 
+ <details class="panel homeFlightSettings" id="homeFlightSettings">
+ <summary><span>✈ 抵澳航班设置</span><small>填写机票信息，自动更新首页倒计时</small><b>＋</b></summary>
+ <div class="homeSettingsBody">  <form id="flightForm"><div class="formGrid">
+   <div class="field"><label>出发机场代码</label><input id="fFromCode" placeholder="例如 PVG" maxlength="5"></div><div class="field"><label>出发机场名称</label><input id="fFromName" placeholder="例如 Shanghai Pudong"></div>
+   <div class="field"><label>抵达机场代码</label><input id="fToCode" value="SYD" maxlength="5"></div><div class="field"><label>抵达机场名称</label><input id="fToName" value="Sydney · Kingsford Smith"></div>
+   <div class="field"><label>航空公司</label><input id="fAirline" placeholder="例如 China Eastern"></div><div class="field"><label>航班号</label><input id="fFlightNo" placeholder="例如 MU561"></div>
+   <div class="field"><label>抵达日期（悉尼当地）</label><input id="fDate" type="date" value="2027-01-20" required></div><div class="field"><label>抵达时间（悉尼当地）</label><input id="fTime" type="time" value="12:00" required></div>
+  </div><div class="formActions"><button class="primary" type="submit">保存航班与倒计时</button><button class="secondary" type="button" id="resetFlight">使用个人资料中的抵澳时间</button></div></form>
+  <div class="notice">当前版本不查询航班实时状态；航班信息为手动录入。航班号、预计抵达时间请以航空公司确认单为准。</div>
+
+  <div class="notice">航班信息由你手动录入，本版本不读取航空公司实时状态。抵达日期与时间请以航空公司确认单为准。</div>
+ </div>
+</details>
+
  <div class="dashboardLayout">
   <main class="dashboardMain">
    <section class="panel dashboardCalendar" id="homeCalendar">
@@ -336,7 +480,19 @@ body{background:var(--bg);color:var(--ink)}
      <div class="weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div><div class="calendar" id="calendar"></div>
      <div class="legend"><span><i style="background:#4b72d6"></i>学校</span><span><i style="background:#31906e"></i>个人</span><span><i style="background:#dc9c3d"></i>航班</span><span><i style="background:#d66b61"></i>截止日期</span><span><i style="background:#9874c7"></i>自定义</span></div>
      <div class="agenda"><div class="agendaTitle" id="agendaTitle">当天日程</div><div id="agendaList"></div></div>
-     <div class="calendarActions"><button class="secondary" id="newEvent">＋ 添加事件</button><button class="textAction" data-goto="tools">管理全部事件 →</button></div>
+     <div class="calendarActions"><button class="secondary" id="newEvent">＋ 添加事件</button><button class="textAction" id="manageEventsButton" type="button">管理全部事件 →</button></div>
+    <details class="homeEventEditor" id="homeEventEditor">
+ <summary>＋ 添加 / 管理个人事件 <small>添加后同步到首页事件日历和近期安排</small><b>＋</b></summary>
+ <div class="homeSettingsBody">  <form id="eventForm"><div class="formGrid">
+   <div class="field"><label>事件名称</label><input id="eTitle" required placeholder="例如：购买机票 / 语言班考试"></div>
+   <div class="field"><label>事件分类</label><select id="eCategory"><option value="personal">个人生活</option><option value="school">学校与课程</option><option value="flight">航班与旅行</option><option value="deadline">重要截止日期</option><option value="custom">自定义</option></select></div>
+   <div class="field"><label>日期</label><input id="eDate" type="date" required></div><div class="field"><label>时间（可选）</label><input id="eTime" type="time"></div>
+   <div class="field full"><label>备注（可选）</label><textarea id="eNote" placeholder="地点、准备事项或其他信息"></textarea></div>
+  </div><div class="formActions"><button class="primary" type="submit">添加到日历</button></div></form>
+  <div id="manageEvents" style="margin-top:12px"></div>
+ </div>
+</details>
+
     </div>
     <div id="timetablePane" hidden>
      <div class="timetableHead"><div><strong>每周课程安排</strong><small>固定每周重复 · 课程时间以学校课表为准</small></div><button class="secondary" id="todayTimetable">本周</button></div>
@@ -363,8 +519,15 @@ body{background:var(--bg);color:var(--ink)}
    </section>
   </main>
   <aside class="dashboardSide">
-   <section class="panel dashWidget"><div class="panelHead"><div><h2>近期安排</h2><p>接下来值得留意的事情</p></div><button class="textAction" data-goto="tools">全部 →</button></div><div id="dashboardUpcoming"></div></section>
-   <section class="panel dashWidget"><div class="panelHead"><div><h2>本月花销</h2><p>固定支出与日常消费</p></div><button class="textAction" data-goto="expenses">明细 →</button></div><div class="spendingMini"><div><small>固定支出月均</small><strong id="dashFixedSpend">A$0</strong></div><div><small>本月日常消费</small><strong id="dashVariableSpend">A$0</strong></div><div class="spendingTotal"><small>本月预计总支出</small><strong id="dashTotalSpend">A$0</strong></div></div></section>
+   <section class="panel dashWidget"><div class="panelHead"><div><h2>近期安排</h2><p>接下来值得留意的事情</p></div><button class="textAction" id="showAllEvents" type="button">全部 →</button></div><div id="dashboardUpcoming"></div></section>
+   <section class="panel dashWidget"><div class="panelHead"><div><h2>本月花销</h2><p>固定支出与日常消费</p></div><button class="textAction" data-goto="expenses">明细 →</button></div><div class="spendingMini"><div><small>固定支出月均</small><strong id="dashFixedSpend">A$0</strong></div><div><small>本月日常消费</small><strong id="dashVariableSpend">A$0</strong></div><div class="spendingTotal"><small>本月预计总支出</small><strong id="dashTotalSpend">A$0</strong></div></div>
+    <form id="quickExpenseForm" class="quickExpenseForm">
+     <input id="quickSpendName" placeholder="消费项目，例如：Coles 采购" required aria-label="消费项目">
+     <input id="quickSpendAmount" type="number" min="0" step="0.01" placeholder="金额 A$" required aria-label="金额">
+     <select id="quickSpendCategory" aria-label="消费类别"><option>食品杂货</option><option>餐饮</option><option>交通</option><option>购物</option><option>学习</option><option>娱乐</option><option>医疗</option><option>其他</option></select>
+     <button class="primary" type="submit">＋ 快捷记账</button>
+     <small>按今天日期记录 · 详细账单可在个人花销中管理</small>
+    </form></section>
    <section class="panel dashWidget"><div class="panelHead"><div><h2>快捷入口</h2><p>常用模块一键抵达</p></div></div><div class="dashboardShortcuts">
     <button data-goto="arrival"><span>✈</span>来澳准备</button><button data-goto="campus"><span>🎓</span>院校校园</button><button data-goto="housing"><span>⌂</span>租房中心</button><button data-goto="work"><span>▣</span>兼职求职</button><button data-goto="shopping"><span>◇</span>购物信息</button><button data-goto="expenses"><span>＄</span>个人花销</button>
    </div></section>
@@ -408,8 +571,26 @@ body{background:var(--bg);color:var(--ink)}
    <details class="guideCard"><summary><span class="guideIcon">🩺</span><span class="guideSummary"><strong>OSHC 医疗保险与就医准备</strong><small>保险生效日期、电子保险卡、理赔资料和长期就医指南入口</small></span><span class="guideChevron">＋</span></summary>
     <div class="guideBody"><p>抵澳后先把保险资料整理好；日常生病时去哪里看、OSHC 哪些项目能报销，请查看独立的「就医与保险」指南。</p><ul><li>确认 OSHC 生效日覆盖签证要求期间，姓名和保单信息准确。</li><li>下载电子保险卡，保存会员号、理赔入口、24 小时紧急联系电话。</li><li>查清保险公司合作 GP / direct billing 网络，以及看诊是否需要先垫付。</li><li>把常用药物、过敏史、既往病史和紧急联系人整理好，必要时准备英文版本。</li></ul><div class="guideLinks"><a href="https://www.health.gov.au/resources/publications/overseas-student-health-cover-oshc-fact-sheet?language=en" target="_blank" rel="noopener">澳洲政府 OSHC 最新说明 ↗</a><button type="button" class="secondary" data-goto="health">打开就医与保险指南 →</button></div></div>
    </details>
-   <details class="guideCard"><summary><span class="guideIcon">📄</span><span class="guideSummary"><strong>重要文件与入境准备</strong><small>护照、签证、CoE、保险、海关申报和电子备份</small></span><span class="guideChevron">＋</span></summary>
-    <div class="guideBody"><p>把护照、签证批准信、CoE、学校录取文件、OSHC 保单、租房合同、接机和住宿地址分别保存到手机离线文件、云端和纸质文件夹。</p><ul><li>入境时按要求申报食品、植物、动物制品及其他受限制物品。</li><li>不确定是否允许入境的食品，主动向边境工作人员申报。</li><li>给家人留一份航班、住址、紧急联系人和保险信息。</li></ul><div class="guideLinks"><a href="https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in" target="_blank" rel="noopener">澳洲边境入境物品指南 ↗</a><a href="https://www.homeaffairs.gov.au/" target="_blank" rel="noopener">Department of Home Affairs ↗</a></div></div>
+   <details class="guideCard" id="arrivalDocumentsCard"><summary><span class="guideIcon">📄</span><span class="guideSummary"><strong>重要文件与入境准备</strong><small>可逐项勾选：护照、签证、CoE、保险、住宿、海关申报和备份</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p>建议把重要文件分成「随身可出示」「手机离线保存」「云端备份」三份。勾选状态会保存在当前浏览器，出发前可以回来逐项检查。</p>
+     <div class="arrivalDocProgress"><span id="arrivalDocCount">0 / 12 项已完成</span><div class="progress"><span id="arrivalDocProgressBar"></span></div></div>
+     <div class="arrivalDocChecklist" id="arrivalDocChecklist">
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="passport"><span><b>护照</b><small>检查有效期、签名页和护照信息；随身携带原件。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="visa"><span><b>学生签证批准信 / Visa Grant Notice</b><small>保存 PDF 离线副本，核对姓名、签证类别和有效条件。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="coe"><span><b>CoE、Offer 与入学文件</b><small>准备 CoE、录取通知、缴费或注册相关证明。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="oshc"><span><b>OSHC 医疗保险资料</b><small>保险凭证、会员号、生效日期、紧急联系电话。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="flight"><span><b>机票行程与航班确认单</b><small>航空公司、航班号、抵达航站楼、行李额度和转机信息。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="address"><span><b>抵澳住宿地址与联系人</b><small>完整英文地址、入住方式、房东/公寓联系人和备用电话。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="transfer"><span><b>机场到住处的交通方案</b><small>路线、费用估算、夜间备用方案及网约车上车点。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="medical"><span><b>处方药与医疗证明（如适用）</b><small>药品原包装、处方或医生证明；入境携带限制需提前核对。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="contacts"><span><b>紧急联系人与重要电话</b><small>家人、住宿联系人、学校、保险公司及澳洲紧急电话。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="declaration"><span><b>入境申报准备</b><small>按航班发放的入境申报卡如实填写；不确定的物品主动申报。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="offline"><span><b>手机离线文件夹</b><small>在没有网络时仍能打开签证、CoE、保险、机票和住宿资料。</small></span></label>
+      <label class="arrivalDocItem"><input type="checkbox" data-arrival-doc="backup"><span><b>云端备份与纸质副本</b><small>云端备份一份，关键文件打印一份；不要只保存在单一设备。</small></span></label>
+     </div>
+     <div class="guideLinks"><a href="https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in" target="_blank" rel="noopener">澳洲边境入境物品指南 ↗</a><a href="https://www.homeaffairs.gov.au/" target="_blank" rel="noopener">Department of Home Affairs ↗</a><a href="https://www.abf.gov.au/entering-and-leaving-australia/entering-australia" target="_blank" rel="noopener">入境澳洲官方说明 ↗</a></div>
+    </div>
    </details>
   </div>
  </div>
@@ -501,7 +682,7 @@ body{background:var(--bg);color:var(--ink)}
 </section>
 
 <section class="page" id="page-work">
- <div class="pageIntro"><div class="eyebrow">WORK & CAREER</div><h1>兼职求职</h1><p>把工作权利、工资核验和求职渠道整理成三个互不重复的模块。</p></div>
+ <div class="pageIntro"><div class="eyebrow">WORK & CAREER</div><h1>兼职求职</h1><p>先确认签证和劳动权益，再用线上平台、校内资源、雇主官网和线下走访寻找适合自己的兼职。</p></div>
  <div class="workCoreGrid">
   <article class="workCoreCard">
    <div class="workCoreIcon">🛂</div><span class="tag blue">先确认资格</span><h2>学生签证工作条件</h2>
@@ -515,11 +696,111 @@ body{background:var(--bg);color:var(--ink)}
    <ul><li>确认岗位属于 casual、part-time 还是 full-time。</li><li>核对适用 Award、基础时薪和 penalty rates。</li><li>每次发薪检查 payslip、税款扣缴和 super 信息。</li><li>保留排班、打卡、工资单与银行入账记录。</li><li>警惕长时间无薪试工、培训不付薪、招聘费或扣押护照。</li></ul>
    <div class="guideLinks"><a href="https://www.fairwork.gov.au/" target="_blank" rel="noopener">Fair Work Ombudsman ↗</a><a href="https://www.fairwork.gov.au/pay-and-wages/minimum-wages" target="_blank" rel="noopener">最低工资 ↗</a><a href="https://calculate.fairwork.gov.au/" target="_blank" rel="noopener">Pay Calculator ↗</a><a href="https://www.fairwork.gov.au/pay-and-wages/paying-wages/pay-slips" target="_blank" rel="noopener">Payslip 规则 ↗</a></div>
   </article>
-  <article class="workCoreCard">
-   <div class="workCoreIcon">🔎</div><span class="tag">寻找机会</span><h2>招聘渠道与申请准备</h2>
-   <p>先建立一份清晰的英文简历，再按岗位调整经历和技能。校内职位、招聘平台和线下门店可以并行寻找。</p>
-   <ul><li>校内：学校 Careers、Student Job Board、招聘会和学院邮件。</li><li>校外：按 suburb、casual、part-time 和岗位关键词筛选。</li><li>投递前核实雇主、工作地点、薪资范围和工作内容。</li><li>面试准备简短自我介绍、可工作时间和相关经历。</li></ul>
-   <div class="guideLinks"><a href="https://www.unsw.edu.au/student/support/career" target="_blank" rel="noopener">UNSW Careers ↗</a><a href="https://www.seek.com.au/" target="_blank" rel="noopener">SEEK ↗</a><a href="https://au.indeed.com/" target="_blank" rel="noopener">Indeed ↗</a><a href="https://au.jora.com/" target="_blank" rel="noopener">Jora ↗</a></div>
+  <article class="workCoreCard workChannelsCard">
+   <div class="workCoreIcon">🔎</div><span class="tag">寻找机会 · 实用资源库</span><h2>招聘渠道与申请准备</h2>
+   <p>不要只盯着一个招聘网站。澳洲兼职可以同时走「招聘平台投递 + 学校内部机会 + 雇主官网 + 线下直接询问」四条路线。下面按使用场景整理，找到适合自己的渠道后再集中申请。</p>
+
+   <div class="workChannelIntro">
+    <strong>先从这四条路线开始</strong>
+    <span>想尽快找 casual / part-time：先刷 SEEK、Indeed、Jora；想找校内工作：先看 UNSW Jobs on Campus 和 Arc；想进超市/零售：直接看雇主官网；想做活动、餐饮、临时班：注册 Sidekicker 等 casual staffing 平台。</span>
+   </div>
+
+   <div class="workChannelGrid">
+    <section class="workChannelPanel">
+     <div class="workChannelHeading"><span>01</span><div><h3>综合招聘网站</h3><small>最适合日常持续搜索和设置提醒</small></div></div>
+     <div class="workResourceList">
+      <div><a href="https://www.seek.com.au/" target="_blank" rel="noopener">SEEK ↗</a><p>澳洲主流招聘平台。适合零售、餐饮、客服、仓储、行政以及专业岗位；筛选 Casual、Part-time、Temporary 和距离。</p></div>
+      <div><a href="https://au.indeed.com/" target="_blank" rel="noopener">Indeed Australia ↗</a><p>职位覆盖面广，也会聚合雇主官网招聘。适合用岗位关键词和 suburb 组合搜索，并留意广告发布日期。</p></div>
+      <div><a href="https://au.jora.com/" target="_blank" rel="noopener">Jora ↗</a><p>适合补充搜索本地兼职、入门岗位和小型雇主招聘；与 SEEK / Indeed 交叉检查，避免重复投递。</p></div>
+      <div><a href="https://www.workforceaustralia.gov.au/individuals/jobs/search" target="_blank" rel="noopener">Workforce Australia ↗</a><p>澳洲政府求职平台，可按地点、行业、Casual、Part-time 和职位类型筛选，也可建立求职资料和提醒。</p></div>
+      <div><a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener">LinkedIn Jobs ↗</a><p>更适合客服、行政、市场、实习和专业方向；同时完善个人资料、关注公司并建立职业联系。</p></div>
+      <div><a href="https://au.prosple.com/" target="_blank" rel="noopener">Prosple ↗</a>　<a href="https://au.gradconnection.com/" target="_blank" rel="noopener">GradConnection ↗</a><p>偏向实习、Graduate Program 和专业发展岗位，不是找餐厅短班的首选。</p></div>
+     </div>
+     <div class="workTip">搜索小技巧：职位类型选 Casual / Part-time；地点可填 Sydney NSW，再加 suburb，例如 Kensington、Kingsford、Randwick、Zetland；把搜索结果按 Date Listed 排序并设置 Job Alert。</div>
+    </section>
+
+    <section class="workChannelPanel">
+     <div class="workChannelHeading"><span>02</span><div><h3>UNSW 校内机会</h3><small>离学校近，也更容易兼顾课程</small></div></div>
+     <div class="workResourceList">
+      <div><a href="https://www.unsw.edu.au/employability/resources/job-opportunities" target="_blank" rel="noopener">UNSW Job Opportunities ↗</a><p>查看兼职、实习、Graduate Program 和雇主发布的机会；页面也汇总 SEEK、Indeed、LinkedIn、Prosple 等延伸入口。</p></div>
+      <div><a href="https://www.unsw.edu.au/employability/resources/jobs-on-campus" target="_blank" rel="noopener">Jobs on Campus ↗</a><p>UNSW 在校学生专属人才库，可接触校园内带薪岗位，例如学生大使、活动支持、行政和专业类工作。申请前需完成指定 Employability 活动、简历与求职信模块，并通过 SMART Resume 等准备步骤。</p></div>
+      <div><a href="https://www.arc.unsw.edu.au/about/jobs" target="_blank" rel="noopener">Arc UNSW Jobs ↗</a><p>查看 Arc 自身的 casual / junior / part-time 工作、外部机会和志愿活动；适合关注学生社群、活动和校园生活相关岗位。</p></div>
+      <div><a href="https://www.unsw.edu.au/employability" target="_blank" rel="noopener">UNSW Employability ↗</a><p>查看职业咨询、简历指导、面试准备、招聘活动和职业技能资源；可以预约线上或线下支持。</p></div>
+     </div>
+     <div class="workTip">建议：入学后先完成学校职业服务的简历检查，再订阅 Jobs on Campus 和 Arc 的机会。校内岗位不一定天天有空缺，适合长期关注。</div>
+    </section>
+
+    <section class="workChannelPanel">
+     <div class="workChannelHeading"><span>03</span><div><h3>雇主官网直接申请</h3><small>零售、超市、餐饮连锁通常会有自己的 Careers 页面</small></div></div>
+     <div class="workEmployerGrid">
+      <a href="https://colescareers.com.au/au/en/search-results" target="_blank" rel="noopener"><b>Coles Careers ↗</b><small>超市门店、收银、补货、面包房、配送和仓储岗位</small></a>
+      <a href="https://www.wowcareers.com.au/" target="_blank" rel="noopener"><b>Woolworths Careers ↗</b><small>门店团队、夜间补货、线上订单拣货、配送和仓储</small></a>
+      <a href="https://www.aldicareers.com.au/" target="_blank" rel="noopener"><b>ALDI Careers ↗</b><small>门店助理、收银补货、仓库及物流岗位</small></a>
+      <a href="https://jobs.kmart.com.au/" target="_blank" rel="noopener"><b>Kmart Careers ↗</b><small>零售团队成员、门店运营和仓储岗位</small></a>
+      <a href="https://www.bunningscareers.com.au/home" target="_blank" rel="noopener"><b>Bunnings Careers ↗</b><small>门店团队、客户服务、仓储和园艺相关岗位</small></a>
+      <a href="https://careers.mcdonalds.com.au/" target="_blank" rel="noopener"><b>McDonald's Careers ↗</b><small>餐厅 Crew、厨房、前台和管理培训岗位</small></a>
+     </div>
+     <div class="workTip">为什么要看官网？部分雇主先让你登记 Expression of Interest / Talent Pool，再根据门店空缺联系你；官网申请记录也比把简历只交给门店更容易追踪。</div>
+    </section>
+
+    <section class="workChannelPanel">
+     <div class="workChannelHeading"><span>04</span><div><h3>临时班、活动和招聘中介</h3><small>适合排班灵活、希望积累澳洲本地经验的人</small></div></div>
+     <div class="workResourceList">
+      <div><a href="https://sidekicker.com/worker" target="_blank" rel="noopener">Sidekicker · Find Work ↗</a><p>通过平台申请 casual shifts，岗位涉及餐饮、酒店、活动展会、促销、仓储物流、客服和部分零售。先注册、完成资料和评估，获批后在 App 查看可申请班次。</p></div>
+      <div><a href="https://www.hays.com.au/" target="_blank" rel="noopener">Hays ↗</a><p>综合招聘机构，覆盖办公室支持、客服、财务、技术、工程及其他专业岗位；可按领域注册候选人资料。</p></div>
+      <div><a href="https://www.randstad.com.au/" target="_blank" rel="noopener">Randstad ↗</a><p>涵盖行政、客服、物流、制造、教育及专业岗位；适合寻找临时、合同或长期职位。</p></div>
+      <div><a href="https://www.adecco.com/en-au" target="_blank" rel="noopener">Adecco ↗</a><p>可关注临时用工、活动、仓储、客服和办公室支持类机会；不同城市和时期的岗位会变化。</p></div>
+     </div>
+     <div class="workTip">联系中介时：使用官网公布的联系方式，说明你想找的岗位类型、可工作的日期和地区；不要向中介支付“保证录用费”或把银行密码、验证码交给任何人。</div>
+    </section>
+
+    <section class="workChannelPanel workOfflinePanel">
+     <div class="workChannelHeading"><span>05</span><div><h3>线下找工作：直接走进店里问</h3><small>小餐馆、咖啡店、零售门店和社区小生意值得主动联系</small></div></div>
+     <div class="workOfflineSteps">
+      <div><b>① 先选区域</b><p>从住处和学校周边开始，沿着商业街、购物中心、餐饮街区走访。先列出咖啡店、餐厅、奶茶店、超市、零售店、健身房和活动场馆。</p></div>
+      <div><b>② 看招聘信号</b><p>留意门窗上的 “Staff Wanted / Now Hiring / Help Wanted” 标识、店铺社交账号、商场公告板和社区中心招聘信息。</p></div>
+      <div><b>③ 带好简历</b><p>准备几份干净的英文简历，第一页突出联系方式、可工作时间、语言能力、相关技能和经验；如果店铺要求线上申请，就按官网流程提交。</p></div>
+      <div><b>④ 找对时间问经理</b><p>避开午餐、晚餐和周末高峰。礼貌询问店长或值班经理是否接受兼职申请，简短介绍自己并留下简历；不要打断忙碌的员工。</p></div>
+      <div><b>⑤ 记下来再跟进</b><p>记录店名、地址、询问日期、联系人和答复；约一周后可礼貌跟进一次，不要频繁催问。</p></div>
+     </div>
+     <div class="workPhrase"><small>可以这样开口</small><p>“Hi, I'm looking for casual or part-time work. Are you currently hiring? I have my resume with me, and I'm happy to apply online if that's your preferred process.”</p></div>
+     <div class="workTip">线下渠道不等于随便把简历塞给店员。澳洲政府的求职建议也包括主动联系本地企业、询问是否有空缺；大型连锁门店通常仍要求从官网申请。</div>
+    </section>
+
+    <section class="workChannelPanel">
+     <div class="workChannelHeading"><span>06</span><div><h3>简历、申请材料和面试准备</h3><small>准备好一套基础材料，再按不同岗位快速调整</small></div></div>
+     <div class="workPrepGrid">
+      <div><b>英文简历 Resume</b><ul><li>通常控制在 1–2 页，清楚写姓名、手机、邮箱和所在 suburb。</li><li>把相关经验、技能、语言、可工作时间放在容易看到的位置。</li><li>没有正式工作经验，也可写课程项目、社团、志愿服务、团队合作和客户服务经历。</li><li>针对每份岗位调整关键词，不要一份简历海投所有工作。</li><li>一般不需要放照片、出生日期、护照号码或 TFN。</li></ul></div>
+      <div><b>Cover Letter / 简短申请留言</b><ul><li>说明申请哪个职位、为什么适合、什么时候可以开始。</li><li>突出 2–3 个与岗位直接相关的技能，例如沟通、守时、团队合作和服务意识。</li><li>在线申请的文字框可以写简短版本，不必每次写很长的信。</li></ul></div>
+      <div><b>Availability 可工作时间</b><ul><li>明确写周一至周日哪些时段可以上班，以及是否能做早班、晚班或周末。</li><li>开学后按真实课表更新，不要为了获得面试承诺无法做到的排班。</li><li>如果时间会随学期变化，说明可调整的时间范围。</li></ul></div>
+      <div><b>References 推荐人</b><ul><li>可使用前雇主、导师、社团负责人或志愿服务负责人。</li><li>提前征得对方同意，并确认姓名、职位、邮箱和电话可以提供。</li><li>没有推荐人时，可先说明 “References available on request”。</li></ul></div>
+      <div><b>面试常见问题</b><ul><li>Tell me about yourself：用 30–60 秒介绍自己。</li><li>Why do you want to work here：说明对岗位和门店的了解。</li><li>What is your availability：清楚说出能工作的时间。</li><li>How would you handle a difficult customer：用具体例子说明处理方式。</li></ul></div>
+      <div><b>可能需要的证书</b><ul><li>在 NSW 销售、供应或服务酒类，通常需要完成获批的 RSA 培训。</li><li>特定岗位可能要求急救、食品安全、Working With Children Check 或其他资格；先看招聘广告再决定是否花钱考证。</li></ul><a href="https://www.nsw.gov.au/business-and-economy/liquor-and-gaming/training/rsa" target="_blank" rel="noopener">NSW RSA 官方说明 ↗</a></div>
+     </div>
+    </section>
+
+    <section class="workChannelPanel workSearchPlan">
+     <div class="workChannelHeading"><span>07</span><div><h3>适合新手搜索的岗位关键词</h3><small>英文关键词可以直接复制到 SEEK / Indeed / Jora</small></div></div>
+     <div class="workKeywordGroups">
+      <div><b>零售与超市</b><span>Retail Assistant · Store Team Member · Sales Assistant · Checkout Operator · Stock Replenishment</span></div>
+      <div><b>餐饮与咖啡</b><span>Wait Staff · Food & Beverage Attendant · Barista · Kitchen Hand · Cafe All-Rounder</span></div>
+      <div><b>活动与临时班</b><span>Event Staff · Catering Assistant · Usher · Ticketing · Brand Ambassador · Promotional Staff</span></div>
+      <div><b>仓储与后勤</b><span>Pick Packer · Warehouse Assistant · Storeperson · Cleaner · Delivery Assistant</span></div>
+      <div><b>办公室与客服</b><span>Receptionist · Admin Assistant · Customer Service · Data Entry · Call Centre</span></div>
+      <div><b>筛选词</b><span>Casual · Part-time · Entry Level · No Experience · Weekend · Evening · Immediate Start</span></div>
+     </div>
+    </section>
+   </div>
+
+   <div class="workWeeklyPlan">
+    <strong>一周求职行动建议</strong>
+    <div><span>周一</span>更新简历，检查学校和雇主官网的新职位。</div>
+    <div><span>周二–周三</span>在 SEEK / Indeed / Jora 投递匹配的岗位，并设置提醒。</div>
+    <div><span>周四</span>走访住处或校园附近几家门店，询问是否接受申请。</div>
+    <div><span>周五</span>跟进已投递申请，练习面试问题，更新申请记录。</div>
+    <small>可以用简单表格记录：公司 / 岗位 / 申请日期 / 联系方式 / 面试日期 / 跟进结果。重点是持续、针对性地申请，而不是只追求投递数量。</small>
+   </div>
+   <div class="workSafetyNote"><b>求职安全提醒</b> 不要为获得工作先交押金、培训费或“保证录用费”；不要把网银密码、验证码或加密货币账户交给陌生人。即使招聘信息出现在知名网站，也要核实雇主和招聘联系人。<a href="https://www.scamwatch.gov.au/types-of-scams/jobs-and-employment-scams" target="_blank" rel="noopener">Scamwatch：招聘诈骗识别 ↗</a></div>
   </article>
  </div>
  <div class="notice">政策说明按目前 Home Affairs 官方信息整理。学生签证工作条件可能因签证类别、课程状态和个人签证条款不同而变化；开始工作前务必查询 VEVO。<a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/work-rights-and-exploitation/work-restrictions" target="_blank" rel="noopener">官方工作限制说明 ↗</a></div>
@@ -533,6 +814,22 @@ body{background:var(--bg);color:var(--ink)}
   <article class="shoppingQuickCard"><span>🪑</span><strong>家具家居</strong><small>Kmart / BIG W 买小件；IKEA 买家具；二手平台找大件</small></article>
   <article class="shoppingQuickCard"><span>👟</span><strong>衣服鞋履</strong><small>DFO / Birkenhead Point 找品牌折扣和运动鞋</small></article>
   <article class="shoppingQuickCard"><span>💻</span><strong>数码学习</strong><small>Officeworks 看文具；JB Hi-Fi 比电子产品型号</small></article>
+ </div>
+
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>澳洲年度购物节日历</h2><p>提前安排大件采购，活动日期分为已公布与每年常见但待确认两类。</p></div><span class="tag">SALE CALENDAR</span></div>
+  <div class="saleCalendarGrid">
+   <article class="saleEventCard saleHot"><div class="saleDate">27–30 NOV 2026</div><span class="tag warn">近期活动</span><h3>Black Friday 黑五 + Cyber Monday</h3><p>电视、电脑、耳机、手机、家电、服饰和家具。黑五 11 月 27 日，Cyber Monday 11 月 30 日。</p><small>购买建议：提前记录目标型号与平时价格，不要只看折扣百分比。</small></article>
+   <article class="saleEventCard"><div class="saleDate">26 JAN · 每年</div><span class="tag">1 月</span><h3>Australia Day / Stocktake Clearance</h3><p>年初库存清仓、夏季服饰、家居用品和部分电子产品；同时关注 Back to School 返校季。</p><small>适合：开学文具、床品、夏季衣物和上一代型号。</small></article>
+   <article class="saleEventCard"><div class="saleDate">MAR · 日期待公布</div><span class="tag">3 月</span><h3>Afterpay Day / Click Frenzy</h3><p>服饰、美妆、家居、生活方式和部分电子产品可能参加。2027 具体活动日期尚待主办方公布。</p><small>适合：非急需的服饰、护肤和家居小件；先比较现金总价。</small></article>
+   <article class="saleEventCard"><div class="saleDate">MAY–JUN · 每年</div><span class="tag">5–6 月</span><h3>EOFY 年终财务年度促销</h3><p>澳洲财年在 6 月 30 日结束，许多零售商会在 5–6 月开展 EOFY 活动。</p><small>适合：电脑、显示器、办公设备、家电和家具；2027 各店活动日期以官方公告为准。</small></article>
+   <article class="saleEventCard"><div class="saleDate">JUL · 日期待公布</div><span class="tag">7 月</span><h3>Amazon Prime Day</h3><p>Amazon 会员专属活动，常见品类包括 Amazon 设备、数码产品、小家电和日用品。</p><small>适合：提前加入愿望清单；需比较会员费、配送和其他零售商同款价格。</small></article>
+   <article class="saleEventCard"><div class="saleDate">AUG · 日期待公布</div><span class="tag">8 月</span><h3>Afterpay Day · 年中场</h3><p>部分品牌会参加第二轮促销，具体日期每年变化。</p><small>适合：服装、鞋履、家居和美妆；分期付款不等于省钱。</small></article>
+   <article class="saleEventCard"><div class="saleDate">11 NOV · 每年</div><span class="tag">11 月</span><h3>Singles' Day · 11.11</h3><p>部分线上零售商和跨境平台会推出服饰、美妆、配件与数码商品活动。</p><small>适合：比价小件和已有明确型号的商品，留意国际配送与退货成本。</small></article>
+   <article class="saleEventCard"><div class="saleDate">26–29 NOV 2027</div><span class="tag blue">2027 日期可推算</span><h3>Black Friday + Cyber Monday</h3><p>2027 黑五为 11 月 26 日，Cyber Monday 为 11 月 29 日。零售商提前促销的时间可能不同。</p><small>适合：大件电子产品、家电、家具和品牌折扣。</small></article>
+   <article class="saleEventCard"><div class="saleDate">26 DEC · 每年</div><span class="tag">12 月</span><h3>Boxing Day 节礼日促销</h3><p>圣诞后清仓，常见服饰、床品、家居、家具、家电和上一代电子产品。</p><small>适合：不赶时间的家居采购和季末清仓；先确认配送与退换条件。</small></article>
+  </div>
+  <div class="notice">已核对的 2026 黑五日期为 11 月 27 日、Cyber Monday 为 11 月 30 日；2027 黑五按「11 月最后一个星期五」计算为 11 月 26 日。Click Frenzy、Afterpay Day、Prime Day 等活动的 2027 具体日期尚未全部公布，页面不提前编造日期。<a href="https://www.clickfrenzy.com.au/calendar" target="_blank" rel="noopener">查看 Click Frenzy 官方活动日历 ↗</a></div>
  </div>
 
  <div class="sectionBlock">
@@ -613,6 +910,27 @@ body{background:var(--bg);color:var(--ink)}
       <article class="shoppingStore"><span class="tag warn">海港旁 Outlet</span><h3>Birkenhead Point</h3><p>品牌服饰、鞋履、运动和家居 Outlet，适合安排半天集中逛店。</p><a href="https://www.birkenheadpoint.com.au/visitor" target="_blank" rel="noopener">Birkenhead Point ↗</a></article>
       <article class="shoppingStore"><span class="tag">西南区 Outlet</span><h3>Fashion Spree Liverpool</h3><p>服饰、运动鞋、配饰和家居 Outlet，可作为悉尼西南区的折扣购物点。</p><a href="https://www.fashionspree.com.au/" target="_blank" rel="noopener">Fashion Spree ↗</a></article>
      </div>
+    </div>
+   </details>
+
+   <details class="guideCard">
+    <summary><span class="guideIcon">♻️</span><span class="guideSummary"><strong>二手、免费领取与物品交换</strong><small>床、床垫、书桌、椅子、厨具、家电、衣物；也可以免费送出或交换</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="shoppingLead">刚抵澳时，床架、书桌、椅子、餐具和小家电不一定要全部买新。建议先看学校内部免费资源，再看本地二手平台和 Op Shop。大件优先考虑自提距离、搬运方式和卫生安全。</p>
+     <div class="shoppingStoreGrid">
+      <article class="shoppingStore"><span class="tag blue">UNSW 校园免费 / 低价</span><h3>Arc Second Life Hub</h3><p>UNSW 校园内由学生与教职员工捐赠的二手物品空间，可能有文具、家居小物、小型电器、厨房用品和配件；库存会变化，部分免费、部分低价。</p><small>适合：开学用品、厨房基础物件、收纳和小家电。到访前先查看开放时间和当前可领物品。</small><a href="https://www.arc.unsw.edu.au/savers/second-life-hub" target="_blank" rel="noopener">Second Life Hub 官方介绍 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">校园环保资源</span><h3>UNSW Reuse / Sustainability</h3><p>UNSW 可持续发展部门介绍校园再利用项目和 Second Life Hub；部分家具再利用项目面向校内部门，不等于学生可以直接领取所有办公室家具。</p><small>适合：查看校园可持续项目、学生可参与的捐赠与再利用机会。</small><a href="https://www.unsw.edu.au/estate/sustainability/take-action/recycle" target="_blank" rel="noopener">UNSW Recycle & Reuse ↗</a></article>
+      <article class="shoppingStore"><span class="tag warn">免费家具 / 家居</span><h3>Gumtree Freebies</h3><p>可筛选免费物品或搜索 free bed、free desk、free sofa、free fridge 等关键词；悉尼各区都有不同自提地点。</p><small>适合：床架、书桌、椅子、沙发和家用物品；确认是否需要拆卸、搬运和多人协助。</small><a href="https://www.gumtree.com.au/s-sydney/free/" target="_blank" rel="noopener">悉尼 Gumtree 免费物品 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">二手买卖</span><h3>Facebook Marketplace</h3><p>本地二手家具、床架、桌椅、家电和搬家清仓非常常见。可以按 suburb、距离和价格筛选。</p><small>搜索：bed frame、mattress、desk、chair、fridge、washing machine、moving sale。</small><a href="https://www.facebook.com/marketplace/" target="_blank" rel="noopener">打开 Marketplace ↗</a></article>
+      <article class="shoppingStore"><span class="tag">免费送 / 交换</span><h3>Buy Nothing / Pay It Forward</h3><p>社区成员发布免费赠送、求物和邻里互助。Facebook 搜索「Buy Nothing + suburb」「Pay It Forward + suburb」「Free Stuff Sydney」。</p><small>适合：厨房用品、收纳、书籍、衣物和小家具；各社区有独立入群规则。</small><a href="https://buynothingproject.org/" target="_blank" rel="noopener">Buy Nothing Project ↗</a>　<a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook 社区搜索 ↗</a></article>
+      <article class="shoppingStore"><span class="tag blue">买卖 / 交换 / 赠送</span><h3>Facebook Buy Swap Sell</h3><p>各个 Sydney suburb 都可能有本地 Buy, Swap & Sell 社区组，可发布二手物品、直接交换、低价转让或免费赠送。</p><small>搜索关键词：Buy Swap Sell + suburb、UNSW Buy Swap Sell、Sydney furniture swap；入群前先读管理员规则。</small><a href="https://www.facebook.com/search/groups/?q=buy%20swap%20sell%20sydney" target="_blank" rel="noopener">查找悉尼交换群组 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">免费交换</span><h3>Freecycle Sydney</h3><p>社区成员免费发布想送出的物品，也可以发布求物信息；不涉及付费买卖，具体取货由双方协商。</p><small>适合：家具、家电、书籍、厨房用品和搬家剩余物品。</small><a href="https://www.freecycle.org/town/SydneyNSW" target="_blank" rel="noopener">Freecycle Sydney ↗</a></article>
+      <article class="shoppingStore"><span class="tag">免费领取 / 社区</span><h3>Trash Nothing</h3><p>加入 Sydney 社区浏览免费物品，也可以把不再需要的物品送给附近的人。</p><small>适合：家具、家居用品、书籍、衣物和日用品；库存取决于社区发布。</small><a href="https://trashnothing.com/free/sydney-new-south-wales-australia-2147714" target="_blank" rel="noopener">Sydney Free Stuff ↗</a></article>
+      <article class="shoppingStore"><span class="tag">二手 / 低价</span><h3>Ziilch</h3><p>澳洲免费物品分享平台，适合找免费家居物品和日用品；先确认悉尼当前地区的活跃度和可取货范围。</p><small>适合：免费家具、小家电、杂物和家庭用品。</small><a href="https://www.ziilch.com.au/" target="_blank" rel="noopener">Ziilch ↗</a></article>
+      <article class="shoppingStore"><span class="tag">实体二手店</span><h3>Vinnies / Salvos Stores</h3><p>慈善二手店可淘衣物、书籍、餐具、装饰和部分小家具；不同门店库存差异很大。</p><small>适合：衣服、书、厨具、装饰品和小件家居；先查附近门店与营业时间。</small><a href="https://www.vinnies.org.au/" target="_blank" rel="noopener">Vinnies ↗</a>　<a href="https://www.salvosstores.com.au/" target="_blank" rel="noopener">Salvos Stores ↗</a></article>
+      <article class="shoppingStore"><span class="tag">实体二手店 / 线上商店</span><h3>The Bower</h3><p>可淘二手家具、厨房用品、书籍、电子产品、自行车和回收材料；也有线上商店与 eBay 商品。</p><small>实体店：Building 34, 142 Addison Road, Marrickville；另有 Summer Hill 店。床垫不接受捐赠，具体可买品类和库存请先查官网。</small><a href="https://bower.org.au/shop/the-bower-stores/" target="_blank" rel="noopener">实体店地点与营业时间 ↗</a>　<a href="https://shop.bower.org.au/" target="_blank" rel="noopener">线上商店 ↗</a></article>
+     </div>
+     <div class="notice">安全提醒：二手床垫和软体家具要仔细检查污渍、异味、霉斑与床虱迹象；电器现场测试并检查电源线。不要为免费物品提前支付「预留费」或陌生运费。大件自提尽量白天、结伴并确认车辆和搬运人手。</div>
     </div>
    </details>
   </div>
@@ -733,6 +1051,18 @@ body{background:var(--bg);color:var(--ink)}
   <div class="notice">其他信息不再重复放在这里：航班和倒计时在首页管理，个人事件在首页日历管理，实际房租和其他支出在「个人花销」记录。</div>
  </div>
  <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>资料摘要</h2><p>当前保存的基本信息</p></div></div><div class="profileGrid" id="profileSummary"></div></div>
+ 
+ <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>数据备份与恢复</h2><p>导出或导入你的个人资料、航班、日历、课表、清单和花销记录。</p></div><span class="tag blue">本地数据</span></div>
+  <div class="formActions"><button class="primary" id="exportData" type="button">导出 JSON 备份</button><label class="secondary" style="cursor:pointer">导入 JSON 备份<input id="importData" type="file" accept="application/json" hidden></label></div>
+  <div class="notice">所有数据保存在当前浏览器，不会自动上传云端。清理浏览器数据、换设备或更换浏览器前，请先导出备份。导入会覆盖当前个人数据。</div>
+ </div>
+ <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>外观与配色</h2><p>选择你喜欢的柔和主题，设置会保存在当前浏览器。</p></div></div>
+  <div class="themeChoices">
+   <button type="button" class="themeChoice" data-theme-choice="warm"><span class="themeSwatches"><i></i><i></i><i></i></span><b>暖阳米杏</b><small>当前经典配色 · 米色、杏色与木色</small></button>
+   <button type="button" class="themeChoice" data-theme-choice="day"><span class="themeSwatches daySwatches"><i></i><i></i><i></i></span><b>明亮日间</b><small>更白、更清爽，适合白天长时间使用</small></button>
+   <button type="button" class="themeChoice" data-theme-choice="night"><span class="themeSwatches nightSwatches"><i></i><i></i><i></i></span><b>柔和夜间</b><small>低亮度灰绿与暖灰，不使用纯黑背景</small></button>
+  </div>
+ </div>
 </section>
 
 <section class="page" id="page-expenses">
@@ -778,32 +1108,7 @@ body{background:var(--bg);color:var(--ink)}
  </div>
 </section>
 
-<section class="page" id="page-tools">
- <div class="pageIntro"><div class="eyebrow">PERSONAL TOOLS</div><h1>个人工具</h1><p>航班设置、日历事件和数据备份。个人花销已独立到「个人花销」模块。</p></div>
- <div class="panel" style="margin-bottom:14px"><div class="panelHead"><div><h2>抵澳航班设置</h2><p>手动填写机票确认单上的信息，倒计时使用悉尼时区。</p></div></div>
-  <form id="flightForm"><div class="formGrid">
-   <div class="field"><label>出发机场代码</label><input id="fFromCode" placeholder="例如 PVG" maxlength="5"></div><div class="field"><label>出发机场名称</label><input id="fFromName" placeholder="例如 Shanghai Pudong"></div>
-   <div class="field"><label>抵达机场代码</label><input id="fToCode" value="SYD" maxlength="5"></div><div class="field"><label>抵达机场名称</label><input id="fToName" value="Sydney · Kingsford Smith"></div>
-   <div class="field"><label>航空公司</label><input id="fAirline" placeholder="例如 China Eastern"></div><div class="field"><label>航班号</label><input id="fFlightNo" placeholder="例如 MU561"></div>
-   <div class="field"><label>抵达日期（悉尼当地）</label><input id="fDate" type="date" value="2027-01-20" required></div><div class="field"><label>抵达时间（悉尼当地）</label><input id="fTime" type="time" value="12:00" required></div>
-  </div><div class="formActions"><button class="primary" type="submit">保存航班与倒计时</button><button class="secondary" type="button" id="resetFlight">使用个人资料中的抵澳时间</button></div></form>
-  <div class="notice">当前版本不查询航班实时状态；航班信息为手动录入。航班号、预计抵达时间请以航空公司确认单为准。</div>
- </div>
- <div class="panel" style="margin-bottom:14px"><div class="panelHead"><div><h2>新建个人事件</h2><p>添加后同步显示在月历、日程和事件列表。</p></div></div>
-  <form id="eventForm"><div class="formGrid">
-   <div class="field"><label>事件名称</label><input id="eTitle" required placeholder="例如：购买机票 / 语言班考试"></div>
-   <div class="field"><label>事件分类</label><select id="eCategory"><option value="personal">个人生活</option><option value="school">学校与课程</option><option value="flight">航班与旅行</option><option value="deadline">重要截止日期</option><option value="custom">自定义</option></select></div>
-   <div class="field"><label>日期</label><input id="eDate" type="date" required></div><div class="field"><label>时间（可选）</label><input id="eTime" type="time"></div>
-   <div class="field full"><label>备注（可选）</label><textarea id="eNote" placeholder="地点、准备事项或其他信息"></textarea></div>
-  </div><div class="formActions"><button class="primary" type="submit">添加到日历</button></div></form>
-  <div id="manageEvents" style="margin-top:12px"></div>
- </div>
- <div class="panel"><div class="panelHead"><div><h2>数据备份与恢复</h2><p>备份个人资料、航班、事件、待办、固定支出和日常消费。</p></div></div>
-  <div class="formActions"><button class="primary" id="exportData" type="button">导出 JSON 备份</button><label class="secondary" style="cursor:pointer">导入 JSON 备份<input id="importData" type="file" accept="application/json" hidden></label></div>
-  <div class="notice">数据保存在当前浏览器。清理浏览器数据、换设备或更换浏览器前，请先导出备份。导入会覆盖当前个人数据。</div>
- </div>
-</section>
-<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.5　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
+<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.7　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
 </div></main>
 </div>
 
@@ -951,17 +1256,19 @@ $('prevMonth').onclick=()=>shiftCalendar(-1);
 $('nextMonth').onclick=()=>shiftCalendar(1);
 $('todayMonth').onclick=()=>{const d=new Date();selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()};
 $('calendarViewMode').onchange=()=>{calendarMode=$('calendarViewMode').value;renderAllCalendars()};
-function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='tools'){fillFlightForm();renderManageEvents()}if(name==='expenses'){renderExpenses();renderDashboardWidgets()}if(name==='campus')updateCampusSchool()}
-document.querySelectorAll('.sideLink').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='expenses'){renderExpenses();renderDashboardWidgets()}if(name==='campus')updateCampusSchool()}
+document.querySelectorAll('.sideLink').forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+document.querySelectorAll('[data-theme-choice]').forEach(b=>b.onclick=()=>applyTheme(b.dataset.themeChoice));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 const sidebar=$('sidebar'),overlay=$('overlay');function openMenu(){sidebar.classList.add('open');overlay.classList.add('show')}function closeMenu(){sidebar.classList.remove('open');overlay.classList.remove('show')}
 $('menuToggle').onclick=()=>{if(innerWidth<=720){sidebar.classList.contains('open')?closeMenu():openMenu()}else sidebar.classList.toggle('closed')};overlay.onclick=closeMenu;
-$('calendarShortcut').onclick=()=>{showPage('home');document.getElementById('homeCalendar').scrollIntoView({behavior:'smooth',block:'start'})};$('addShortcut').onclick=()=>{showPage('tools');$('eTitle').focus()};$('newEvent').onclick=()=>{showPage('tools');$('eDate').value=selectedDate;$('eTitle').focus()};$('editFlight').onclick=()=>showPage('tools');
+function openHomeEventEditor(){showPage('home');const d=$('homeEventEditor');d.open=true;d.scrollIntoView({behavior:'smooth',block:'nearest'});$('eDate').value=selectedDate||ymd(new Date().getFullYear(),new Date().getMonth(),new Date().getDate())}
+$('calendarShortcut').onclick=()=>{showPage('home');document.getElementById('homeCalendar').scrollIntoView({behavior:'smooth',block:'start'})};$('addShortcut').onclick=()=>{showPage('home');openHomeEventEditor()};$('newEvent').onclick=()=>{openHomeEventEditor();$('eDate').value=selectedDate;$('eTitle').focus()};$('manageEventsButton').onclick=()=>{const d=$('homeEventEditor');d.open=true;d.scrollIntoView({behavior:'smooth',block:'nearest'});renderManageEvents()};$('showAllEvents').onclick=()=>{const d=$('homeEventEditor');d.open=true;d.scrollIntoView({behavior:'smooth',block:'nearest'});renderManageEvents()};$('editFlight').onclick=()=>{const d=$('homeFlightSettings');d.open=true;d.scrollIntoView({behavior:'smooth',block:'nearest'});fillFlightForm()};
 function fillFlightForm(){const f=state.flight;for(const [id,key] of Object.entries({fFromCode:'fromCode',fFromName:'fromName',fToCode:'toCode',fToName:'toName',fAirline:'airline',fFlightNo:'flightNo',fDate:'date',fTime:'time'}))$(id).value=f[key]||''}
 $('flightForm').addEventListener('submit',e=>{e.preventDefault();state.flight={fromCode:$('fFromCode').value.trim().toUpperCase(),fromName:$('fFromName').value.trim(),toCode:$('fToCode').value.trim().toUpperCase()||'SYD',toName:$('fToName').value.trim(),airline:$('fAirline').value.trim(),flightNo:$('fFlightNo').value.trim().toUpperCase(),date:$('fDate').value,time:$('fTime').value};save();renderCountdownTargets();updateClock();toast('航班与抵澳时间已保存')});
 $('resetFlight').onclick=()=>{state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00';save();fillFlightForm();updateClock();toast('已使用个人资料中的抵澳时间')};
 $('eDate').value=selectedDate;
-$('eventForm').addEventListener('submit',e=>{e.preventDefault();state.events.push({id:'e-'+Date.now(),title:$('eTitle').value.trim(),date:$('eDate').value,time:$('eTime').value,category:$('eCategory').value,note:$('eNote').value.trim()});save();selectedDate=$('eDate').value;viewYear=+selectedDate.slice(0,4);viewMonth=+selectedDate.slice(5,7)-1;renderAllCalendars();e.target.reset();$('eDate').value=selectedDate;toast('事件已添加到日历')});
-function renderManageEvents(){if(!$('manageEvents'))return;$('manageEvents').innerHTML='<div class="agendaTitle">已保存事件 · '+state.events.length+' 项</div>'+state.events.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>`<div class="eventManage"><div><strong>${escapeHTML(e.title)}</strong><small>${e.date} ${e.time||''} · ${catName(e.category)}</small></div><button class="delete" data-delete="${escapeHTML(e.id)}">删除</button></div>`).join('');$('manageEvents').querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{state.events=state.events.filter(e=>e.id!==b.dataset.delete);save();renderAllCalendars();toast('事件已删除')})}
+$('eventForm').addEventListener('submit',e=>{e.preventDefault();state.events.push({id:'e-'+Date.now(),title:$('eTitle').value.trim(),date:$('eDate').value,time:$('eTime').value,category:$('eCategory').value,note:$('eNote').value.trim()});save();selectedDate=$('eDate').value;viewYear=+selectedDate.slice(0,4);viewMonth=+selectedDate.slice(5,7)-1;renderAllCalendars();renderManageEvents();e.target.reset();$('eDate').value=selectedDate;toast('事件已添加到日历')});
+function renderManageEvents(){if(!$('manageEvents'))return;$('manageEvents').innerHTML='<div class="agendaTitle">已保存事件 · '+state.events.length+' 项</div>'+state.events.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>`<div class="eventManage"><div><strong>${escapeHTML(e.title)}</strong><small>${e.date} ${e.time||''} · ${catName(e.category)}</small></div><button class="delete" data-delete="${escapeHTML(e.id)}">删除</button></div>`).join('');$('manageEvents').querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{state.events=state.events.filter(e=>e.id!==b.dataset.delete);save();renderAllCalendars();renderManageEvents();toast('事件已删除')})}
 function renderAllEvents(){if(!$('allEvents'))return;$('allEvents').innerHTML=state.events.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>`<div class="eventManage"><div><strong>${escapeHTML(e.title)}</strong><small>${e.date} ${e.time||''} · ${catName(e.category)}</small></div><button class="delete" data-del-all="${escapeHTML(e.id)}">删除</button></div>`).join('')||'<div class="eventEmpty">暂时没有事件。</div>';$('allEvents').querySelectorAll('[data-del-all]').forEach(b=>b.onclick=()=>{state.events=state.events.filter(e=>e.id!==b.dataset.delAll);save();renderAllCalendars();toast('事件已删除')})}
 function fillProfile(){const p=state.profile;const map={pName:'name',pCountry:'country',pCity:'city',pSchool:'school',pProgram:'program'};for(const [id,k] of Object.entries(map))$(id).value=p[k]??'';renderProfileSummary()}
 
@@ -986,8 +1293,8 @@ function updateOverview(){const p=state.profile;$('welcomeTitle').textContent=p.
 
 const tasks=['确认签证批准信、签证条件与 VEVO','确认 CoE、语言班报到与开课安排','整理护照、保险、录取文件及电子备份','筛选租房区域并预约看房','核实租赁合同、Bond 与入住状况报告','确认航班、行李、机场到住处路线','准备澳洲手机卡 / eSIM 方案','比较银行账户与国际汇款方式','了解 Opal / 非接触式交通支付','确认 OSHC 保单与医疗服务入口','熟悉 Arc、社团及校园支持服务','核实 2027 官方校历、迎新和主课日期','准备抵澳初期生活用品','导出并保存网站个人数据备份'];
 function renderTasks(){$('arrivalTasks').innerHTML=tasks.map((t,i)=>`<label class="checkRow ${state.tasks[i]?'done':''}"><input type="checkbox" data-task="${i}" ${state.tasks[i]?'checked':''}><span>${escapeHTML(t)}</span></label>`).join('');const done=tasks.filter((_,i)=>state.tasks[i]).length;$('taskCount').textContent=done+' / '+tasks.length;$('taskProgress').style.width=(done/tasks.length*100)+'%';$('arrivalTasks').querySelectorAll('[data-task]').forEach(c=>c.onchange=()=>{state.tasks[c.dataset.task]=c.checked;save();renderTasks()})}
-$('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}'),healthChecks:JSON.parse(localStorage.getItem('msl-health-checks-v45')||'{}')}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
-$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]},countdownDates:{...clone(defaultState.countdownDates),...(obj.countdownDates||{})},customCountdownTargets:Array.isArray(obj.customCountdownTargets)?obj.customCountdownTargets:[],timetable:Array.isArray(obj.timetable)?obj.timetable:[]};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(obj.extras.rentalChecks||{}));localStorage.setItem('msl-health-checks-v45',JSON.stringify(obj.extras.healthChecks||{}));}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();renderHealthChecklist();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderHealthChecklist();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
+$('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}'),healthChecks:JSON.parse(localStorage.getItem('msl-health-checks-v45')||'{}'),arrivalDocs:JSON.parse(localStorage.getItem('msl-arrival-docs-v47')||'{}'),theme:localStorage.getItem('msl-theme-v47')||'warm'}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
+$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]},countdownDates:{...clone(defaultState.countdownDates),...(obj.countdownDates||{})},customCountdownTargets:Array.isArray(obj.customCountdownTargets)?obj.customCountdownTargets:[],timetable:Array.isArray(obj.timetable)?obj.timetable:[]};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(obj.extras.rentalChecks||{}));localStorage.setItem('msl-health-checks-v45',JSON.stringify(obj.extras.healthChecks||{}));localStorage.setItem('msl-arrival-docs-v47',JSON.stringify(obj.extras.arrivalDocs||{}));applyTheme(obj.extras.theme||'warm');}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();renderHealthChecklist();renderArrivalDocumentChecklist();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderHealthChecklist();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
 
 
 
@@ -1057,6 +1364,8 @@ function renderExpenses(){
 }
 $('fixedExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('fxName').value.trim(),amount=Number($('fxAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.fixed.push({id:'fx-'+Date.now(),name,amount,frequency:$('fxFrequency').value,category:$('fxCategory').value});save();e.target.reset();renderExpenses();toast('固定支出已添加')});
 $('dailyExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('spName').value.trim(),amount=Number($('spAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.entries.push({id:'sp-'+Date.now(),name,amount,date:$('spDate').value,category:$('spCategory').value});save();$('spName').value='';$('spAmount').value='';renderExpenses();toast('消费记录已保存')});
+$('quickExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('quickSpendName').value.trim(),amount=Number($('quickSpendAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;const d=new Date();state.expenses.entries.push({id:'sp-'+Date.now(),name,amount,date:ymd(d.getFullYear(),d.getMonth(),d.getDate()),category:$('quickSpendCategory').value});save();$('quickSpendName').value='';$('quickSpendAmount').value='';renderExpenses();toast('已从工作台记录消费')});
+
 $('expenseMonth').value=new Date().toISOString().slice(0,7);$('spDate').value=ymd(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());$('expenseMonth').addEventListener('change',renderExpenses);
 
 const resourceItems=[
@@ -1152,7 +1461,26 @@ function renderHealthChecklist(){
  document.querySelectorAll('[data-health-check]').forEach(c=>{const key=c.dataset.healthCheck;c.checked=!!saved[key];c.closest('.checkRow')?.classList.toggle('done',!!saved[key]);c.onchange=()=>{const d=JSON.parse(localStorage.getItem('msl-health-checks-v45')||'{}');d[key]=c.checked;localStorage.setItem('msl-health-checks-v45',JSON.stringify(d));c.closest('.checkRow')?.classList.toggle('done',c.checked)}});
 }
 
-fillProfile();fillFlightForm();updateOverview();renderAllCalendars();renderManageEvents();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderTasks();
+
+function renderArrivalDocumentChecklist(){
+ const saved=JSON.parse(localStorage.getItem('msl-arrival-docs-v47')||'{}');
+ const checks=[...document.querySelectorAll('[data-arrival-doc]')];
+ checks.forEach(c=>{const key=c.dataset.arrivalDoc;c.checked=!!saved[key];c.closest('.arrivalDocItem')?.classList.toggle('done',!!saved[key]);c.onchange=()=>{const d=JSON.parse(localStorage.getItem('msl-arrival-docs-v47')||'{}');d[key]=c.checked;localStorage.setItem('msl-arrival-docs-v47',JSON.stringify(d));c.closest('.arrivalDocItem')?.classList.toggle('done',c.checked);updateArrivalDocProgress()}});
+ updateArrivalDocProgress();
+}
+function updateArrivalDocProgress(){
+ const checks=[...document.querySelectorAll('[data-arrival-doc]')],done=checks.filter(c=>c.checked).length;
+ if($('arrivalDocCount'))$('arrivalDocCount').textContent=done+' / '+checks.length+' 项已完成';
+ if($('arrivalDocProgressBar'))$('arrivalDocProgressBar').style.width=(checks.length?done/checks.length*100:0)+'%';
+}
+function applyTheme(theme,saveChoice=true){
+ const valid=['warm','day','night'].includes(theme)?theme:'warm';
+ document.body.dataset.theme=valid;
+ if(saveChoice)localStorage.setItem('msl-theme-v47',valid);
+ document.querySelectorAll('[data-theme-choice]').forEach(b=>b.classList.toggle('selected',b.dataset.themeChoice===valid));
+}
+
+applyTheme(localStorage.getItem('msl-theme-v47')||'warm',false);fillProfile();fillFlightForm();renderArrivalDocumentChecklist();updateOverview();renderAllCalendars();renderManageEvents();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderTasks();
 renderResources();renderRentalChecks();renderExpenses();renderHealthChecklist();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>

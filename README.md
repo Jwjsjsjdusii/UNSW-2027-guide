@@ -1,23 +1,30 @@
-# My Study Life · Personal Edition V4.5
+# My Study Life · Personal Edition V4.7
 
-## V4.5 更新
-- 移除独立「交通出行」「银行金融」侧边栏页面；相关资料合并进「来澳准备」折叠指南。
-- 「来澳准备」交通指南补充 Opal、Trip Planner、Transport NSW、机场、地图和网约车入口。
-- 「来澳准备」银行指南补充四大银行、Wise、TFN、myGov 与 Moneysmart。
-- 保留独立「就医与保险」页面，并改造成症状就医路径、紧急求助、OSHC 基础保障、额外保障和看病前核对清单。
-- OSHC 内容依据澳洲政府 2026 年 8 月 Fact Sheet；个人支付和具体福利以自己的保单为准。
-- 「购物信息」改成按购买目的展开：日常食品、家具家居、服装鞋履、数码学习、药妆个护、悉尼购物中心与 Outlet。
-- 加入 DFO Homebush、Birkenhead Point 等悉尼 Outlet 节点及购物建议。
-- 「个人资料」只保留称呼、国家、城市、学校和专业；航班、日历、课程日期和实际花销在各自模块管理。
+## V4.7 更新
+- 「重要文件与入境准备」改为 12 项可勾选清单，进度条和勾选状态保存在本地。
+- 购物信息恢复二手、免费领取和物品交换分类：Arc UNSW Second Life Hub、UNSW reuse、Gumtree Freebies、Facebook Marketplace、Facebook Buy Swap Sell、Buy Nothing / Pay It Forward、Freecycle、Trash Nothing、Ziilch、Vinnies / Salvos、The Bower（Marrickville 与 Summer Hill 实体店及线上商店）。
+- 增加澳洲年度购物节点：Black Friday、Cyber Monday、Boxing Day、EOFY、Afterpay Day、Click Frenzy、Prime Day、Singles' Day、Back to School 等；明确区分已公布日期与待公布日期。
+- 抵澳航班设置移至首页倒计时下方的折叠卡片。
+- 个人事件添加与事件管理移至首页日历下方的折叠卡片。
+- 删除独立「个人工具」侧边栏和页面。
+- 数据导出 / 导入移动到个人资料页面。
+- 首页「本月花销」增加快捷记账表单，可直接记录今天的消费。
+- 调整工作台左右栏比例和高度分布，减少右栏明显过长的问题。
+- 增加三套可切换主题：暖阳米杏（原配色）、明亮日间（更白）、柔和夜间（灰绿暖灰，不使用纯黑背景）。
 
 ## 数据兼容
-继续沿用 V4.4 的本地存储键，已有个人资料、航班、事件、预算、支出、课表、倒计时和租房清单状态继续保留。
-个人资料表单只编辑基本信息；原有语言班/正课日期仍保留在现有数据中，首页倒计时继续读取，不会因简化资料页而清空。旧版预置的「房租预算参考」样例会自动移除，实际租金请在「个人花销」中按真实合同金额录入。
-新增的医疗核对清单保存在本地浏览器。
-本地数据不是云同步；换设备或浏览器前请先导出备份。
+继续使用 `my-study-life-v3` 原有本地数据键，个人资料、航班、事件、待办、课表、预算、固定支出和消费记录继续保留。
+新增的入境文件清单保存在本地，并随 JSON 备份导出 / 导入；主题选择保存在本地。
+数据不会自动云同步。更换设备或浏览器前，请在「个人资料」页面导出 JSON 备份。
+
+## 购物节日日期说明
+2026 Black Friday：11 月 27 日；Cyber Monday：11 月 30 日。
+2027 Black Friday：11 月 26 日；Cyber Monday：11 月 29 日。
+Boxing Day：每年 12 月 26 日；EOFY 为 6 月 30 日财年结束前后。
+Click Frenzy、Afterpay Day、Prime Day 等促销活动的 2027 具体日期应以主办方后续公告为准，网站没有将未公布日期写成已确认。
 
 ## 部署
 1. 解压 ZIP。
-2. 将 index.html、manifest.json、sw.js、icon.svg、README.md 上传到现有 GitHub 仓库根目录并覆盖。
-3. Commit changes，等待 GitHub Pages 部署成功。
-4. 重新打开网站；若仍显示旧版，清理该站点旧 PWA 缓存并重新添加到主屏幕。
+2. 将 `index.html`、`manifest.json`、`sw.js`、`icon.svg`、`README.md` 五个文件上传到现有 GitHub 仓库根目录并覆盖。
+3. Commit changes，等待 GitHub Pages 部署。
+4. 重新打开网站；若仍显示旧版，清理旧 PWA 缓存后重新添加到主屏幕。
