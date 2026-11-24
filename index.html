@@ -82,12 +82,49 @@ body{background:var(--bg);color:var(--ink)}
 @media(max-width:390px){.expenseSummary{grid-template-columns:1fr}.expenseFormGrid{grid-template-columns:1fr}}
 </style>
 
+
+<style id="v43-information-architecture">
+.accordionGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.guideCard{background:#fffefa;border:1px solid #eee2d4;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px #8b68400a}
+.guideCard[open]{border-color:#e6c49e;box-shadow:0 10px 24px #a96e4812}
+.guideCard summary{list-style:none;display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer}
+.guideCard summary::-webkit-details-marker{display:none}
+.guideIcon{width:40px;height:40px;flex:0 0 40px;border-radius:13px;display:grid;place-items:center;background:#fff0dc;font-size:20px}
+.guideSummary{min-width:0;flex:1}.guideSummary strong{display:block;font-size:13px;color:#624632}.guideSummary small{display:block;color:#95816e;font-size:10px;line-height:1.55;margin-top:4px}
+.guideChevron{width:25px;height:25px;flex:0 0 25px;border-radius:50%;display:grid;place-items:center;background:#fbefdf;color:#a66b42;font-weight:800}
+.guideCard[open] .guideChevron{transform:rotate(45deg);background:#f5dfc5}
+.guideBody{border-top:1px solid #f0e3d5;padding:14px 16px 16px;color:#705a47;font-size:11px}
+.guideBody p{margin:0 0 10px}.guideBody ul{padding-left:18px;margin:8px 0 12px}.guideBody li{margin:5px 0}
+.guideLead{color:#8a735e}
+.transportOption{padding:12px;margin:10px 0;background:#fff8ed;border:1px solid #f0e1ce;border-radius:12px}
+.transportOption>div:first-child{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.transportOption strong{font-size:12px;color:#624632}.transportMetrics{display:flex;gap:8px;flex-wrap:wrap;margin:9px 0}
+.transportMetrics b{font-size:12px;color:#9b6038;background:#fff0dc;border-radius:8px;padding:6px 8px}
+.transportOption p{margin:0 0 6px}.transportOption small{color:#99836d;font-size:10px}
+.guideLinks{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+.guideLinks a{display:inline-block;padding:7px 9px;border-radius:9px;background:#f8ead8;color:#965d39;font-size:10px;font-weight:750}
+.campusCardGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.campusCard{appearance:none;text-align:left;border:1px solid #eee2d4;border-radius:16px;padding:18px;background:#fffefa;color:#604735;box-shadow:0 6px 20px #8b68400a;transition:transform .15s,border-color .15s,box-shadow .15s}
+.campusCard:hover{transform:translateY(-2px);border-color:#e3bd94;box-shadow:0 12px 26px #8b684018}
+.campusCardIcon{display:grid;place-items:center;width:42px;height:42px;background:#fff0dc;border-radius:13px;font-size:21px;margin-bottom:12px}
+.campusCard strong{display:block;font-size:14px}.campusCard p{font-size:11px;line-height:1.65;color:#907d6a;min-height:54px;margin:7px 0 12px}
+.campusCard>span:last-child{font-size:10px;color:#a96e48;font-weight:800}
+.campusDetailPanel{margin-top:14px;padding:22px;border:1px solid #eee2d4;border-radius:18px;background:#fffefa;box-shadow:0 8px 25px #8b68400d}
+.campusDetailPanel h2{font-size:22px;margin:5px 0 8px;color:#604735}.campusDetailPanel>p{font-size:12px;color:#8d7966}
+.campusDetailPanel h3{font-size:14px;margin:18px 0 7px}.campusDetailPanel p,.campusDetailPanel li{font-size:12px;line-height:1.8;color:#75604d}
+.campusDetailPanel ul{padding-left:20px}
+.campusOfficial{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:13px;margin-top:18px;border-radius:12px;background:#fff3e3}
+.campusOfficial span{font-size:11px;color:#90775f}.campusOfficial a{font-size:11px;font-weight:800;color:#9a6038}
+@media(max-width:820px){.campusCardGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.accordionGrid,.campusCardGrid{grid-template-columns:1fr}.campusCard p{min-height:0}.guideCard summary{padding:13px}.guideBody{padding:12px}}
+</style>
+
 </head>
 <body>
 <header class="top"><div class="topLeft">
  <button class="iconBtn" id="menuToggle" aria-label="打开菜单">☰</button>
  <button class="iconBtn" id="calendarShortcut" aria-label="打开日历">▦</button>
- <div class="brand">MY STUDY LIFE<small>PERSONAL EDITION · UNSW 2027</small></div>
+ <div class="brand">MY STUDY LIFE<small>PERSONAL EDITION · STUDY ABROAD 2027</small></div>
  </div><div class="topRight"><span class="topDate" id="todayText"></span><button class="iconBtn" id="addShortcut" aria-label="添加事件">＋</button></div>
 </header>
 <div class="overlay" id="overlay"></div>
@@ -95,14 +132,15 @@ body{background:var(--bg);color:var(--ink)}
 <aside class="sidebar closed" id="sidebar"><div class="sideInner">
  <div class="sideLabel">MY WORKSPACE</div>
  <button class="sideLink active" data-page="home"><span class="ico">⌂</span>首页控制中心</button>
- <button class="sideLink" data-page="calendar"><span class="ico">▦</span>日历与时间轴</button>
+ <button class="sideLink" data-page="timeline"><span class="ico">⌁</span>留学时间轴</button>
  <div class="sideLabel" style="padding-top:18px">STUDY ABROAD</div>
- <button class="sideLink" data-page="arrival"><span class="ico">✈</span>抵澳指南</button>
- <button class="sideLink" data-page="campus"><span class="ico">🎓</span>UNSW 校园</button>
+ <button class="sideLink" data-page="arrival"><span class="ico">✈</span>来澳准备</button>
+ <div class="sideLabel" style="padding-top:18px">CAMPUS</div>
+ <button class="sideLink" data-page="campus"><span class="ico">🎓</span>院校校园</button>
+ <div class="sideLabel" style="padding-top:18px">LIFE IN AUSTRALIA</div>
  <button class="sideLink" data-page="housing"><span class="ico">⌂</span>租房中心</button>
  <button class="sideLink" data-page="work"><span class="ico">▣</span>兼职求职</button>
  <button class="sideLink" data-page="shopping"><span class="ico">◇</span>购物信息</button>
- <div class="sideLabel" style="padding-top:18px">LIFE IN AUSTRALIA</div>
  <button class="sideLink" data-page="transport"><span class="ico">🚋</span>交通出行</button>
  <button class="sideLink" data-page="banking"><span class="ico">🏦</span>银行金融</button>
  <button class="sideLink" data-page="health"><span class="ico">🩺</span>医疗与保险</button>
@@ -110,7 +148,7 @@ body{background:var(--bg);color:var(--ink)}
  <div class="sideLabel" style="padding-top:18px">PERSONAL</div>
  <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人资料</button>
  <button class="sideLink" data-page="expenses"><span class="ico">＄</span>个人花销</button><button class="sideLink" data-page="tools"><span class="ico">⚙</span>个人工具</button>
- <div class="sideBottom">PERSONAL EDITION · V4.2<br>本地数据 · 无需注册 · 无需服务器</div>
+ <div class="sideBottom">PERSONAL EDITION · V4.3<br>本地数据 · 无需注册 · 无需服务器</div>
 </div></aside>
 <main class="main"><div class="content">
 <section class="page active" id="page-home">
@@ -148,50 +186,79 @@ body{background:var(--bg);color:var(--ink)}
    <div class="notice">学校 2027 官方校历、迎新及课程日期仍需以最终通知核实。</div>
   </section>
  </div>
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>我的留学时间轴</h2><p>抵澳阶段、学期和学年视图</p></div><div class="timelineTabs"><button class="active" data-timeline="arrival">抵澳阶段</button><button data-timeline="semester">学期</button><button data-timeline="year">学年</button></div></div><div class="timelinePanel"><div class="timelineList" id="timelineList"></div></div></div>
 </section>
 
-<section class="page" id="page-calendar">
- <div class="pageIntro"><div class="eyebrow">MY SCHEDULE</div><h1>日历与时间轴</h1><p>所有个人事件统一保存在本地，可创建、删除并导出备份。</p></div>
- <div class="panel"><div class="panelHead"><div><h2>日历管理</h2><p>选择日期，查看当天安排</p></div><button class="primary" id="calendarAdd">＋ 添加事件</button></div>
-  <div class="calendarHead"><div class="monthTitle" id="monthTitle2">2027年1月</div><div class="calNav"><select class="calendarMode" id="calendarViewMode2" aria-label="日历视图"><option value="week" selected>一周</option><option value="month">整个月</option></select><button id="prevMonth2">‹</button><button id="todayMonth2">今</button><button id="nextMonth2">›</button></div></div>
-  <div class="weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div><div class="calendar" id="calendar2"></div>
-  <div class="agenda"><div class="agendaTitle" id="agendaTitle2">当天日程</div><div id="agendaList2"></div></div>
+<section class="page" id="page-timeline">
+ <div class="pageIntro"><div class="eyebrow">MY STUDY ROADMAP</div><h1>留学时间轴</h1><p>这里专注长期阶段规划，不重复首页的日历和每日事件管理。</p></div>
+ <div class="sectionBlock" style="margin-top:0">
+  <div class="sectionTitle"><div><h2>我的留学阶段</h2><p>按抵澳准备、学期节奏或完整学年查看关键节点</p></div>
+   <div class="timelineTabs"><button class="active" data-timeline="arrival">来澳阶段</button><button data-timeline="semester">学期规划</button><button data-timeline="year">学年规划</button></div>
+  </div>
+  <div class="timelinePanel"><div class="timelineList" id="timelineList2"></div></div>
  </div>
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>阶段时间轴</h2><p>当前个人留学阶段规划</p></div><div class="timelineTabs"><button class="active" data-timeline="arrival">抵澳阶段</button><button data-timeline="semester">学期</button><button data-timeline="year">学年</button></div></div><div class="timelinePanel"><div class="timelineList" id="timelineList2"></div></div></div>
- <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>全部个人事件</h2><p>管理你创建的事件</p></div></div><div id="allEvents"></div></div>
+ <div class="notice">具体开学、迎新、考试和假期日期应以你所就读学校及课程的正式校历为准。可以在个人资料中维护自己的关键日期。</div>
+ <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>时间轴使用说明</h2><p>让长期计划与日常安排各司其职</p></div></div>
+  <div class="cardGrid">
+   <article class="infoCard"><h3>来澳阶段</h3><p>从计划抵达、落地安顿、语言班、迎新到主课开学，梳理入学前后的过渡节点。</p></article>
+   <article class="infoCard"><h3>学期规划</h3><p>围绕选课、教学周、作业评估、考试周和假期安排每个学期的学习节奏。</p></article>
+   <article class="infoCard"><h3>学年规划</h3><p>从全年视角安排学习目标、实习兼职、社团参与、假期和下一学年的准备。</p></article>
+  </div>
+ </div>
 </section>
 
 <section class="page" id="page-arrival">
- <div class="pageIntro"><div class="eyebrow">SYDNEY ARRIVAL</div><h1>抵澳指南</h1><p>从出发前准备到落地第一周，逐项完成安顿任务。</p></div>
- <div class="panel"><div class="panelHead"><div><h2>抵澳待办清单</h2><p>完成状态自动保存在本地</p></div><span id="taskCount" class="tag blue">0 / 14</span></div><div class="progress"><span id="taskProgress"></span></div><div id="arrivalTasks"></div></div>
- <div class="cardGrid" style="margin-top:14px">
-  <article class="infoCard"><h3>✈ 机场与抵达</h3><p>确认航站楼、接机安排、行李、住处入住时间。比较机场火车、出租车和网约车。</p><a href="https://www.sydneyairport.com.au/" target="_blank" rel="noopener">Sydney Airport ↗</a></article>
-  <article class="infoCard"><h3>🚋 Opal 与公共交通</h3><p>了解 Opal 与银行卡/手机非接触式支付方式，出行前查询线路、票价和施工。</p><a href="https://transportnsw.info/tickets-opal" target="_blank" rel="noopener">Transport NSW ↗</a></article>
-  <article class="infoCard"><h3>📱 手机卡与网络</h3><p>检查手机频段与 eSIM 支持，保留国内号码用于验证；按覆盖、流量和合约比较本地套餐。</p><a href="https://www.acma.gov.au/" target="_blank" rel="noopener">ACMA ↗</a></article>
-  <article class="infoCard"><h3>🏦 银行与 TFN</h3><p>比较账户费用、国际汇款成本和开户条件。开始工作后通过 ATO 官方流程了解 TFN。</p><a href="https://www.ato.gov.au/individuals-and-families/tax-file-number" target="_blank" rel="noopener">ATO · TFN ↗</a></article>
-  <article class="infoCard"><h3>🩺 OSHC 医疗保险</h3><p>核对保单起止日期、保险卡和理赔流程，保存紧急联系人及附近医疗服务信息。</p><a href="https://www.health.gov.au/topics/private-health-insurance/overseas-students" target="_blank" rel="noopener">OSHC 官方信息 ↗</a></article>
-  <article class="infoCard"><h3>📄 重要文件</h3><p>护照、签证批准信、CoE、保险、租房合同和学校录取文件，分别保存云端与离线副本。</p></article>
+ <div class="pageIntro"><div class="eyebrow">YOUR ARRIVAL PLAYBOOK</div><h1>来澳准备</h1><p>把落地前后最重要的事项放在一起。先看简介，点击卡片再展开操作细节。</p></div>
+ <div class="panel"><div class="panelHead"><div><h2>抵澳待办清单</h2><p>完成状态自动保存在当前浏览器</p></div><span id="taskCount" class="tag blue">0 / 14</span></div><div class="progress"><span id="taskProgress"></span></div><div id="arrivalTasks"></div></div>
+ <div class="sectionBlock"><div class="sectionTitle"><div><h2>落地生活指南</h2><p>每张卡片都可以单独展开，查看详细步骤、价格和官方入口</p></div><span class="tag">点击展开</span></div>
+  <div class="accordionGrid">
+   <details class="guideCard">
+    <summary><span class="guideIcon">✈</span><span class="guideSummary"><strong>机场与抵达</strong><small>从悉尼机场到 UNSW Kensington：公共交通、出租车和网约车的时间与费用比较</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="guideLead">以下按悉尼机场 T1 / T2–T3 前往 UNSW Kensington 主校区估算。路况、航班时段、行李和实时票价会影响实际结果。</p>
+     <div class="transportOption"><div><strong>火车 + 轻轨 L2</strong><span class="tag blue">省心推荐</span></div><div class="transportMetrics"><b>约 30–45 分钟</b><b>约 A$20–24 / 人</b></div><p>机场站乘 T8 Airport Line 到 Central，换乘 L2 Randwick 方向轻轨，在 UNSW High Street 或 Anzac Parade 一带下车。机场火车票价包含额外的 Airport Station Access Fee。</p><small>机场站成人 access fee 当前为 A$18.61，另加普通火车车费。</small></div>
+     <div class="transportOption"><div><strong>公交接驳 + 普通火车 / 轻轨</strong><span class="tag">预算优先</span></div><div class="transportMetrics"><b>约 45–65 分钟</b><b>约 A$5–8 / 人</b></div><p>可考虑机场公交接驳至 Mascot，再转普通火车到 Central，最后换乘 L2 轻轨前往 UNSW。比机场火车多一次或多次换乘，具体线路需按抵达航站楼和当日班次规划。</p><small>适合：行李较少、预算优先且不赶时间。请用 Transport NSW Trip Planner 核对当天实际路线和票价。</small></div>
+     <div class="transportOption"><div><strong>出租车 / Uber / DiDi 等网约车</strong><span class="tag warn">行李多更方便</span></div><div class="transportMetrics"><b>约 20–25 分钟</b><b>约 A$35–55 / 车</b></div><p>机场航站楼外有出租车候车点，也有网约车指定上车区。费用会随时段、需求、车型、行李和交通情况变化；多人同行可分摊费用。</p><small>适合：行李多、夜间抵达、多人同行或希望直接送到住处。</small></div>
+     <div class="notice">费用参考整理于 2026 年 11 月公开资料，不是固定报价。机场火车 access fee 以 Transport NSW / Opal 最新公告为准；公交与轻轨票价按实际行程计算。</div>
+     <div class="guideLinks"><a href="https://transportnsw.info/trip" target="_blank" rel="noopener">规划实时路线与票价 ↗</a><a href="https://transportnsw.info/travel-info/airport-travel/getting-to-from-sydney-airport" target="_blank" rel="noopener">机场交通官方说明 ↗</a><a href="https://www.unsw.edu.au/estate/getting-here/public-transport" target="_blank" rel="noopener">UNSW 校园交通 ↗</a></div>
+    </div>
+   </details>
+   <details class="guideCard"><summary><span class="guideIcon">🚋</span><span class="guideSummary"><strong>Opal 与公共交通</strong><small>公交、火车、轻轨、轮渡的支付方式和出行准备</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody"><p>悉尼公共交通可使用 Opal 卡，或使用支持的 Visa、Mastercard、American Express 借记卡/信用卡及手机钱包直接 tap on / tap off。一次行程务必使用同一张卡或同一设备。</p><ul><li>上车/进站 tap on，下车/出站 tap off，避免被收取默认最高票价。</li><li>成人非高峰时段部分公共交通可享 30% 折扣；每日和每周封顶规则以 Opal 官方为准。</li><li>机场火车站另收 Station Access Fee，该费用不计入普通 Opal 每日/每周交通封顶。</li></ul><div class="guideLinks"><a href="https://transportnsw.info/tickets-opal" target="_blank" rel="noopener">Opal 官方入口 ↗</a><a href="https://transportnsw.info/tickets-fares/fares/adult-opal-fares" target="_blank" rel="noopener">成人票价与封顶 ↗</a></div></div>
+   </details>
+   <details class="guideCard"><summary><span class="guideIcon">📱</span><span class="guideSummary"><strong>手机卡与网络</strong><small>Telstra、Optus、Vodafone 与预付费套餐选择</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody"><p>抵达初期优先确保能接收短信、使用地图和联系房东/学校。先确认手机是否支持 eSIM、是否锁网，再比较运营商覆盖、流量、国际通话、自动续费和有效期。</p><ul><li>Telstra：可重点比较偏远地区覆盖与价格。</li><li>Optus：比较流量包、国际通话和优惠有效期。</li><li>Vodafone：比较城市区域覆盖和短期预付费方案。</li><li>保留国内号码用于银行、邮箱和双重验证，直到重要账户都迁移完成。</li></ul><div class="guideLinks"><a href="https://www.telstra.com.au/mobile-phones/prepaid-mobiles" target="_blank" rel="noopener">Telstra Prepaid ↗</a><a href="https://www.optus.com.au/prepaid" target="_blank" rel="noopener">Optus Prepaid ↗</a><a href="https://www.vodafone.com.au/prepaid" target="_blank" rel="noopener">Vodafone Prepaid ↗</a></div></div>
+   </details>
+   <details class="guideCard"><summary><span class="guideIcon">🏦</span><span class="guideSummary"><strong>银行账户与 TFN</strong><small>开户、国际汇款、税号和开始工作前的准备</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody"><p>比较账户月费、ATM 费用、国际汇款汇率与手续费、海外转账到账时间，以及是否支持手机钱包。开户所需材料因银行和身份核验方式而异。</p><ul><li>尽早确认银行账户能否接收工资、是否有账户维护费。</li><li>TFN 可通过 ATO 官方渠道申请，不要向不明中介购买或付费申请。</li><li>开始工作后保存 payslip、雇佣协议和工资入账记录。</li></ul><div class="guideLinks"><a href="https://www.ato.gov.au/individuals-and-families/tax-file-number" target="_blank" rel="noopener">ATO · TFN ↗</a><a href="https://moneysmart.gov.au/banking" target="_blank" rel="noopener">MoneySmart 银行账户 ↗</a></div></div>
+   </details>
+   <details class="guideCard"><summary><span class="guideIcon">🩺</span><span class="guideSummary"><strong>OSHC 医疗保险</strong><small>保险生效日期、保险卡、理赔和就医入口</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody"><p>核对 OSHC 保单是否覆盖整个签证要求期间、姓名拼写和生效日期是否正确。保存电子保险卡、保单号码、紧急联系电话，并了解 direct billing、GP、专科转诊和急诊的区别。</p><ul><li>看 GP 前确认诊所是否支持保险直付以及可能产生的 gap fee。</li><li>急症或危及生命的紧急情况拨打澳洲 000。</li><li>非紧急健康建议可联系保险公司或学校健康服务。</li></ul><div class="guideLinks"><a href="https://www.health.gov.au/topics/private-health-insurance/overseas-students" target="_blank" rel="noopener">澳洲政府 OSHC 说明 ↗</a></div></div>
+   </details>
+   <details class="guideCard"><summary><span class="guideIcon">📄</span><span class="guideSummary"><strong>重要文件与入境准备</strong><small>护照、签证、CoE、保险、海关申报和电子备份</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody"><p>把护照、签证批准信、CoE、学校录取文件、OSHC 保单、租房合同、接机和住宿地址分别保存到手机离线文件、云端和纸质文件夹。</p><ul><li>入境时按要求申报食品、植物、动物制品及其他受限制物品。</li><li>不确定是否允许入境的食品，主动向边境工作人员申报。</li><li>给家人留一份航班、住址、紧急联系人和保险信息。</li></ul><div class="guideLinks"><a href="https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in" target="_blank" rel="noopener">澳洲边境入境物品指南 ↗</a><a href="https://www.homeaffairs.gov.au/" target="_blank" rel="noopener">Department of Home Affairs ↗</a></div></div>
+   </details>
+  </div>
  </div>
 </section>
 
 <section class="page" id="page-campus">
- <div class="pageIntro"><div class="eyebrow">UNSW CAMPUS</div>
-<h1>UNSW 校园</h1><p>校园资源、学生组织、学习支持与职业发展。</p></div>
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>Arc 与校园生活怎么用</h2><p>把长期稳定的校园资源介绍直接收进网站</p></div></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>Arc 是什么</h3><p>Arc 是 UNSW 的学生组织，连接社团、志愿活动、体育、创意项目、学生支持与校园活动。可从兴趣社团、国际文化社群和新生活动开始融入校园生活。</p><a href="https://www.arc.unsw.edu.au/" target="_blank" rel="noopener">Arc 官方入口 ↗</a></article>
-  <article class="infoCard"><h3>加入社团的价值</h3><p>社团适合认识朋友、练习沟通、参加工作坊、建立专业或兴趣人脉。选择时比较活动频率、会员费、活动地点和是否欢迎新手；不要只看社团数量。</p><a href="https://www.arc.unsw.edu.au/clubs" target="_blank" rel="noopener">社团目录 ↗</a></article>
-  <article class="infoCard"><h3>国际学生融入</h3><p>可以优先关注 International & Cultural 类社团、语言交流、迎新活动和 Arc Goes To 等悉尼周边活动。具体活动时间与报名名额属于动态信息，需要查看当期公告。</p><a href="https://www.arc.unsw.edu.au/join/international" target="_blank" rel="noopener">国际学生与朋友 ↗</a></article>
-  <article class="infoCard"><h3>校园求助路径</h3><p>遇到选课、学业、签证支持、心理健康、经济困难或安全问题时，先识别对应的 UNSW 学生服务部门；不要把紧急安全问题留到普通邮件回复。</p><a href="https://www.unsw.edu.au/student/support" target="_blank" rel="noopener">UNSW Student Support ↗</a></article>
- </div></div>
-
- <div class="cardGrid">
-  <article class="infoCard"><h3>🎓 Arc 学生组织</h3><p>查看会员权益、社团目录、志愿活动、校园活动与学生体验。具体权益按当年规则核实。</p><a href="https://www.arc.unsw.edu.au/" target="_blank" rel="noopener">Arc 官网 ↗</a>　<a href="https://www.arc.unsw.edu.au/clubs" target="_blank" rel="noopener">社团目录 ↗</a></article>
-  <article class="infoCard"><h3>🧭 国际学生支持</h3><p>了解入学、学习适应、签证相关支持与学生服务入口。</p><a href="https://www.unsw.edu.au/student/support/international" target="_blank" rel="noopener">International Support ↗</a></article>
-  <article class="infoCard"><h3>📚 图书馆</h3><p>熟悉学习空间、电脑、打印和图书馆服务，开放时间以学校公告为准。</p><a href="https://www.library.unsw.edu.au/" target="_blank" rel="noopener">UNSW Library ↗</a></article>
-  <article class="infoCard"><h3>💼 职业发展</h3><p>关注职业咨询、简历指导、招聘会、实习和校内就业机会。</p><a href="https://www.unsw.edu.au/student/support/career" target="_blank" rel="noopener">UNSW Careers ↗</a></article>
-  <article class="infoCard"><h3>🗓 2027 校历</h3><p>语言班和学位课程迎新可能是不同安排。重要日期需按学校最终发布版本确认。</p><a href="https://www.unsw.edu.au/student/managing-your-studies/key-dates" target="_blank" rel="noopener">UNSW Key Dates ↗</a></article>
+ <div class="pageIntro"><div class="eyebrow">YOUR UNIVERSITY</div><h1>院校校园</h1><p>学校：<strong id="campusSchoolName">UNSW Sydney</strong> · 校园资源采用通用结构，学校不同，官方入口也可以替换。</p></div>
+ <div id="campusOverview">
+  <div class="sectionTitle"><div><h2>校园生活入口</h2><p>点击卡片进入站内详情页；每个详情页都保留学校官方入口。</p></div></div>
+  <div class="campusCardGrid">
+   <button class="campusCard" data-campus-detail="clubs"><span class="campusCardIcon">🎓</span><strong>学生会与社团</strong><p>认识学生组织、加入兴趣社团、参与活动和建立校园人际网络。</p><span>查看站内详情 →</span></button>
+   <button class="campusCard" data-campus-detail="support"><span class="campusCardIcon">🧭</span><strong>国际学生支持</strong><p>了解入学、签证相关支持、学习适应和学生服务的求助路径。</p><span>查看站内详情 →</span></button>
+   <button class="campusCard" data-campus-detail="library"><span class="campusCardIcon">📚</span><strong>图书馆与学习空间</strong><p>熟悉自习空间、电脑、打印、借阅和学术学习资源。</p><span>查看站内详情 →</span></button>
+   <button class="campusCard" data-campus-detail="careers"><span class="campusCardIcon">💼</span><strong>职业发展与就业</strong><p>简历、职业咨询、招聘会、实习、校内工作和求职资源。</p><span>查看站内详情 →</span></button>
+   <button class="campusCard" data-campus-detail="calendar"><span class="campusCardIcon">🗓</span><strong>校历与学术日期</strong><p>教学周、选课、迎新、考试、假期和关键行政日期。</p><span>查看站内详情 →</span></button>
+   <button class="campusCard" data-campus-detail="safety"><span class="campusCardIcon">🛟</span><strong>校园安全与帮助</strong><p>校园安全、紧急联络、心理健康和困难时期的支持方式。</p><span>查看站内详情 →</span></button>
+  </div>
+ </div>
+ <div id="campusDetailView" hidden>
+  <button class="secondary" id="campusBack">← 返回校园资源</button>
+  <div class="campusDetailPanel"><div class="eyebrow" id="campusDetailEyebrow">CAMPUS GUIDE</div><h2 id="campusDetailTitle">详情</h2><p id="campusDetailIntro"></p><div id="campusDetailContent"></div>
+   <div class="campusOfficial"><span>学校官方入口</span><a id="campusOfficialLink" href="https://www.unsw.edu.au/" target="_blank" rel="noopener">打开官方页面 ↗</a></div>
+  </div>
  </div>
 </section>
 
@@ -476,7 +543,7 @@ body{background:var(--bg);color:var(--ink)}
   <div class="notice">数据保存在当前浏览器。清理浏览器数据、换设备或更换浏览器前，请先导出备份。导入会覆盖当前个人数据。</div>
  </div>
 </section>
-<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.2　|　个人规划工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
+<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.3　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
 </div></main>
 </div>
 
@@ -574,22 +641,22 @@ function shiftCalendar(delta){
  else {viewMonth+=delta;if(viewMonth<0){viewMonth=11;viewYear--}if(viewMonth>11){viewMonth=0;viewYear++}selectedDate=ymd(viewYear,viewMonth,1);}
  renderAllCalendars();
 }
-['prevMonth','prevMonth2'].forEach(id=>$(id).onclick=()=>shiftCalendar(-1));
-['nextMonth','nextMonth2'].forEach(id=>$(id).onclick=()=>shiftCalendar(1));
-['todayMonth','todayMonth2'].forEach(id=>$(id).onclick=()=>{const d=new Date();selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()});
-['calendarViewMode','calendarViewMode2'].forEach(id=>{if($(id))$(id).onchange=()=>{calendarMode=$(id).value;['calendarViewMode','calendarViewMode2'].forEach(x=>{if($(x))$(x).value=calendarMode});renderAllCalendars()}});
+$('prevMonth').onclick=()=>shiftCalendar(-1);
+$('nextMonth').onclick=()=>shiftCalendar(1);
+$('todayMonth').onclick=()=>{const d=new Date();selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()};
+$('calendarViewMode').onchange=()=>{calendarMode=$('calendarViewMode').value;renderAllCalendars()};
 const timelines={
  arrival:()=>[['抵达日',state.profile.arrival,'机场、入住、手机卡、银行与交通'],['语言班开始',state.profile.languageStart,'按录取通知完成报到'],['语言班结束',state.profile.languageEnd,'成绩、衔接与后续课程准备'],['迎新计划',state.profile.orientation,'日期待学校官方确认'],['主课预计开始',state.profile.course,'日期待学校官方确认']],
  semester:()=>[['学期前','准备阶段','选课、注册、教材、课表'],['教学周','学习阶段','上课、作业、考试与校园活动'],['考试期','评估阶段','复习、考试与成绩查询'],['假期','休整阶段','旅行、兼职与下学期准备']],
  year:()=>[['第一阶段','适应与建立','熟悉学习方式、校园与悉尼生活'],['第二阶段','学习与提升','课程、项目、社团与工作经验'],['年末阶段','总结与规划','考试、成绩、假期与下一年计划']]
 };
-function renderTimeline(type){const items=timelines[type]();['timelineList','timelineList2'].forEach(id=>{if($(id))$(id).innerHTML=items.map(x=>`<div class="timeItem"><time>${escapeHTML(x[1])}</time><strong>${escapeHTML(x[0])}</strong><small>${escapeHTML(x[2])}</small></div>`).join('')})}
+function renderTimeline(type){const items=timelines[type]();if($('timelineList2'))$('timelineList2').innerHTML=items.map(x=>`<div class="timeItem"><time>${escapeHTML(x[1])}</time><strong>${escapeHTML(x[0])}</strong><small>${escapeHTML(x[2])}</small></div>`).join('')}
 document.querySelectorAll('[data-timeline]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-timeline]').forEach(x=>x.classList.toggle('active',x.dataset.timeline===b.dataset.timeline));renderTimeline(b.dataset.timeline)});renderTimeline('arrival');
-function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='tools'){fillFlightForm();renderManageEvents()}if(name==='calendar')renderAllCalendars();if(name==='expenses')renderExpenses()}
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));document.querySelectorAll('.sideLink').forEach(b=>b.classList.toggle('active',b.dataset.page===name));closeMenu();window.scrollTo({top:0,behavior:'smooth'});if(name==='profile')fillProfile();if(name==='tools'){fillFlightForm();renderManageEvents()}if(name==='timeline')renderTimeline('arrival');if(name==='expenses')renderExpenses();if(name==='campus')updateCampusSchool()}
 document.querySelectorAll('.sideLink').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>showPage(b.dataset.goto));
 const sidebar=$('sidebar'),overlay=$('overlay');function openMenu(){sidebar.classList.add('open');overlay.classList.add('show')}function closeMenu(){sidebar.classList.remove('open');overlay.classList.remove('show')}
 $('menuToggle').onclick=()=>{if(innerWidth<=720){sidebar.classList.contains('open')?closeMenu():openMenu()}else sidebar.classList.toggle('closed')};overlay.onclick=closeMenu;
-$('calendarShortcut').onclick=()=>{showPage('calendar')};$('addShortcut').onclick=()=>{showPage('tools');$('eTitle').focus()};$('newEvent').onclick=()=>{showPage('tools');$('eDate').value=selectedDate;$('eTitle').focus()};$('calendarAdd').onclick=()=>{showPage('tools');$('eDate').value=selectedDate;$('eTitle').focus()};$('editFlight').onclick=()=>showPage('tools');
+$('calendarShortcut').onclick=()=>{showPage('home');document.getElementById('homeCalendar').scrollIntoView({behavior:'smooth',block:'start'})};$('addShortcut').onclick=()=>{showPage('tools');$('eTitle').focus()};$('newEvent').onclick=()=>{showPage('tools');$('eDate').value=selectedDate;$('eTitle').focus()};$('editFlight').onclick=()=>showPage('tools');
 function fillFlightForm(){const f=state.flight;for(const [id,key] of Object.entries({fFromCode:'fromCode',fFromName:'fromName',fToCode:'toCode',fToName:'toName',fAirline:'airline',fFlightNo:'flightNo',fDate:'date',fTime:'time'}))$(id).value=f[key]||''}
 $('flightForm').addEventListener('submit',e=>{e.preventDefault();state.flight={fromCode:$('fFromCode').value.trim().toUpperCase(),fromName:$('fFromName').value.trim(),toCode:$('fToCode').value.trim().toUpperCase()||'SYD',toName:$('fToName').value.trim(),airline:$('fAirline').value.trim(),flightNo:$('fFlightNo').value.trim().toUpperCase(),date:$('fDate').value,time:$('fTime').value};save();updateClock();toast('航班与抵澳时间已保存')});
 $('resetFlight').onclick=()=>{state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00';save();fillFlightForm();updateClock();toast('已使用个人资料中的抵澳时间')};
@@ -598,7 +665,22 @@ $('eventForm').addEventListener('submit',e=>{e.preventDefault();state.events.pus
 function renderManageEvents(){if(!$('manageEvents'))return;$('manageEvents').innerHTML='<div class="agendaTitle">已保存事件 · '+state.events.length+' 项</div>'+state.events.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>`<div class="eventManage"><div><strong>${escapeHTML(e.title)}</strong><small>${e.date} ${e.time||''} · ${catName(e.category)}</small></div><button class="delete" data-delete="${escapeHTML(e.id)}">删除</button></div>`).join('');$('manageEvents').querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{state.events=state.events.filter(e=>e.id!==b.dataset.delete);save();renderAllCalendars();toast('事件已删除')})}
 function renderAllEvents(){if(!$('allEvents'))return;$('allEvents').innerHTML=state.events.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>`<div class="eventManage"><div><strong>${escapeHTML(e.title)}</strong><small>${e.date} ${e.time||''} · ${catName(e.category)}</small></div><button class="delete" data-del-all="${escapeHTML(e.id)}">删除</button></div>`).join('')||'<div class="eventEmpty">暂时没有事件。</div>';$('allEvents').querySelectorAll('[data-del-all]').forEach(b=>b.onclick=()=>{state.events=state.events.filter(e=>e.id!==b.dataset.delAll);save();renderAllCalendars();toast('事件已删除')})}
 function fillProfile(){const p=state.profile;const map={pName:'name',pCountry:'country',pCity:'city',pSchool:'school',pProgram:'program',pLanguage:'language',pArrival:'arrival',pArrivalTime:'arrivalTime',pLanguageStart:'languageStart',pLanguageEnd:'languageEnd',pOrientation:'orientation',pCourse:'course',pRentMin:'rentMin',pRentMax:'rentMax',pNotes:'notes'};for(const [id,k] of Object.entries(map))$(id).value=p[k]??'';renderProfileSummary()}
-$('profileForm').addEventListener('submit',e=>{e.preventDefault();state.profile={name:$('pName').value.trim(),country:$('pCountry').value.trim(),city:$('pCity').value.trim(),school:$('pSchool').value.trim(),program:$('pProgram').value.trim(),language:$('pLanguage').value,arrival:$('pArrival').value,arrivalTime:$('pArrivalTime').value,languageStart:$('pLanguageStart').value,languageEnd:$('pLanguageEnd').value,orientation:$('pOrientation').value,course:$('pCourse').value,rentMin:Number($('pRentMin').value)||0,rentMax:Number($('pRentMax').value)||0,notes:$('pNotes').value.trim()};if(!state.flight.flightNo){state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00'}save();updateClock();updateOverview();renderTimeline('arrival');renderProfileSummary();toast('个人资料已保存，首页已同步')});
+
+const campusDetails={
+ clubs:{title:'学生会与社团',intro:'学生会和社团通常是认识同学、融入校园和参与课外活动的第一入口。不同学校的组织名称、会员权益和活动安排会有所不同。',html:`<h3>在这里可以做什么？</h3><ul><li>搜索兴趣社团、专业协会、文化社群、体育和志愿服务组织。</li><li>参加迎新活动、社团集市和新生体验活动，先体验再决定是否付费加入。</li><li>留意会员费、活动频率、活动地点、报名名额和是否需要额外保险。</li><li>加入前查看社团是否由学校或学生会正式认可。</li></ul><h3>以 UNSW 为例</h3><p>UNSW 的学生组织 Arc 管理社团、活动、志愿机会和学生体验项目。若个人资料中的学校不是 UNSW，请以自己学校的 Student Union、Students’ Association 或 Clubs & Societies 官方目录为准。</p>`,url:'https://www.arc.unsw.edu.au/',label:'Arc UNSW 官方网站'},
+ support:{title:'国际学生支持',intro:'国际学生支持通常涵盖入学手续、学习适应、签证信息转介、健康与福利服务，以及遇到困难时的求助路径。',html:`<h3>建议先确认的服务</h3><ul><li>International Student Support：签证相关信息、入学适应与学生权益转介。</li><li>Student Hub / Student Services：学籍、选课、缴费、证明文件和行政问题。</li><li>Academic Skills：学术写作、英语表达、研究与考试准备。</li><li>Wellbeing / Counselling：心理健康、压力管理和个人支持。</li></ul><p>涉及签证的个案应以 Home Affairs 和注册移民专业人士的正式意见为准。</p>`,url:'https://www.unsw.edu.au/student/support/international',label:'UNSW International Student Support'},
+ library:{title:'图书馆与学习空间',intro:'图书馆不仅是借书地点，也是自习空间、课程资料、电脑、打印和学术技能支持的集中入口。',html:`<h3>新生第一周可以完成</h3><ul><li>确认主图书馆和学院图书馆的位置、开放时间及考试季安排。</li><li>登录学校账号，测试校外访问电子期刊、数据库和课程阅读材料。</li><li>了解小组讨论室、静音区、电脑、打印和扫描服务的预约/收费规则。</li><li>查看学术诚信、引用格式、研究技能和学习辅导资源。</li></ul><p>开放时间、设施预约和借阅规则可能随学期变化。</p>`,url:'https://www.library.unsw.edu.au/',label:'UNSW Library'},
+ careers:{title:'职业发展与就业',intro:'学校职业服务可以帮助学生准备简历、求职信、面试、职业方向探索、实习和雇主活动。',html:`<h3>推荐使用顺序</h3><ul><li>先完成英文简历和 LinkedIn 资料，准备通用版和按岗位调整的版本。</li><li>预约 Career Advising 或参加简历工作坊，了解澳洲本地招聘表达方式。</li><li>关注学校 Job Board、招聘会、行业分享和校友活动。</li><li>申请实习或校内工作前，核对签证工作条件、岗位要求和薪酬安排。</li></ul><p>校内职业服务提供求职支持，不代表保证获得工作或实习机会。</p>`,url:'https://www.unsw.edu.au/student/support/career',label:'UNSW Careers'},
+ calendar:{title:'校历与学术日期',intro:'校历决定教学周、选课、迎新、考试、假期和关键行政日期。语言课程与学位课程可能使用不同日期安排。',html:`<h3>每学期建议核对</h3><ul><li>Term / Semester 开始与结束日期。</li><li>选课开放、加退课截止、缴费截止和 Census Date。</li><li>教学周、公共假期、考试期、成绩公布和假期。</li><li>国际学生迎新、学院说明会和课程特定活动。</li></ul><p>网站时间轴用于个人规划，最终日期应以学校官方校历、课程页面和正式通知为准。</p>`,url:'https://www.unsw.edu.au/student/managing-your-studies/key-dates',label:'UNSW Key Dates'},
+ safety:{title:'校园安全与帮助',intro:'了解校园安全团队、紧急联络方式、心理健康支持和夜间出行建议，能帮助你更快找到正确入口。',html:`<h3>先保存这些信息</h3><ul><li>校园安全团队和校内紧急联系电话。</li><li>学校心理健康、Counselling 和 Wellbeing 服务。</li><li>夜间安全护送、校园安全 App 或值班服务（如学校提供）。</li><li>澳洲紧急情况拨打 000。</li></ul><p>不同学校的紧急号码、服务时间和校园安全措施不同，请在入学后核实并保存本校信息。</p>`,url:'https://www.unsw.edu.au/student/support',label:'UNSW Student Support'}
+};
+function updateCampusSchool(){if($('campusSchoolName'))$('campusSchoolName').textContent=state.profile.school||'请在个人资料中设置学校'}
+function openCampusDetail(key){const d=campusDetails[key];if(!d)return;$('campusOverview').hidden=true;$('campusDetailView').hidden=false;$('campusDetailEyebrow').textContent=(state.profile.school||'YOUR UNIVERSITY')+' · CAMPUS GUIDE';$('campusDetailTitle').textContent=d.title;$('campusDetailIntro').textContent=d.intro;$('campusDetailContent').innerHTML=d.html;$('campusOfficialLink').href=d.url;$('campusOfficialLink').textContent=d.label+' ↗';window.scrollTo({top:0,behavior:'smooth'})}
+function closeCampusDetail(){$('campusDetailView').hidden=true;$('campusOverview').hidden=false;window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-campus-detail]').forEach(b=>b.addEventListener('click',()=>openCampusDetail(b.dataset.campusDetail)));
+$('campusBack').onclick=closeCampusDetail;
+
+$('profileForm').addEventListener('submit',e=>{e.preventDefault();state.profile={name:$('pName').value.trim(),country:$('pCountry').value.trim(),city:$('pCity').value.trim(),school:$('pSchool').value.trim(),program:$('pProgram').value.trim(),language:$('pLanguage').value,arrival:$('pArrival').value,arrivalTime:$('pArrivalTime').value,languageStart:$('pLanguageStart').value,languageEnd:$('pLanguageEnd').value,orientation:$('pOrientation').value,course:$('pCourse').value,rentMin:Number($('pRentMin').value)||0,rentMax:Number($('pRentMax').value)||0,notes:$('pNotes').value.trim()};if(!state.flight.flightNo){state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00'}save();updateClock();updateOverview();renderTimeline('arrival');renderProfileSummary();updateCampusSchool();toast('个人资料已保存，首页已同步')});
 $('resetProfile').onclick=()=>{state.profile=clone(baseProfile);save();fillProfile();updateOverview();toast('已恢复项目交接资料')};
 function renderProfileSummary(){const p=state.profile;const rows=[['国家',p.country],['城市',p.city],['学校',p.school],['专业 / 学位',p.program||'尚未填写'],['语言班',p.language==='yes'?'需要':p.language==='no'?'不需要':'尚未确定'],['计划抵澳',p.arrival],['主课预计开始',p.course],['房租预算','A$'+p.rentMin+'–'+p.rentMax+'/周']];$('profileSummary').innerHTML=rows.map(x=>`<div class="profileItem"><small>${escapeHTML(x[0])}</small><strong>${escapeHTML(x[1])}</strong></div>`).join('')}
 function updateOverview(){const p=state.profile;$('statArrival').textContent=p.arrival||'待设置';$('statLanguage').textContent=p.languageStart||'待设置';$('statLanguageEnd').textContent=p.languageEnd||'待设置';$('statCourse').textContent=p.course||'待设置';$('welcomeTitle').textContent=p.name?'欢迎回来，'+p.name+'！':'早上好，准备好开启'+(p.city||'留学')+'生活了吗？'}

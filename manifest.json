@@ -1,7 +1,7 @@
 {
   "name": "My Study Life · Personal Edition",
   "short_name": "My Study Life",
-  "description": "温暖明亮风格的个人留学生活管理中心",
+  "description": "个人留学生活管理中心",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
