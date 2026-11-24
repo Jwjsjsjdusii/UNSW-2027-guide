@@ -221,6 +221,49 @@ body{background:var(--bg);color:var(--ink)}
 #timetablePane[hidden],#eventsCalendarPane[hidden]{display:none!important}
 </style>
 
+
+<style id="v45-health-shopping">
+.healthEmergency{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 22px;border-radius:16px;background:#fff0e9;border:1px solid #edc2b2;margin-bottom:12px}
+.healthEyebrow{font-size:9px;letter-spacing:1.5px;font-weight:900;color:#b04d3e}
+.healthEmergency h2{font-size:17px;color:#823e34;margin:5px 0}
+.healthEmergency p{font-size:11px;color:#90675d;margin:0;line-height:1.6}
+.healthEmergency>a{white-space:nowrap;text-decoration:none;background:#b94d40;color:white;border-radius:12px;padding:12px 17px;font-size:13px;font-weight:900}
+.healthCallout{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:14px 16px;background:#fffaf2;border:1px solid #efe0cf;border-radius:13px;margin-bottom:20px}
+.healthCallout strong{font-size:11px;color:#765238}.healthCallout span{font-size:10px;line-height:1.6;color:#856e58}.healthCallout a{font-size:10px;font-weight:800;color:#a46a43;white-space:nowrap}
+.healthPathGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.healthPathCard{background:#fffefa;border:1px solid #eee1d2;border-radius:14px;padding:14px;display:flex;flex-direction:column;align-items:flex-start}
+.healthPathIcon{font-size:22px;margin-bottom:8px}
+.healthPathCard h3{font-size:13px;color:#654a35;margin:8px 0 5px}
+.healthPathCard p{font-size:10px;line-height:1.7;color:#88735f;margin:0 0 8px}
+.healthPathCard small{font-size:9px;line-height:1.6;color:#9c8976;margin-top:auto}
+.oshcIntro{font-size:11px;line-height:1.8;color:#7e674f;background:#fff8ed;border-left:3px solid #d5a06f;padding:12px 14px;border-radius:0 10px 10px 0;margin-bottom:12px}
+.benefitGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.benefitCard{border:1px solid #eee1d2;border-radius:12px;background:#fffefa;padding:13px;display:grid;gap:6px}
+.benefitCard span{font-size:10px;color:#987b5d;font-weight:800}
+.benefitCard strong{font-size:12px;line-height:1.5;color:#6e5038}
+.benefitCard small{font-size:9px;line-height:1.6;color:#9a8673}
+.extraBenefitGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.extraBenefitGrid>div{background:#fffaf3;border:1px solid #f0e5d8;border-radius:11px;padding:12px;display:grid;gap:6px}
+.extraBenefitGrid strong{font-size:10px;color:#76553a}.extraBenefitGrid span{font-size:9px;line-height:1.6;color:#917c66}
+.healthChecklist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 15px;padding:12px;background:#fffaf3;border:1px solid #f0e5d8;border-radius:12px}
+.shoppingQuickGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:20px}
+.shoppingQuickCard{background:#fffaf3;border:1px solid #efe2d4;border-radius:13px;padding:13px;display:grid;gap:6px}
+.shoppingQuickCard>span{font-size:20px}.shoppingQuickCard strong{font-size:11px;color:#715238}.shoppingQuickCard small{font-size:9px;line-height:1.6;color:#947e67}
+.shoppingAccordionList{display:grid;gap:10px}
+.shoppingAccordionList .guideCard{background:#fffefa;border:1px solid #eee1d2;border-radius:14px;overflow:hidden}
+.shoppingAccordionList .guideCard>summary{cursor:pointer}
+.shoppingAccordionList .guideBody{padding-top:12px}
+.shoppingLead{font-size:10px;line-height:1.7;color:#846e58;margin:0 0 12px}
+.shoppingStoreGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.shoppingStore{background:#fff9f1;border:1px solid #f0e5d8;border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.shoppingStore h3{font-size:12px;color:#694d35;margin:3px 0}
+.shoppingStore p{font-size:10px;line-height:1.65;color:#8a755f;margin:0}
+.shoppingStore small{font-size:9px;line-height:1.6;color:#9b856e;margin-top:auto}
+.shoppingStore a{font-size:10px;font-weight:850;color:#a36b43;margin-top:5px}
+@media(max-width:900px){.healthPathGrid,.benefitGrid,.extraBenefitGrid,.shoppingStoreGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.shoppingQuickGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.healthEmergency{align-items:flex-start;flex-direction:column}.healthCallout{grid-template-columns:1fr}.healthPathGrid,.benefitGrid,.extraBenefitGrid,.shoppingStoreGrid,.healthChecklist{grid-template-columns:1fr}.shoppingQuickGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
 </head>
 <body>
 <header class="top"><div class="topLeft">
@@ -242,14 +285,12 @@ body{background:var(--bg);color:var(--ink)}
  <button class="sideLink" data-page="housing"><span class="ico">⌂</span>租房中心</button>
  <button class="sideLink" data-page="work"><span class="ico">▣</span>兼职求职</button>
  <button class="sideLink" data-page="shopping"><span class="ico">◇</span>购物信息</button>
- <button class="sideLink" data-page="transport"><span class="ico">🚋</span>交通出行</button>
- <button class="sideLink" data-page="banking"><span class="ico">🏦</span>银行金融</button>
- <button class="sideLink" data-page="health"><span class="ico">🩺</span>医疗与保险</button>
+ <button class="sideLink" data-page="health"><span class="ico">🩺</span>就医与保险</button>
  <button class="sideLink" data-page="resources"><span class="ico">✧</span>资源导航中心</button>
  <div class="sideLabel" style="padding-top:18px">PERSONAL</div>
  <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人资料</button>
  <button class="sideLink" data-page="expenses"><span class="ico">＄</span>个人花销</button><button class="sideLink" data-page="tools"><span class="ico">⚙</span>个人工具</button>
- <div class="sideBottom">PERSONAL EDITION · V4.4<br>本地数据 · 无需注册 · 无需服务器</div>
+ <div class="sideBottom">PERSONAL EDITION · V4.5<br>本地数据 · 无需注册 · 无需服务器</div>
 </div></aside>
 <main class="main"><div class="content">
 <section class="page active" id="page-home">
@@ -348,16 +389,24 @@ body{background:var(--bg);color:var(--ink)}
     </div>
    </details>
    <details class="guideCard"><summary><span class="guideIcon">🚋</span><span class="guideSummary"><strong>Opal 与公共交通</strong><small>公交、火车、轻轨、轮渡的支付方式和出行准备</small></span><span class="guideChevron">＋</span></summary>
-    <div class="guideBody"><p>悉尼公共交通可使用 Opal 卡，或使用支持的 Visa、Mastercard、American Express 借记卡/信用卡及手机钱包直接 tap on / tap off。一次行程务必使用同一张卡或同一设备。</p><ul><li>上车/进站 tap on，下车/出站 tap off，避免被收取默认最高票价。</li><li>成人非高峰时段部分公共交通可享 30% 折扣；每日和每周封顶规则以 Opal 官方为准。</li><li>机场火车站另收 Station Access Fee，该费用不计入普通 Opal 每日/每周交通封顶。</li></ul><div class="guideLinks"><a href="https://transportnsw.info/tickets-opal" target="_blank" rel="noopener">Opal 官方入口 ↗</a><a href="https://transportnsw.info/tickets-fares/fares/adult-opal-fares" target="_blank" rel="noopener">成人票价与封顶 ↗</a></div></div>
+    <div class="guideBody">
+     <p>悉尼公交、火车、轻轨和轮渡可使用 Opal 卡，或在支持的服务上使用非接触式银行卡/手机钱包 tap on / tap off。整趟行程务必使用同一张卡或同一设备，不要中途混用 Opal 和银行卡。</p>
+     <ul><li>上车/进站 tap on，下车/出站 tap off；忘记 tap off 可能被收取默认最高票价。</li><li>留意成人非高峰折扣、每日/每周封顶和周末优惠，具体以 Transport NSW 最新规则为准。</li><li>机场火车站有额外 Station Access Fee，不要把机场火车费用当作普通市区车费。</li><li>搬家前用实际门牌地址到学校校门查询门到门通勤，比较高峰时段、换乘和步行接驳。</li></ul>
+     <div class="guideLinks"><a href="https://transportnsw.info/tickets-opal" target="_blank" rel="noopener">Opal 与交通支付 ↗</a><a href="https://transportnsw.info/tickets-fares/fares/adult-opal-fares" target="_blank" rel="noopener">成人票价与封顶 ↗</a><a href="https://transportnsw.info/trip" target="_blank" rel="noopener">Trip Planner 路线规划 ↗</a><a href="https://transportnsw.info/" target="_blank" rel="noopener">Transport NSW 实时公告 ↗</a><a href="https://www.sydneyairport.com.au/" target="_blank" rel="noopener">Sydney Airport ↗</a><a href="https://maps.google.com/" target="_blank" rel="noopener">Google Maps ↗</a><a href="https://www.uber.com/au/en/" target="_blank" rel="noopener">Uber ↗</a><a href="https://www.didiglobal.com/" target="_blank" rel="noopener">DiDi ↗</a></div>
+    </div>
    </details>
    <details class="guideCard"><summary><span class="guideIcon">📱</span><span class="guideSummary"><strong>手机卡与网络</strong><small>Telstra、Optus、Vodafone 与预付费套餐选择</small></span><span class="guideChevron">＋</span></summary>
     <div class="guideBody"><p>抵达初期优先确保能接收短信、使用地图和联系房东/学校。先确认手机是否支持 eSIM、是否锁网，再比较运营商覆盖、流量、国际通话、自动续费和有效期。</p><ul><li>Telstra：可重点比较偏远地区覆盖与价格。</li><li>Optus：比较流量包、国际通话和优惠有效期。</li><li>Vodafone：比较城市区域覆盖和短期预付费方案。</li><li>保留国内号码用于银行、邮箱和双重验证，直到重要账户都迁移完成。</li></ul><div class="guideLinks"><a href="https://www.telstra.com.au/mobile-phones/prepaid-mobiles" target="_blank" rel="noopener">Telstra Prepaid ↗</a><a href="https://www.optus.com.au/prepaid" target="_blank" rel="noopener">Optus Prepaid ↗</a><a href="https://www.vodafone.com.au/prepaid" target="_blank" rel="noopener">Vodafone Prepaid ↗</a></div></div>
    </details>
    <details class="guideCard"><summary><span class="guideIcon">🏦</span><span class="guideSummary"><strong>银行账户与 TFN</strong><small>开户、国际汇款、税号和开始工作前的准备</small></span><span class="guideChevron">＋</span></summary>
-    <div class="guideBody"><p>比较账户月费、ATM 费用、国际汇款汇率与手续费、海外转账到账时间，以及是否支持手机钱包。开户所需材料因银行和身份核验方式而异。</p><ul><li>尽早确认银行账户能否接收工资、是否有账户维护费。</li><li>TFN 可通过 ATO 官方渠道申请，不要向不明中介购买或付费申请。</li><li>开始工作后保存 payslip、雇佣协议和工资入账记录。</li></ul><div class="guideLinks"><a href="https://www.ato.gov.au/individuals-and-families/tax-file-number" target="_blank" rel="noopener">ATO · TFN ↗</a><a href="https://moneysmart.gov.au/banking" target="_blank" rel="noopener">MoneySmart 银行账户 ↗</a></div></div>
+    <div class="guideBody">
+     <p>先准备一个澳洲日常交易账户，用于收工资、交房租和日常消费。比较账户月费、ATM 费用、国际汇款汇率/手续费、转账到账时间、手机钱包支持和身份验证要求。</p>
+     <ul><li><b>四大银行：</b>CommBank、NAB、ANZ、Westpac。各家开户方式、月费减免和新生服务不同，按自己情况比较。</li><li><b>跨境转账：</b>可比较 Wise 与银行电汇的汇率、手续费、到账时间和收款币种；下单前看最终到账金额。</li><li><b>税号 TFN：</b>开始工作或处理税务时，通过 ATO 官方渠道了解申请；TFN 是敏感信息，不要交给不明中介。</li><li><b>政府服务：</b>需要办理相关政府事务时再注册 myGov，开启多重验证并保护登录信息。</li><li>开始工作后保存雇佣协议、payslip 和工资入账记录。</li></ul>
+     <div class="guideLinks"><a href="https://www.commbank.com.au/banking/everyday-account.html" target="_blank" rel="noopener">CommBank ↗</a><a href="https://www.nab.com.au/personal/bank-accounts" target="_blank" rel="noopener">NAB ↗</a><a href="https://www.anz.com.au/personal/bank-accounts/" target="_blank" rel="noopener">ANZ ↗</a><a href="https://www.westpac.com.au/personal-banking/bank-accounts/" target="_blank" rel="noopener">Westpac ↗</a><a href="https://wise.com/au/" target="_blank" rel="noopener">Wise ↗</a><a href="https://www.ato.gov.au/individuals-and-families/tax-file-number" target="_blank" rel="noopener">ATO · TFN ↗</a><a href="https://my.gov.au/" target="_blank" rel="noopener">myGov ↗</a><a href="https://moneysmart.gov.au/banking" target="_blank" rel="noopener">Moneysmart 银行指南 ↗</a></div>
+    </div>
    </details>
-   <details class="guideCard"><summary><span class="guideIcon">🩺</span><span class="guideSummary"><strong>OSHC 医疗保险</strong><small>保险生效日期、保险卡、理赔和就医入口</small></span><span class="guideChevron">＋</span></summary>
-    <div class="guideBody"><p>核对 OSHC 保单是否覆盖整个签证要求期间、姓名拼写和生效日期是否正确。保存电子保险卡、保单号码、紧急联系电话，并了解 direct billing、GP、专科转诊和急诊的区别。</p><ul><li>看 GP 前确认诊所是否支持保险直付以及可能产生的 gap fee。</li><li>急症或危及生命的紧急情况拨打澳洲 000。</li><li>非紧急健康建议可联系保险公司或学校健康服务。</li></ul><div class="guideLinks"><a href="https://www.health.gov.au/topics/private-health-insurance/overseas-students" target="_blank" rel="noopener">澳洲政府 OSHC 说明 ↗</a></div></div>
+   <details class="guideCard"><summary><span class="guideIcon">🩺</span><span class="guideSummary"><strong>OSHC 医疗保险与就医准备</strong><small>保险生效日期、电子保险卡、理赔资料和长期就医指南入口</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody"><p>抵澳后先把保险资料整理好；日常生病时去哪里看、OSHC 哪些项目能报销，请查看独立的「就医与保险」指南。</p><ul><li>确认 OSHC 生效日覆盖签证要求期间，姓名和保单信息准确。</li><li>下载电子保险卡，保存会员号、理赔入口、24 小时紧急联系电话。</li><li>查清保险公司合作 GP / direct billing 网络，以及看诊是否需要先垫付。</li><li>把常用药物、过敏史、既往病史和紧急联系人整理好，必要时准备英文版本。</li></ul><div class="guideLinks"><a href="https://www.health.gov.au/resources/publications/overseas-student-health-cover-oshc-fact-sheet?language=en" target="_blank" rel="noopener">澳洲政府 OSHC 最新说明 ↗</a><button type="button" class="secondary" data-goto="health">打开就医与保险指南 →</button></div></div>
    </details>
    <details class="guideCard"><summary><span class="guideIcon">📄</span><span class="guideSummary"><strong>重要文件与入境准备</strong><small>护照、签证、CoE、保险、海关申报和电子备份</small></span><span class="guideChevron">＋</span></summary>
     <div class="guideBody"><p>把护照、签证批准信、CoE、学校录取文件、OSHC 保单、租房合同、接机和住宿地址分别保存到手机离线文件、云端和纸质文件夹。</p><ul><li>入境时按要求申报食品、植物、动物制品及其他受限制物品。</li><li>不确定是否允许入境的食品，主动向边境工作人员申报。</li><li>给家人留一份航班、住址、紧急联系人和保险信息。</li></ul><div class="guideLinks"><a href="https://www.abf.gov.au/entering-and-leaving-australia/can-you-bring-it-in" target="_blank" rel="noopener">澳洲边境入境物品指南 ↗</a><a href="https://www.homeaffairs.gov.au/" target="_blank" rel="noopener">Department of Home Affairs ↗</a></div></div>
@@ -477,104 +526,184 @@ body{background:var(--bg);color:var(--ink)}
 </section>
 
 <section class="page" id="page-shopping">
- <div class="pageIntro"><div class="eyebrow">SMART SAVING</div><h1>购物信息</h1><p>学生折扣、开户礼和赠品必须逐项核对官方资格、有效期与条件。</p></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>💻 Apple 教育优惠</h3><p>检查澳洲教育商店资格、产品范围和促销细则，不默认所有国际学生均符合资格。</p><a href="https://www.apple.com/au-hed/store" target="_blank" rel="noopener">Apple Education Store ↗</a></article>
-  <article class="infoCard"><h3>🛒 超市</h3><p>比较单位价格、会员价和自有品牌，采购前考虑运输与退货成本。</p><a href="https://www.woolworths.com.au/" target="_blank" rel="noopener">Woolworths ↗</a>　<a href="https://www.coles.com.au/" target="_blank" rel="noopener">Coles ↗</a>　<a href="https://www.aldi.com.au/" target="_blank" rel="noopener">ALDI ↗</a></article>
-  <article class="infoCard"><h3>🪑 家具与二手</h3><p>先确认住宿是否带家具；二手交易现场验货，避免预付运费或押金。</p><a href="https://www.ikea.com/au/en/" target="_blank" rel="noopener">IKEA ↗</a>　<a href="https://www.facebook.com/marketplace/" target="_blank" rel="noopener">Marketplace ↗</a></article>
-  <article class="infoCard"><h3>🎁 学生优惠与赠品</h3><p>记录官方活动页、截止日期、资格、最低消费和退货条件。赠品仅在官方条款明确时列入。</p></article>
-  <article class="infoCard"><h3>🏦 银行开户活动</h3><p>比较月费、ATM、国际转账、汇率和开户要求，不为赠品忽略账户成本。</p></article>
+ <div class="pageIntro"><div class="eyebrow">SMART SAVING</div><h1>购物信息</h1><p>按购物目的找店：日常食品、家具家居、衣服鞋履、数码产品和折扣商场。先知道去哪买，再比较当期价格。</p></div>
+
+ <div class="shoppingQuickGrid">
+  <article class="shoppingQuickCard"><span>🛒</span><strong>日常食品</strong><small>ALDI 先看基础食品；Coles / Woolworths 比较每周 Specials</small></article>
+  <article class="shoppingQuickCard"><span>🪑</span><strong>家具家居</strong><small>Kmart / BIG W 买小件；IKEA 买家具；二手平台找大件</small></article>
+  <article class="shoppingQuickCard"><span>👟</span><strong>衣服鞋履</strong><small>DFO / Birkenhead Point 找品牌折扣和运动鞋</small></article>
+  <article class="shoppingQuickCard"><span>💻</span><strong>数码学习</strong><small>Officeworks 看文具；JB Hi-Fi 比电子产品型号</small></article>
  </div>
 
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>澳洲购物地图</h2><p>按购买任务选择商家，不必每家店都逛一遍</p></div><span class="tag">购物入口</span></div>
- <div class="cardGrid">
-  <article class="infoCard"><span class="tag">日常食品</span><h3>Coles</h3><p>日常食品、生鲜、牛奶、面包、肉类、蔬果和家庭清洁用品。每周补货，留意 Flybuys、目录促销与会员价。</p><a href="https://www.coles.com.au/" target="_blank" rel="noopener">Coles 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">日常食品</span><h3>Woolworths</h3><p>日常食品、生鲜、杂货和线上配送/自提。适合与 Coles 对比每周目录、会员价和单位价格。</p><a href="https://www.woolworths.com.au/" target="_blank" rel="noopener">Woolworths 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">折扣食品</span><h3>ALDI</h3><p>基础食品、日常杂货和部分限时 Special Buys。商品选择精简，适合预算型采购。</p><a href="https://www.aldi.com.au/" target="_blank" rel="noopener">ALDI 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">家居 / 家具</span><h3>IKEA</h3><p>床架、床垫、书桌、椅子、收纳、厨房用品和基础家具。搬家采购前核对配送与组装费用。</p><a href="https://www.ikea.com/au/en/" target="_blank" rel="noopener">IKEA 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">平价日用品</span><h3>Kmart</h3><p>锅具、餐具、收纳、床品、灯具、小家电和基础生活用品，适合刚落地补齐日用品。</p><a href="https://www.kmart.com.au/" target="_blank" rel="noopener">Kmart 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">家居 / 文具</span><h3>BIG W</h3><p>文具、床品、毛巾、厨房小物、家庭用品和部分电子产品，适合平价日常采购。</p><a href="https://www.bigw.com.au/" target="_blank" rel="noopener">BIG W 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">文具 / 打印</span><h3>Officeworks</h3><p>笔记本、文件夹、打印复印、电脑配件、桌面用品和学习办公设备。</p><a href="https://www.officeworks.com.au/" target="_blank" rel="noopener">Officeworks 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">数码 / 电器</span><h3>JB Hi-Fi</h3><p>笔记本、耳机、显示器、手机、配件和家用电子产品。比价时核对具体型号、保修和教育优惠。</p><a href="https://www.jbhifi.com.au/" target="_blank" rel="noopener">JB Hi-Fi 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">药妆 / 日用品</span><h3>Chemist Warehouse</h3><p>常见非处方药、洗护、护肤和个人护理用品。药品按标签与药师建议使用。</p><a href="https://www.chemistwarehouse.com.au/" target="_blank" rel="noopener">Chemist Warehouse ↗</a></article>
-  <article class="infoCard"><span class="tag">综合百货</span><h3>Target Australia</h3><p>服饰、家居、玩具和日常用品，适合与 Kmart、BIG W 比价。</p><a href="https://www.target.com.au/" target="_blank" rel="noopener">Target ↗</a></article>
-  <article class="infoCard"><span class="tag">百货 / 美妆</span><h3>Myer</h3><p>服饰、美妆、香水、家居和礼品，适合促销季比价。</p><a href="https://www.myer.com.au/" target="_blank" rel="noopener">Myer ↗</a></article>
-  <article class="infoCard"><span class="tag">大包装采购</span><h3>Costco</h3><p>大包装食品、家庭消耗品和部分电子产品。考虑会员费、储存空间与包装规格。</p><a href="https://www.costco.com.au/" target="_blank" rel="noopener">Costco ↗</a></article>
-  <article class="infoCard"><span class="tag">二手家具</span><h3>Gumtree</h3><p>二手桌椅、床架、显示器和搬家清仓。现场验货，避免预付运费或押金。</p><a href="https://www.gumtree.com.au/" target="_blank" rel="noopener">Gumtree ↗</a></article>
-  <article class="infoCard"><span class="tag">二手交易</span><h3>Facebook Marketplace</h3><p>附近二手家具、家电和免费物品。面交选安全地点，先验货再付款。</p><a href="https://www.facebook.com/marketplace/" target="_blank" rel="noopener">Marketplace ↗</a></article>
- </div></div>
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>悉尼实体购物中心</h2><p>集中逛店、试穿、买电子产品和日常用品</p></div></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>Westfield Sydney</h3><p>CBD 核心购物中心，适合百货、时尚、美妆和品牌店集中采购。</p><a href="https://www.westfield.com.au/sydney" target="_blank" rel="noopener">商场官网 ↗</a></article>
-  <article class="infoCard"><h3>Broadway Sydney</h3><p>靠近 Central/Ultimo 一带，适合超市、服饰、电子和日常购物。</p><a href="https://www.broadwaysydney.com.au/" target="_blank" rel="noopener">商场官网 ↗</a></article>
-  <article class="infoCard"><h3>Westfield Eastgardens</h3><p>东南区大型购物中心，可集中采购食品、服饰、家居与生活用品。</p><a href="https://www.westfield.com.au/eastgardens" target="_blank" rel="noopener">商场官网 ↗</a></article>
-  <article class="infoCard"><h3>Central Park Mall</h3><p>靠近 UTS 与 Central 区域，适合校园周边日常购物和餐饮。</p><a href="https://www.centralparkmall.com.au/" target="_blank" rel="noopener">商场官网 ↗</a></article>
- </div></div>
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>澳洲购物地图</h2><p>点开你要买的类别，下面会列出对应商店、适合买什么和省钱提示。</p></div><span class="tag">分类导航</span></div>
+  <div class="shoppingAccordionList">
+   <details class="guideCard" open>
+    <summary><span class="guideIcon">🥦</span><span class="guideSummary"><strong>日常食品与超市</strong><small>每周采购、生鲜、基础食品、家庭消耗品</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="shoppingLead">想省日常食品开支，可以先去 ALDI 看基础款，再用 Coles 和 Woolworths 的每周目录比价。不要只看促销标签，优先比较每 100g / 每 kg / 每 L 的单位价格。</p>
+     <div class="shoppingStoreGrid">
+      <article class="shoppingStore"><span class="tag blue">预算优先</span><h3>ALDI</h3><p>基础食品、自有品牌、冷冻食品和日常杂货；部分商品有 Special Buys 限时活动。</p><small>适合：米面、牛奶、鸡蛋、基础食材和家庭日用品。</small><a href="https://www.aldi.com.au/" target="_blank" rel="noopener">ALDI 官网 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">促销对比</span><h3>Coles</h3><p>生鲜、肉类、蔬果、烘焙、日常杂货；留意 Flybuys、目录 Specials 和会员价。</p><small>适合：每周补货、比价和线上配送/自提。</small><a href="https://www.coles.com.au/" target="_blank" rel="noopener">Coles 官网 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">促销对比</span><h3>Woolworths</h3><p>生鲜、食品和家庭消耗品；留意 Everyday Rewards、目录 Specials 和会员价。</p><small>适合：与 Coles 对比同款商品和单位价格。</small><a href="https://www.woolworths.com.au/" target="_blank" rel="noopener">Woolworths 官网 ↗</a></article>
+      <article class="shoppingStore"><span class="tag warn">大包装采购</span><h3>Costco</h3><p>大包装食品、家庭消耗品和部分电子产品；需要会员资格。</p><small>适合：多人合住、储物空间充足且确定能用完的商品。</small><a href="https://www.costco.com.au/" target="_blank" rel="noopener">Costco 官网 ↗</a></article>
+     </div>
+    </div>
+   </details>
 
- <div class="sectionBlock"><div class="sectionTitle"><div><h2>在澳洲怎么买更划算</h2><p>固定消费知识直接放在这里，不必每次跳出网站查基础概念</p></div></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>食品采购：先比单位价格</h3><p>不要只看包装总价。比较每 100g、每 kg、每 L 的价格；留意自有品牌、冷冻蔬菜、季末折扣和临近保质期商品。每周先列菜单和清单，减少重复购买与浪费。</p></article>
-  <article class="infoCard"><h3>会员积分怎么用</h3><p>Coles 常见 Flybuys，Woolworths 常见 Everyday Rewards。加入前确认会员价、积分兑换规则和个人数据使用条款；不为积分而购买原本不需要的商品。</p></article>
-  <article class="infoCard"><h3>搬家第一周优先买什么</h3><p>先买床品、毛巾、基础厨具、餐具、清洁用品、衣架、垃圾袋和简单药箱。家具先测量房间与门宽，再考虑 IKEA、Kmart、二手平台或校内群组。</p></article>
-  <article class="infoCard"><h3>数码产品购买检查</h3><p>先确认准确型号、键盘布局、电源规格、保修范围和退换条件。比较教育价、公开促销与历史常见价格；不要只因“限时优惠”而仓促下单。</p></article>
-  <article class="infoCard"><h3>二手交易安全</h3><p>优先当面检查物品、测试电器、确认配件并在安全公共地点交易。不要点击陌生人发来的付款链接，不要为“预留商品”向个人账户提前汇款。</p></article>
-  <article class="infoCard"><h3>学生优惠核验</h3><p>先完成学生身份认证，再核对折扣适用国家、课程/学校资格、有效期、排除型号和是否可叠加。折扣码不等于最低价，最终以结算页为准。</p></article>
- </div></div>
-\n <div class="sectionBlock"><div class="sectionTitle"><div><h2>优惠、目录与学生折扣</h2><p>购物前先查折扣和每周促销</p></div></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>UNiDAYS</h3><p>学生身份验证后查看电子产品、时尚、生活品牌等学生优惠。资格和折扣因品牌而异。</p><a href="https://www.myunidays.com/AU/en-AU" target="_blank" rel="noopener">查看 UNiDAYS ↗</a></article>
-  <article class="infoCard"><h3>Student Beans</h3><p>学生折扣与优惠码平台，覆盖电子产品、餐饮、服饰和娱乐。</p><a href="https://www.studentbeans.com/au" target="_blank" rel="noopener">查看 Student Beans ↗</a></article>
-  <article class="infoCard"><h3>Shopfully</h3><p>聚合零售商每周促销目录，适合采购前查看 Specials。</p><a href="https://www.shopfully.com.au/" target="_blank" rel="noopener">查看促销目录 ↗</a></article>
-  <article class="infoCard"><h3>ShopBack</h3><p>返现平台。需通过指定入口并符合活动条款；留意排除商品、追踪失败和返现确认时间。</p><a href="https://www.shopback.com.au/" target="_blank" rel="noopener">查看 ShopBack ↗</a></article>
-  <article class="infoCard"><h3>The Student Australia</h3><p>按城市、校园和类别查看学生优惠，适合持续查找悉尼本地优惠。</p><a href="https://www.thestudent.com.au/" target="_blank" rel="noopener">查看学生优惠 ↗</a></article>
- </div></div>
- <div class="notice">价格、库存和优惠会变化。这里提供商家用途导航，不代表当前最低价或保证存在学生折扣；购买前以商家结算页和官方条款为准。</div>
+   <details class="guideCard">
+    <summary><span class="guideIcon">🛏️</span><span class="guideSummary"><strong>家具、家居与日用品</strong><small>床品、锅具、收纳、书桌、椅子和搬家采购</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="shoppingLead">刚到澳洲先买床品、毛巾、锅具、餐具、清洁用品和收纳；大型家具先量房间、门宽和电梯，再决定买新或二手。</p>
+     <div class="shoppingStoreGrid">
+      <article class="shoppingStore"><span class="tag blue">大型家具</span><h3>IKEA</h3><p>床架、床垫、书桌、椅子、衣柜、收纳和厨房用品。</p><small>适合：一次性购齐家具；额外核对配送、组装和退货费用。</small><a href="https://www.ikea.com/au/en/" target="_blank" rel="noopener">IKEA 官网 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">平价小件</span><h3>Kmart</h3><p>锅具、餐具、床品、毛巾、灯具、小家电、收纳和基础衣物。</p><small>适合：搬家第一周补齐低价日用品。</small><a href="https://www.kmart.com.au/" target="_blank" rel="noopener">Kmart 官网 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">家居与文具</span><h3>BIG W</h3><p>床品、毛巾、厨房小物、文具、家庭用品和部分电子产品。</p><small>适合：与 Kmart 比价购买常用生活用品。</small><a href="https://www.bigw.com.au/" target="_blank" rel="noopener">BIG W 官网 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">二手大件</span><h3>Gumtree / Marketplace</h3><p>二手桌椅、床架、显示器和搬家清仓物品。</p><small>适合：预算有限且能现场验货；不要预付陌生卖家运费或押金。</small><a href="https://www.gumtree.com.au/" target="_blank" rel="noopener">Gumtree ↗</a>　<a href="https://www.facebook.com/marketplace/" target="_blank" rel="noopener">Marketplace ↗</a></article>
+     </div>
+    </div>
+   </details>
 
-</section>
+   <details class="guideCard">
+    <summary><span class="guideIcon">👕</span><span class="guideSummary"><strong>服装、鞋履与品牌折扣</strong><small>基础款、运动鞋、澳洲本土品牌和 Outlet 折扣</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="shoppingLead">基础衣物可以先看 Kmart、Cotton On、Uniqlo 的常规款和季末促销；想买品牌运动鞋、外套或设计师品牌，可以集中去 Outlet 比较折扣。Outlet 不代表每件商品都是最低价，先看原价、款号和退换政策。</p>
+     <div class="shoppingStoreGrid">
+      <article class="shoppingStore"><span class="tag blue">平价基础款</span><h3>Kmart</h3><p>T 恤、睡衣、运动基础款、袜子和日常衣物。</p><a href="https://www.kmart.com.au/" target="_blank" rel="noopener">Kmart 官网 ↗</a></article>
+      <article class="shoppingStore"><span class="tag">休闲服饰</span><h3>Cotton On</h3><p>日常休闲服、基础款、牛仔和配饰；留意官网促销与门店折扣。</p><a href="https://cottonon.com/AU/" target="_blank" rel="noopener">Cotton On ↗</a></article>
+      <article class="shoppingStore"><span class="tag">基础款</span><h3>Uniqlo</h3><p>基础 T 恤、衬衫、针织、保暖内搭和功能性服装；比较季节促销。</p><a href="https://www.uniqlo.com/au/en/" target="_blank" rel="noopener">Uniqlo Australia ↗</a></article>
+      <article class="shoppingStore"><span class="tag warn">品牌 Outlet</span><h3>DFO Homebush</h3><p>运动鞋、运动服、品牌服饰、包袋和家居品牌 Outlet 集中地。</p><small>可重点比较 Nike、Adidas、Asics、Puma、Coach、Calvin Klein 等门店的折扣和款式。</small><a href="https://www.homebush.dfo.com.au/shopping" target="_blank" rel="noopener">查看 DFO Homebush 商户目录 ↗</a></article>
+      <article class="shoppingStore"><span class="tag warn">品牌 Outlet</span><h3>Birkenhead Point</h3><p>品牌服饰、运动品牌、鞋履、包袋和家居用品 Outlet。</p><small>适合计划半天集中逛品牌折扣；先查商户目录和 Visitor Passport 活动。</small><a href="https://www.birkenheadpoint.com.au/visitor" target="_blank" rel="noopener">Birkenhead Point 官网 ↗</a></article>
+     </div>
+    </div>
+   </details>
 
+   <details class="guideCard">
+    <summary><span class="guideIcon">💻</span><span class="guideSummary"><strong>数码产品、学习用品与打印</strong><small>笔记本电脑、耳机、文具、打印和 Apple 教育优惠</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="shoppingLead">买电子产品时先锁定准确型号，再比同款价格、保修、键盘布局和退换规则。不要只比较品牌名或大概配置。</p>
+     <div class="shoppingStoreGrid">
+      <article class="shoppingStore"><span class="tag">数码电器</span><h3>JB Hi-Fi</h3><p>电脑、耳机、显示器、手机和家用电子产品。</p><small>适合：线下试机、比较同型号促销和配件套装。</small><a href="https://www.jbhifi.com.au/" target="_blank" rel="noopener">JB Hi-Fi ↗</a></article>
+      <article class="shoppingStore"><span class="tag">文具 / 打印</span><h3>Officeworks</h3><p>笔记本、文件夹、打印复印、电脑配件和桌面用品。</p><small>适合：开学采购、打印资料和学习办公用品。</small><a href="https://www.officeworks.com.au/" target="_blank" rel="noopener">Officeworks ↗</a></article>
+      <article class="shoppingStore"><span class="tag blue">教育优惠</span><h3>Apple Education Store</h3><p>查看澳洲教育商店的 Mac、iPad 和教育优惠活动。</p><small>资格、产品范围和赠品活动以官方教育商店条款为准。</small><a href="https://www.apple.com/au-hed/store" target="_blank" rel="noopener">Apple Education Store ↗</a></article>
+     </div>
+    </div>
+   </details>
 
-<section class="page" id="page-transport">
- <div class="pageIntro"><div class="eyebrow">GETTING AROUND</div><h1>交通出行</h1><p>悉尼公共交通、机场抵达、路线规划与常用工具。</p></div>
- <div class="cardGrid">
-  <article class="infoCard"><h3>🚋 Opal / 交通支付</h3><p>查询 Opal 卡、充值、票价规则和优惠。悉尼部分交通方式也支持直接使用非接触式银行卡或手机支付；上车与下车使用同一支付方式。</p><a href="https://transportnsw.info/tickets-opal" target="_blank" rel="noopener">Opal 官方入口 ↗</a></article>
-  <article class="infoCard"><h3>🗺 Trip Planner</h3><p>输入住址与 UNSW 校园目的地，查看公交、轻轨、火车和步行组合。搬家前用上课时段测试门到门通勤。</p><a href="https://transportnsw.info/trip" target="_blank" rel="noopener">路线规划 ↗</a></article>
-  <article class="infoCard"><h3>✈ Sydney Airport</h3><p>查询航站楼、交通、机场设施和出发/抵达信息。机场到市区可比较机场火车、出租车和网约车成本。</p><a href="https://www.sydneyairport.com.au/" target="_blank" rel="noopener">机场官网 ↗</a></article>
-  <article class="infoCard"><h3>🚆 Transport NSW</h3><p>官方交通公告、线路变更、服务中断、票价与实时出行信息。</p><a href="https://transportnsw.info/" target="_blank" rel="noopener">Transport NSW ↗</a></article>
-  <article class="infoCard"><h3>🚖 出租车与网约车</h3><p>可比较 Uber、DiDi 与本地出租车的预计费用；机场接送前核对上车点和附加费。</p><a href="https://www.uber.com/au/en/" target="_blank" rel="noopener">Uber ↗</a>　<a href="https://www.didiglobal.com/" target="_blank" rel="noopener">DiDi ↗</a></article>
-  <article class="infoCard"><h3>📍 Google Maps</h3><p>适合步行导航、找超市和查看商家位置；公共交通行程仍建议交叉核对 Transport NSW。</p><a href="https://maps.google.com/" target="_blank" rel="noopener">打开地图 ↗</a></article>
+   <details class="guideCard">
+    <summary><span class="guideIcon">🧴</span><span class="guideSummary"><strong>药妆、护肤与个人护理</strong><small>洗护、护肤、常见非处方药和日常护理用品</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="shoppingLead">日常洗护、护肤和个人护理可以先比较药妆店的目录促销、会员活动和同款规格。处方药必须凭处方购买；非处方药也应按标签和药师建议使用。</p>
+     <div class="shoppingStoreGrid">
+      <article class="shoppingStore"><h3>Chemist Warehouse</h3><p>护肤、洗护、维生素、个人护理和部分非处方药；常见商品适合比价。</p><a href="https://www.chemistwarehouse.com.au/" target="_blank" rel="noopener">Chemist Warehouse ↗</a></article>
+      <article class="shoppingStore"><h3>Priceline Pharmacy</h3><p>护肤、美妆、洗护和药房服务；关注会员活动与品牌促销。</p><a href="https://www.priceline.com.au/" target="_blank" rel="noopener">Priceline ↗</a></article>
+     </div>
+    </div>
+   </details>
+
+   <details class="guideCard">
+    <summary><span class="guideIcon">🏬</span><span class="guideSummary"><strong>悉尼购物中心与 Outlet 节点</strong><small>集中逛商场、品牌折扣、日常采购和周末购物</small></span><span class="guideChevron">＋</span></summary>
+    <div class="guideBody">
+     <p class="shoppingLead">如果想一次逛多家店，可以按目的选择商场：买日常用品选离家近的大型购物中心；专门找品牌折扣，优先看 Outlet Centre。</p>
+     <div class="shoppingStoreGrid">
+      <article class="shoppingStore"><span class="tag">CBD / 品牌百货</span><h3>Westfield Sydney</h3><p>时尚、美妆、百货和品牌门店集中，适合市中心逛街和试穿。</p><a href="https://www.westfield.com.au/sydney" target="_blank" rel="noopener">Westfield Sydney ↗</a></article>
+      <article class="shoppingStore"><span class="tag">校园周边</span><h3>Broadway Sydney</h3><p>靠近 Central / Ultimo，超市、服饰、电子产品和餐饮较集中。</p><a href="https://www.broadwaysydney.com.au/" target="_blank" rel="noopener">Broadway Sydney ↗</a></article>
+      <article class="shoppingStore"><span class="tag">悉尼东南区</span><h3>Westfield Eastgardens</h3><p>大型综合购物中心，适合食品、服饰、家居和日常服务一站式采购。</p><a href="https://www.westfield.com.au/eastgardens" target="_blank" rel="noopener">Westfield Eastgardens ↗</a></article>
+      <article class="shoppingStore"><span class="tag warn">品牌折扣首选</span><h3>DFO Homebush</h3><p>大型 Outlet 节点，运动品牌、服饰、鞋履、包袋和部分家居品牌选择多。</p><a href="https://www.homebush.dfo.com.au/shopping" target="_blank" rel="noopener">DFO Homebush ↗</a></article>
+      <article class="shoppingStore"><span class="tag warn">海港旁 Outlet</span><h3>Birkenhead Point</h3><p>品牌服饰、鞋履、运动和家居 Outlet，适合安排半天集中逛店。</p><a href="https://www.birkenheadpoint.com.au/visitor" target="_blank" rel="noopener">Birkenhead Point ↗</a></article>
+      <article class="shoppingStore"><span class="tag">西南区 Outlet</span><h3>Fashion Spree Liverpool</h3><p>服饰、运动鞋、配饰和家居 Outlet，可作为悉尼西南区的折扣购物点。</p><a href="https://www.fashionspree.com.au/" target="_blank" rel="noopener">Fashion Spree ↗</a></article>
+     </div>
+    </div>
+   </details>
+  </div>
  </div>
- <div class="notice">交通票价、优惠和支付方式可能调整。以 Transport NSW 最新规则为准；使用银行卡/手机支付时，避免同一趟行程混用 Opal 与银行卡。</div>
-</section>
 
-<section class="page" id="page-banking">
- <div class="pageIntro"><div class="eyebrow">MONEY IN AUSTRALIA</div><h1>银行金融</h1><p>开户、日常消费、跨境转账与税务入口。先比较费用和服务，再决定开户。</p></div>
- <div class="cardGrid">
-  <article class="infoCard"><span class="tag">四大银行</span><h3>CommBank</h3><p>查看学生/年轻客户账户、国际学生开户要求、银行卡和 NetBank/App 功能。开户资格和费用以银行页面为准。</p><a href="https://www.commbank.com.au/banking/everyday-account.html" target="_blank" rel="noopener">账户信息 ↗</a></article>
-  <article class="infoCard"><span class="tag">四大银行</span><h3>NAB</h3><p>查看 NAB Classic Banking、抵澳前开户选项、身份验证和账户费用。</p><a href="https://www.nab.com.au/personal/bank-accounts" target="_blank" rel="noopener">账户信息 ↗</a></article>
-  <article class="infoCard"><span class="tag">四大银行</span><h3>ANZ</h3><p>比较 ANZ 日常交易账户、银行卡、数字银行和新来澳客户的开户流程。</p><a href="https://www.anz.com.au/personal/bank-accounts/" target="_blank" rel="noopener">账户信息 ↗</a></article>
-  <article class="infoCard"><span class="tag">四大银行</span><h3>Westpac</h3><p>查看 Choice 账户、国际学生开户条件、账户月费豁免与数字支付。</p><a href="https://www.westpac.com.au/personal-banking/bank-accounts/" target="_blank" rel="noopener">账户信息 ↗</a></article>
-  <article class="infoCard"><span class="tag">跨境金融</span><h3>Wise</h3><p>可研究国际汇款、多币种账户和汇率透明度；确认澳洲可用功能、费用和个人资格。</p><a href="https://wise.com/au/" target="_blank" rel="noopener">Wise 官网 ↗</a></article>
-  <article class="infoCard"><span class="tag">税务</span><h3>ATO · TFN</h3><p>开始工作或处理税务时，通过澳大利亚税务局了解 Tax File Number 的申请与使用。TFN 属于敏感个人信息。</p><a href="https://www.ato.gov.au/individuals-and-families/tax-file-number" target="_blank" rel="noopener">ATO TFN 官方指南 ↗</a></article>
-  <article class="infoCard"><span class="tag">政府账户</span><h3>myGov</h3><p>澳洲政府服务线上账户入口。仅在需要使用相应政府服务时注册，保护登录凭证与多重验证。</p><a href="https://my.gov.au/" target="_blank" rel="noopener">myGov ↗</a></article>
-  <article class="infoCard"><span class="tag">金融安全</span><h3>Moneysmart</h3><p>澳大利亚政府金融教育网站，适合了解预算、银行账户、信用卡、诈骗和租房资金规划。</p><a href="https://moneysmart.gov.au/" target="_blank" rel="noopener">Moneysmart ↗</a></article>
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>折扣与学生优惠</h2><p>把折扣入口放在最后，购物前集中核对资格和活动条件。</p></div></div>
+  <div class="cardGrid">
+   <article class="infoCard"><h3>UNiDAYS</h3><p>学生身份验证后查看电子产品、时尚、生活品牌等优惠；资格和折扣因品牌而异。</p><a href="https://www.myunidays.com/AU/en-AU" target="_blank" rel="noopener">查看 UNiDAYS ↗</a></article>
+   <article class="infoCard"><h3>Student Beans</h3><p>学生折扣与优惠码平台，覆盖电子产品、餐饮、服饰和娱乐。</p><a href="https://www.studentbeans.com/au" target="_blank" rel="noopener">查看 Student Beans ↗</a></article>
+   <article class="infoCard"><h3>Shopfully</h3><p>聚合零售商每周促销目录，适合采购前查看 Specials。</p><a href="https://www.shopfully.com.au/" target="_blank" rel="noopener">查看促销目录 ↗</a></article>
+   <article class="infoCard"><h3>ShopBack</h3><p>返现平台；需通过指定入口并符合活动条款，留意排除商品和返现确认时间。</p><a href="https://www.shopback.com.au/" target="_blank" rel="noopener">查看 ShopBack ↗</a></article>
+  </div>
  </div>
- <div class="notice">开户前比较账户月费、ATM 费用、国际转账费、汇率、存款条件和身份验证要求。不要把网银密码、验证码或 TFN 提供给任何第三方。</div>
+ <div class="notice">价格、库存和优惠会变化。本页提供商家用途导航，不代表当前最低价或保证存在学生折扣；购买前以商家结算页和官方条款为准。</div>
 </section>
 
 <section class="page" id="page-health">
- <div class="pageIntro"><div class="eyebrow">HEALTH & WELLBEING</div><h1>医疗与保险</h1><p>OSHC、看 GP、紧急求助和医疗服务入口。</p></div>
- <div class="cardGrid">
-  <article class="infoCard"><span class="tag warn">学生签证重点</span><h3>OSHC 官方说明</h3><p>大多数学生签证持有人需要在澳期间维持符合要求的 Overseas Student Health Cover。确认保单覆盖日期与签证期限衔接。</p><a href="https://www.studyaustralia.gov.au/en/plan-your-move/overseas-student-health-cover-oshc" target="_blank" rel="noopener">Study Australia OSHC ↗</a></article>
-  <article class="infoCard"><h3>ahm OSHC</h3><p>比较单人/家庭计划、等待期、理赔方式、网络诊所和保单除外责任。</p><a href="https://www.ahmoshc.com/" target="_blank" rel="noopener">ahm 官网 ↗</a></article>
-  <article class="infoCard"><h3>Allianz Care</h3><p>查看学生签证 OSHC 产品、理赔和会员服务。</p><a href="https://www.allianzcare.com.au/en/student-visa-oshc.html" target="_blank" rel="noopener">Allianz OSHC ↗</a></article>
-  <article class="infoCard"><h3>Bupa OSHC</h3><p>查看保险计划、线上会员服务、理赔与合作医疗服务。</p><a href="https://www.bupa.com.au/health-insurance/oshc" target="_blank" rel="noopener">Bupa OSHC ↗</a></article>
-  <article class="infoCard"><h3>Medibank OSHC</h3><p>比较基础保障、附加保障、理赔流程和服务网络。</p><a href="https://www.medibank.com.au/overseas-health-insurance/oshc/" target="_blank" rel="noopener">Medibank OSHC ↗</a></article>
-  <article class="infoCard"><h3>nib OSHC</h3><p>查看学生保险报价、会员服务和理赔信息。</p><a href="https://www.nib.com.au/overseas-students" target="_blank" rel="noopener">nib OSHC ↗</a></article>
-  <article class="infoCard"><h3>CBHS International</h3><p>查看国际学生保险产品与服务范围。</p><a href="https://www.cbhsinternationalhealth.com.au/overseas-students-oshc" target="_blank" rel="noopener">CBHS OSHC ↗</a></article>
-  <article class="infoCard"><h3>healthdirect</h3><p>澳大利亚健康信息和非紧急健康建议入口。医疗紧急情况请拨打 000。</p><a href="https://www.healthdirect.gov.au/" target="_blank" rel="noopener">healthdirect ↗</a></article>
+ <div class="pageIntro"><div class="eyebrow">HEALTH & OSHC</div><h1>就医与保险</h1><p>不舒服时先判断应该去哪里；看诊前再核对 OSHC 能报什么、自己可能需要付多少。</p></div>
+
+ <div class="healthEmergency">
+  <div><span class="healthEyebrow">EMERGENCY</span><h2>严重或危及生命的情况</h2><p>例如严重胸痛、呼吸困难、疑似中风、失去意识、严重出血或重大事故。</p></div>
+  <a href="tel:000">拨打 000</a>
  </div>
- <div class="notice">OSHC 的基础保障通常不等于全面私人医疗保险，牙科、视力和理疗等可能不在基础保障内。逐项比较保单条款；本页不是医疗或保险建议。</div>
+ <div class="healthCallout"><strong>不确定应该去哪里？</strong><span>拨打 healthdirect <b>1800 022 222</b>（24 小时），由护士评估症状并建议合适的医疗服务。紧急情况不要等待电话评估，直接拨打 000。</span><a href="https://www.healthdirect.gov.au/" target="_blank" rel="noopener">healthdirect 官方入口 ↗</a></div>
+
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>不同症状，先去哪里？</h2><p>这是就医路径参考，不用于自行诊断；症状严重或迅速恶化时应立即求助。</p></div><span class="tag">就医导航</span></div>
+  <div class="healthPathGrid">
+   <article class="healthPathCard"><span class="healthPathIcon">💊</span><span class="tag">轻微 / 初步咨询</span><h3>药房 Pharmacist</h3><p>轻微感冒症状、常见过敏、轻度皮肤不适、非处方药选择、药物用法和一般健康咨询。</p><small>药剂师可以提供用药建议；持续、加重或不确定的症状应找 GP。</small></article>
+   <article class="healthPathCard"><span class="healthPathIcon">🩺</span><span class="tag blue">普通门诊首选</span><h3>全科医生 GP</h3><p>发烧、咳嗽持续不退、肠胃不适、皮肤问题、反复疼痛、慢性病管理、疫苗、处方和专科转诊。</p><small>非紧急健康问题通常先预约 GP；预约前问清费用、bulk billing/direct billing 和 gap fee。</small></article>
+   <article class="healthPathCard"><span class="healthPathIcon">➕</span><span class="tag warn">需要较快处理</span><h3>Urgent Care / 急诊护理</h3><p>例如轻微割伤、扭伤或疑似简单骨折、轻度烧伤、皮疹、耳痛、尿路感染、轻微感染或发烧，且短时间内需要处理。</p><small>是否适合由 healthdirect 或服务机构评估；国际学生可能产生费用，先核实资格和 OSHC 保障。</small></article>
+   <article class="healthPathCard"><span class="healthPathIcon">🚑</span><span class="tag warn">危及生命</span><h3>医院急诊 ED / Ambulance</h3><p>严重胸痛、呼吸困难、疑似中风、意识丧失、抽搐、无法控制的出血、重大创伤或严重过敏反应。</p><small>立即拨打 000；不要为了先问保险或费用而延误急救。</small></article>
+   <article class="healthPathCard"><span class="healthPathIcon">🧠</span><span class="tag">心理健康</span><h3>GP / 学校 Counselling</h3><p>持续焦虑、低落、睡眠问题、学习压力或情绪困扰，可先预约 GP 或学校 Wellbeing / Counselling 服务。</p><small>若存在立即伤害自己或他人的风险，请拨打 000 或前往急诊。</small></article>
+   <article class="healthPathCard"><span class="healthPathIcon">🦷</span><span class="tag">通常需额外核保</span><h3>牙科 / 眼科 / 理疗</h3><p>牙痛、洗牙、配眼镜、视力检查和物理治疗通常要单独确认保障；基础 OSHC 不应被默认包含这些项目。</p><small>先查是否购买了 Extras / Additional Cover，再预约和付款。</small></article>
+  </div>
+  <div class="guideLinks"><a href="https://www.healthdirect.gov.au/healthcare-and-services/emergency-and-urgent-care" target="_blank" rel="noopener">Healthdirect：紧急与非紧急就医 ↗</a><a href="https://www.healthdirect.gov.au/australian-health-services" target="_blank" rel="noopener">查找附近 GP、药房和医院 ↗</a><a href="https://www.health.nsw.gov.au/Hospitals/Pages/urgent-care-services.aspx" target="_blank" rel="noopener">NSW Urgent Care Services ↗</a><a href="https://www.health.nsw.gov.au/" target="_blank" rel="noopener">NSW Health ↗</a></div>
+ </div>
+
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>OSHC 基础保险通常保什么？</h2><p>按澳洲政府 2026 年 8 月发布的 OSHC Fact Sheet 整理；具体支付金额仍以你的保险合同为准。</p></div><span class="tag blue">基础保障参考</span></div>
+  <div class="oshcIntro">OSHC 基础计划通常包括 GP、专科医生、住院与手术、血液检查与 X 光、紧急救护车，以及部分处方药。保险支付通常按 Medicare Benefits Schedule（MBS）费用计算，不代表保险会报销医院或诊所账单的 85%。</div>
+  <div class="benefitGrid">
+   <article class="benefitCard"><span>GP 全科医生</span><strong>通常按 MBS 费用的 85%</strong><small>诊所收费高于保险支付金额时，差额由自己承担。</small></article>
+   <article class="benefitCard"><span>专科医生</span><strong>通常按 MBS 费用的 85%</strong><small>可能需要 GP 转诊；先核实专科费用和保险支付金额。</small></article>
+   <article class="benefitCard"><span>住院与手术</span><strong>基础计划包含住院治疗</strong><small>公立或私立医院的具体支付、医生费用和自付差额需按保单确认。</small></article>
+   <article class="benefitCard"><span>血液检查 / X 光</span><strong>至少按 MBS 费用的 85%</strong><small>检查项目、机构收费及是否需要转诊可能影响最终报销。</small></article>
+   <article class="benefitCard"><span>紧急救护车</span><strong>基础计划包含紧急转运保障</strong><small>核实何种情形被认定为紧急，以及是否有网络或服务限制。</small></article>
+   <article class="benefitCard"><span>部分处方药</span><strong>通常有单项和年度限额</strong><small>政府基础要求列出每项最高 A$50；单人每年 A$500、伴侣/家庭每年 A$1,000 的限额。以保单为准。</small></article>
+  </div>
+  <div class="notice">注意 Gap Fee：例如诊所收费高于 MBS 对应费用，保险只按合同支付其应付部分，差额需要自己承担。预约前同时询问诊所收费和保险公司预计支付金额。</div>
+ </div>
+
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>额外保障：哪些项目可能需要加购？</h2><p>不同保险公司和计划差异较大，不要把额外保障当成基础 OSHC 的默认福利。</p></div></div>
+  <div class="extraBenefitGrid">
+   <div><strong>🦷 牙科 Dental</strong><span>洗牙、检查、补牙、拔牙等；等待期、年度上限和指定诊所网络要逐项核对。</span></div>
+   <div><strong>👓 眼科 Optical</strong><span>验光、眼镜或隐形眼镜补贴；确认年度额度、合作商家和处方要求。</span></div>
+   <div><strong>🦵 理疗 Physiotherapy</strong><span>运动损伤、康复治疗等；查看每次报销上限、年度次数和转诊要求。</span></div>
+   <div><strong>🧠 心理服务</strong><span>Psychology / Counselling 可能属于额外保障；确认服务类型、等待期和年度限额。</span></div>
+   <div><strong>💊 药品与其他项目</strong><span>部分计划提供更高药品额度或额外服务；核对处方要求、单次上限和药品排除清单。</span></div>
+   <div><strong>🌏 其他附加保障</strong><span>例如遗体/医疗遣返等项目；是否包含取决于具体计划条款。</span></div>
+  </div>
+ </div>
+
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>看病前的保险核对清单</h2><p>预约前先确认，避免看完病才发现有大额自费。</p></div></div>
+  <div class="healthChecklist" id="healthChecklist">
+   <label class="checkRow"><input type="checkbox" data-health-check="0"><span>确认保单在就诊日期有效，等待期已经满足</span></label>
+   <label class="checkRow"><input type="checkbox" data-health-check="1"><span>确认该项目属于 Basic 还是 Additional Cover</span></label>
+   <label class="checkRow"><input type="checkbox" data-health-check="2"><span>询问诊所总收费、保险支付金额和 Gap Fee</span></label>
+   <label class="checkRow"><input type="checkbox" data-health-check="3"><span>确认诊所是否支持 direct billing / insurer network</span></label>
+   <label class="checkRow"><input type="checkbox" data-health-check="4"><span>如需专科、检查或住院，先问保险公司是否需要预先批准</span></label>
+   <label class="checkRow"><input type="checkbox" data-health-check="5"><span>保存发票、转诊信、检查结果和理赔记录</span></label>
+  </div>
+  <div class="guideLinks"><a href="https://www.health.gov.au/resources/publications/overseas-student-health-cover-oshc-fact-sheet?language=en" target="_blank" rel="noopener">澳洲政府 OSHC Fact Sheet ↗</a><a href="https://www.privatehealth.gov.au/" target="_blank" rel="noopener">PrivateHealth.gov.au ↗</a><a href="https://www.ombudsman.gov.au/complaints/private-health-insurance-complaints" target="_blank" rel="noopener">保险投诉与 Ombudsman ↗</a></div>
+ </div>
+
+ <div class="sectionBlock">
+  <div class="sectionTitle"><div><h2>OSHC 保险公司入口</h2><p>政府目前列出的 OSHC 保险公司；打开官网查看你的具体计划、会员服务和理赔规则。</p></div></div>
+  <div class="cardGrid">
+   <article class="infoCard"><h3>Allianz Care</h3><p>学生签证 OSHC、会员服务、合作诊所和理赔。</p><a href="https://www.allianzcare.com.au/en/student-visa-oshc.html" target="_blank" rel="noopener">Allianz OSHC ↗</a></article>
+   <article class="infoCard"><h3>Bupa OSHC</h3><p>查看保险计划、线上会员服务、理赔与合作医疗服务。</p><a href="https://www.bupa.com.au/health-insurance/oshc" target="_blank" rel="noopener">Bupa OSHC ↗</a></article>
+   <article class="infoCard"><h3>Medibank OSHC</h3><p>查看基础与额外保障、理赔流程和服务网络。</p><a href="https://www.medibank.com.au/overseas-health-insurance/oshc/" target="_blank" rel="noopener">Medibank OSHC ↗</a></article>
+   <article class="infoCard"><h3>ahm OSHC</h3><p>查看单人/家庭计划、等待期、理赔方式和网络诊所。</p><a href="https://www.ahmoshc.com/" target="_blank" rel="noopener">ahm OSHC ↗</a></article>
+   <article class="infoCard"><h3>nib OSHC</h3><p>查看学生保险计划、会员服务、理赔和合作医疗机构。</p><a href="https://www.nib.com.au/overseas-students" target="_blank" rel="noopener">nib OSHC ↗</a></article>
+  </div>
+ </div>
+ <div class="notice">本页是澳洲医疗服务和 OSHC 的一般导航，不是诊断、治疗或保险承保承诺。若症状严重、快速恶化或你担心有生命危险，请立即拨打 000。</div>
 </section>
+
 
 <section class="page" id="page-resources">
  <div class="pageIntro"><div class="eyebrow">ONE PLACE, USEFUL LINKS</div><h1>资源导航中心</h1><p>把常用官方服务、平台和工具放在一个地方。搜索、筛选并收藏，收藏保存在本机。</p></div>
@@ -588,30 +717,23 @@ body{background:var(--bg);color:var(--ink)}
 </section>
 
 <section class="page" id="page-profile">
- <div class="pageIntro"><div class="eyebrow">MY PROFILE</div><h1>个人资料中心</h1><p>修改一次，首页概览、航班和阶段计划同步读取。资料仅保存在本机浏览器。</p></div>
- <div class="panel"><div class="panelHead"><div><h2>我的留学信息</h2><p>初始资料根据你之前提供的项目交接信息填写</p></div><span class="tag blue">个人版</span></div>
-  <form id="profileForm"><div class="formGrid">
-   <div class="field"><label>称呼 / 昵称</label><input id="pName" placeholder="例如：My Study Plan"></div>
-   <div class="field"><label>留学国家</label><input id="pCountry" value="澳大利亚"></div>
-   <div class="field"><label>留学城市</label><input id="pCity" value="悉尼"></div>
-   <div class="field"><label>学校</label><input id="pSchool" value="UNSW Sydney"></div>
-   <div class="field"><label>专业 / 学位（选填）</label><input id="pProgram" placeholder="填写你的专业或学位"></div>
-   <div class="field"><label>语言班</label><select id="pLanguage"><option value="yes">需要语言班</option><option value="no">不需要语言班</option><option value="unknown">尚未确定</option></select></div>
-   <div class="field"><label>计划抵达日期</label><input id="pArrival" type="date" value="2027-01-20"></div>
-   <div class="field"><label>抵达时间（当地）</label><input id="pArrivalTime" type="time" value="12:00"></div>
-   <div class="field"><label>语言班开始</label><input id="pLanguageStart" type="date" value="2027-02-08"></div>
-   <div class="field"><label>语言班结束</label><input id="pLanguageEnd" type="date" value="2027-05-21"></div>
-   <div class="field"><label>迎新开始（待确认）</label><input id="pOrientation" type="date" value="2027-05-25"></div>
-   <div class="field"><label>主课预计开始（待确认）</label><input id="pCourse" type="date" value="2027-06-01"></div>
-   <div class="field"><label>每周房租预算下限 A$</label><input id="pRentMin" type="number" min="0" value="450"></div>
-   <div class="field"><label>每周房租预算上限 A$</label><input id="pRentMax" type="number" min="0" value="500"></div>
-   <div class="field full"><label>个人备注</label><textarea id="pNotes" placeholder="可记录专业、住宿偏好、行前目标等"></textarea></div>
-  </div><div class="formActions"><button class="primary" type="submit">保存个人资料</button><button class="secondary" type="button" id="resetProfile">恢复交接资料默认值</button></div></form>
-  <div class="notice">你的主课迎新及开学日期目前是计划信息，必须以 UNSW 最终发布的 2027 官方安排为准。</div>
+ <div class="pageIntro"><div class="eyebrow">MY PROFILE</div><h1>个人资料</h1><p>这里只保留简单的基本信息；航班、课程日期、个人事件和实际房租分别在对应功能里管理。</p></div>
+ <div class="panel">
+  <div class="panelHead"><div><h2>基本信息</h2><p>修改称呼或学校信息后，首页欢迎语和校园模块会同步更新。</p></div><span class="tag blue">基础资料</span></div>
+  <form id="profileForm">
+   <div class="formGrid">
+    <div class="field"><label>称呼 / 昵称</label><input id="pName" placeholder="例如：Alex"></div>
+    <div class="field"><label>留学国家</label><input id="pCountry" value="澳大利亚"></div>
+    <div class="field"><label>所在城市</label><input id="pCity" value="悉尼"></div>
+    <div class="field"><label>学校</label><input id="pSchool" value="UNSW Sydney"></div>
+    <div class="field full"><label>专业 / 学位（选填）</label><input id="pProgram" placeholder="例如：Master of Commerce"></div>
+   </div>
+   <div class="formActions"><button class="primary" type="submit">保存基本资料</button><button class="secondary" type="button" id="resetProfile">恢复默认资料</button></div>
+  </form>
+  <div class="notice">其他信息不再重复放在这里：航班和倒计时在首页管理，个人事件在首页日历管理，实际房租和其他支出在「个人花销」记录。</div>
  </div>
- <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>个人资料摘要</h2><p>当前系统使用的主要设定</p></div></div><div class="profileGrid" id="profileSummary"></div></div>
+ <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>资料摘要</h2><p>当前保存的基本信息</p></div></div><div class="profileGrid" id="profileSummary"></div></div>
 </section>
-
 
 <section class="page" id="page-expenses">
  <div class="pageIntro"><div class="eyebrow">MY MONEY & EXPENSES</div><h1>个人花销</h1><p>把固定账单、日常消费和预算放在一起。金额以澳元 A$ 记录，数据仅保存在当前浏览器。</p></div>
@@ -681,7 +803,7 @@ body{background:var(--bg);color:var(--ink)}
   <div class="notice">数据保存在当前浏览器。清理浏览器数据、换设备或更换浏览器前，请先导出备份。导入会覆盖当前个人数据。</div>
  </div>
 </section>
-<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.4　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
+<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.5　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
 </div></main>
 </div>
 
@@ -711,7 +833,7 @@ const defaultState={
   {id:'degree-2027',title:'学位课程预计开始',date:'2027-06-01',time:'',category:'school',note:'待 UNSW 官方日历确认'}
  ],
  budget:{rent:475,food:110,transport:35,other:65},
- expenses:{fixed:[{id:'fx-rent',name:'房租预算参考',amount:475,frequency:'weekly',category:'住房'}],entries:[]},
+ expenses:{fixed:[],entries:[]},
  tasks:{},
  countdownDates:{'return-home':{date:'',time:'12:00'},'return-campus':{date:'',time:'09:00'}},
  customCountdownTargets:[],
@@ -719,7 +841,7 @@ const defaultState={
  timetable:[]
 };
 function clone(x){return JSON.parse(JSON.stringify(x))}
-function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},expenses:{...clone(defaultState.expenses),...(s.expenses||{}),fixed:Array.isArray(s.expenses?.fixed)?s.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(s.expenses?.entries)?s.expenses.entries:[]},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{},countdownDates:{...clone(defaultState.countdownDates),...(s.countdownDates||{})},customCountdownTargets:Array.isArray(s.customCountdownTargets)?s.customCountdownTargets:[],activeCountdownId:s.activeCountdownId||'arrival',timetable:Array.isArray(s.timetable)?s.timetable:[]}}catch(e){return clone(defaultState)}}
+function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},expenses:{...clone(defaultState.expenses),...(s.expenses||{}),fixed:Array.isArray(s.expenses?.fixed)?s.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(s.expenses?.entries)?s.expenses.entries:[]},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{},countdownDates:{...clone(defaultState.countdownDates),...(s.countdownDates||{})},customCountdownTargets:Array.isArray(s.customCountdownTargets)?s.customCountdownTargets:[],activeCountdownId:s.activeCountdownId||'arrival',timetable:Array.isArray(s.timetable)?s.timetable:[]}}catch(e){return clone(defaultState)}}
 let state=loadState();
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 let toastTimer;function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2200)}
@@ -841,7 +963,7 @@ $('eDate').value=selectedDate;
 $('eventForm').addEventListener('submit',e=>{e.preventDefault();state.events.push({id:'e-'+Date.now(),title:$('eTitle').value.trim(),date:$('eDate').value,time:$('eTime').value,category:$('eCategory').value,note:$('eNote').value.trim()});save();selectedDate=$('eDate').value;viewYear=+selectedDate.slice(0,4);viewMonth=+selectedDate.slice(5,7)-1;renderAllCalendars();e.target.reset();$('eDate').value=selectedDate;toast('事件已添加到日历')});
 function renderManageEvents(){if(!$('manageEvents'))return;$('manageEvents').innerHTML='<div class="agendaTitle">已保存事件 · '+state.events.length+' 项</div>'+state.events.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>`<div class="eventManage"><div><strong>${escapeHTML(e.title)}</strong><small>${e.date} ${e.time||''} · ${catName(e.category)}</small></div><button class="delete" data-delete="${escapeHTML(e.id)}">删除</button></div>`).join('');$('manageEvents').querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>{state.events=state.events.filter(e=>e.id!==b.dataset.delete);save();renderAllCalendars();toast('事件已删除')})}
 function renderAllEvents(){if(!$('allEvents'))return;$('allEvents').innerHTML=state.events.slice().sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).map(e=>`<div class="eventManage"><div><strong>${escapeHTML(e.title)}</strong><small>${e.date} ${e.time||''} · ${catName(e.category)}</small></div><button class="delete" data-del-all="${escapeHTML(e.id)}">删除</button></div>`).join('')||'<div class="eventEmpty">暂时没有事件。</div>';$('allEvents').querySelectorAll('[data-del-all]').forEach(b=>b.onclick=()=>{state.events=state.events.filter(e=>e.id!==b.dataset.delAll);save();renderAllCalendars();toast('事件已删除')})}
-function fillProfile(){const p=state.profile;const map={pName:'name',pCountry:'country',pCity:'city',pSchool:'school',pProgram:'program',pLanguage:'language',pArrival:'arrival',pArrivalTime:'arrivalTime',pLanguageStart:'languageStart',pLanguageEnd:'languageEnd',pOrientation:'orientation',pCourse:'course',pRentMin:'rentMin',pRentMax:'rentMax',pNotes:'notes'};for(const [id,k] of Object.entries(map))$(id).value=p[k]??'';renderProfileSummary()}
+function fillProfile(){const p=state.profile;const map={pName:'name',pCountry:'country',pCity:'city',pSchool:'school',pProgram:'program'};for(const [id,k] of Object.entries(map))$(id).value=p[k]??'';renderProfileSummary()}
 
 const campusDetails={
  clubs:{title:'学生会与社团',intro:'学生会和社团通常是认识同学、融入校园和参与课外活动的第一入口。不同学校的组织名称、会员权益和活动安排会有所不同。',html:`<h3>在这里可以做什么？</h3><ul><li>搜索兴趣社团、专业协会、文化社群、体育和志愿服务组织。</li><li>参加迎新活动、社团集市和新生体验活动，先体验再决定是否付费加入。</li><li>留意会员费、活动频率、活动地点、报名名额和是否需要额外保险。</li><li>加入前查看社团是否由学校或学生会正式认可。</li></ul><h3>以 UNSW 为例</h3><p>UNSW 的学生组织 Arc 管理社团、活动、志愿机会和学生体验项目。若个人资料中的学校不是 UNSW，请以自己学校的 Student Union、Students’ Association 或 Clubs & Societies 官方目录为准。</p>`,url:'https://www.arc.unsw.edu.au/',label:'Arc UNSW 官方网站'},
@@ -857,15 +979,15 @@ function closeCampusDetail(){$('campusDetailView').hidden=true;$('campusOverview
 document.querySelectorAll('[data-campus-detail]').forEach(b=>b.addEventListener('click',()=>openCampusDetail(b.dataset.campusDetail)));
 $('campusBack').onclick=closeCampusDetail;
 
-$('profileForm').addEventListener('submit',e=>{e.preventDefault();state.profile={name:$('pName').value.trim(),country:$('pCountry').value.trim(),city:$('pCity').value.trim(),school:$('pSchool').value.trim(),program:$('pProgram').value.trim(),language:$('pLanguage').value,arrival:$('pArrival').value,arrivalTime:$('pArrivalTime').value,languageStart:$('pLanguageStart').value,languageEnd:$('pLanguageEnd').value,orientation:$('pOrientation').value,course:$('pCourse').value,rentMin:Number($('pRentMin').value)||0,rentMax:Number($('pRentMax').value)||0,notes:$('pNotes').value.trim()};if(!state.flight.flightNo){state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00'}save();updateClock();updateOverview();renderProfileSummary();updateCampusSchool();renderCountdownTargets();updateClock();toast('个人资料已保存，首页已同步')});
-$('resetProfile').onclick=()=>{state.profile=clone(baseProfile);save();fillProfile();updateOverview();toast('已恢复项目交接资料')};
-function renderProfileSummary(){const p=state.profile;const rows=[['国家',p.country],['城市',p.city],['学校',p.school],['专业 / 学位',p.program||'尚未填写'],['语言班',p.language==='yes'?'需要':p.language==='no'?'不需要':'尚未确定'],['计划抵澳',p.arrival],['主课预计开始',p.course],['房租预算','A$'+p.rentMin+'–'+p.rentMax+'/周']];$('profileSummary').innerHTML=rows.map(x=>`<div class="profileItem"><small>${escapeHTML(x[0])}</small><strong>${escapeHTML(x[1])}</strong></div>`).join('')}
+$('profileForm').addEventListener('submit',e=>{e.preventDefault();state.profile={...state.profile,name:$('pName').value.trim(),country:$('pCountry').value.trim(),city:$('pCity').value.trim(),school:$('pSchool').value.trim(),program:$('pProgram').value.trim()};if(!state.flight.flightNo){state.flight.date=state.profile.arrival;state.flight.time=state.profile.arrivalTime||'12:00'}save();updateClock();updateOverview();renderProfileSummary();updateCampusSchool();renderCountdownTargets();updateClock();toast('个人资料已保存，首页已同步')});
+$('resetProfile').onclick=()=>{state.profile={...state.profile,name:'',country:'澳大利亚',city:'悉尼',school:'UNSW Sydney',program:''};save();fillProfile();updateOverview();updateCampusSchool();toast('已恢复基本资料默认值')};
+function renderProfileSummary(){const p=state.profile;const rows=[['称呼',p.name||'尚未填写'],['国家',p.country||'尚未填写'],['城市',p.city||'尚未填写'],['学校',p.school||'尚未填写'],['专业 / 学位',p.program||'尚未填写']];$('profileSummary').innerHTML=rows.map(x=>`<div class="profileItem"><small>${escapeHTML(x[0])}</small><strong>${escapeHTML(x[1])}</strong></div>`).join('')}
 function updateOverview(){const p=state.profile;$('welcomeTitle').textContent=p.name?'欢迎回来，'+p.name+'！':'早上好，准备好开启'+(p.city||'留学')+'生活了吗？'}
 
 const tasks=['确认签证批准信、签证条件与 VEVO','确认 CoE、语言班报到与开课安排','整理护照、保险、录取文件及电子备份','筛选租房区域并预约看房','核实租赁合同、Bond 与入住状况报告','确认航班、行李、机场到住处路线','准备澳洲手机卡 / eSIM 方案','比较银行账户与国际汇款方式','了解 Opal / 非接触式交通支付','确认 OSHC 保单与医疗服务入口','熟悉 Arc、社团及校园支持服务','核实 2027 官方校历、迎新和主课日期','准备抵澳初期生活用品','导出并保存网站个人数据备份'];
 function renderTasks(){$('arrivalTasks').innerHTML=tasks.map((t,i)=>`<label class="checkRow ${state.tasks[i]?'done':''}"><input type="checkbox" data-task="${i}" ${state.tasks[i]?'checked':''}><span>${escapeHTML(t)}</span></label>`).join('');const done=tasks.filter((_,i)=>state.tasks[i]).length;$('taskCount').textContent=done+' / '+tasks.length;$('taskProgress').style.width=(done/tasks.length*100)+'%';$('arrivalTasks').querySelectorAll('[data-task]').forEach(c=>c.onchange=()=>{state.tasks[c.dataset.task]=c.checked;save();renderTasks()})}
-$('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}')}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
-$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed:clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]},countdownDates:{...clone(defaultState.countdownDates),...(obj.countdownDates||{})},customCountdownTargets:Array.isArray(obj.customCountdownTargets)?obj.customCountdownTargets:[],timetable:Array.isArray(obj.timetable)?obj.timetable:[]};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(obj.extras.rentalChecks||{}));}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();renderTimetable();renderCountdownTargets();renderDashboardWidgets();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
+$('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}'),healthChecks:JSON.parse(localStorage.getItem('msl-health-checks-v45')||'{}')}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
+$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]},countdownDates:{...clone(defaultState.countdownDates),...(obj.countdownDates||{})},customCountdownTargets:Array.isArray(obj.customCountdownTargets)?obj.customCountdownTargets:[],timetable:Array.isArray(obj.timetable)?obj.timetable:[]};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(obj.extras.rentalChecks||{}));localStorage.setItem('msl-health-checks-v45',JSON.stringify(obj.extras.healthChecks||{}));}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();renderHealthChecklist();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderHealthChecklist();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
 
 
 
@@ -1024,8 +1146,14 @@ $('resetViewingChecks').onclick=()=>{const d=JSON.parse(localStorage.getItem('ms
 $('resetLeaseChecks').onclick=()=>{const d=JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}');Object.keys(d).filter(k=>k.startsWith('l')).forEach(k=>delete d[k]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(d));renderRentalChecks()};
 
 
+
+function renderHealthChecklist(){
+ const saved=JSON.parse(localStorage.getItem('msl-health-checks-v45')||'{}');
+ document.querySelectorAll('[data-health-check]').forEach(c=>{const key=c.dataset.healthCheck;c.checked=!!saved[key];c.closest('.checkRow')?.classList.toggle('done',!!saved[key]);c.onchange=()=>{const d=JSON.parse(localStorage.getItem('msl-health-checks-v45')||'{}');d[key]=c.checked;localStorage.setItem('msl-health-checks-v45',JSON.stringify(d));c.closest('.checkRow')?.classList.toggle('done',c.checked)}});
+}
+
 fillProfile();fillFlightForm();updateOverview();renderAllCalendars();renderManageEvents();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderTasks();
-renderResources();renderRentalChecks();renderExpenses();
+renderResources();renderRentalChecks();renderExpenses();renderHealthChecklist();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body></html>

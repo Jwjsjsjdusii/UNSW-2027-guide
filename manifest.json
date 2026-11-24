@@ -1,7 +1,7 @@
 {
   "name": "My Study Life · Personal Edition",
   "short_name": "My Study Life",
-  "description": "个人留学生活工作台：倒计时、事件日历、课表、租房清单与花销管理",
+  "description": "个人留学生活工作台：日程、课表、租房、就医保险与购物导航",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
