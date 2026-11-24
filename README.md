@@ -1,23 +1,22 @@
-# My Study Life V5.0
+# My Study Life V5.1 — Zero Cost Edition
 
-## V5.0 更新
-- 就医与保险新增个人保单上传、预览、保存、替换及删除，支持多份文件。
-- IndexedDB 本地存储，无服务器、账户同步或应用级加密；清理浏览器数据会删除保单。
-- AI 助手仅界面和禁用的接口占位，无网络调用。
-- 保留 V4.9 功能及原有数据键，更新 PWA 缓存版本。
+基于 V5.0 增量更新。就医与保险独立；原保单 IndexedDB 和原个人数据键保留。同一网址、浏览器、未清理数据时无需重新上传。保单仍不跨设备同步，也没有应用级加密。
 
-## V4.9 更新记录
+## 前端部署
+上传 index.html、manifest.json、sw.js、icon.svg、insurance-ai.js 到原 GitHub Pages 仓库根目录，覆盖旧文件。README 可选。不要更改原网址。刷新页面，若仍显示旧版，请关闭旧标签页后重开。保单预览和本地条款搜索不需要 AI。PDF.js 从固定版本 CDN 加载，仅在本地处理文件；扫描 PDF 和图片暂需手动录入。搜索片段可能不完整，需核对。不要在公共设备保存保单。
 
-## 本次更新
-- 首页日历自动标记 NSW 悉尼 2026 与 2027 年全州公共假日（包括补休日），日期依据 NSW Government。
-- Bank Holiday 不是全州公共假日，已明确排除；地方性区域假日不包含在悉尼日历。
-- 公共假日不写入个人事件存储，也不需要自己添加；点击日期可查看假日名称。
-- 购物节中日期已确定者有「加到我的日历」/「点击移除」按钮；不会重复添加，且可从首页事件管理删除。
-- 黑五、Cyber Monday 等是按日历规则确定的日期，不能保证该日每个商家都有促销。
-- 2027 日期尚未确认的 Afterpay Day、Prime Day、Click Frenzy 等不提供错误的固定日期按钮。
-- 兼容原 localStorage 数据键 my-study-life-v3 与所有 V4.8 数据。
+## Cloudflare 免费后端（首次必须配置）
+1. 注册 Cloudflare，保持 Workers Free，绝不升级 Workers Paid。免费层是硬性费用保护；本代码不能替代账户套餐检查。选用账户免费可用的模型，不启用收费产品。
+2. 安装 Node.js，在终端进入 worker 目录，运行 npm install，再运行 npx wrangler login。
+3. 编辑 wrangler.toml 的 ALLOWED_ORIGIN 为实际 GitHub Pages 源，例如 https://abc.github.io（无路径、无末尾斜线）。保持 AI 和 Durable Object 绑定。运行 npx wrangler deploy。
+4. 运行 npx wrangler secret put ACCESS_KEY，输入自行生成的长随机口令，不要提交到 GitHub。记录部署输出的 HTTPS workers.dev 地址。
+5. 打开保险页面的 AI 服务设置，填写 Worker 地址和口令，点击连接。口令仅存于标签页会话，地址本地保存。此版为个人/受控测试，共享口令并非学生账户认证，不适合直接公开给大量学生；公开上线需独立身份认证和个人限额。
+6. 提取 PDF，搜索条款，检查实际发送文字和问题，手动去除姓名、保单号、地址、健康信息等，勾选授权后发送。仅提交选中条款和问题，不提交文件原件。模型回复不保证正确，核对原文。
 
-## 部署
-解压后将 index.html、manifest.json、sw.js、icon.svg、README.md 五个文件上传到 GitHub 仓库根目录并覆盖，Commit changes。
+## 额度与限制
+Cloudflare Workers Free 每天 10000 Neurons，UTC 00:00 重置。全站另有每日 100 次请求硬上限（失败也计入），Durable Object 串行事务保留配额；达到上限或收到 Cloudflare 3036 时暂停，前端显示本地恢复时间及倒计时，重置后自动检查。其他错误不冒充额度耗尽。100 次是自设保护，不是 Neurons 的换算；实际模型免费额度可能先耗尽。其他服务或账户共享额度也可能导致更早暂停。保持 Free 计划才可避免超额收费。尚未实现个人账户限额、自动脱敏、OCR、持久化 AI 答案缓存或完整保单自动摘要；当前支持选段解读和问答。
 
-官方假日来源：https://www.nsw.gov.au/about-nsw/public-holidays
+## 检查
+worker 目录运行 npm test，模拟鉴权、请求校验、AI 返回、3036、暂停及 UTC 跨日恢复。真实 Cloudflare 账户和浏览器端交互仍需部署后验收。
+
+官方资料：https://developers.cloudflare.com/workers-ai/platform/pricing/ 及 https://developers.cloudflare.com/workers-ai/platform/errors/

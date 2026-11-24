@@ -527,17 +527,19 @@ body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#6
  <button class="sideLink" data-page="housing"><span class="ico">⌂</span>租房中心</button>
  <button class="sideLink" data-page="work"><span class="ico">▣</span>兼职求职</button>
  <button class="sideLink" data-page="shopping"><span class="ico">◇</span>购物信息</button>
- <button class="sideLink" data-page="health"><span class="ico">🩺</span>就医与保险</button>
+ <button class="sideLink" data-page="health"><span class="ico">🩺</span>就医</button>
+ <button class="sideLink" data-page="insurance"><span class="ico">◇</span>保险</button>
  <button class="sideLink" data-page="resources"><span class="ico">✧</span>资源导航中心</button>
  <div class="sideLabel" style="padding-top:18px">PERSONAL</div>
  <button class="sideLink" data-page="expenses"><span class="ico">＄</span>预算计算器</button>
  <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人中心</button>
- <div class="sideBottom">PERSONAL EDITION · V5.0<br>本地数据 · 无需注册 · 无需服务器</div>
+ <div class="sideBottom">PERSONAL EDITION · V5.1<br>本地数据 · AI 可选连接</div>
 </div></aside>
 <main class="main"><div class="content">
 <section class="page active" id="page-home">
  <div class="welcome"><div><div class="eyebrow">YOUR PERSONAL STUDY HUB</div><h1 id="welcomeTitle">早上好，准备好开启新的一天了吗？</h1><p>课程、日程、待办与生活开支，一站管理。</p></div><div class="dateChip" id="dateChip"></div></div>
- <section class="flightHero">
+ <div class="policyActions"><button onclick="showPage('health')">就医指南</button><button onclick="showPage('insurance')">我的保险</button></div>
+<section class="flightHero">
   <div class="flightTop">
    <div><div class="flightLabel">✦ COUNTDOWN · YOUR NEXT MILESTONE</div><div class="countTargetName" id="countdownTargetName">抵达澳洲</div><div class="status" id="flightStatus">计划抵达 · 手动设置</div></div>
    <div class="countTargetPicker"><label for="countdownTargetSelect">当前目标</label><select id="countdownTargetSelect" aria-label="切换倒计时目标"></select></div>
@@ -682,7 +684,7 @@ body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#6
     </div>
    </details>
    <details class="guideCard"><summary><span class="guideIcon">🩺</span><span class="guideSummary"><strong>OSHC 医疗保险与就医准备</strong><small>保险生效日期、电子保险卡、理赔资料和长期就医指南入口</small></span><span class="guideChevron">＋</span></summary>
-    <div class="guideBody"><p>抵澳后先把保险资料整理好；日常生病时去哪里看、OSHC 哪些项目能报销，请查看独立的「就医与保险」指南。</p><ul><li>确认 OSHC 生效日覆盖签证要求期间，姓名和保单信息准确。</li><li>下载电子保险卡，保存会员号、理赔入口、24 小时紧急联系电话。</li><li>查清保险公司合作 GP / direct billing 网络，以及看诊是否需要先垫付。</li><li>把常用药物、过敏史、既往病史和紧急联系人整理好，必要时准备英文版本。</li></ul><div class="guideLinks"><a href="https://www.health.gov.au/resources/publications/overseas-student-health-cover-oshc-fact-sheet?language=en" target="_blank" rel="noopener">澳洲政府 OSHC 最新说明 ↗</a><button type="button" class="secondary" data-goto="health">打开就医与保险指南 →</button></div></div>
+    <div class="guideBody"><p>抵澳后先把保险资料整理好；日常生病时去哪里看、OSHC 哪些项目能报销，请查看独立的「就医」与「保险」指南。</p><ul><li>确认 OSHC 生效日覆盖签证要求期间，姓名和保单信息准确。</li><li>下载电子保险卡，保存会员号、理赔入口、24 小时紧急联系电话。</li><li>查清保险公司合作 GP / direct billing 网络，以及看诊是否需要先垫付。</li><li>把常用药物、过敏史、既往病史和紧急联系人整理好，必要时准备英文版本。</li></ul><div class="guideLinks"><a href="https://www.health.gov.au/resources/publications/overseas-student-health-cover-oshc-fact-sheet?language=en" target="_blank" rel="noopener">澳洲政府 OSHC 最新说明 ↗</a><button type="button" class="secondary" data-goto="health">打开就医与保险指南 →</button></div></div>
    </details>
    <details class="guideCard" id="arrivalDocumentsCard"><summary><span class="guideIcon">📄</span><span class="guideSummary"><strong>重要文件与入境准备</strong><small>可逐项勾选：护照、签证、CoE、保险、住宿、海关申报和备份</small></span><span class="guideChevron">＋</span></summary>
     <div class="guideBody">
@@ -1062,7 +1064,7 @@ body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#6
 </section>
 
 <section class="page" id="page-health">
- <div class="pageIntro"><div class="eyebrow">HEALTH & OSHC</div><h1>就医与保险</h1><p>不舒服时先判断应该去哪里；看诊前再核对 OSHC 能报什么、自己可能需要付多少。</p></div>
+ <div class="pageIntro"><div class="eyebrow">HEALTHCARE</div><h1>就医</h1><p>不舒服时先判断应该去哪里；看诊前再核对 OSHC 能报什么、自己可能需要付多少。</p></div>
 
  <div class="healthEmergency">
   <div><span class="healthEyebrow">EMERGENCY</span><h2>严重或危及生命的情况</h2><p>例如严重胸痛、呼吸困难、疑似中风、失去意识、严重出血或重大事故。</p></div>
@@ -1070,10 +1072,6 @@ body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#6
  </div>
  <div class="healthCallout"><strong>不确定应该去哪里？</strong><span>拨打 healthdirect <b>1800 022 222</b>（24 小时），由护士评估症状并建议合适的医疗服务。紧急情况不要等待电话评估，直接拨打 000。</span><a href="https://www.healthdirect.gov.au/" target="_blank" rel="noopener">healthdirect 官方入口 ↗</a></div>
 
-<div class="sectionBlock" id="personalPolicies">
-<div class="sectionTitle"><div><h2>我的医疗保险</h2><p>My OSHC · 随时查看自己的保险凭证及保障条款。</p></div><span class="tag blue">个人保单</span></div>
-<div class="policyPanel"><label class="policyUpload" for="policyFiles">＋ 上传我的保单</label><input id="policyFiles" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple hidden><p class="policyHint">支持 PDF、JPG、PNG，每份最多 20 MB。建议上传保险凭证及完整保障条款（Policy wording / PDS）。文件仅存于当前浏览器，不会上传服务器；请勿在公共设备保存，清除浏览器数据会删除文件。不同设备不会同步。</p><p id="policyStatus" role="status" aria-live="polite"></p><div id="policyList"></div><div id="policyViewer" hidden><div class="policyActions"><button type="button" id="policyClose">关闭预览</button></div><div id="policyPreviewContent"></div></div></div>
-<div class="policyPanel"><div class="sectionTitle"><div><h2>AI 保险助手</h2><p>未来可基于个人保单解读条款、查询保障与费用。</p></div><span class="tag">暂未开放</span></div><div class="policyQuestions"><span>GP 门诊能报销多少？</span><span>牙科是否包含？</span><span>急诊和救护车如何报销？</span><span>有哪些等待期和自付费用？</span></div><textarea disabled placeholder="AI 服务尚未接入"></textarea><div class="policyActions"><button disabled>发送问题</button></div><p class="policyHint">当前不会解析或发送保单，也不会生成保险建议。请直接查阅保单原件并向保险公司确认。</p></div></div>
  <div class="sectionBlock">
   <div class="sectionTitle"><div><h2>不同症状，先去哪里？</h2><p>这是就医路径参考，不用于自行诊断；症状严重或迅速恶化时应立即求助。</p></div><span class="tag">就医导航</span></div>
   <div class="healthPathGrid">
@@ -1087,7 +1085,20 @@ body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#6
   <div class="guideLinks"><a href="https://www.healthdirect.gov.au/healthcare-and-services/emergency-and-urgent-care" target="_blank" rel="noopener">Healthdirect：紧急与非紧急就医 ↗</a><a href="https://www.healthdirect.gov.au/australian-health-services" target="_blank" rel="noopener">查找附近 GP、药房和医院 ↗</a><a href="https://www.health.nsw.gov.au/Hospitals/Pages/urgent-care-services.aspx" target="_blank" rel="noopener">NSW Urgent Care Services ↗</a><a href="https://www.health.nsw.gov.au/" target="_blank" rel="noopener">NSW Health ↗</a></div>
  </div>
 
- <div class="sectionBlock">
+ <div class="policyPanel"><strong>看病前核对个人保障</strong><div class="policyActions"><button onclick="showPage('insurance')">前往我的保险 →</button></div></div>
+ <div class="notice">本页是澳洲医疗服务和 OSHC 的一般导航，不是诊断、治疗或保险承保承诺。若症状严重、快速恶化或你担心有生命危险，请立即拨打 000。</div>
+</section>
+
+
+<section class="page" id="page-insurance"><div class="pageIntro"><div class="eyebrow">MY INSURANCE</div><h1>保险</h1><p>个人保单、保障查询与理赔指南。</p></div><div class="policyActions"><button onclick="showPage('health')">← 返回就医指南</button></div><div class="sectionBlock" id="personalPolicies">
+<div class="sectionTitle"><div><h2>我的医疗保险</h2><p>My OSHC · 随时查看自己的保险凭证及保障条款。</p></div><span class="tag blue">个人保单</span></div>
+<div class="policyPanel"><label class="policyUpload" for="policyFiles">＋ 上传我的保单</label><input id="policyFiles" type="file" accept=".pdf,.jpg,.jpeg,.png" multiple hidden><p class="policyHint">支持 PDF、JPG、PNG，每份最多 20 MB。建议上传保险凭证及完整保障条款（Policy wording / PDS）。文件仅存于当前浏览器，不会上传服务器；请勿在公共设备保存，清除浏览器数据会删除文件。不同设备不会同步。</p><p id="policyStatus" role="status" aria-live="polite"></p><div id="policyList"></div><div id="policyViewer" hidden><div class="policyActions"><button type="button" id="policyClose">关闭预览</button></div><div id="policyPreviewContent"></div></div></div>
+<div class="policyPanel"><div class="sectionTitle"><div><h2>AI 保险助手</h2><p>仅根据你审核过的条款回答，并引用页码。</p></div><span class="tag" id="aiBadge">未配置</span></div>
+<p id="aiStatus" role="status"></p><p id="aiCountdown" aria-live="off"></p>
+<details><summary>AI 服务设置（首次部署后配置）</summary><p>填入管理员部署的 Worker HTTPS 地址及访问口令。口令仅保存在当前标签页会话。</p><input id="aiEndpoint" type="url" placeholder="https://your-worker.workers.dev"><input id="aiKey" type="password" placeholder="访问口令" autocomplete="off"><div class="policyActions"><button id="aiConnect">连接 / 检查状态</button></div></details>
+<p class="policyHint">保单原件始终留在本机。点击保单的「提取 PDF 文字」后可本地搜索。图片或扫描件请手动录入相关条款。发送前请删除姓名、会员号、地址、病历等个人信息。</p>
+<textarea id="policyText" rows="8" placeholder="本地提取的文字或手动粘贴的条款，可编辑"></textarea><div class="policyActions"><input id="policySearch" placeholder="搜索条款，如 dental / waiting period"><button id="policyFind">本地搜索</button></div><pre id="policyMatches" style="white-space:pre-wrap;overflow-wrap:anywhere"></pre>
+<div class="policyQuestions" id="aiQuestions"><span>GP 门诊能报销多少？</span><span>牙科是否包含？</span><span>有哪些等待期和自付费用？</span><span>总结保障、限制与理赔条件</span></div><textarea id="aiQuestion" placeholder="输入保险问题"></textarea><p>实际发送的条款（可编辑，最多 12000 字符）：</p><textarea id="aiExcerpt" maxlength="12000" rows="6" placeholder="本地搜索后自动填入匹配片段，或自行粘贴"></textarea><label><input type="checkbox" id="aiConsent"> 我已检查并删除个人信息，同意将以上条款及问题发送至 Cloudflare AI。</label><div class="policyActions"><button id="aiAsk" disabled>发送问题</button></div><pre id="aiAnswer" style="white-space:pre-wrap;overflow-wrap:anywhere" role="status"></pre><p class="policyHint">AI 结果仅供参考，不保证理赔；请核对原文及保险公司确认。免费额度为全站共享。</p></div></div> <div class="sectionBlock">
   <div class="sectionTitle"><div><h2>OSHC 基础保险通常保什么？</h2><p>按澳洲政府 2026 年 8 月发布的 OSHC Fact Sheet 整理；具体支付金额仍以你的保险合同为准。</p></div><span class="tag blue">基础保障参考</span></div>
   <div class="oshcIntro">OSHC 基础计划通常包括 GP、专科医生、住院与手术、血液检查与 X 光、紧急救护车，以及部分处方药。保险支付通常按 Medicare Benefits Schedule（MBS）费用计算，不代表保险会报销医院或诊所账单的 85%。</div>
   <div class="benefitGrid">
@@ -1136,10 +1147,7 @@ body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#6
    <article class="infoCard"><h3>nib OSHC</h3><p>查看学生保险计划、会员服务、理赔和合作医疗机构。</p><a href="https://www.nib.com.au/overseas-students" target="_blank" rel="noopener">nib OSHC ↗</a></article>
   </div>
  </div>
- <div class="notice">本页是澳洲医疗服务和 OSHC 的一般导航，不是诊断、治疗或保险承保承诺。若症状严重、快速恶化或你担心有生命危险，请立即拨打 000。</div>
-</section>
-
-
+<div class="notice">保障及理赔以正式合同及保险公司确认为准。</div></section>
 <section class="page" id="page-resources">
  <div class="pageIntro"><div class="eyebrow">ONE PLACE, USEFUL LINKS</div><h1>资源导航中心</h1><p>把常用官方服务、平台和工具放在一个地方。搜索、筛选并收藏，收藏保存在本机。</p></div>
  <div class="panel">
@@ -1250,7 +1258,7 @@ body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#6
  </div>
 </section>
 
-<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V5.0　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
+<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V5.1　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
 </div></main>
 </div>
 
@@ -1739,12 +1747,12 @@ const tx=(mode,fn)=>new Promise((resolve,reject)=>{const t=db.transaction('polic
 function close(){if(previewURL)URL.revokeObjectURL(previewURL);previewURL=null;content.replaceChildren();viewer.hidden=true;}
 function preview(p){close();previewURL=URL.createObjectURL(p.blob);const el=document.createElement(p.blob.type==='application/pdf'?'iframe':'img');el.className=p.blob.type==='application/pdf'?'policyPreview':'policyPreviewImage';el.title=p.name;el.alt=p.name;el.src=previewURL;content.append(el);viewer.hidden=false;}
 function button(label,fn){const b=document.createElement('button');b.type='button';b.textContent=label;b.onclick=async()=>{try{await fn();}catch(e){say('操作失败，请检查浏览器存储权限或剩余空间。');}};return b;}
-async function render(){const rows=await tx('readonly',s=>s.getAll());list.replaceChildren();if(!rows.length){list.textContent='尚未上传保单。';return;}for(const p of rows){const row=document.createElement('div');row.className='policyItem';const name=document.createElement('strong');name.textContent=p.name;const meta=document.createElement('small');meta.textContent=' · '+(p.blob.size/1024).toFixed(0)+' KB · '+new Date(p.date).toLocaleDateString();const actions=document.createElement('div');actions.className='policyActions';actions.append(button('查看原件',()=>preview(p)),button('保存原件',()=>{const u=URL.createObjectURL(p.blob),a=document.createElement('a');a.href=u;a.download=p.name;a.click();setTimeout(()=>URL.revokeObjectURL(u),30000);}),button('替换',()=>{const input=document.createElement('input');input.type='file';input.accept='.pdf,.jpg,.jpeg,.png';input.onchange=async()=>{if(input.files[0])await save([input.files[0]],p.id);};input.click();}),button('删除',async()=>{if(confirm('确定删除此保单？')){await tx('readwrite',s=>s.delete(p.id));close();await render();say('已删除。');}}));row.append(name,meta,actions);list.append(row);}}
+async function render(){const rows=await tx('readonly',s=>s.getAll());list.replaceChildren();if(!rows.length){list.textContent='尚未上传保单。';return;}for(const p of rows){const row=document.createElement('div');row.className='policyItem';const name=document.createElement('strong');name.textContent=p.name;const meta=document.createElement('small');meta.textContent=' · '+(p.blob.size/1024).toFixed(0)+' KB · '+new Date(p.date).toLocaleDateString();const actions=document.createElement('div');actions.className='policyActions';actions.append(button('查看原件',()=>preview(p)),button('提取 PDF 文字',()=>window.extractPolicy(p)),button('保存原件',()=>{const u=URL.createObjectURL(p.blob),a=document.createElement('a');a.href=u;a.download=p.name;a.click();setTimeout(()=>URL.revokeObjectURL(u),30000);}),button('替换',()=>{const input=document.createElement('input');input.type='file';input.accept='.pdf,.jpg,.jpeg,.png';input.onchange=async()=>{if(input.files[0])await save([input.files[0]],p.id);};input.click();}),button('删除',async()=>{if(confirm('确定删除此保单？')){await tx('readwrite',s=>s.delete(p.id));close();await render();say('已删除。');}}));row.append(name,meta,actions);list.append(row);}}
 async function save(files,id){let ok=0,errors=[];for(const f of files){try{const ext=f.name.split('.').pop().toLowerCase(),types={pdf:'application/pdf',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png'},type=types[ext];if(!type||f.size>20*1024*1024||!f.size)throw Error('格式不支持或文件超过 20 MB');const h=new Uint8Array(await f.slice(0,8).arrayBuffer());if(!(ext==='pdf'?String.fromCharCode(...h.slice(0,5))==='%PDF-':ext==='png'?h[0]===137&&h[1]===80&&h[2]===78&&h[3]===71:h[0]===255&&h[1]===216))throw Error('文件内容与格式不匹配');const item={name:f.name,blob:f.slice(0,f.size,type),date:Date.now()};if(id!==undefined)item.id=id;await tx('readwrite',s=>s.put(item));ok++;}catch(e){errors.push(f.name+'：'+e.message);}}close();await render();say((ok?'已保存 '+ok+' 份保单。':'')+errors.join('；'));}
 $('policyClose').onclick=close;$('policyFiles').disabled=true;$('policyFiles').onchange=async e=>{try{await save([...e.target.files]);}catch(err){say('保存失败。');}finally{e.target.value='';}};
 (async()=>{try{db=await open();await render();$('policyFiles').disabled=false;}catch(e){say('当前浏览器无法使用本地保单存储，请使用支持 IndexedDB 的浏览器。');}})();
-// Reserved integration contract only; no network or model invocation.
-const aiPolicyAdapter={enabled:false,parse:async()=>{throw new Error('AI not configured');},ask:async()=>{throw new Error('AI not configured');}};
+
 })();
 </script>
+<script src="insurance-ai.js" defer></script>
 </body></html>
