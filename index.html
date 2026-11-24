@@ -363,7 +363,7 @@ body{background:var(--bg);color:var(--ink)}
 .themeChoice b{font-size:11px}.themeChoice small{font-size:9px;color:var(--muted);line-height:1.5}
 .themeSwatches{display:flex;gap:5px}.themeSwatches i{width:25px;height:25px;border-radius:8px;background:#fff1dc;border:1px solid #ead9c5}.themeSwatches i:nth-child(2){background:#e8ad78}.themeSwatches i:nth-child(3){background:#9b704f}
 .daySwatches i:nth-child(1){background:#fff}.daySwatches i:nth-child(2){background:#eaf3f5}.daySwatches i:nth-child(3){background:#f1c99e}
-.nightSwatches i:nth-child(1){background:#e9ece7}.nightSwatches i:nth-child(2){background:#c9d2c9}.nightSwatches i:nth-child(3){background:#9aaba0}
+.nightSwatches i:nth-child(1){background:#292c30}.nightSwatches i:nth-child(2){background:#39393c}.nightSwatches i:nth-child(3){background:#b99b86}
 
 /* Three light, low-contrast themes: none uses black backgrounds. */
 body[data-theme="day"]{--bg:#fbfcfa;--paper:#ffffff;--ink:#3f4b4d;--muted:#7d8988;--line:#e7ece9;--navy:#6f9b9a;--navy2:#8eb6b0;--blue:#7ba7b1;--gold:#e8bd82;--green:#7fa58d;--shadow:0 9px 28px #6f8b8410;background:var(--bg);color:var(--ink)}
@@ -394,6 +394,116 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
 @media(max-width:650px){.arrivalDocChecklist,.saleCalendarGrid,.themeChoices{grid-template-columns:1fr}.dashboardSide{grid-template-columns:1fr}.dashboardSide .dashWidget:last-child{grid-column:auto}.quickExpenseForm{grid-template-columns:1fr 1fr}.homeFlightSettings>summary,.homeEventEditor>summary{flex-wrap:wrap}.homeFlightSettings>summary small,.homeEventEditor>summary small{width:100%;margin-left:0}}
 </style>
 
+
+<style id="v471-actual-dark-night">
+/* Dark, but not black: slate, coffee, warm parchment text. Only applies to Night. */
+body[data-theme="night"]{--bg:#26292d;--paper:#35383c;--ink:#f0e9df;--muted:#bbb7ae;--line:#4c5053;--navy:#e1b88d;--navy2:#bb997d;--blue:#a7c1c3;--ice:#475557;--gold:#e1b88d;--green:#a4beaa;--red:#e3a090;--purple:#bdb0dc;--shadow:0 10px 30px #14171b36;background:var(--bg);color:var(--ink);color-scheme:dark}
+body[data-theme="night"] :is(.top,.sidebar){background:#2d3033;border-color:#464a4c;color:var(--ink)}
+body[data-theme="night"] :is(.brand,.brand small,.sideLabel,.sideBottom,.sideLink,.topDate,.welcome h1,.welcome p,.dateChip){color:var(--ink)}
+body[data-theme="night"] :is(.sideLink:hover,.sideLink.active){background:#464440;color:#f5d0a8}
+body[data-theme="night"] .flightHero{background:linear-gradient(120deg,#454447,#524b46 58%,#61534b);color:#f4e7d7;box-shadow:0 16px 34px #13141745}
+body[data-theme="night"] .flightHero:after{border-color:#ffffff19;box-shadow:0 0 0 32px #ffffff0d,0 0 0 65px #ffffff08}
+body[data-theme="night"] :is(.flightLabel,.countLabel,.flightMeta,.heroFoot small,.airport span,.planeLine,.countTargetName,.countTargetPicker label,.countdownManager>summary){color:#f2ddc6}
+body[data-theme="night"] .status{color:#f3e0cb;background:#ffffff14;border-color:#ffffff25}
+body[data-theme="night"] :is(.countTargetPicker select,.countdownManageBody,.countTargetRow input,.inlineAddForm input,.calendarMode){background:#393b3e;color:#f0e9df;border-color:#65605c}
+body[data-theme="night"] :is(.countTargetRow,.countdownManager){border-color:#6e655c}
+body[data-theme="night"] :is(.countTargetRow small,.countdownManageBody small){color:#c7b8a8}
+body[data-theme="night"] :is(.panel,.guideCard,.campusCard,.campusDetailPanel,.housingAccordion,.platformMini,.areaCard,.workCoreCard,.healthPathCard,.benefitCard,.shoppingQuickCard,.shoppingStore,.saleEventCard,.infoCard,.themeChoice,.expenseRow,.expenseStat,.leaseCheckGroup,.arrivalDocItem,.homeFlightSettings,.homeEventEditor,.courseEditor,.timetableDay,.courseForm,.extraBenefitGrid>div){background:var(--paper);border-color:var(--line);color:var(--ink);box-shadow:0 7px 25px #1113171c}
+body[data-theme="night"] :is(.housingAccordionBody,.guideBody,.homeSettingsBody,.campusDetailPanel,.oshcIntro,.shoppingLead,.notice,.healthCallout){color:var(--ink);border-color:var(--line)}
+body[data-theme="night"] :is(.guideCard summary,.housingAccordion>summary,.homeFlightSettings>summary,.homeEventEditor>summary,.courseEditor>summary,.timetableDayHead,.calendarTabs,.courseForm,.oshcIntro,.healthCallout,.expenseEmpty,.profileItem,.checkRow,.shoppingStore,.shoppingQuickCard,.arrivalDocItem){background-color:#393c40;color:var(--ink);border-color:var(--line)}
+body[data-theme="night"] :is(.guideIcon,.guideChevron,.housingNumber,.housingAccordion>summary>b,.campusCardIcon,.upcomingMini>span,.tag,.saleEventCard.saleHot,.healthEmergency){background:#51483f;color:#f2d5b6;border-color:#74614f}
+body[data-theme="night"] :is(.guideLinks a,.calendarTabs button.active,.secondary,.lightBtn,.dashboardShortcuts button,.textAction){background:#504942;color:#f6dac0;border-color:#786554}
+body[data-theme="night"] .calendarTabs button{color:#d6c9b8}
+body[data-theme="night"] :is(.spendingMini>div,.spendingMini .spendingTotal,.dashboardShortcuts button,.upcomingMini,.healthChecklist,.courseApricot,.courseSage,.courseLavender,.courseRose,.courseSky){background:#414448;border-color:#54575a}
+body[data-theme="night"] :is(.timetableDayCourses,.timetableHead,.timetableDayHead,.noCourse){color:var(--muted)}
+body[data-theme="night"] :is(.day,.calendar .day,.calendar .empty,.agenda,.agendaTitle){color:var(--ink)}
+body[data-theme="night"] :is(.day.hasEvents,.day.selected,.day.selected.hasEvents){background:#66543e;color:#fff0d7;border-color:#9a7856}
+body[data-theme="night"] :is(.guideSummary strong,.guideBody strong,.guideBody b,.housingAccordion>summary strong,.campusCard strong,.campusDetailPanel h2,.campusDetailPanel h3,.infoCard h3,.platformMini h3,.areaCard h3,.workCoreCard h2,.healthPathCard h3,.benefitCard strong,.shoppingStore h3,.saleEventCard h3,.shoppingQuickCard strong,.spendingMini strong,.upcomingMini strong,.expenseStat strong,.expenseRow strong,.expenseRow .amount,.profileItem strong,.arrivalDocItem b,.courseCard strong,.courseCard b,.sectionTitle h2,.panel h2,.pageIntro h1,.themeChoice b){color:#f1e7db}
+body[data-theme="night"] :is(.guideSummary small,.guideBody p,.guideBody li,.guideBody small,.campusCard p,.campusDetailPanel p,.campusDetailPanel li,.platformMini p,.areaCard p,.workCoreCard p,.workCoreCard li,.healthPathCard p,.healthPathCard small,.benefitCard small,.shoppingStore p,.shoppingStore small,.saleEventCard p,.saleEventCard small,.shoppingQuickCard small,.spendingMini small,.upcomingMini small,.expenseRow small,.expenseStat span,.profileItem small,.arrivalDocItem small,.courseCard small,.sectionTitle p,.panelHead p,.pageIntro p,.themeChoice small){color:#c5beb4}
+body[data-theme="night"] :is(input,textarea,select){background:#42464a;color:#f4ece2;border-color:#686a69}
+body[data-theme="night"] :is(input,textarea)::placeholder{color:#b7aea4;opacity:1}
+body[data-theme="night"] :is(.field label,.courseForm label,.expenseSectionTitle p){color:#d4c6b6}
+body[data-theme="night"] :is(.arrivalDocItem.done,.checkRow.done){background:#3b4b43;border-color:#587163}
+body[data-theme="night"] .arrivalDocItem.done b{color:#d9e5d4}
+body[data-theme="night"] .healthEmergency a{background:#9d5148;color:#fff}
+body[data-theme="night"] .healthEmergency h2{color:#f6d8cb}
+body[data-theme="night"] .saleDate{color:#f0c296}
+body[data-theme="night"] .iconBtn{background:#404447;color:#f1e9df;border-color:#616466}
+body[data-theme="night"] .footer{color:#aba99f}
+</style>
+<style id="v48-budget-mobile">
+/* Readable work guide: compact body text in earlier releases was difficult to read on mobile. */
+#page-work{font-size:15px;line-height:1.75}
+#page-work .pageIntro p{font-size:15px;line-height:1.75}
+#page-work .workCoreCard h2{font-size:20px;line-height:1.35}
+#page-work .workCoreCard p,#page-work .workCoreCard li{font-size:15px;line-height:1.75}
+#page-work .workCoreCard .tag{font-size:12px}
+#page-work .workChannelIntro{font-size:15px;line-height:1.7}
+#page-work .workChannelIntro strong,#page-work .workChannelIntro span{font-size:15px;line-height:1.7}
+#page-work .workChannelHeading h3{font-size:17px;line-height:1.4}
+#page-work .workChannelHeading small{font-size:13px;line-height:1.5}
+#page-work .workResourceList p,#page-work .workResourceList a{font-size:15px;line-height:1.8}
+#page-work .workResourceList a{font-weight:850}
+#page-work .workEmployerGrid a b{font-size:15px;line-height:1.5}
+#page-work .workEmployerGrid a small{font-size:13px;line-height:1.55}
+#page-work .workTip,#page-work .workOfflineSteps p,#page-work .workOfflineSteps b,#page-work .workPhrase p,#page-work .workPrepGrid p,#page-work .workKeywordGroups p{font-size:14px;line-height:1.75}
+#page-work .workChannelGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+#page-work a{overflow-wrap:anywhere}
+/* Running-life-budget wallet */
+.budgetHero{margin-top:15px;margin-bottom:15px;background:var(--paper);border:1px solid var(--line)}
+.budgetHeroStats{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:12px}
+.budgetNumber{display:grid;gap:8px;align-content:center;border:1px solid var(--line);background:var(--bg);border-radius:14px;padding:16px;min-width:0}
+.budgetNumber small{font-size:12px;color:var(--muted)}.budgetNumber strong{font-size:23px;color:var(--ink);overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.budgetNumber span{font-size:11px;color:var(--muted)}.budgetRemaining{background:linear-gradient(135deg,#fff0d9,#f7e6d3);border-color:#e9d4b8}
+.budgetRemaining strong{font-size:32px;color:#825b3f}.budgetRemaining strong.overBudget{color:#b7534b}
+.walletProgressWrap{display:grid;gap:7px;margin-top:14px}.walletProgress{height:10px;border-radius:99px;background:#e8e1d9;overflow:hidden}
+.walletProgress>div{width:0;height:100%;background:#b9805b;border-radius:99px;transition:width .25s}.walletProgress>div.overBudget{background:#bf645a}
+.walletProgressWrap>small{font-size:11px;color:var(--muted)}
+.walletControls{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.walletControls form{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--bg)}
+.walletControls form label{display:grid;gap:6px;color:var(--muted);font-size:12px}
+.walletControls form input{min-width:0;width:100%;background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:11px 10px;color:var(--ink);font-size:15px}
+.walletControls form button{grid-column:1/-1;min-height:43px;font-size:13px}
+.walletBottom{margin-top:17px}.walletBottom h3{font-size:15px;color:var(--ink)}.walletBottom p{font-size:12px;color:var(--muted);line-height:1.6}
+.walletTopupRow{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.walletTopupRow span{flex:1}.walletTopupRow b,.walletTopupRow small{display:block}.walletTopupRow b{font-size:13px;color:var(--ink)}.walletTopupRow small{font-size:11px;color:var(--muted)}
+.walletTopupRow strong{font-size:14px;color:var(--ink)}.walletTopupRow button{font-size:12px}
+.dashboardWalletBalance{border-radius:11px;background:var(--bg);padding:12px 14px;margin-bottom:12px;display:grid;gap:5px}
+.dashboardWalletBalance small{font-size:11px;color:var(--muted)}.dashboardWalletBalance strong{font-size:23px;color:var(--ink);font-variant-numeric:tabular-nums}
+body[data-theme="night"] :is(.budgetHero,.budgetNumber,.walletControls form,.dashboardWalletBalance){background:var(--paper);border-color:var(--line)}
+body[data-theme="night"] .budgetRemaining{background:linear-gradient(135deg,#464039,#50453e);border-color:#665447}
+body[data-theme="night"] .budgetRemaining strong{color:#f0d3b1}
+body[data-theme="night"] .budgetRemaining strong.overBudget{color:#f1a59a}
+body[data-theme="night"] :is(.budgetNumber strong,.walletBottom h3,.walletTopupRow b,.walletTopupRow strong,.dashboardWalletBalance strong){color:#f1e7db}
+body[data-theme="night"] :is(.budgetNumber small,.budgetNumber span,.walletBottom p,.walletTopupRow small,.dashboardWalletBalance small){color:#c5beb4}
+body[data-theme="night"] .walletControls form input{background:var(--bg);color:var(--ink);border-color:var(--line)}
+@media(max-width:1100px){#page-work .workChannelGrid{grid-template-columns:1fr}}
+@media(max-width:780px){.budgetHeroStats{grid-template-columns:1fr 1fr}.budgetRemaining{grid-column:1/-1}.walletControls{grid-template-columns:1fr}#page-work .workCoreGrid{grid-template-columns:1fr}}
+@media(max-width:650px){#page-work{font-size:16px}#page-work .pageIntro p,#page-work .workCoreCard p,#page-work .workCoreCard li,#page-work .workResourceList p,#page-work .workResourceList a,#page-work .workChannelIntro span{font-size:16px;line-height:1.8}#page-work .workChannelHeading h3{font-size:18px}#page-work .workChannelHeading small{font-size:14px}#page-work .workTip,#page-work .workOfflineSteps p{font-size:15px}#page-work .workCoreCard{padding:18px}#page-work .workChannelPanel{padding:15px}#page-work .workChannelGrid,#page-work .workEmployerGrid{grid-template-columns:1fr}.budgetNumber strong{font-size:19px}.budgetRemaining strong{font-size:29px}.walletControls form{grid-template-columns:1fr}.walletTopupRow{flex-wrap:wrap}}
+</style>
+<style id="v49-calendar-holiday-sales">
+/* Public holiday markers remain visible in weekly and monthly views. */
+#calendar .day{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:5px;gap:1px;min-width:0;min-height:49px}
+#calendar .day.nswHoliday{background:rgba(214,110,84,.10);outline:1px solid rgba(206,123,93,.28)}
+#calendar .day.nswHoliday.selected{outline:2px solid #c97863}
+#calendar .dayNum{font-size:12px;font-weight:700;line-height:1.25}
+#calendar .holidayMini{font-size:9px;font-weight:800;color:#b75e48;line-height:1.2;white-space:nowrap}
+#calendar .shoppingMini{font-size:9px;font-weight:800;color:#8763a7;line-height:1.2;white-space:nowrap}
+#calendar .dots{position:static;transform:none;left:auto;bottom:auto;margin-top:auto;margin-bottom:3px}
+.holidayGuide{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:11px;font-size:10px;color:var(--muted)}
+.holidayGuide span{display:flex;gap:5px;align-items:center}.holidayGuide i{width:9px;height:9px;display:inline-block;border-radius:3px}
+.holidaySwatch{background:#c97964}.shoppingSwatch{background:#9874c7}
+.holidayGuide a{color:var(--navy);font-size:10px;font-weight:800}
+.dot.holiday{background:#c97964}.dot.shopping{background:#9874c7}
+.saleButtonGroup{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.saleAddButton{background:var(--paper);color:var(--navy);border:1px solid var(--line);border-radius:9px;padding:8px 10px;font-size:11px;font-weight:800;cursor:pointer;min-height:35px}
+.saleAddButton:hover{border-color:var(--navy)}.saleAddButton.added{background:#eaf3eb;color:#44734e;border-color:#b8d8c2}
+body[data-theme="night"] #calendar .day.nswHoliday{background:rgba(202,124,98,.20);outline-color:#8e665e}
+body[data-theme="night"] #calendar .holidayMini{color:#f1b69f}
+body[data-theme="night"] #calendar .shoppingMini{color:#cfb7ed}
+body[data-theme="night"] .saleAddButton.added{background:#3e5146;border-color:#658a72;color:#dbf1dc}
+@media(max-width:650px){#calendar .day{min-height:52px;padding:5px 1px 1px}#calendar .holidayMini,#calendar .shoppingMini{font-size:9px}.saleAddButton{font-size:12px;min-height:42px}}
+</style>
 </head>
 <body>
 <header class="top"><div class="topLeft">
@@ -418,9 +528,9 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
  <button class="sideLink" data-page="health"><span class="ico">🩺</span>就医与保险</button>
  <button class="sideLink" data-page="resources"><span class="ico">✧</span>资源导航中心</button>
  <div class="sideLabel" style="padding-top:18px">PERSONAL</div>
- <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人资料</button>
- <button class="sideLink" data-page="expenses"><span class="ico">＄</span>个人花销</button>
- <div class="sideBottom">PERSONAL EDITION · V4.7<br>本地数据 · 无需注册 · 无需服务器</div>
+ <button class="sideLink" data-page="expenses"><span class="ico">＄</span>预算计算器</button>
+ <button class="sideLink" data-page="profile"><span class="ico">◎</span>个人中心</button>
+ <div class="sideBottom">PERSONAL EDITION · V4.9<br>本地数据 · 无需注册 · 无需服务器</div>
 </div></aside>
 <main class="main"><div class="content">
 <section class="page active" id="page-home">
@@ -479,6 +589,7 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
      <div class="calendarHead"><div class="monthTitle" id="monthTitle">2027年1月</div><div class="calNav"><select class="calendarMode" id="calendarViewMode" aria-label="日历视图"><option value="week" selected>一周</option><option value="month">整个月</option></select><button id="prevMonth">‹</button><button id="todayMonth">今</button><button id="nextMonth">›</button></div></div>
      <div class="weekdays"><div>一</div><div>二</div><div>三</div><div>四</div><div>五</div><div>六</div><div>日</div></div><div class="calendar" id="calendar"></div>
      <div class="legend"><span><i style="background:#4b72d6"></i>学校</span><span><i style="background:#31906e"></i>个人</span><span><i style="background:#dc9c3d"></i>航班</span><span><i style="background:#d66b61"></i>截止日期</span><span><i style="background:#9874c7"></i>自定义</span></div>
+     <div class="holidayGuide"><span><i class="holidaySwatch"></i> NSW 公共假日（自动）</span><span><i class="shoppingSwatch"></i> 自选购物提醒</span><a href="https://www.nsw.gov.au/about-nsw/public-holidays" target="_blank" rel="noopener">NSW 官方假日表 ↗</a></div>
      <div class="agenda"><div class="agendaTitle" id="agendaTitle">当天日程</div><div id="agendaList"></div></div>
      <div class="calendarActions"><button class="secondary" id="newEvent">＋ 添加事件</button><button class="textAction" id="manageEventsButton" type="button">管理全部事件 →</button></div>
     <details class="homeEventEditor" id="homeEventEditor">
@@ -520,16 +631,16 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
   </main>
   <aside class="dashboardSide">
    <section class="panel dashWidget"><div class="panelHead"><div><h2>近期安排</h2><p>接下来值得留意的事情</p></div><button class="textAction" id="showAllEvents" type="button">全部 →</button></div><div id="dashboardUpcoming"></div></section>
-   <section class="panel dashWidget"><div class="panelHead"><div><h2>本月花销</h2><p>固定支出与日常消费</p></div><button class="textAction" data-goto="expenses">明细 →</button></div><div class="spendingMini"><div><small>固定支出月均</small><strong id="dashFixedSpend">A$0</strong></div><div><small>本月日常消费</small><strong id="dashVariableSpend">A$0</strong></div><div class="spendingTotal"><small>本月预计总支出</small><strong id="dashTotalSpend">A$0</strong></div></div>
+   <section class="panel dashWidget"><div class="panelHead"><div><h2>生活费与支出</h2><p>一笔笔记录，余额自动更新</p></div><button class="textAction" data-goto="expenses">明细 →</button></div><div class="dashboardWalletBalance"><small>当前剩余生活费</small><strong id="dashboardWalletBalance">尚未设置</strong></div><div class="spendingMini"><div><small>固定支出月均</small><strong id="dashFixedSpend">A$0</strong></div><div><small>本月日常消费</small><strong id="dashVariableSpend">A$0</strong></div><div class="spendingTotal"><small>本月预计总支出</small><strong id="dashTotalSpend">A$0</strong></div></div>
     <form id="quickExpenseForm" class="quickExpenseForm">
      <input id="quickSpendName" placeholder="消费项目，例如：Coles 采购" required aria-label="消费项目">
      <input id="quickSpendAmount" type="number" min="0" step="0.01" placeholder="金额 A$" required aria-label="金额">
      <select id="quickSpendCategory" aria-label="消费类别"><option>食品杂货</option><option>餐饮</option><option>交通</option><option>购物</option><option>学习</option><option>娱乐</option><option>医疗</option><option>其他</option></select>
      <button class="primary" type="submit">＋ 快捷记账</button>
-     <small>按今天日期记录 · 详细账单可在个人花销中管理</small>
+     <small>按今天日期记录 · 详细账单可在预算计算器中管理</small>
     </form></section>
    <section class="panel dashWidget"><div class="panelHead"><div><h2>快捷入口</h2><p>常用模块一键抵达</p></div></div><div class="dashboardShortcuts">
-    <button data-goto="arrival"><span>✈</span>来澳准备</button><button data-goto="campus"><span>🎓</span>院校校园</button><button data-goto="housing"><span>⌂</span>租房中心</button><button data-goto="work"><span>▣</span>兼职求职</button><button data-goto="shopping"><span>◇</span>购物信息</button><button data-goto="expenses"><span>＄</span>个人花销</button>
+    <button data-goto="arrival"><span>✈</span>来澳准备</button><button data-goto="campus"><span>🎓</span>院校校园</button><button data-goto="housing"><span>⌂</span>租房中心</button><button data-goto="work"><span>▣</span>兼职求职</button><button data-goto="shopping"><span>◇</span>购物信息</button><button data-goto="expenses"><span>＄</span>预算计算器</button>
    </div></section>
   </aside>
  </div>
@@ -819,15 +930,15 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
  <div class="sectionBlock">
   <div class="sectionTitle"><div><h2>澳洲年度购物节日历</h2><p>提前安排大件采购，活动日期分为已公布与每年常见但待确认两类。</p></div><span class="tag">SALE CALENDAR</span></div>
   <div class="saleCalendarGrid">
-   <article class="saleEventCard saleHot"><div class="saleDate">27–30 NOV 2026</div><span class="tag warn">近期活动</span><h3>Black Friday 黑五 + Cyber Monday</h3><p>电视、电脑、耳机、手机、家电、服饰和家具。黑五 11 月 27 日，Cyber Monday 11 月 30 日。</p><small>购买建议：提前记录目标型号与平时价格，不要只看折扣百分比。</small></article>
-   <article class="saleEventCard"><div class="saleDate">26 JAN · 每年</div><span class="tag">1 月</span><h3>Australia Day / Stocktake Clearance</h3><p>年初库存清仓、夏季服饰、家居用品和部分电子产品；同时关注 Back to School 返校季。</p><small>适合：开学文具、床品、夏季衣物和上一代型号。</small></article>
+   <article class="saleEventCard saleHot"><div class="saleDate">27–30 NOV 2026</div><span class="tag warn">近期活动</span><h3>Black Friday 黑五 + Cyber Monday</h3><p>电视、电脑、耳机、手机、家电、服饰和家具。黑五 11 月 27 日，Cyber Monday 11 月 30 日。</p><small>购买建议：提前记录目标型号与平时价格，不要只看折扣百分比。</small><div class="saleButtonGroup"><button type="button" class="saleAddButton" data-sale-add="black-friday-2026">＋ 加到我的日历</button><button type="button" class="saleAddButton" data-sale-add="cyber-monday-2026">＋ 加到我的日历</button></div></article>
+   <article class="saleEventCard"><div class="saleDate">26 JAN · 每年</div><span class="tag">1 月</span><h3>Australia Day / Stocktake Clearance</h3><p>年初库存清仓、夏季服饰、家居用品和部分电子产品；同时关注 Back to School 返校季。</p><small>适合：开学文具、床品、夏季衣物和上一代型号。</small><div class="saleButtonGroup"><button type="button" class="saleAddButton" data-sale-add="australia-day-sale-2027">＋ 加到我的日历</button></div></article>
    <article class="saleEventCard"><div class="saleDate">MAR · 日期待公布</div><span class="tag">3 月</span><h3>Afterpay Day / Click Frenzy</h3><p>服饰、美妆、家居、生活方式和部分电子产品可能参加。2027 具体活动日期尚待主办方公布。</p><small>适合：非急需的服饰、护肤和家居小件；先比较现金总价。</small></article>
    <article class="saleEventCard"><div class="saleDate">MAY–JUN · 每年</div><span class="tag">5–6 月</span><h3>EOFY 年终财务年度促销</h3><p>澳洲财年在 6 月 30 日结束，许多零售商会在 5–6 月开展 EOFY 活动。</p><small>适合：电脑、显示器、办公设备、家电和家具；2027 各店活动日期以官方公告为准。</small></article>
    <article class="saleEventCard"><div class="saleDate">JUL · 日期待公布</div><span class="tag">7 月</span><h3>Amazon Prime Day</h3><p>Amazon 会员专属活动，常见品类包括 Amazon 设备、数码产品、小家电和日用品。</p><small>适合：提前加入愿望清单；需比较会员费、配送和其他零售商同款价格。</small></article>
    <article class="saleEventCard"><div class="saleDate">AUG · 日期待公布</div><span class="tag">8 月</span><h3>Afterpay Day · 年中场</h3><p>部分品牌会参加第二轮促销，具体日期每年变化。</p><small>适合：服装、鞋履、家居和美妆；分期付款不等于省钱。</small></article>
-   <article class="saleEventCard"><div class="saleDate">11 NOV · 每年</div><span class="tag">11 月</span><h3>Singles' Day · 11.11</h3><p>部分线上零售商和跨境平台会推出服饰、美妆、配件与数码商品活动。</p><small>适合：比价小件和已有明确型号的商品，留意国际配送与退货成本。</small></article>
-   <article class="saleEventCard"><div class="saleDate">26–29 NOV 2027</div><span class="tag blue">2027 日期可推算</span><h3>Black Friday + Cyber Monday</h3><p>2027 黑五为 11 月 26 日，Cyber Monday 为 11 月 29 日。零售商提前促销的时间可能不同。</p><small>适合：大件电子产品、家电、家具和品牌折扣。</small></article>
-   <article class="saleEventCard"><div class="saleDate">26 DEC · 每年</div><span class="tag">12 月</span><h3>Boxing Day 节礼日促销</h3><p>圣诞后清仓，常见服饰、床品、家居、家具、家电和上一代电子产品。</p><small>适合：不赶时间的家居采购和季末清仓；先确认配送与退换条件。</small></article>
+   <article class="saleEventCard"><div class="saleDate">11 NOV · 每年</div><span class="tag">11 月</span><h3>Singles' Day · 11.11</h3><p>部分线上零售商和跨境平台会推出服饰、美妆、配件与数码商品活动。</p><small>适合：比价小件和已有明确型号的商品，留意国际配送与退货成本。</small><div class="saleButtonGroup"><button type="button" class="saleAddButton" data-sale-add="singles-2027">＋ 加到我的日历</button></div></article>
+   <article class="saleEventCard"><div class="saleDate">26–29 NOV 2027</div><span class="tag blue">2027 日期可推算</span><h3>Black Friday + Cyber Monday</h3><p>2027 黑五为 11 月 26 日，Cyber Monday 为 11 月 29 日。零售商提前促销的时间可能不同。</p><small>适合：大件电子产品、家电、家具和品牌折扣。</small><div class="saleButtonGroup"><button type="button" class="saleAddButton" data-sale-add="black-friday-2027">＋ 加到我的日历</button><button type="button" class="saleAddButton" data-sale-add="cyber-monday-2027">＋ 加到我的日历</button></div></article>
+   <article class="saleEventCard"><div class="saleDate">26 DEC · 每年</div><span class="tag">12 月</span><h3>Boxing Day 节礼日促销</h3><p>圣诞后清仓，常见服饰、床品、家居、家具、家电和上一代电子产品。</p><small>适合：不赶时间的家居采购和季末清仓；先确认配送与退换条件。</small><div class="saleButtonGroup"><button type="button" class="saleAddButton" data-sale-add="boxing-day-2027">＋ 加到我的日历</button></div></article>
   </div>
   <div class="notice">已核对的 2026 黑五日期为 11 月 27 日、Cyber Monday 为 11 月 30 日；2027 黑五按「11 月最后一个星期五」计算为 11 月 26 日。Click Frenzy、Afterpay Day、Prime Day 等活动的 2027 具体日期尚未全部公布，页面不提前编造日期。<a href="https://www.clickfrenzy.com.au/calendar" target="_blank" rel="noopener">查看 Click Frenzy 官方活动日历 ↗</a></div>
  </div>
@@ -1035,7 +1146,7 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
 </section>
 
 <section class="page" id="page-profile">
- <div class="pageIntro"><div class="eyebrow">MY PROFILE</div><h1>个人资料</h1><p>这里只保留简单的基本信息；航班、课程日期、个人事件和实际房租分别在对应功能里管理。</p></div>
+ <div class="pageIntro"><div class="eyebrow">MY PROFILE</div><h1>个人中心</h1><p>这里只保留简单的基本信息；航班、课程日期、个人事件和实际房租分别在对应功能里管理。</p></div>
  <div class="panel">
   <div class="panelHead"><div><h2>基本信息</h2><p>修改称呼或学校信息后，首页欢迎语和校园模块会同步更新。</p></div><span class="tag blue">基础资料</span></div>
   <form id="profileForm">
@@ -1048,7 +1159,7 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
    </div>
    <div class="formActions"><button class="primary" type="submit">保存基本资料</button><button class="secondary" type="button" id="resetProfile">恢复默认资料</button></div>
   </form>
-  <div class="notice">其他信息不再重复放在这里：航班和倒计时在首页管理，个人事件在首页日历管理，实际房租和其他支出在「个人花销」记录。</div>
+  <div class="notice">其他信息不再重复放在这里：航班和倒计时在首页管理，个人事件在首页日历管理，实际房租和其他支出在「预算计算器」记录。</div>
  </div>
  <div class="panel" style="margin-top:14px"><div class="panelHead"><div><h2>资料摘要</h2><p>当前保存的基本信息</p></div></div><div class="profileGrid" id="profileSummary"></div></div>
  
@@ -1060,13 +1171,38 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
   <div class="themeChoices">
    <button type="button" class="themeChoice" data-theme-choice="warm"><span class="themeSwatches"><i></i><i></i><i></i></span><b>暖阳米杏</b><small>当前经典配色 · 米色、杏色与木色</small></button>
    <button type="button" class="themeChoice" data-theme-choice="day"><span class="themeSwatches daySwatches"><i></i><i></i><i></i></span><b>明亮日间</b><small>更白、更清爽，适合白天长时间使用</small></button>
-   <button type="button" class="themeChoice" data-theme-choice="night"><span class="themeSwatches nightSwatches"><i></i><i></i><i></i></span><b>柔和夜间</b><small>低亮度灰绿与暖灰，不使用纯黑背景</small></button>
+   <button type="button" class="themeChoice" data-theme-choice="night"><span class="themeSwatches nightSwatches"><i></i><i></i><i></i></span><b>深夜暖灰</b><small>深石墨灰与咖啡色，暖白文字，不使用纯黑背景</small></button>
   </div>
  </div>
 </section>
 
 <section class="page" id="page-expenses">
- <div class="pageIntro"><div class="eyebrow">MY MONEY & EXPENSES</div><h1>个人花销</h1><p>把固定账单、日常消费和预算放在一起。金额以澳元 A$ 记录，数据仅保存在当前浏览器。</p></div>
+ <div class="pageIntro"><div class="eyebrow">MY MONEY & EXPENSES</div><h1>预算计算器</h1><p>把自己的生活费存进预算账户，每记一笔真实支出就自动扣减。固定支出另外作为参考，避免没有实际付款也自动扣钱。</p></div>
+
+ <section class="budgetHero panel" id="budgetCalculator">
+  <div class="panelHead"><div><h2>我的生活费余额</h2><p>输入你目前可支配的生活费，每笔已记录的真实消费都自动扣减</p></div><span class="tag blue">实时计算</span></div>
+  <div class="budgetHeroStats">
+   <div class="budgetNumber budgetRemaining"><small>当前剩余生活费</small><strong id="walletBalance">A$0.00</strong><span id="walletHint">设置初始生活费后开始累计</span></div>
+   <div class="budgetNumber"><small>累计投入</small><strong id="walletFunded">A$0.00</strong></div>
+   <div class="budgetNumber"><small>已记录支出</small><strong id="walletUsed">A$0.00</strong></div>
+  </div>
+  <div class="walletProgressWrap"><div class="walletProgress"><div id="walletProgressBar"></div></div><small id="walletProgressText">还没有设置生活费</small></div>
+  <div class="walletControls">
+   <form id="walletOpeningForm" class="walletOpenForm">
+    <label>开始记账日期<input id="walletStartDate" type="date" required></label>
+    <label>起始生活费（A$）<input id="walletOpeningAmount" type="number" min="0" step="0.01" placeholder="例如：3000.00" required></label>
+    <button class="primary" type="submit">保存初始生活费</button>
+   </form>
+   <form id="walletTopupForm" class="walletTopupForm">
+    <label>生活费追加（A$）<input id="walletTopupAmount" type="number" min="0.01" step="0.01" placeholder="例如：500.00" required></label>
+    <label>收入备注<input id="walletTopupNote" type="text" maxlength="60" placeholder="例如：家人转入 / 兼职工资"></label>
+    <button class="secondary" type="submit">＋ 追加生活费</button>
+   </form>
+  </div>
+  <div class="walletBottom"><div><h3>生活费追加记录</h3><p>追加生活费会增加余额；删除错误记录后会自动重新计算。</p></div><div id="walletTopupList"></div></div>
+  <div class="notice">计算方式：<strong>剩余生活费 = 起始生活费 + 追加金额 − 开始日期以来已记录的实际消费。</strong>下方的固定账单只作月度预算参考，不会自动扣减；真正付款后请记录一笔消费（如实际房租），避免重复扣款。更改开始日期会重新统计该日期起的消费。</div>
+ </section>
+
  <div class="expenseSummary">
   <div class="expenseStat"><span>固定支出 · 月均</span><strong id="fixedMonthly">A$0</strong></div>
   <div class="expenseStat"><span>本月已记录消费</span><strong id="spentThisMonth">A$0</strong></div>
@@ -1108,7 +1244,7 @@ body[data-theme="night"] .panel{box-shadow:0 8px 24px #59695b0b}
  </div>
 </section>
 
-<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.7　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
+<div class="footer">MY STUDY LIFE · PERSONAL EDITION · V4.9　|　个人留学生活管理工具，不构成移民、法律、税务或租赁建议。重要日期与政策请核对官方信息。</div>
 </div></main>
 </div>
 
@@ -1143,10 +1279,11 @@ const defaultState={
  countdownDates:{'return-home':{date:'',time:'12:00'},'return-campus':{date:'',time:'09:00'}},
  customCountdownTargets:[],
  activeCountdownId:'arrival',
- timetable:[]
+ timetable:[],
+ wallet:{opening:0,startDate:'',topups:[],configured:false}
 };
 function clone(x){return JSON.parse(JSON.stringify(x))}
-function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},expenses:{...clone(defaultState.expenses),...(s.expenses||{}),fixed:Array.isArray(s.expenses?.fixed)?s.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(s.expenses?.entries)?s.expenses.entries:[]},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{},countdownDates:{...clone(defaultState.countdownDates),...(s.countdownDates||{})},customCountdownTargets:Array.isArray(s.customCountdownTargets)?s.customCountdownTargets:[],activeCountdownId:s.activeCountdownId||'arrival',timetable:Array.isArray(s.timetable)?s.timetable:[]}}catch(e){return clone(defaultState)}}
+function loadState(){try{const s=JSON.parse(localStorage.getItem(KEY));if(!s)return clone(defaultState);return {...clone(defaultState),...s,profile:{...baseProfile,...s.profile},flight:{...defaultState.flight,...s.flight},budget:{...defaultState.budget,...s.budget},expenses:{...clone(defaultState.expenses),...(s.expenses||{}),fixed:Array.isArray(s.expenses?.fixed)?s.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(s.expenses?.entries)?s.expenses.entries:[]},events:Array.isArray(s.events)?s.events:clone(defaultState.events),tasks:s.tasks||{},countdownDates:{...clone(defaultState.countdownDates),...(s.countdownDates||{})},customCountdownTargets:Array.isArray(s.customCountdownTargets)?s.customCountdownTargets:[],activeCountdownId:s.activeCountdownId||'arrival',timetable:Array.isArray(s.timetable)?s.timetable:[],wallet:{...clone(defaultState.wallet),...(s.wallet||{}),topups:Array.isArray(s.wallet?.topups)?s.wallet.topups:[]}}}catch(e){return clone(defaultState)}}
 let state=loadState();
 function save(){localStorage.setItem(KEY,JSON.stringify(state))}
 let toastTimer;function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').classList.remove('show'),2200)}
@@ -1216,7 +1353,67 @@ setInterval(updateClock,250);renderCountdownTargets();updateClock();
 const now=new Date();$('todayText').textContent=new Intl.DateTimeFormat('zh-CN',{dateStyle:'full'}).format(now);$('dateChip').textContent=new Intl.DateTimeFormat('zh-CN',{dateStyle:'full'}).format(now);
 
 let viewYear=now.getFullYear(),viewMonth=now.getMonth(),selectedDate=ymd(now.getFullYear(),now.getMonth(),now.getDate()),calendarMode='week';
-function catName(c){return {school:'学校',personal:'个人',flight:'航班',deadline:'截止',custom:'自定义'}[c]||'事件'}
+const nswHolidays={
+ '2026-01-01':'元旦 · New Year’s Day',
+ '2026-01-26':'澳大利亚日 · Australia Day',
+ '2026-04-03':'耶稣受难日 · Good Friday',
+ '2026-04-04':'复活节周六 · Easter Saturday',
+ '2026-04-05':'复活节周日 · Easter Sunday',
+ '2026-04-06':'复活节周一 · Easter Monday',
+ '2026-04-25':'澳新军团日 · ANZAC Day',
+ '2026-04-27':'ANZAC Day 额外公假',
+ '2026-06-08':'国王生日 · King’s Birthday',
+ '2026-10-05':'劳动节 · Labour Day',
+ '2026-12-25':'圣诞节 · Christmas Day',
+ '2026-12-26':'节礼日 · Boxing Day',
+ '2026-12-28':'节礼日补休 · Additional Day',
+ '2027-01-01':'元旦 · New Year’s Day',
+ '2027-01-26':'澳大利亚日 · Australia Day',
+ '2027-03-26':'耶稣受难日 · Good Friday',
+ '2027-03-27':'复活节周六 · Easter Saturday',
+ '2027-03-28':'复活节周日 · Easter Sunday',
+ '2027-03-29':'复活节周一 · Easter Monday',
+ '2027-04-25':'澳新军团日 · ANZAC Day',
+ '2027-04-26':'ANZAC Day 额外公假',
+ '2027-06-14':'国王生日 · King’s Birthday',
+ '2027-10-04':'劳动节 · Labour Day',
+ '2027-12-25':'圣诞节 · Christmas Day',
+ '2027-12-26':'节礼日 · Boxing Day',
+ '2027-12-27':'圣诞节补休 · Additional Day',
+ '2027-12-28':'节礼日补休 · Additional Day'
+};
+function getCalendarEntries(date){
+ const personal=state.events.filter(e=>e.date===date);
+ const holiday=nswHolidays[date];
+ return holiday?[{id:'nsw-holiday-'+date,title:holiday,date,category:'holiday',time:'',note:'NSW 政府公布的全州公共假日 · 自动显示',autoHoliday:true},...personal]:personal;
+}
+const saleReminders={
+ 'black-friday-2026':{title:'Black Friday 黑色星期五',date:'2026-11-27'},
+ 'cyber-monday-2026':{title:'Cyber Monday 网络星期一',date:'2026-11-30'},
+ 'australia-day-sale-2027':{title:'Australia Day 购物节点（非统一促销）',date:'2027-01-26'},
+ 'singles-2027':{title:'11.11 购物节点',date:'2027-11-11'},
+ 'black-friday-2027':{title:'Black Friday 黑色星期五',date:'2027-11-26'},
+ 'cyber-monday-2027':{title:'Cyber Monday 网络星期一',date:'2027-11-29'},
+ 'boxing-day-2027':{title:'Boxing Day 购物节点',date:'2027-12-26'}
+};
+function renderSaleButtons(){
+ document.querySelectorAll('[data-sale-add]').forEach(button=>{
+  const spec=saleReminders[button.dataset.saleAdd];if(!spec)return;
+  const added=state.events.some(e=>e.id==='sale-'+button.dataset.saleAdd);
+  button.textContent=added?'✓ 已加入 · 点击移除':'＋ 加到我的日历';
+  button.classList.toggle('added',added);
+  button.setAttribute('aria-pressed',String(added));
+ });
+}
+function toggleSaleReminder(key){
+ const spec=saleReminders[key];if(!spec)return;
+ const id='sale-'+key,found=state.events.some(e=>e.id===id);
+ if(found){state.events=state.events.filter(e=>e.id!==id)}
+ else state.events.push({id,title:spec.title,date:spec.date,time:'',category:'shopping',note:'购物提醒 · 可在首页日历管理'});
+ save();renderAllCalendars();renderSaleButtons();toast(found?'购物提醒已移除':'购物提醒已加入首页日历');
+}
+
+function catName(c){return {school:'学校',personal:'个人',flight:'航班',deadline:'截止',custom:'自定义',shopping:'购物',holiday:'NSW公假'}[c]||'事件'}
 function renderCalendar(idSuffix=''){
  const calId='calendar'+idSuffix,titleId='monthTitle'+idSuffix,agendaTitleId='agendaTitle'+idSuffix,agendaListId='agendaList'+idSuffix;
  if(!$(calId))return;
@@ -1236,22 +1433,25 @@ function renderCalendar(idSuffix=''){
  let out='';const todayKey=ymd(now.getFullYear(),now.getMonth(),now.getDate());
  for(let i=0;i<count;i++){
    const dt=new Date(start);dt.setDate(start.getDate()+i);const key=fmt(dt),same=mode==='week'||dt.getMonth()===viewMonth;
-   const dayEvents=state.events.filter(e=>e.date===key),has=dayEvents.length>0;
+   const dayEvents=getCalendarEntries(key),has=dayEvents.length>0;
+   const holiday=nswHolidays[key];
    const dots=dayEvents.slice(0,4).map(e=>`<i class="dot ${e.category}"></i>`).join('');
-   out+=`<button class="day ${same?'':'mutedDay'} ${key===todayKey?'today':''} ${key===selectedDate?'selected':''} ${has?'hasEvents':''}" data-date="${key}" aria-label="${key}${has?'，'+dayEvents.length+'个事件':''}">${dt.getDate()}<span class="dots">${dots}</span>${has&&dayEvents.length>1?`<small class="eventCount">${dayEvents.length}</small>`:''}</button>`;
+   const shopping=dayEvents.some(e=>e.category==='shopping');
+   out+=`<button class="day ${same?'':'mutedDay'} ${key===todayKey?'today':''} ${key===selectedDate?'selected':''} ${has?'hasEvents':''} ${holiday?'nswHoliday':''} ${shopping?'saleReminderDay':''}" data-date="${key}" aria-label="${key}${holiday?'，NSW 公共假日：'+escapeHTML(holiday):''}${shopping?'，有购物提醒':''}" title="${escapeHTML(holiday||'')}"><span class="dayNum">${dt.getDate()}</span>${holiday?`<span class="holidayMini">公假</span>`:''}${shopping?`<span class="shoppingMini">购物</span>`:''}<span class="dots">${dots}</span></button>`;
  }
  $(calId).innerHTML=out;
  $(calId).querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{selectedDate=b.dataset.date;const d=new Date(selectedDate+'T12:00:00');viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()});
- const ev=state.events.filter(e=>e.date===selectedDate).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
- $(agendaTitleId).textContent=selectedDate+' · '+ev.length+' 项安排';
+ const ev=getCalendarEntries(selectedDate).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+ $(agendaTitleId).textContent=selectedDate+' · '+ev.length+' 项安排'+(nswHolidays[selectedDate]?' · NSW 公共假日':'');
  $(agendaListId).innerHTML=ev.length?ev.map(e=>`<div class="eventRow"><div class="eventDate">${e.date.slice(5).replace('-','/')}</div><div class="eventInfo"><strong>${escapeHTML(e.title)}</strong><small>${e.time||'全天'}${e.note?' · '+escapeHTML(e.note):''}</small></div><span class="eventCat">${catName(e.category)}</span></div>`).join(''):'<div class="eventEmpty">这一天还没有安排。点击「添加事件」添加事项。</div>';
 }
-function renderAllCalendars(){renderCalendar('');renderAllEvents();renderManageEvents();renderDashboardWidgets()}
+function renderAllCalendars(){renderCalendar('');renderAllEvents();renderManageEvents();renderDashboardWidgets();renderSaleButtons()}
 function shiftCalendar(delta){
  if(calendarMode==='week'){const d=new Date(selectedDate+'T12:00:00');d.setDate(d.getDate()+delta*7);selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();}
  else {viewMonth+=delta;if(viewMonth<0){viewMonth=11;viewYear--}if(viewMonth>11){viewMonth=0;viewYear++}selectedDate=ymd(viewYear,viewMonth,1);}
  renderAllCalendars();
 }
+document.querySelectorAll('[data-sale-add]').forEach(btn=>btn.addEventListener('click',()=>toggleSaleReminder(btn.dataset.saleAdd)));
 $('prevMonth').onclick=()=>shiftCalendar(-1);
 $('nextMonth').onclick=()=>shiftCalendar(1);
 $('todayMonth').onclick=()=>{const d=new Date();selectedDate=ymd(d.getFullYear(),d.getMonth(),d.getDate());viewYear=d.getFullYear();viewMonth=d.getMonth();renderAllCalendars()};
@@ -1294,7 +1494,7 @@ function updateOverview(){const p=state.profile;$('welcomeTitle').textContent=p.
 const tasks=['确认签证批准信、签证条件与 VEVO','确认 CoE、语言班报到与开课安排','整理护照、保险、录取文件及电子备份','筛选租房区域并预约看房','核实租赁合同、Bond 与入住状况报告','确认航班、行李、机场到住处路线','准备澳洲手机卡 / eSIM 方案','比较银行账户与国际汇款方式','了解 Opal / 非接触式交通支付','确认 OSHC 保单与医疗服务入口','熟悉 Arc、社团及校园支持服务','核实 2027 官方校历、迎新和主课日期','准备抵澳初期生活用品','导出并保存网站个人数据备份'];
 function renderTasks(){$('arrivalTasks').innerHTML=tasks.map((t,i)=>`<label class="checkRow ${state.tasks[i]?'done':''}"><input type="checkbox" data-task="${i}" ${state.tasks[i]?'checked':''}><span>${escapeHTML(t)}</span></label>`).join('');const done=tasks.filter((_,i)=>state.tasks[i]).length;$('taskCount').textContent=done+' / '+tasks.length;$('taskProgress').style.width=(done/tasks.length*100)+'%';$('arrivalTasks').querySelectorAll('[data-task]').forEach(c=>c.onchange=()=>{state.tasks[c.dataset.task]=c.checked;save();renderTasks()})}
 $('exportData').onclick=()=>{const backup={...state,extras:{favorites:getFavs(),rentalChecks:JSON.parse(localStorage.getItem('msl-rental-checks-v44')||'{}'),healthChecks:JSON.parse(localStorage.getItem('msl-health-checks-v45')||'{}'),arrivalDocs:JSON.parse(localStorage.getItem('msl-arrival-docs-v47')||'{}'),theme:localStorage.getItem('msl-theme-v47')||'warm'}};const blob=new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='my-study-life-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(url);toast('备份文件已生成')};
-$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]},countdownDates:{...clone(defaultState.countdownDates),...(obj.countdownDates||{})},customCountdownTargets:Array.isArray(obj.customCountdownTargets)?obj.customCountdownTargets:[],timetable:Array.isArray(obj.timetable)?obj.timetable:[]};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(obj.extras.rentalChecks||{}));localStorage.setItem('msl-health-checks-v45',JSON.stringify(obj.extras.healthChecks||{}));localStorage.setItem('msl-arrival-docs-v47',JSON.stringify(obj.extras.arrivalDocs||{}));applyTheme(obj.extras.theme||'warm');}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();renderHealthChecklist();renderArrivalDocumentChecklist();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderHealthChecklist();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
+$('importData').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const obj=JSON.parse(await file.text());if(!obj.profile||!obj.flight||!Array.isArray(obj.events)||!obj.budget)throw Error('bad');state={...clone(defaultState),...obj,profile:{...baseProfile,...obj.profile},expenses:{...clone(defaultState.expenses),...(obj.expenses||{}),fixed:Array.isArray(obj.expenses?.fixed)?obj.expenses.fixed.filter(x=>!(x.id==='fx-rent'&&x.name==='房租预算参考')):clone(defaultState.expenses.fixed),entries:Array.isArray(obj.expenses?.entries)?obj.expenses.entries:[]},countdownDates:{...clone(defaultState.countdownDates),...(obj.countdownDates||{})},customCountdownTargets:Array.isArray(obj.customCountdownTargets)?obj.customCountdownTargets:[],timetable:Array.isArray(obj.timetable)?obj.timetable:[],wallet:{...clone(defaultState.wallet),...(obj.wallet||{}),topups:Array.isArray(obj.wallet?.topups)?obj.wallet.topups:[]}};if(obj.extras){setFavs(Array.isArray(obj.extras.favorites)?obj.extras.favorites:[]);localStorage.setItem('msl-rental-checks-v44',JSON.stringify(obj.extras.rentalChecks||{}));localStorage.setItem('msl-health-checks-v45',JSON.stringify(obj.extras.healthChecks||{}));localStorage.setItem('msl-arrival-docs-v47',JSON.stringify(obj.extras.arrivalDocs||{}));applyTheme(obj.extras.theme||'warm');}save();updateClock();fillProfile();fillFlightForm();renderAllCalendars();renderTasks();renderManageEvents();renderResources();renderRentalChecks();renderExpenses();renderWallet();renderHealthChecklist();renderArrivalDocumentChecklist();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderHealthChecklist();updateOverview();toast('备份导入成功')}catch(err){toast('导入失败：文件格式不正确')}e.target.value=''};
 
 
 
@@ -1345,6 +1545,44 @@ function renderDashboardWidgets(){
 function money(n){return 'A$'+(Number(n)||0).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})}
 function fixedMonthly(item){const a=Number(item.amount)||0;return a*({weekly:52/12,fortnightly:26/12,monthly:1,quarterly:1/3,yearly:1/12}[item.frequency]||1)}
 function frequencyText(f){return {weekly:'每周',fortnightly:'每两周',monthly:'每月',quarterly:'每季度',yearly:'每年'}[f]||f}
+
+function walletToday(){const d=new Date();return ymd(d.getFullYear(),d.getMonth(),d.getDate())}
+function walletTotals(){
+ const w=state.wallet||{},start=w.startDate||walletToday();
+ const topups=(w.topups||[]).filter(t=>t.date>=start);
+ const funded=(Number(w.opening)||0)+topups.reduce((sum,t)=>sum+(Number(t.amount)||0),0);
+ const used=(state.expenses?.entries||[]).filter(e=>(e.date||'')>=start).reduce((sum,e)=>sum+(Number(e.amount)||0),0);
+ return {funded,used,balance:funded-used,start};
+}
+function renderWallet(){
+ const w=state.wallet||{};
+ if(!$('walletBalance'))return;
+ $('walletOpeningAmount').value=(Number(w.opening)||0).toFixed(2);
+ $('walletStartDate').value=w.startDate||walletToday();
+ const t=walletTotals(),configured=!!w.configured;
+ $('walletBalance').textContent=configured?money(t.balance):'未设置';
+ $('walletFunded').textContent=configured?money(t.funded):'A$0.00';
+ $('walletUsed').textContent=configured?money(t.used):'A$0.00';
+ $('walletHint').textContent=!configured?'先输入生活费金额开始记账':t.balance<0?'当前超出已投入的生活费':t.balance===0?'生活费已全部使用':'从 '+t.start+' 开始自动扣除已记录支出';
+ $('walletBalance').classList.toggle('overBudget',configured&&t.balance<0);
+ $('walletProgressBar').style.width=(configured&&t.funded>0?Math.min(100,Math.max(0,t.used/t.funded*100)):0)+'%';
+ $('walletProgressBar').classList.toggle('overBudget',configured&&t.balance<0);
+ $('walletProgressText').textContent=configured?(t.funded>0?'已使用 '+(t.used/t.funded*100).toFixed(1)+'% 的累计生活费':'已设置生活费，可随时追加'):'请先保存初始生活费';
+ const list=$('walletTopupList');
+ list.innerHTML=(w.topups||[]).length?(w.topups||[]).slice().sort((a,b)=>b.date.localeCompare(a.date)).map(t=>`<div class="walletTopupRow"><span><b>${escapeHTML(t.note||'生活费追加')}</b><small>${escapeHTML(t.date)}</small></span><strong>+${money(t.amount)}</strong><button class="secondary" type="button" data-wallet-del="${escapeHTML(t.id)}">删除</button></div>`).join(''):'<div class="expenseEmpty">还没有追加记录。</div>';
+ list.querySelectorAll('[data-wallet-del]').forEach(b=>b.onclick=()=>{state.wallet.topups=state.wallet.topups.filter(t=>t.id!==b.dataset.walletDel);save();renderWallet();renderDashboardWidgets();toast('已删除追加记录')});
+ const dash=$('dashboardWalletBalance');if(dash)dash.textContent=configured?money(t.balance):'尚未设置';
+}
+$('walletOpeningForm').addEventListener('submit',e=>{e.preventDefault();
+ const opening=Number($('walletOpeningAmount').value),start=$('walletStartDate').value;
+ if(!Number.isFinite(opening)||opening<0||!start){toast('请输入有效金额和开始日期');return}
+ state.wallet={...state.wallet,opening,startDate:start,configured:true};save();renderWallet();renderDashboardWidgets();toast('已保存生活费，余额开始自动计算')});
+$('walletTopupForm').addEventListener('submit',e=>{e.preventDefault();
+ if(!state.wallet?.configured){toast('请先设置起始生活费');return}
+ const amount=Number($('walletTopupAmount').value),note=$('walletTopupNote').value.trim();if(!Number.isFinite(amount)||amount<=0)return;
+ state.wallet.topups.push({id:'topup-'+Date.now(),amount,note:note||'生活费追加',date:walletToday()});
+ save();e.target.reset();renderWallet();renderDashboardWidgets();toast('已追加生活费')});
+
 function renderExpenses(){
  if(!$('fixedExpenseList'))return;
  const exp=state.expenses||{fixed:[],entries:[]},fixed=exp.fixed||[],entries=exp.entries||[];
@@ -1361,6 +1599,7 @@ function renderExpenses(){
  const breakdown=[...fixed.reduce((m,x)=>{const c=x.category||'固定支出';m.set(c,(m.get(c)||0)+fixedMonthly(x));return m},new Map()).entries(),...Object.entries(cats)];
  $('expenseBreakdown').innerHTML=breakdown.length?breakdown.map(([c,v])=>`<div class="expenseRow"><strong>${escapeHTML(c)}</strong><span class="amount">${money(v)}</span></div>`).join(''):'<div class="expenseEmpty">暂无支出数据。</div>';
  renderDashboardWidgets();
+ renderWallet();
 }
 $('fixedExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('fxName').value.trim(),amount=Number($('fxAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.fixed.push({id:'fx-'+Date.now(),name,amount,frequency:$('fxFrequency').value,category:$('fxCategory').value});save();e.target.reset();renderExpenses();toast('固定支出已添加')});
 $('dailyExpenseForm').addEventListener('submit',e=>{e.preventDefault();const name=$('spName').value.trim(),amount=Number($('spAmount').value);if(!name||!Number.isFinite(amount)||amount<0)return;state.expenses.entries.push({id:'sp-'+Date.now(),name,amount,date:$('spDate').value,category:$('spCategory').value});save();$('spName').value='';$('spAmount').value='';renderExpenses();toast('消费记录已保存')});
@@ -1481,7 +1720,7 @@ function applyTheme(theme,saveChoice=true){
 }
 
 applyTheme(localStorage.getItem('msl-theme-v47')||'warm',false);fillProfile();fillFlightForm();renderArrivalDocumentChecklist();updateOverview();renderAllCalendars();renderManageEvents();renderTimetable();renderCountdownTargets();renderDashboardWidgets();renderTasks();
-renderResources();renderRentalChecks();renderExpenses();renderHealthChecklist();
+renderResources();renderRentalChecks();renderExpenses();renderWallet();renderHealthChecklist();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http'))addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 </script>
 </body></html>

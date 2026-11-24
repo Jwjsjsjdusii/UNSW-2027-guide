@@ -1,7 +1,7 @@
 {
   "name": "My Study Life · Personal Edition",
   "short_name": "My Study Life",
-  "description": "个人留学生活工作台：航班倒计时、日历课表、快捷记账、来澳清单、购物与二手资源",
+  "description": "个人留学生活工作台：倒计时、课表、兼职求职、生活费余额与预算计算器",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
